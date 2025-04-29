@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar'
 import Footer from './Footer'
 
 export default function Home() {
+    // data-background img start 
+    const [background, setBackground] = useState('');
+
+    useEffect(() => {
+     
+      const backgroundUrl = "/assets/img/bg/hero_bg.jpg"; 
+      setBackground(backgroundUrl);
+    }, []);
+    // data-background img end 
   return (
     <div>
       <Navbar />
@@ -21,7 +30,10 @@ export default function Home() {
 <div className="body_wrap">
   
 {/* <!-- hero start --> */}
-        <section className="hero hero__style-one bg_img" data-background="/assets/img/bg/hero_bg.jpg">
+<section 
+      className="hero hero__style-one bg_img" 
+      style={{ backgroundImage: `url(${background})` }}
+    >
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-xl-6 col-lg-7">
