@@ -2,7 +2,7 @@
 	"use strict";
 
 	// preloader
-	$('#xb-loadding').delay().fadeOut();
+	// $('#xb-loadding').delay().fadeOut();
 
 	// back to top - start
 	// --------------------------------------------------

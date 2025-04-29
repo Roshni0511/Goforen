@@ -15,20 +15,8 @@ export default function Home() {
 </div>
 {/* <!-- backtotop - end --> */}
 
-{/* <!-- preloader start --> */}
-{/* <div id="xb-loadding">
-    <div className="loader">
-        <div className="plane">
-            <img className="plane-img" src="assets/img/icon/plane.gif" alt="" />
-        </div>
-        <div className="earth-wrapper">
-            <div className="earth"></div>
-        </div>
-    </div>
-</div> */}
 
 
-{/* <!-- preloader end --> */}
 
 <div className="body_wrap">
   
