@@ -1,0 +1,22 @@
+.scroll-container {
+    height: 140px; /* 2 items x 70px */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .scroll-inner {
+    position: absolute;
+    top: 0;
+    transition: top 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  .scroll-item {
+    height: 70px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+  }
+ 
