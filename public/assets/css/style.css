@@ -60,3 +60,29 @@ p{
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
+.xb-swiper-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.xb-swiper-wrapper {
+  display: flex;
+}
+
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* ensures vertical stretching */
+  padding: 1rem;
+}
+
+.news-item {
+  white-space: nowrap; /* prevents auto line break */
+  overflow: hidden;
+  text-overflow: ellipsis; /* adds ... if too long */
+  margin-bottom: 0.5rem;
+  font-size: 14px; /* adjust to fit space */
+  text-align: center;
+}
