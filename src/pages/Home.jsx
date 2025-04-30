@@ -6,7 +6,14 @@ export default function Home() {
     const scrollRef = useRef(null);
     const itemHeight = 70;
     const [index, setIndex] = useState(0);
+   // data-background img start
+    const [background, setBackground] = useState("");
   
+    useEffect(() => {
+      const backgroundUrl = "/assets/img/bg/hero_bg.jpg";
+      setBackground(backgroundUrl);
+    }, []);
+    // data-background img end
     const items = [
       "Poland Introduced e-Konsulat for Work Visa Applications in India.",
       "Australian Universities Impose Restrictions on Students from Six Indian Regions.",
@@ -56,7 +63,7 @@ export default function Home() {
 <div className="body_wrap">
   
 {/* <!-- hero start --> */}
-        <section className="hero hero__style-one bg_img" data-background="/assets/img/bg/hero_bg.jpg">
+        <section className="hero hero__style-one bg_img"   style={{ backgroundImage: `url(${background})` }}>
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-xl-6 col-lg-7">
