@@ -1,3 +1,9 @@
+
+p{
+  font-size: 16px !important;
+  text-align: justify;
+}
+
 .scroll-container {
     height: 140px; /* 2 items x 70px */
     overflow: hidden;
@@ -19,4 +25,38 @@
     background: #f9f9f9;
     border-bottom: 1px solid #ddd;
   }
- 
+  .sec-title p {
+    margin-bottom: 10px;
+}
+.xb-testimonial {
+  min-height: 360px; /* Adjust based on your tallest card */
+}
+/* Force all Swiper slides to match height */
+.xb-swiper-sliders .swiper-wrapper {
+  display: flex;
+}
+
+/* Make each Swiper slide take equal height */
+.xb-swiper-sliders .swiper-slide {
+  display: flex;
+  height: auto !important;
+}
+
+/* Ensure testimonial box fills available height */
+.xb-testimonial {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Make inner content fill and align properly */
+.xb-item--inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}

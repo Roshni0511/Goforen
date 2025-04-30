@@ -50,6 +50,34 @@ export default function Navbar() {
       $('.xb-menu-close, .xb-header-menu-backdrop').off();
     };
   }, []);
+  useEffect(() => {
+    if ($('.stricky').length) {
+      $('.stricky')
+        .addClass('original')
+        .clone(true)
+        .insertAfter('.stricky')
+        .addClass('stricked-menu')
+        .removeClass('original');
+    }
+
+    const handleScroll = () => {
+      if ($('.stricked-menu').length) {
+        const headerScrollPos = 100;
+        const stricky = $('.stricked-menu');
+        if ($(window).scrollTop() > headerScrollPos) {
+          stricky.addClass('stricky-fixed');
+        } else {
+          stricky.removeClass('stricky-fixed');
+        }
+      }
+    };
+
+    $(window).on('scroll', handleScroll);
+
+    return () => {
+      $(window).off('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -68,7 +96,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="header__wrap stricky">
+        <div className="header__wrap stricky  ">
           <div className="container">
             <div className="header__inner ul_li_between">
               <div className="header__logo">
@@ -101,7 +129,16 @@ export default function Navbar() {
                         <li><a href=""><span>FAQ</span></a></li>
                       </ul>
                     </li>
-                    <li><a href="/About"><span>About us</span></a></li>
+                    <li className="menu-item-has-children">
+                      <a href="/About"><span>About us</span></a>
+                      <ul className="submenu">
+                        <li><a href="/About-us-race"><span>About Race Group</span></a></li>
+                        <li><a href=""><span>About Goforen</span></a></li>
+                        <li><a href=""><span>About Founder</span></a></li>
+                       
+                      </ul>
+                    </li>
+                    
                     <li className="menu-item-has-children">
                       <a href=""><span>Country</span></a>
                       <ul className="submenu">
@@ -201,7 +238,15 @@ export default function Navbar() {
                       <li className="menu-item"><a href=""><span>FAQ</span></a></li>
                     </ul>
                   </li>
-                  <li className="menu-item"><a href="/About"><span>About us</span></a></li>
+                  <li className="menu-item menu-item-has-children">
+                    <a href="/About"><span>About us</span></a>
+                    <ul className="sub-menu">
+                      <li className="menu-item"><a href="/About-us-race"><span>About Race Group</span></a></li>
+                      <li className="menu-item"><a href=""><span>About Goforen</span></a></li>
+                      <li className="menu-item"><a href=""><span>About Founder</span></a></li>
+                    </ul>
+                  </li>
+                  
                   <li className="menu-item menu-item-has-children">
                     <a href="#"><span>Country</span></a>
                     <ul className="sub-menu">

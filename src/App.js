@@ -2,18 +2,36 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Aboutusrace from "./pages/About-us-race";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [showScroll, setShowScroll] = useState(false);
 
+  // Loading screen timeout
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500); // 1.5 seconds
-
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
+
+  // Show/hide back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 500);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll to top with smooth animation
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   if (loading) {
     return (
@@ -29,18 +47,23 @@ function App() {
       </div>
     );
   }
+
   return (
     <>
-      {/* <!-- backtotop - start --> */}
-      <div className="xb-backtotop">
-        <a href="#" className="scroll">
+      {/* Back to Top Button */}
+      <div
+        className={`xb-backtotop ${showScroll ? "active" : ""}`}
+        onClick={scrollToTop}
+      >
+        <button className="scroll-btn" style={{background:'#00cc99' ,color:'#fff',padding:'10px 15px',borderRadius:'8px'}}>
           <i className="far fa-arrow-up"></i>
-        </a>
+        </button>
       </div>
-      {/* <!-- backtotop - end --> */}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
+        <Route path="/About-us-race" element={<Aboutusrace />} />
       </Routes>
     </>
   );
