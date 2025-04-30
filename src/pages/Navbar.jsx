@@ -78,7 +78,7 @@ export default function Navbar() {
                 <nav className="main-menu collapse navbar-collapse">
                   <ul>
                     <li className="menu-item-has-children active">
-                      <a href="/Home"><span>Home</span></a>
+                      <a href="/"><span>Home</span></a>
                       <ul className="submenu">
                         <li className="active"><a href=""><span>Immigration</span></a></li>
                         <li><a href=""><span>Student Visa</span></a></li>
@@ -101,7 +101,7 @@ export default function Navbar() {
                         <li><a href=""><span>FAQ</span></a></li>
                       </ul>
                     </li>
-                    <li><a href=""><span>About us</span></a></li>
+                    <li><a href="/About"><span>About us</span></a></li>
                     <li className="menu-item-has-children">
                       <a href=""><span>Country</span></a>
                       <ul className="submenu">
@@ -178,7 +178,7 @@ export default function Navbar() {
               <nav className="xb-header-nav">
                 <ul className="xb-menu-primary clearfix">
                   <li className="menu-item menu-item-has-children">
-                    <a href="#"><span>Home</span></a>
+                    <a href="/"><span>Home</span></a>
                     <ul className="sub-menu">
                       <li className="menu-item"><a href=""><span>Immigration</span></a></li>
                       <li className="menu-item"><a href=""><span>Student Visa</span></a></li>
@@ -201,7 +201,7 @@ export default function Navbar() {
                       <li className="menu-item"><a href=""><span>FAQ</span></a></li>
                     </ul>
                   </li>
-                  <li className="menu-item"><a href=""><span>About us</span></a></li>
+                  <li className="menu-item"><a href="/About"><span>About us</span></a></li>
                   <li className="menu-item menu-item-has-children">
                     <a href="#"><span>Country</span></a>
                     <ul className="sub-menu">

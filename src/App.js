@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-
-
-
+import About from "./pages/About";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,9 +31,17 @@ function App() {
   }
   return (
     <>
-   <Routes>
-      <Route path="/" element={<Home />}/>
-   </Routes>
+      {/* <!-- backtotop - start --> */}
+      <div className="xb-backtotop">
+        <a href="#" className="scroll">
+          <i className="far fa-arrow-up"></i>
+        </a>
+      </div>
+      {/* <!-- backtotop - end --> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+      </Routes>
     </>
   );
 }
