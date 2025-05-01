@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import SuccessStories from "../component/SuccessStories";
+import FooterTop from "../component/FooterTop";
 export default function About() {
   // data-background img start
   const [background, setBackground] = useState("");
@@ -407,7 +408,7 @@ export default function About() {
       {/* <!-- testimonial start --> */}
       <SuccessStories />
       {/* <!-- testimonial end --> */}
-
+      <FooterTop />
       <Footer />
     </div>
   );

@@ -4,6 +4,7 @@ import Footer from './Footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import SuccessStories from "../component/SuccessStories";
+import FooterTop from "../component/FooterTop";
 
 export default function Aboutusrace() {
       // data-background img start
@@ -166,7 +167,7 @@ export default function Aboutusrace() {
       </section>
       {/* <!-- about text end --> */}
 
-      {/* <!-- img start --> */}
+      {/* <!-- img start responsive pandding--> */}
         <section className="blog pb-130">
             <div className="container">
                 <div className="blog-wrap">
@@ -213,7 +214,7 @@ export default function Aboutusrace() {
         {/* <!-- img end --> */}
 
          {/* <!-- about text start --> */}
-      <section className="team-signle pt-120 pb-120">
+      <section className="team-signle pb-120">
         <div className="container">
           <div className="team-single__inner">
             <div className="team-single__content" style={{ paddingTop: "0px" }}>
@@ -226,6 +227,28 @@ export default function Aboutusrace() {
               <b>URL:</b> <a href="https://www.racevarsity.com" target="_blank">www.racevarsity.com</a>
               </p>
              
+             <p><b>2. IROJGAR – Placement division:</b> Provides comprehensive workforce solutions catering to both professionals and non-professionals alike. Leveraging technology-driven job portal (online), we streamline the process of connecting job seekers with suitable employment opportunities while enabling job providers to effortlessly discover the talented individuals they require for sustainable success. All this is offered at a competitive and reasonable cost, ensuring a win-win scenario for all stakeholders involved since 2015.
+             <br />
+             <b>Contact number:</b> +91 77 79 01 01 01
+             <br />
+             <b>URL:</b> <a href="https://www.irojgar.com" target="_blank">www.irojgar.com</a>
+             </p>
+             
+             <p>
+             <b>3. GO FOREN – Visa and Immigration division:</b> GO FOREN is your go-to place for immigration and visa services. We can help you with various visas like PR, student, visitor, business, and work permits since 2018. Our specialty is immigration, and we provide all-round support to people who want to work and live in a new country like Canada, USA, UK, Australia, New Zealand. We offer help from the beginning till the end, including counselling, evaluations, applications, reapplications, and immigration processes. And that's not all! We also offer extra services like air ticketing, foreign exchange, accommodation arrangements, travel insurance, and airport transfers once you successfully move to your new country. Trust us for a smooth and hassle-free journey!
+             <br />
+             <b>Contact number:</b> +91 96 24 819 819
+             <br />
+             <b>URL:</b> <a href="https://www.goforen.com" target="_blank">www.goforen.com</a>
+             </p>
+
+             <p>
+             <b>4. CAREERIAA – Co working space:</b> This is an outstanding co-working space established in 2022, dedicated to serving distinguished coworkers, freelancers, and aspiring entrepreneurs in need of a launchpad for their startups or businesses. For various reasons, like office maintenance and additional expenses, they may not be able to afford their own office initially. Our comprehensive range of amenities and services is designed to support and empower these passionate individuals like good ambience, waiting area, meeting place, parking, library, internet, xeroxing, CCTV surveillance, cafeteria, wash rooms, change rooms, recording facility, and air-conditioned.
+             <br />
+             <b>Contact number:</b> +91 85 11 11 02 21
+             <br />
+             <b>URL:</b><a href="https://www.careeriaa.com" target="_blank">www.careeriaa.com</a>
+             </p>
              
             </div>
           </div>
@@ -237,7 +260,7 @@ export default function Aboutusrace() {
         <SuccessStories />
         {/* <!-- testimonial end --> */}
 
-
+        <FooterTop />
 
       <Footer />
     </div>

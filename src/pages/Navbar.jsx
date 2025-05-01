@@ -115,29 +115,25 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
-                      <a href="#!"><span>Pages</span></a>
-                      <ul className="submenu">
-                        <li><a href=""><span>Services</span></a></li>
-                        <li><a href=""><span>Service Details</span></a></li>
-                        <li><a href=""><span>Coaching</span></a></li>
-                        <li><a href=""><span>Coaching Details</span></a></li>
-                        <li><a href=""><span>Visa</span></a></li>
-                        <li><a href=""><span>Visa Details</span></a></li>
-                        <li><a href=""><span>Team</span></a></li>
-                        <li><a href=""><span>Team Details</span></a></li>
-                        <li><a href=""><span>Testimonials</span></a></li>
-                        <li><a href=""><span>FAQ</span></a></li>
-                      </ul>
-                    </li>
-                    <li className="menu-item-has-children">
                       <a href="/About"><span>About us</span></a>
                       <ul className="submenu">
                         <li><a href="/About-us-race"><span>About Race Group</span></a></li>
-                        <li><a href=""><span>About Goforen</span></a></li>
-                        <li><a href=""><span>About Founder</span></a></li>
+                        <li><a href="/About"><span>About Goforen</span></a></li>
+                        <li><a href="/About-founder"><span>About Founder</span></a></li>
                        
                       </ul>
                     </li>
+                    <li className="menu-item-has-children">
+                      <a href="/Visa-services"><span>Visa Services</span></a>
+                      <ul className="submenu">
+                        <li><a href=""><span> Immigration - PR Visa</span></a></li>
+                        <li><a href=""><span>Student Visa</span></a></li>
+                        <li><a href=""><span> Visitor Visa</span></a></li>
+                        <li><a href=""><span> Investor Visa</span></a></li>
+                        <li><a href=""><span> Work Permit Visa</span></a></li>
+                      </ul>
+                    </li>
+                  
                     
                     <li className="menu-item-has-children">
                       <a href=""><span>Country</span></a>
@@ -224,28 +220,25 @@ export default function Navbar() {
                     </ul>
                   </li>
                   <li className="menu-item menu-item-has-children">
-                    <a href="#"><span>Pages</span></a>
-                    <ul className="sub-menu">
-                      <li className="menu-item"><a href=""><span>Services</span></a></li>
-                      <li className="menu-item"><a href=""><span>Service Details</span></a></li>
-                      <li className="menu-item"><a href=""><span>Coaching</span></a></li>
-                      <li className="menu-item"><a href=""><span>Coaching Details</span></a></li>
-                      <li className="menu-item"><a href=""><span>Visa</span></a></li>
-                      <li className="menu-item"><a href=""><span>Visa Details</span></a></li>
-                      <li className="menu-item"><a href=""><span>Team</span></a></li>
-                      <li className="menu-item"><a href=""><span>Team Details</span></a></li>
-                      <li className="menu-item"><a href=""><span>Testimonials</span></a></li>
-                      <li className="menu-item"><a href=""><span>FAQ</span></a></li>
-                    </ul>
-                  </li>
-                  <li className="menu-item menu-item-has-children">
                     <a href="/About"><span>About us</span></a>
                     <ul className="sub-menu">
                       <li className="menu-item"><a href="/About-us-race"><span>About Race Group</span></a></li>
-                      <li className="menu-item"><a href=""><span>About Goforen</span></a></li>
-                      <li className="menu-item"><a href=""><span>About Founder</span></a></li>
+                      <li className="menu-item"><a href="/About"><span>About Goforen</span></a></li>
+                      <li className="menu-item"><a href="/About-founder"><span>About Founder</span></a></li>
                     </ul>
                   </li>
+                  <li className="menu-item menu-item-has-children">
+                    <a href="/Visa-services"><span>Visa Services</span></a>
+                    <ul className="sub-menu">
+                      <li className="menu-item"><a href=""><span>Immigration - PR Visa</span></a></li>
+                      <li className="menu-item"><a href=""><span>Student Visa</span></a></li>
+                      <li className="menu-item"><a href=""><span>Visitor Visa</span></a></li>
+                      <li className="menu-item"><a href=""><span>Investor Visa</span></a></li>
+                      <li className="menu-item"><a href=""><span>Work Permit Visa</span></a></li>
+                     
+                    </ul>
+                  </li>
+                 
                   
                   <li className="menu-item menu-item-has-children">
                     <a href="#"><span>Country</span></a>

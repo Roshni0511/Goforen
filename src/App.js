@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Aboutusrace from "./pages/About-us-race";
+import Aboutfounder from "./pages/About-founder";
+import Visaservices from "./pages/Visa-services";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -64,6 +66,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/About-us-race" element={<Aboutusrace />} />
+        <Route path="/About-founder" element={<Aboutfounder />} />
+        <Route path="/Visa-services" element={<Visaservices />} />
       </Routes>
     </>
   );
