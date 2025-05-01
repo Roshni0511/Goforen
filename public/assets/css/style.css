@@ -94,9 +94,7 @@ p{
 .hover-shadow:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-.xb-item--img{
-  border: 1px solid #000;
-}
+
 
 .table-responsive {
   width: 100%;

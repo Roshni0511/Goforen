@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-export default function Immigrationprvisa() {
+export default function Visitorvisa() {
   // data-background img start
   const [background, setBackground] = useState("");
 

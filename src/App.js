@@ -12,7 +12,7 @@ import TOEFLIBT from "./pages/TOEFLIBT";
 import GRE from "./pages/GRE";
 import PTE from "./pages/PTE";
 import SAT from "./pages/SAT";
-
+import Studentvisa from "./pages/Student-visa";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -76,6 +76,7 @@ function App() {
         <Route path="/About-founder" element={<Aboutfounder />} />
         <Route path="/Visa-services" element={<Visaservices />} />
         <Route path="/Immigration-pr-visa" element={<Immigrationprvisa />} />
+        <Route path="/Student-visa" element={<Studentvisa />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/IELTS" element={<IELTS />} />
         
