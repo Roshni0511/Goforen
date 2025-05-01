@@ -10,6 +10,8 @@ import Immigrationprvisa from "./pages/Immigration-pr-visa";
 import IELTS from "./pages/IELTS";
 import TOEFLIBT from "./pages/TOEFLIBT";
 import GRE from "./pages/GRE";
+import PTE from "./pages/PTE";
+import SAT from "./pages/SAT";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -76,9 +78,11 @@ function App() {
         <Route path="/Immigration-pr-visa" element={<Immigrationprvisa />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/IELTS" element={<IELTS />} />
-        <Route path="/" element={<TOEFLIBT />} />
+        
         <Route path="/TOEFLIBT" element={<TOEFLIBT />} />
         <Route path="/GRE" element={<GRE />} />
+        <Route path="/PTE" element={<PTE />} />
+        <Route path="/SAT" element={<SAT />} />
       </Routes>
     </>
   );

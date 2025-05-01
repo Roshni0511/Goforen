@@ -2,23 +2,24 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-const IELTS = () => {
-        const [background, setBackground] = useState("");
-        
-          useEffect(() => {
-            const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
-            setBackground(backgroundUrl);
-          }, []);
-          const [background1, setBackground1] = useState("");
-        
-          useEffect(() => {
-            const backgroundUrl1 = "https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg";
-            setBackground1(backgroundUrl1);
-          }, []);
+const PTE = () => {
+      const [background, setBackground] = useState("");
+                    
+                      useEffect(() => {
+                        const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
+                        setBackground(backgroundUrl);
+                      }, []);
+                      const [background1, setBackground1] = useState("");
+                    
+                      useEffect(() => {
+                        const backgroundUrl1 = "https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg";
+                        setBackground1(backgroundUrl1);
+                      }, []);
   return (
     <>
-       <Navbar />
-       <div>
+      <div>
+        <Navbar />
+        <div>
             {/* <!-- breadcrumb start --> */}
       <section
         className="breadcrumb pos-rel bg_img"
@@ -26,12 +27,12 @@ const IELTS = () => {
       >
         <div className="container">
           <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">IELTS</h2>
+            <h2 className="breadcrumb__title">PTE</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
               </li>
-              <li className="breadcrumb-item">IELTS</li>
+              <li className="breadcrumb-item">PTE</li>
             </ul>
           </div>
         </div>
@@ -66,7 +67,7 @@ const IELTS = () => {
             <div className="row">
                 <div className="col-8">
                 <blockquote>
-                                    <p>"IELTS, the international English Language Testing system, provides an assessment of language ability of candidates who need to study or train in the medium of English."</p>
+                                    <p>"PTE test is based on real-life academic and general content. You will come across graphs, summaries, excerpts, and many more items that belong to things around you. The test also contains accents from both native and non-native speakers exactly that you hear on the television, movies, and real conversation encountered in day-to-day life."</p>
                                     
                                     <div class="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
                                 </blockquote>
@@ -77,11 +78,13 @@ const IELTS = () => {
                                
    
                            
-                                <p style={{margin:'15px 0px'}}>IELTS is regarded as an entrance requirement by most universities in the United Kingdom, Australia, New Zealand and Canada. It is also gaining recognition among universities and other educational institutes in the United States of America.</p>
+                                <p style={{margin:'20px 0px 10px'}}>Aussizz Group brings you the best way to digitally access your reading, speaking, listening, and writing skills. The three-hour test session will help you evaluate your answers thoroughly so that you can recognize the flaws and improve for the final exam.
+
+</p>
                             
-                          <p style={{margin:'10px 0px'}}>In India test is held at many test centers inclusive of SURAT, which arrange test administrations according to local demand.</p>
-                          <p style={{margin:'10px 0px'}}>The University of Cambridge Local Examinations Syndicate (UCLES), the British council and IDP Education Australia jointly manage the IELTS.</p>
-                          <p style={{margin:'20px 0px'}}>Candidates must select either the Academic or the general Training Modules depending on the stated requirement of their sponsor or receiving institution.</p>
+                          <p style={{margin:'2px '}}>To take the PTE test, you need to go to a secure Pearson test center where you'll be given with a computer and a headset to get on all the four modules. While speaking and writing modules are combined in one session, listening and reading have separate sections. Ranging from MCQs to essay writing, and reading out the sentences to choosing a proper word, there are twenty types of question formats.</p>
+                      
+            <p style={{marginBottom:'30px'}}>Upon release, it was recognized by nearly 6,000 organizations. For instance, the test is approved for use by the Australia Border Agency and the Australian Department of Immigration and Citizenship for visa</p>
                                 <div style={{marginBottom:'40px'}}>
                                     <button style={{padding:'10px 20px',background:'#00cc99',color:'#fff',borderRadius:'10px'}}>Read More</button>
                                 </div>
@@ -100,10 +103,10 @@ const IELTS = () => {
                             <div class="widget">
                                 <h3 class="widget-title">Courses</h3>
                                 <ul class="widget__category list-unstyled">
-                                    <li><a href="/TOEFLIBT"><i class="far fa-arrow-up"></i> TOEFL IBT</a></li>
-                                    <li><a href="/GRE"><i class="far fa-arrow-up"></i> GRE</a></li>
-                                    <li><a href="/PTE"><i class="far fa-arrow-up"></i> PTE</a></li>
-                                    <li><a href="SAT"><i class="far fa-arrow-up"></i> SAT</a></li>
+                                    <li><a href="#!"><i class="far fa-arrow-up"></i> IELTS</a></li>
+                                    <li><a href="/TOEFLIBT                                                                                                                             EM                "><i class="far fa-arrow-up"></i> TOEFL IBT</a></li>
+                                    <li><a href="#!"><i class="far fa-arrow-up"></i> GRE</a></li>
+                                    <li><a href="#!"><i class="far fa-arrow-up"></i> SAT</a></li>
                            
                                </ul>
                             </div>
@@ -116,9 +119,10 @@ const IELTS = () => {
          </div>
    {/* new content end */}
        </div>
-       <Footer />
+        <Footer />
+      </div>
     </>
   )
 }
 
-export default IELTS
+export default PTE
