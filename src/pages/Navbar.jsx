@@ -105,15 +105,8 @@ export default function Navbar() {
               <div className="main-menu__wrap ul_li navbar navbar-expand-lg">
                 <nav className="main-menu collapse navbar-collapse">
                   <ul>
-                    <li className="menu-item-has-children active">
-                      <a href="/"><span>Home</span></a>
-                      <ul className="submenu">
-                        <li className="active"><a href=""><span>Immigration</span></a></li>
-                        <li><a href=""><span>Student Visa</span></a></li>
-                        <li><a href=""><span>Travel Agency</span></a></li>
-                        <li><a href=""><span>Demo RTL</span></a></li>
-                      </ul>
-                    </li>
+                  <li><a href="/"><span>Home</span></a></li>
+                    
                     <li className="menu-item-has-children">
                       <a href="/About"><span>About us</span></a>
                       <ul className="submenu">
@@ -128,9 +121,9 @@ export default function Navbar() {
                       <ul className="submenu">
                         <li><a href="/Immigration-pr-visa"><span> Immigration - PR Visa</span></a></li>
                         <li><a href="/Student-visa"><span>Student Visa</span></a></li>
-                        <li><a href=""><span> Visitor Visa</span></a></li>
-                        <li><a href=""><span> Investor Visa</span></a></li>
-                        <li><a href=""><span> Work Permit Visa</span></a></li>
+                        <li><a href="/Visitor-visa"><span> Visitor Visa</span></a></li>
+                        <li><a href="/Investor-visa"><span> Investor Visa</span></a></li>
+                        <li><a href="/Work-permit-visa"><span> Work Permit Visa</span></a></li>
                       </ul>
                     </li>
                   
@@ -213,15 +206,8 @@ export default function Navbar() {
               </div>
               <nav className="xb-header-nav">
                 <ul className="xb-menu-primary clearfix">
-                  <li className="menu-item menu-item-has-children">
-                    <a href="/"><span>Home</span></a>
-                    <ul className="sub-menu">
-                      <li className="menu-item"><a href=""><span>Immigration</span></a></li>
-                      <li className="menu-item"><a href=""><span>Student Visa</span></a></li>
-                      <li className="menu-item"><a href=""><span>Travel Agency</span></a></li>
-                      <li className="menu-item"><a href=""><span>Demo RTL</span></a></li>
-                    </ul>
-                  </li>
+                <li className="menu-item"><a href="/"><span>Home</span></a></li>
+                  
                   <li className="menu-item menu-item-has-children">
                     <a href="/About"><span>About us</span></a>
                     <ul className="sub-menu">
@@ -235,9 +221,9 @@ export default function Navbar() {
                     <ul className="sub-menu">
                       <li className="menu-item"><a href="/Immigration-pr-visa"><span>Immigration - PR Visa</span></a></li>
                       <li className="menu-item"><a href="/Student-visa"><span>Student Visa</span></a></li>
-                      <li className="menu-item"><a href=""><span>Visitor Visa</span></a></li>
-                      <li className="menu-item"><a href=""><span>Investor Visa</span></a></li>
-                      <li className="menu-item"><a href=""><span>Work Permit Visa</span></a></li>
+                      <li className="menu-item"><a href="/Visitor-visa"><span>Visitor Visa</span></a></li>
+                      <li className="menu-item"><a href="/Investor-visa"><span>Investor Visa</span></a></li>
+                      <li className="menu-item"><a href="/Work-permit-visa"><span>Work Permit Visa</span></a></li>
                      
                     </ul>
                   </li>

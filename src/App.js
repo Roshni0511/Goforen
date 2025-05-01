@@ -13,6 +13,9 @@ import GRE from "./pages/GRE";
 import PTE from "./pages/PTE";
 import SAT from "./pages/SAT";
 import Studentvisa from "./pages/Student-visa";
+import Visitorvisa from "./pages/Visitor-visa";
+import Investorvisa from "./pages/Investor-visa";
+import Workpermitvisa from "./pages/Work-permit-visa";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -77,6 +80,9 @@ function App() {
         <Route path="/Visa-services" element={<Visaservices />} />
         <Route path="/Immigration-pr-visa" element={<Immigrationprvisa />} />
         <Route path="/Student-visa" element={<Studentvisa />} />
+        <Route path="/Visitor-visa" element={<Visitorvisa />} />
+        <Route path="/Investor-visa" element={<Investorvisa />} />
+        <Route path="/Work-permit-visa" element={<Workpermitvisa />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/IELTS" element={<IELTS />} />
         

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-export default function Visitorvisa() {
+export default function Investorvisa() {
   // data-background img start
   const [background, setBackground] = useState("");
 
@@ -22,7 +22,7 @@ export default function Visitorvisa() {
       >
         <div className="container">
           <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">Visitor Visa</h2>
+            <h2 className="breadcrumb__title">Investor Visa</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
@@ -30,7 +30,7 @@ export default function Visitorvisa() {
               <li className="breadcrumb-item">
                 <a href="/Visa-services">Visa Services</a>
               </li>
-              <li className="breadcrumb-item">Visitor Visa</li>
+              <li className="breadcrumb-item">Investor Visa</li>
             </ul>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function Visitorvisa() {
                 <article class="post-details">
                   <blockquote>
                     <p>
-                    Tourist/Visitors visas are conditional authorization granted by a country to foreigners to enter and temporarily remain within that country. Visas typically include limits on the duration of the foreigner's stay, territory within the country they may enter, the dates they may enter, or the number of permitted visits. Visitors Visas are associated with the request for permission to enter a country and thus are, in some countries, distinct from actual formal permission for foreigners and to enter and remain in the country. In each instance, a visa is subject to entry permission by an immigration official at the time of actual entry and can be revoked at any time.
+                    Investor Visas allow you to invest in an overseas country where you can settle permanently. The minimum amount of investment varies from country to country. Visas are issued to businessmen and self employed people who have sufficient funds.
                     </p>
 
                     <div class="quote">
@@ -76,29 +76,19 @@ export default function Visitorvisa() {
                     </div>
                   </blockquote>
                   <div class="post-thumb">
-                    <img src="/assets/pic/4-image.jpg" alt="" />
+                    <img src="/assets/pic/7-image.jpg" alt="" />
                   </div>
 
                   <div class="sec-title sec-title--big style-2 mb-20">
-                    <span class="sec-title--sub">
+                  <span class="sec-title--sub">
                       <img src="assets/img/icon/h_star.png" alt="" />
-                      There are two types of Temporary visas.
+                      The 50 Residency by Investment Programs
                       <img src="assets/img/icon/h_star.png" alt="" />
                     </span>
-
-                    <p style={{marginBottom:'0px'}}>
-                      <b>1.Transit visas</b>
+                    <p>
+                    There are 50 countries with even more residency by investment programs to choose from. These really different residency by investment programs created a more comprehensive market than the citizenship by investment industry’s. These solutions are characterized by different requisites and goals. There are well managed and branded programs, on the other hand there are also some solutions which can be marketed as programs, but these are still only solutions or effective structures to obtain the residence permit of the chosen country, through some kind of investment. Some schemes are excellent ways for obtaining temporary residence permits, meanwhile under other legislations, applicants can acquire permanent residency permits or even the citizen status through a fast-track naturalization process.
                     </p>
-                    <p>For passing through the country of issue to a destination outside of that country. Validity of transit visas are usually limited by short terms such as several hours to ten days depending on the size of the country or the circumstances of a particular transit itinerary.</p>
-                    <ul style={{ paddingLeft: "10px" }}>
-                      <li>
-                      Airside transit visa, required by some countries for passing through their airports even without going through passport control.
-                      </li>
-                      <li>
-                      Crew member, steward or driver visa, issued to persons employed or trained on aircraft, vessels, trains, trucks, buses and any other means of international transportation, or ships fishing in international waters.
-                      </li>
-                     
-                    </ul>
+                  
                     <div class="text-start mt-20">
                       <a
                         href="#"
@@ -119,7 +109,7 @@ export default function Visitorvisa() {
               <div class="blog-sidebar">
                 <div class="widget">
                   <h3 class="widget-title">
-                  Countries for Visitor Visa
+                  Countries for Investor Visa
                   </h3>
                   <div class="widget__post">
                     <div class="widget__post-item ul_li">
@@ -212,24 +202,6 @@ export default function Visitorvisa() {
                         </span>
                       </div>
                     </div>
-                    <div class="widget__post-item ul_li">
-                      <div class="post-thumb">
-                        <a href="blog-single.html">
-                          <img src="/assets/pic/europe.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div class="post-content">
-                        <h4 class="post-title border-effect-2">
-                          <a href="blog-single.html">Europe</a>
-                        </h4>
-                        <span class="post-date">
-                          Read More
-                          <span>
-                            <img src="assets/img/icon/right_arrow.svg" alt="" />
-                          </span>
-                        </span>
-                      </div>
-                    </div>
 
                   </div>
                 </div>
@@ -243,14 +215,15 @@ export default function Visitorvisa() {
                     </li>
                     <li>
                       <a href="#!">
-                        <i class="far fa-arrow-up"></i> Student Visa
+                        <i class="far fa-arrow-up"></i>Student Visa
                       </a>
                     </li>
                     <li>
                       <a href="#!">
-                        <i class="far fa-arrow-up"></i>Investor Visa
+                        <i class="far fa-arrow-up"></i> Visitor Visa
                       </a>
                     </li>
+                   
                     <li>
                       <a href="#!">
                         <i class="far fa-arrow-up"></i> Work Permit Visa
