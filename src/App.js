@@ -15,11 +15,12 @@ import SAT from "./pages/SAT";
 import Studentvisa from "./pages/Student-visa";
 import Gallary from "./pages/Gallary";
 import Videos from "./pages/Videos";
-import SuccessStories from "./component/SuccessStories";
+
 import Activities from "./pages/Activities";
 import Visitorvisa from "./pages/Visitor-visa";
 import Investorvisa from "./pages/Investor-visa";
 import Workpermitvisa from "./pages/Work-permit-visa";
+import SuccessStory from "./pages/SuccessStory";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -96,7 +97,7 @@ function App() {
         <Route path="/SAT" element={<SAT />} />
         <Route path="/Gallary" element={<Gallary />} />
         <Route path="/Videos" element={<Videos />} />
-        <Route path="/SuccessStories" element={<SuccessStories />} />
+        <Route path="/SuccessStory" element={<SuccessStory />} />
         <Route path="/Activities" element={<Activities />} />
       </Routes>
     </>
