@@ -96,7 +96,18 @@ p{
 }
 
 
-                                        
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  min-width: 700px; /* or adjust depending on your columns */
+  border-collapse: collapse;
+}
+                      
                                             
 
                                         

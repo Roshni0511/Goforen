@@ -7,6 +7,9 @@ import Aboutfounder from "./pages/About-founder";
 import Visaservices from "./pages/Visa-services";
 import Courses from "./pages/Courses";
 import Immigrationprvisa from "./pages/Immigration-pr-visa";
+import IELTS from "./pages/IELTS";
+import TOEFLIBT from "./pages/TOEFLIBT";
+import GRE from "./pages/GRE";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -72,6 +75,10 @@ function App() {
         <Route path="/Visa-services" element={<Visaservices />} />
         <Route path="/Immigration-pr-visa" element={<Immigrationprvisa />} />
         <Route path="/Courses" element={<Courses />} />
+        <Route path="/IELTS" element={<IELTS />} />
+        <Route path="/" element={<TOEFLIBT />} />
+        <Route path="/TOEFLIBT" element={<TOEFLIBT />} />
+        <Route path="/GRE" element={<GRE />} />
       </Routes>
     </>
   );
