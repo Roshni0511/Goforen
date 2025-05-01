@@ -103,10 +103,10 @@ const PTE = () => {
                             <div class="widget">
                                 <h3 class="widget-title">Courses</h3>
                                 <ul class="widget__category list-unstyled">
-                                    <li><a href="#!"><i class="far fa-arrow-up"></i> IELTS</a></li>
-                                    <li><a href="/TOEFLIBT                                                                                                                             EM                "><i class="far fa-arrow-up"></i> TOEFL IBT</a></li>
-                                    <li><a href="#!"><i class="far fa-arrow-up"></i> GRE</a></li>
-                                    <li><a href="#!"><i class="far fa-arrow-up"></i> SAT</a></li>
+                                    <li><a href="/IELTS"><i class="far fa-arrow-up"></i> IELTS</a></li>
+                                    <li><a href="/TOEFLIBT"><i class="far fa-arrow-up"></i> TOEFL IBT</a></li>
+                                    <li><a href="/GRE"><i class="far fa-arrow-up"></i> GRE</a></li>
+                                    <li><a href="/SAT"><i class="far fa-arrow-up"></i> SAT</a></li>
                            
                                </ul>
                             </div>
