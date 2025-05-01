@@ -138,9 +138,9 @@ export default function Navbar() {
                     <li className="menu-item-has-children">
                       <a href="/Courses"><span>Courses</span></a>
                       <ul className="submenu">
-                        <li><a href=""><span>IELTS</span></a></li>
-                        <li><a href=""><span>TOEFL IBT</span></a></li>
-                        <li><a href=""><span>GRE</span></a></li>
+                        <li><a href="/IELTS"><span>IELTS</span></a></li>
+                        <li><a href="/TOEFLIBT"><span>TOEFL IBT</span></a></li>
+                        <li><a href="/GRE"><span>GRE</span></a></li>
                         <li><a href=""><span>PTE</span></a></li>
                         <li><a href=""><span>SAT</span></a></li>
                       </ul>
@@ -246,9 +246,9 @@ export default function Navbar() {
                   <li className="menu-item menu-item-has-children">
                     <a href="/Courses"><span>Courses</span></a>
                     <ul className="sub-menu">
-                      <li className="menu-item"><a href=""><span>IELTS</span></a></li>
-                      <li className="menu-item"><a href=""><span>TOEFL IBT</span></a></li>
-                      <li className="menu-item"><a href=""><span>GRE</span></a></li>
+                      <li className="menu-item"><a href="/IELTS"><span>IELTS</span></a></li>
+                      <li className="menu-item"><a href="/TOEFLIBT"><span>TOEFL IBT</span></a></li>
+                      <li className="menu-item"><a href="/GRE"><span>GRE</span></a></li>
                       <li className="menu-item"><a href=""><span>PTE</span></a></li>
                       <li className="menu-item"><a href=""><span>SAT</span></a></li>
                      

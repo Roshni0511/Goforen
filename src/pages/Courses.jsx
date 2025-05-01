@@ -116,63 +116,52 @@ Here is a table describing exam requirement according to the course of your choi
              
             </ul>
            <br />
-           <table class="table table-bordered">
+           <div class="table-responsive">
+           {/* <!-- Responsive Table Wrapper --> */}
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Courses/Programs</th>
+                <th>Standardized Tests</th>
+                <th>Preferred English Language Tests (by Country)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Undergraduate</th>
+                <td>SAT or ACT</td>
+                <td>
+                    TOEFL for US, IELTS or PTE for Canada, UK, Australia, New Zealand, CAE or CPE for UK
+                </td>
+            </tr>
+            <tr>
+                <th>MBA</th>
+                <td>GMAT or GRE</td>
+                <td>
+                    TOEFL for US, IELTS or PTE for Canada, UK, Australia, New Zealand, CAE or CPE for UK
+                </td>
+            </tr>
+            <tr>
+                <th>MS or PG Degree</th>
+                <td>GRE</td>
+                <td>
+                    TOEFL for US, IELTS or PTE for Canada, UK, Australia, New Zealand, CAE or CPE for UK
+                </td>
+            </tr>
+            <tr>
+                <th>Certificate Course</th>
+                <td>–</td>
+                <td>
+                    TOEFL for US, IELTS or PTE for Canada, UK, Australia, New Zealand, CAE or CPE for UK
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-                            <thead>
+</div>
 
-                                <tr><th>Courses/Programs</th>
-
-                                <th>Standardized Tests</th>
-
-                                <th>Preferred English Language Tests on country basis</th>
-
-                            </tr></thead>
-
-                            <tbody>
-
-                                <tr>
-
-                                    <th>Undergraduate</th>
-
-                                    <td>SAT or ACT</td>
-
-                                    <td>TOEFL for US, IELTS or PTE for  Canada,UK, Australia, New Zealand CAE or CPE for UK</td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <th>MBA</th>
-
-                                    <td>GMAT or GRE</td>
-
-                                    <td>TOEFL for US, IELTS or PTE for Canada,UK, Australia, New Zealand CAE or CPE for UK</td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <th>MS or PG degree</th>
-
-                                    <td>GRE</td>
-
-                                    <td>TOEFL for US, IELTS or PTE for Canada, UK, Australia, New Zealand CAE or CPE for UK</td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <th>Certificate course</th>
-
-                                    <td>-</td>
-
-                                    <td>TOEFL for US, IELTS or PTE for Canada, UK, Australia, New Zealand CAE or CPE for UK</td>
-
-                                </tr>
-
-                            </tbody>
-
-                        </table>
           </div>
         </div>
         <div class="about-shape">
