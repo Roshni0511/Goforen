@@ -146,10 +146,12 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
-                      <a href=""><span>Blog</span></a>
+                      <a href=""><span>Media</span></a>
                       <ul className="submenu">
-                        <li><a href=""><span>Blog</span></a></li>
-                        <li><a href=""><span>Blog Details</span></a></li>
+                      <li className="menu-item"><a href="/Gallary"><span>Gallary</span></a></li>
+                      <li className="menu-item"><a href="/Videos"><span>Videos</span></a></li>
+                      <li className="menu-item"><a href="/SuccessStories"><span>Success Stories</span></a></li>
+                      <li className="menu-item"><a href="/Activities"><span>Activities</span></a></li>
                       </ul>
                     </li>
                     <li><a href=""><span>Contact</span></a></li>
@@ -255,10 +257,12 @@ export default function Navbar() {
                     </ul>
                   </li>
                   <li className="menu-item menu-item-has-children">
-                    <a href="#"><span>Blog</span></a>
+                    <a href="#"><span>Media</span></a>
                     <ul className="sub-menu">
-                      <li className="menu-item"><a href=""><span>Blog</span></a></li>
-                      <li className="menu-item"><a href=""><span>Blog Details</span></a></li>
+                    <li className="menu-item"><a href="/Gallary"><span>Gallary</span></a></li>
+                      <li className="menu-item"><a href="/Videos"><span>Videos</span></a></li>
+                      <li className="menu-item"><a href="/SuccessStories"><span>Success Stories</span></a></li>
+                      <li className="menu-item"><a href="/Activities"><span>Activities</span></a></li>
                     </ul>
                   </li>
                   <li className="menu-item"><a href=""><span>Contact</span></a></li>

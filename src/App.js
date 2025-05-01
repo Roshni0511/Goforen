@@ -13,6 +13,10 @@ import GRE from "./pages/GRE";
 import PTE from "./pages/PTE";
 import SAT from "./pages/SAT";
 import Studentvisa from "./pages/Student-visa";
+import Gallary from "./pages/Gallary";
+import Videos from "./pages/Videos";
+import SuccessStories from "./component/SuccessStories";
+import Activities from "./pages/Activities";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -84,6 +88,10 @@ function App() {
         <Route path="/GRE" element={<GRE />} />
         <Route path="/PTE" element={<PTE />} />
         <Route path="/SAT" element={<SAT />} />
+        <Route path="/Gallary" element={<Gallary />} />
+        <Route path="/Videos" element={<Videos />} />
+        <Route path="/SuccessStories" element={<SuccessStories />} />
+        <Route path="/Activities" element={<Activities />} />
       </Routes>
     </>
   );
