@@ -127,7 +127,7 @@ export default function Navbar() {
                       <a href="/Visa-services"><span>Visa Services</span></a>
                       <ul className="submenu">
                         <li><a href="/Immigration-pr-visa"><span> Immigration - PR Visa</span></a></li>
-                        <li><a href=""><span>Student Visa</span></a></li>
+                        <li><a href="/Student-visa"><span>Student Visa</span></a></li>
                         <li><a href=""><span> Visitor Visa</span></a></li>
                         <li><a href=""><span> Investor Visa</span></a></li>
                         <li><a href=""><span> Work Permit Visa</span></a></li>
@@ -234,7 +234,7 @@ export default function Navbar() {
                     <a href="/Visa-services"><span>Visa Services</span></a>
                     <ul className="sub-menu">
                       <li className="menu-item"><a href="/Immigration-pr-visa"><span>Immigration - PR Visa</span></a></li>
-                      <li className="menu-item"><a href=""><span>Student Visa</span></a></li>
+                      <li className="menu-item"><a href="/Student-visa"><span>Student Visa</span></a></li>
                       <li className="menu-item"><a href=""><span>Visitor Visa</span></a></li>
                       <li className="menu-item"><a href=""><span>Investor Visa</span></a></li>
                       <li className="menu-item"><a href=""><span>Work Permit Visa</span></a></li>
