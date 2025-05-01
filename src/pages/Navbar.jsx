@@ -126,7 +126,7 @@ export default function Navbar() {
                     <li className="menu-item-has-children">
                       <a href="/Visa-services"><span>Visa Services</span></a>
                       <ul className="submenu">
-                        <li><a href=""><span> Immigration - PR Visa</span></a></li>
+                        <li><a href="/Immigration-pr-visa"><span> Immigration - PR Visa</span></a></li>
                         <li><a href=""><span>Student Visa</span></a></li>
                         <li><a href=""><span> Visitor Visa</span></a></li>
                         <li><a href=""><span> Investor Visa</span></a></li>
@@ -138,8 +138,11 @@ export default function Navbar() {
                     <li className="menu-item-has-children">
                       <a href="/Courses"><span>Courses</span></a>
                       <ul className="submenu">
-                        <li><a href=""><span>Country</span></a></li>
-                        <li><a href=""><span>Country Details</span></a></li>
+                        <li><a href=""><span>IELTS</span></a></li>
+                        <li><a href=""><span>TOEFL IBT</span></a></li>
+                        <li><a href=""><span>GRE</span></a></li>
+                        <li><a href=""><span>PTE</span></a></li>
+                        <li><a href=""><span>SAT</span></a></li>
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
@@ -230,7 +233,7 @@ export default function Navbar() {
                   <li className="menu-item menu-item-has-children">
                     <a href="/Visa-services"><span>Visa Services</span></a>
                     <ul className="sub-menu">
-                      <li className="menu-item"><a href=""><span>Immigration - PR Visa</span></a></li>
+                      <li className="menu-item"><a href="/Immigration-pr-visa"><span>Immigration - PR Visa</span></a></li>
                       <li className="menu-item"><a href=""><span>Student Visa</span></a></li>
                       <li className="menu-item"><a href=""><span>Visitor Visa</span></a></li>
                       <li className="menu-item"><a href=""><span>Investor Visa</span></a></li>
@@ -241,10 +244,14 @@ export default function Navbar() {
                  
                   
                   <li className="menu-item menu-item-has-children">
-                    <a href="#"><span>Country</span></a>
+                    <a href="/Courses"><span>Courses</span></a>
                     <ul className="sub-menu">
-                      <li className="menu-item"><a href=""><span>Country</span></a></li>
-                      <li className="menu-item"><a href=""><span>Country Details</span></a></li>
+                      <li className="menu-item"><a href=""><span>IELTS</span></a></li>
+                      <li className="menu-item"><a href=""><span>TOEFL IBT</span></a></li>
+                      <li className="menu-item"><a href=""><span>GRE</span></a></li>
+                      <li className="menu-item"><a href=""><span>PTE</span></a></li>
+                      <li className="menu-item"><a href=""><span>SAT</span></a></li>
+                     
                     </ul>
                   </li>
                   <li className="menu-item menu-item-has-children">

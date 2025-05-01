@@ -188,7 +188,7 @@ export default function Visaservices() {
       {/* What is a visa end  */}
 
       {/* <!-- GO FOREN  start --> */}
-      <section className="blog pb-130">
+      <section className="blog ">
         <div className="container">
           <div className="blog-wrap">
             <div className="sec-title mb-60 text-center">
@@ -212,7 +212,7 @@ export default function Visaservices() {
                 <div className="xb-blog w-100 d-flex flex-column">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <img src="assets/img/blog/img_01.jpg" alt="" />
+                      <img src="/assets/pic/1-image.jpg" alt="" />
                     </div>
                     <div className="xb-item--holder">
                       <h3
@@ -250,7 +250,7 @@ export default function Visaservices() {
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
                       <a href="blog-single.html">
-                        <img src="assets/img/blog/img_02.jpg" alt="" />
+                        <img src="/assets/pic/3-image.jpg" alt="" />
                       </a>
                     </div>
                     <div className="xb-item--holder">
@@ -290,7 +290,7 @@ export default function Visaservices() {
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
                       <a href="blog-single.html">
-                        <img src="assets/img/blog/img_03.jpg" alt="" />
+                        <img src="/assets/pic/4-image.jpg" alt="" />
                       </a>
                     </div>
                     <div className="xb-item--holder">
@@ -330,7 +330,7 @@ export default function Visaservices() {
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
                       <a href="blog-single.html">
-                        <img src="assets/img/blog/img_02.jpg" alt="" />
+                        <img src="/assets/pic/7-image.jpg" alt="" />
                       </a>
                     </div>
                     <div className="xb-item--holder">
@@ -366,7 +366,7 @@ export default function Visaservices() {
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
                       <a href="blog-single.html">
-                        <img src="assets/img/blog/img_03.jpg" alt="" />
+                        <img src="/assets/pic/8-image.jpg" alt="" />
                       </a>
                     </div>
                     <div className="xb-item--holder">

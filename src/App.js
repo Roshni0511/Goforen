@@ -6,6 +6,7 @@ import Aboutusrace from "./pages/About-us-race";
 import Aboutfounder from "./pages/About-founder";
 import Visaservices from "./pages/Visa-services";
 import Courses from "./pages/Courses";
+import Immigrationprvisa from "./pages/Immigration-pr-visa";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -69,6 +70,7 @@ function App() {
         <Route path="/About-us-race" element={<Aboutusrace />} />
         <Route path="/About-founder" element={<Aboutfounder />} />
         <Route path="/Visa-services" element={<Visaservices />} />
+        <Route path="/Immigration-pr-visa" element={<Immigrationprvisa />} />
         <Route path="/Courses" element={<Courses />} />
       </Routes>
     </>
