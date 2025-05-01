@@ -69,9 +69,9 @@ const SAT = () => {
                 <blockquote>
                                     <p>"The SAT is a standardized test widely used for college admissions in the United States. Introduced in 1926, its name and scoring have changed several times; originally called the Scholastic Aptitude Test, it was later called the Scholastic Assessment Test, then the SAT I: Reasoning Test, then the SAT Reasoning Test, and now, simply the SAT."</p>
                                     
-                                    <div class="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
+                                    <div className="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
                                 </blockquote>
-                                <div class="post-thumb">
+                                <div className="post-thumb">
                                     <img src="assets/img/blog/post_02.jpg" alt="" />
                                 </div>
                                 <div>
@@ -91,22 +91,22 @@ const SAT = () => {
                                 </div>
                 </div>
                 <div className="col-4 mt-40">
-                <div class="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
+                <div className="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
                 >
-                                <img class="mb-40" src="assets/img/icon/b_icon.png" alt="" />
+                                <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
                                 <h4>Detailed Information</h4>
-                                <a class="thm-btn" href="#!">Contact Us</a>
+                                <a className="thm-btn" href="#!">Contact Us</a>
                             </div>
                             <div className='pt-30'>
-                            <div class="blog-sidebar" >
+                            <div className="blog-sidebar" >
 
-                            <div class="widget">
-                                <h3 class="widget-title">Courses</h3>
-                                <ul class="widget__category list-unstyled">
-                                    <li><a href="/IELTS"><i class="far fa-arrow-up"></i> IELTS</a></li>
-                                    <li><a href="/TOEFLIBT "><i class="far fa-arrow-up"></i> TOEFL IBT</a></li>
-                                    <li><a href="/GRE"><i class="far fa-arrow-up"></i> GRE</a></li>
-                                    <li><a href="/PTE"><i class="far fa-arrow-up"></i> PTE</a></li>
+                            <div className="widget">
+                                <h3 className="widget-title">Courses</h3>
+                                <ul className="widget__category list-unstyled">
+                                    <li><a href="/IELTS"><i className="far fa-arrow-up"></i> IELTS</a></li>
+                                    <li><a href="/TOEFLIBT "><i className="far fa-arrow-up"></i> TOEFL IBT</a></li>
+                                    <li><a href="/GRE"><i className="far fa-arrow-up"></i> GRE</a></li>
+                                    <li><a href="/PTE"><i className="far fa-arrow-up"></i> PTE</a></li>
                            
                                </ul>
                             </div>

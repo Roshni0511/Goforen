@@ -60,12 +60,12 @@ export default function Immigrationprvisa() {
       {/* <!-- breadcrumb end --> */}
 
       {/* <!-- blog start --> */}
-      <section class="blog pt-120 pb-120">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="blog-post-wrapper">
-                <article class="post-details">
+      <section className="blog pt-120 pb-120">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="blog-post-wrapper">
+                <article className="post-details">
                   <blockquote>
                     <p>
                       Any foreign national who wishes to relocate to any other
@@ -74,16 +74,16 @@ export default function Immigrationprvisa() {
                       particular country.
                     </p>
 
-                    <div class="quote">
+                    <div className="quote">
                       <img src="assets/img/icon/quote.png" alt="" />
                     </div>
                   </blockquote>
-                  <div class="post-thumb">
+                  <div className="post-thumb">
                     <img src="/assets/pic/1-image.jpg" alt="" />
                   </div>
 
-                  <div class="sec-title sec-title--big style-2 mb-20">
-                    <span class="sec-title--sub">
+                  <div className="sec-title sec-title--big style-2 mb-20">
+                    <span className="sec-title--sub">
                       <img src="assets/img/icon/h_star.png" alt="" />
                       Why do people migrate?
                       <img src="assets/img/icon/h_star.png" alt="" />
@@ -116,10 +116,10 @@ export default function Immigrationprvisa() {
                         famine.
                       </li>
                     </ul>
-                    <div class="text-start mt-20">
+                    <div className="text-start mt-20">
                       <a
                         href="#"
-                        class="btn"
+                        className="btn"
                         style={{
                           background: " rgb(0, 204, 153)",
                           color: "rgb(255, 255, 255)",
@@ -132,24 +132,24 @@ export default function Immigrationprvisa() {
                 </article>
               </div>
             </div>
-            <div class="col-lg-4">
-              <div class="blog-sidebar">
-                <div class="widget">
-                  <h3 class="widget-title">
+            <div className="col-lg-4">
+              <div className="blog-sidebar">
+                <div className="widget">
+                  <h3 className="widget-title">
                     Countries for Immigration - PR Visa
                   </h3>
-                  <div class="widget__post">
-                    <div class="widget__post-item ul_li">
-                      <div class="post-thumb">
+                  <div className="widget__post">
+                    <div className="widget__post-item ul_li">
+                      <div className="post-thumb">
                         <a href="blog-single.html">
                           <img src="/assets/pic/canada.png" alt="" />
                         </a>
                       </div>
-                      <div class="post-content">
-                        <h4 class="post-title border-effect-2">
+                      <div className="post-content">
+                        <h4 className="post-title border-effect-2">
                           <a href="blog-single.html"> Canada </a>
                         </h4>
-                        <span class="post-date">
+                        <span className="post-date">
                           Read More
                           <span>
                             <img src="assets/img/icon/right_arrow.svg" alt="" />
@@ -157,17 +157,17 @@ export default function Immigrationprvisa() {
                         </span>
                       </div>
                     </div>
-                    <div class="widget__post-item ul_li">
-                      <div class="post-thumb">
+                    <div className="widget__post-item ul_li">
+                      <div className="post-thumb">
                         <a href="blog-single.html">
                           <img src="/assets/pic/australia.png" alt="" />
                         </a>
                       </div>
-                      <div class="post-content">
-                        <h4 class="post-title border-effect-2">
+                      <div className="post-content">
+                        <h4 className="post-title border-effect-2">
                           <a href="blog-single.html"> Australia </a>
                         </h4>
-                        <span class="post-date">
+                        <span className="post-date">
                           Read More
                           <span>
                             <img src="assets/img/icon/right_arrow.svg" alt="" />
@@ -175,17 +175,17 @@ export default function Immigrationprvisa() {
                         </span>
                       </div>
                     </div>
-                    <div class="widget__post-item ul_li">
-                      <div class="post-thumb">
+                    <div className="widget__post-item ul_li">
+                      <div className="post-thumb">
                         <a href="blog-single.html">
                           <img src="/assets/pic/new-zealand.jpg" alt=""  />
                         </a>
                       </div>
-                      <div class="post-content">
-                        <h4 class="post-title border-effect-2">
+                      <div className="post-content">
+                        <h4 className="post-title border-effect-2">
                           <a href="blog-single.html"> New Zealand </a>
                         </h4>
-                        <span class="post-date">
+                        <span className="post-date">
                           Read More
                           <span>
                             <img src="assets/img/icon/right_arrow.svg" alt="" />
@@ -195,27 +195,27 @@ export default function Immigrationprvisa() {
                     </div>
                   </div>
                 </div>
-                <div class="widget">
-                  <h3 class="widget-title">Other Services</h3>
-                  <ul class="widget__category list-unstyled">
+                <div className="widget">
+                  <h3 className="widget-title">Other Services</h3>
+                  <ul className="widget__category list-unstyled">
                     <li>
                       <a href="#!">
-                        <i class="far fa-arrow-up"></i> Student Visa
+                        <i className="far fa-arrow-up"></i> Student Visa
                       </a>
                     </li>
                     <li>
                       <a href="#!">
-                        <i class="far fa-arrow-up"></i> Visitor Visa
+                        <i className="far fa-arrow-up"></i> Visitor Visa
                       </a>
                     </li>
                     <li>
                       <a href="#!">
-                        <i class="far fa-arrow-up"></i>Investor Visa
+                        <i className="far fa-arrow-up"></i>Investor Visa
                       </a>
                     </li>
                     <li>
                       <a href="#!">
-                        <i class="far fa-arrow-up"></i> Work Permit Visa
+                        <i className="far fa-arrow-up"></i> Work Permit Visa
                       </a>
                     </li>
                   </ul>

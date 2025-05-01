@@ -17,7 +17,7 @@ export default function FooterTop() {
       {/* <!-- brand start --> */}
       <section className="brand" style={{paddingTop:'130px',paddingBottom:'100px'}}>
       <div className="container mx-auto">
-      <h2 class="brand-title text-center mb-50">
+      <h2 className="brand-title text-center mb-50">
                     <span><span>We're proud to work with our preferred partners</span></span>
                 </h2>
         <Swiper
@@ -123,13 +123,8 @@ export default function FooterTop() {
                           <span>
                             <img src="assets/img/icon/c_select.svg" alt="" />
                           </span>
-                          <select name="select" id="nice-select">
-                            <option value="1">Student Visa</option>
-                            <option value="2">Tourist Visa</option>
-                            <option value="3">Commercial Visa</option>
-                            <option value="4">Residence Visa</option>
-                            <option value="4">Working Visa</option>
-                          </select>
+                         
+                          <div className="nice-select" tabindex="0"><span className="current">Student Visa</span><ul className="list"><li data-value="1" className="option selected focus">Student Visa</li><li data-value="2" className="option">Tourist Visa</li><li data-value="3" className="option">Commercial Visa</li><li data-value="4" className="option">Residence Visa</li><li data-value="4" className="option">Working Visa</li></ul></div>
                         </div>
                       </div>
                       <div className="col-lg-6">

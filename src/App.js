@@ -20,6 +20,9 @@ import Activities from "./pages/Activities";
 import Visitorvisa from "./pages/Visitor-visa";
 import Investorvisa from "./pages/Investor-visa";
 import Workpermitvisa from "./pages/Work-permit-visa";
+import Blog from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails";
+import Contact from "./pages/Contact";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -97,7 +100,10 @@ function App() {
         <Route path="/Gallary" element={<Gallary />} />
         <Route path="/Videos" element={<Videos />} />
         <Route path="/SuccessStories" element={<SuccessStories />} />
+        <Route path="/Blog" element={<Blog />} />
+        <Route path="/BlogDetails" element={<BlogDetails />} />
         <Route path="/Activities" element={<Activities />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
     </>
   );

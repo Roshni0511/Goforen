@@ -60,27 +60,27 @@ export default function Workpermitvisa() {
       {/* <!-- breadcrumb end --> */}
 
       {/* <!-- blog start --> */}
-      <section class="blog pt-120 pb-120">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="blog-post-wrapper">
-                <article class="post-details">
+      <section className="blog pt-120 pb-120">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="blog-post-wrapper">
+                <article className="post-details">
                   <blockquote>
                     <p>
                     A work Permit visa is a type of visa that grants the holder authorization to accept employment in a foreign country.
                     </p>
 
-                    <div class="quote">
+                    <div className="quote">
                       <img src="assets/img/icon/quote.png" alt="" />
                     </div>
                   </blockquote>
-                  <div class="post-thumb">
+                  <div className="post-thumb">
                     <img src="/assets/pic/8-image.jpg" alt="" />
                   </div>
 
-                  <div class="sec-title sec-title--big style-2 mb-20">
-                  <span class="sec-title--sub">
+                  <div className="sec-title sec-title--big style-2 mb-20">
+                  <span className="sec-title--sub">
                       <img src="assets/img/icon/h_star.png" alt="" />
                       What is work permit?
                       <img src="assets/img/icon/h_star.png" alt="" />
@@ -89,7 +89,7 @@ export default function Workpermitvisa() {
                     A work permit is an official document issued by a country`s government, allowing foreign nationals to work legally within its borders. It sets out specific conditions under which the work is to be performed, such as duration, location, and type of employment.
                     </p>
 
-                    <span class="sec-title--sub">
+                    <span className="sec-title--sub">
                       <img src="assets/img/icon/h_star.png" alt="" />
                       What is work permit visa?
                       <img src="assets/img/icon/h_star.png" alt="" />
@@ -98,10 +98,10 @@ export default function Workpermitvisa() {
                     A work permit visa is a legal authorization that allows individuals from foreign countries to enter, live, and work in their country for a specific job and duration. It is a gateway for skilled professionals looking to gain international work experience and earn competitive salaries.
                     </p>
                   
-                    <div class="text-start mt-20">
+                    <div className="text-start mt-20">
                       <a
                         href="#"
-                        class="btn"
+                        className="btn"
                         style={{
                           background: " rgb(0, 204, 153)",
                           color: "rgb(255, 255, 255)",
@@ -114,31 +114,31 @@ export default function Workpermitvisa() {
                 </article>
               </div>
             </div>
-            <div class="col-lg-4">
-              <div class="blog-sidebar mt-5">
+            <div className="col-lg-4">
+              <div className="blog-sidebar mt-5">
                 
-                <div class="widget">
-                  <h3 class="widget-title">Other Services</h3>
-                  <ul class="widget__category list-unstyled">
+                <div className="widget">
+                  <h3 className="widget-title">Other Services</h3>
+                  <ul className="widget__category list-unstyled">
                     <li>
                       <a href="">
-                        <i class="far fa-arrow-up"></i> Immigration - PR Visa
+                        <i className="far fa-arrow-up"></i> Immigration - PR Visa
                       </a>
                     </li>
                     <li>
                       <a href="">
-                        <i class="far fa-arrow-up"></i>Student Visa
+                        <i className="far fa-arrow-up"></i>Student Visa
                       </a>
                     </li>
                     <li>
                       <a href="">
-                        <i class="far fa-arrow-up"></i> Visitor Visa
+                        <i className="far fa-arrow-up"></i> Visitor Visa
                       </a>
                     </li>
                    
                     <li>
                       <a href="">
-                        <i class="far fa-arrow-up"></i>Investor Visa
+                        <i className="far fa-arrow-up"></i>Investor Visa
                       </a>
                     </li>
                   </ul>

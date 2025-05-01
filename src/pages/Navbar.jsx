@@ -147,7 +147,16 @@ export default function Navbar() {
                       <li className="menu-item"><a href="/Activities"><span>Activities</span></a></li>
                       </ul>
                     </li>
-                    <li><a href=""><span>Contact</span></a></li>
+                    <li><a href="/Blog"><span>Blog</span></a></li>
+                    <li className="menu-item-has-children">
+                      <a href="/Contact"><span>Contact</span></a>
+                      <ul className="submenu">
+                      <li className="menu-item"><a href="/"><span>Quick Inquiry</span></a></li>
+                      <li className="menu-item"><a href="/"><span>Upload Your CV</span></a></li>
+                      <li className="menu-item"><a href="/"><span>Inquiry / Request For Assessment </span></a></li>
+                      <li className="menu-item"><a href="/"><span>Inquiry For Association</span></a></li>
+                      </ul>
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -169,7 +178,7 @@ export default function Navbar() {
                     <img src="assets/img/icon/search.svg" alt="" />Search
                   </button>
                 </li>
-                <li>
+                {/* <li>
                   <div className="header__language">
                     <ul>
                       <li>
@@ -186,7 +195,7 @@ export default function Navbar() {
                       </li>
                     </ul>
                   </div>
-                </li>
+                </li> */}
               </ul>
 
             </div>
@@ -251,7 +260,16 @@ export default function Navbar() {
                       <li className="menu-item"><a href="/Activities"><span>Activities</span></a></li>
                     </ul>
                   </li>
-                  <li className="menu-item"><a href=""><span>Contact</span></a></li>
+                  <li className="menu-item"><a href="/Blog"><span>Blog</span></a></li>
+                  <li className="menu-item menu-item-has-children">
+                    <a href="/Contact"><span>Contact</span></a>
+                    <ul className="sub-menu">
+                    <li className="menu-item"><a href="/"><span>Quick Inquiry</span></a></li>
+                      <li className="menu-item"><a href="/"><span>Upload Your CV</span></a></li>
+                      <li className="menu-item"><a href="/"><span>Inquiry / Request For Assessment</span></a></li>
+                      <li className="menu-item"><a href="/"><span>Inquiry For Association</span></a></li>
+                    </ul>
+                  </li>
                 </ul>
               </nav>
             </div>

@@ -69,9 +69,9 @@ const TOEFLIBT = () => {
                 <blockquote>
                                     <p>"TOEFL IBT is version of the test that is the most widely used today. IBT stands for Internet Based Test. The entire TOEFL IBT is done on a computer and it is the first TOEFL test to have Speaking questions. It started in 2005 and replaced the CBT (Computer Based Test) which started the trend towards computer-based testing. From 1964 to 1998, the only TOEFL version available was the PBT (Paper Based Test). The PBT test is still used in some countries where computer access is not available."</p>
                                     
-                                    <div class="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
+                                    <div className="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
                                 </blockquote>
-                                <div class="post-thumb">
+                                <div className="post-thumb">
                                     <img src="assets/img/blog/post_02.jpg" alt="" />
                                 </div>
                                 <div>
@@ -88,22 +88,22 @@ const TOEFLIBT = () => {
                                 </div>
                 </div>
                 <div className="col-4 mt-40">
-                <div class="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
+                <div className="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
                 >
-                                <img class="mb-40" src="assets/img/icon/b_icon.png" alt="" />
+                                <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
                                 <h4>Detailed Information</h4>
-                                <a class="thm-btn" href="#!">Contact Us</a>
+                                <a className="thm-btn" href="#!">Contact Us</a>
                             </div>
                             <div className='pt-30'>
-                            <div class="blog-sidebar" >
+                            <div className="blog-sidebar" >
 
-                            <div class="widget">
-                                <h3 class="widget-title">Courses</h3>
-                                <ul class="widget__category list-unstyled">
-                                    <li><a href="/IELTS"><i class="far fa-arrow-up"></i> IELTS</a></li>
-                                    <li><a href="/GRE"><i class="far fa-arrow-up"></i> GRE</a></li>
-                                    <li><a href="/PTE"><i class="far fa-arrow-up"></i> PTE</a></li>
-                                    <li><a href="/SAT"><i class="far fa-arrow-up"></i> SAT</a></li>
+                            <div className="widget">
+                                <h3 className="widget-title">Courses</h3>
+                                <ul className="widget__category list-unstyled">
+                                    <li><a href="/IELTS"><i className="far fa-arrow-up"></i> IELTS</a></li>
+                                    <li><a href="/GRE"><i className="far fa-arrow-up"></i> GRE</a></li>
+                                    <li><a href="/PTE"><i className="far fa-arrow-up"></i> PTE</a></li>
+                                    <li><a href="/SAT"><i className="far fa-arrow-up"></i> SAT</a></li>
                            
                                </ul>
                             </div>

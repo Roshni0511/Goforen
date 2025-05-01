@@ -69,9 +69,9 @@ const GRE = () => {
                 <blockquote>
                                     <p>"If you're planning on going to graduate school, you'll probably need to take the GRE test (or the Graduate Record Exam). It's the most commonly required admission test for grad school."</p>
                                     
-                                    <div class="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
+                                    <div className="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
                                 </blockquote>
-                                <div class="post-thumb">
+                                <div className="post-thumb">
                                     <img src="assets/img/blog/post_02.jpg" alt="" />
                                 </div>
                                 <div>
@@ -81,7 +81,7 @@ const GRE = () => {
                                 <p style={{margin:'15px 0px'}}>The GRE exam is a broad assessment of your critical thinking, analytical writing, verbal reasoning, and quantitative reasoning skills - all skills developed over the course of many years. Some schools may also require you to take one or more GRE subject tests.</p>
                             
                           <p style={{margin:'2px '}}>The purpose of each GRE examination, of course, is to help graduate schools decide if you've got the right stuff for their program.</p>
-                          <span class="sec-title--sub" style={{marginTop:'25px'}}>
+                          <span className="sec-title--sub" style={{marginTop:'25px'}}>
               <img src="assets/img/icon/h_star.png" alt="" />
               Overview of the GRE test
               <img src="assets/img/icon/h_star.png" alt="" />
@@ -93,22 +93,22 @@ const GRE = () => {
                                 </div>
                 </div>
                 <div className="col-4 mt-40">
-                <div class="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
+                <div className="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
                 >
-                                <img class="mb-40" src="assets/img/icon/b_icon.png" alt="" />
+                                <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
                                 <h4>Detailed Information</h4>
-                                <a class="thm-btn" href="#!">Contact Us</a>
+                                <a className="thm-btn" href="#!">Contact Us</a>
                             </div>
                             <div className='pt-30'>
-                            <div class="blog-sidebar" >
+                            <div className="blog-sidebar" >
 
-                            <div class="widget">
-                                <h3 class="widget-title">Courses</h3>
-                                <ul class="widget__category list-unstyled">
-                                    <li><a href="/IELTS"><i class="far fa-arrow-up"></i> IELTS</a></li>
-                                    <li><a href="/TOEFLIBT"><i class="far fa-arrow-up"></i> TOEFL IBT</a></li>
-                                    <li><a href="/PTE"><i class="far fa-arrow-up"></i> PTE</a></li>
-                                    <li><a href="/SAT"><i class="far fa-arrow-up"></i> SAT</a></li>
+                            <div className="widget">
+                                <h3 className="widget-title">Courses</h3>
+                                <ul className="widget__category list-unstyled">
+                                    <li><a href="/IELTS"><i className="far fa-arrow-up"></i> IELTS</a></li>
+                                    <li><a href="/TOEFLIBT"><i className="far fa-arrow-up"></i> TOEFL IBT</a></li>
+                                    <li><a href="/PTE"><i className="far fa-arrow-up"></i> PTE</a></li>
+                                    <li><a href="/SAT"><i className="far fa-arrow-up"></i> SAT</a></li>
                            
                                </ul>
                             </div>

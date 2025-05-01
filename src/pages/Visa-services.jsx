@@ -57,12 +57,12 @@ export default function Visaservices() {
       </section>
       {/* <!-- breadcrumb end --> */}
       {/* What is a visa start  */}
-      <section class="about pos-rel  pt-120">
-        <div class="container">
-          <div class="row align-items-center mt-none-30">
-            <div class="col-xl-8 col-lg-8 mt-30">
-              <div class="sec-title sec-title--big style-2 mb-20">
-                <span class="sec-title--sub">
+      <section className="about pos-rel  pt-120">
+        <div className="container">
+          <div className="row align-items-center mt-none-30">
+            <div className="col-xl-8 col-lg-8 mt-30">
+              <div className="sec-title sec-title--big style-2 mb-20">
+                <span className="sec-title--sub">
                   <img src="assets/img/icon/h_star.png" alt="" />
                   What is a visa?
                   <img src="assets/img/icon/h_star.png" alt="" />
@@ -85,14 +85,14 @@ export default function Visaservices() {
                 </p>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-4 mt-30">
-              <div class="xb-about-img">
+            <div className="col-xl-4 col-lg-4 mt-30">
+              <div className="xb-about-img">
                 <img src="/assets/pic/visa-service.jpg" alt="" />
               </div>
             </div>
           </div>
-          <div class="sec-title sec-title--big style-2 mb-20">
-            <span class="sec-title--sub">
+          <div className="sec-title sec-title--big style-2 mb-20">
+            <span className="sec-title--sub">
               <img src="assets/img/icon/h_star.png" alt="" />
               What are the different types of visa?
               <img src="assets/img/icon/h_star.png" alt="" />
@@ -171,14 +171,14 @@ export default function Visaservices() {
             </p>
           </div>
         </div>
-        <div class="about-shape">
-          <div class="shape shape--1">
-            <div class="shape-inner" data-parallax='{"x":-50,"y":-80}'>
+        <div className="about-shape">
+          <div className="shape shape--1">
+            <div className="shape-inner" data-parallax='{"x":-50,"y":-80}'>
               <img src="assets/img/shape/a_shape1.png" alt="" />
             </div>
           </div>
-          <div class="shape shape--2" style={{ top: "70%", right: "7%" }}>
-            <div class="shape-inner" data-parallax='{"x":50,"y":-80}'>
+          <div className="shape shape--2" style={{ top: "70%", right: "7%" }}>
+            <div className="shape-inner" data-parallax='{"x":50,"y":-80}'>
               <img src="assets/img/shape/a_shape2.png" alt="" />
             </div>
           </div>

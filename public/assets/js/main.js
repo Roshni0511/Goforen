@@ -347,7 +347,9 @@
 	});
 
 	// nice select
-	$('#nice-select').niceSelect();
+$(document).ready(function () {
+  $('#nice-select').niceSelect();
+});
 
 	/* magnificPopup img view */
 	$('.popup-image').magnificPopup({
