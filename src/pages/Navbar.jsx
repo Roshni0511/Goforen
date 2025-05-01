@@ -136,7 +136,7 @@ export default function Navbar() {
                   
                     
                     <li className="menu-item-has-children">
-                      <a href=""><span>Country</span></a>
+                      <a href="/Courses"><span>Courses</span></a>
                       <ul className="submenu">
                         <li><a href=""><span>Country</span></a></li>
                         <li><a href=""><span>Country Details</span></a></li>

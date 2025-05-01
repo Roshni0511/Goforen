@@ -3,6 +3,8 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import Visacard from '../component/Visacard';
 import SuccessStories from '../component/SuccessStories';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 
 export default function Home() {
   const scrollRef = useRef(null);
@@ -62,6 +64,15 @@ export default function Home() {
       }
     }
   }, [index]);
+  const brandImages = [
+    'img_01.png',
+    'img_02.png',
+    'img_03.png',
+    'img_04.png',
+    'img_05.png',
+    'img_06.png',
+    'img_07.png',
+  ];
   return (
     <div>
       <Navbar />
@@ -189,108 +200,44 @@ export default function Home() {
           </div>
         </section>
         {/* <!-- visa type end --> */}
-        {/* <!-- brand start --> */}
-        <section className="brand  pb-90">
-          <div className="container">
-            <h2 className="brand-title text-center mb-50">
-              <span><span>Media</span></span>
-            </h2>
-            <div className="xb-swiper-sliders brand-slider">
-              <div className="xb-carousel-inner">
-                <div className="xb-swiper-container swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
-                  <div className="xb-swiper-wrapper swiper-wrapper" id="swiper-wrapper-c5c7a5ce62d86f17" aria-live="off"
-                   style={{transitionDuration:'0ms', transform:'translate3d(-1103px, 0px, 0px);'}}
-                  >
-            
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 21" style={{opacity:2, width:"184px"}}>
-                    <a href="#!"><img src="assets/img/brand/img_01.png" alt="" /></a>
-                  </div>
-
-                  <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 21" style={{opacity:2, width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_02.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" role="group" aria-label="3 / 21" style={{opacity:2, width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_03.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" role="group" aria-label="4 / 21" style={{opacity:2, width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_04.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="5 / 21" style={{ opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_05.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5" role="group" aria-label="6 / 21" style={{opacity:2, width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_06.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate swiper-slide-visible" data-swiper-slide-index="6" role="group" aria-label="7 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_07.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-visible" data-swiper-slide-index="0" role="group" aria-label="8 / 21" style={{opacity:2, width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_01.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-visible swiper-slide-prev" data-swiper-slide-index="1" role="group" aria-label="9 / 21" style={{ opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_02.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-visible swiper-slide-active" data-swiper-slide-index="2" role="group" aria-label="10 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_03.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-visible swiper-slide-next" data-swiper-slide-index="3" role="group" aria-label="11 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_04.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-visible" data-swiper-slide-index="4" role="group" aria-label="12 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_05.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-visible" data-swiper-slide-index="5" role="group" aria-label="13 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_06.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide" data-swiper-slide-index="6" role="group" aria-label="14 / 21" style={{opacity:2, width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_07.png" alt="" /></a>
-                    </div>
-
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="15 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_01.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="16 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_02.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" role="group" aria-label="17 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_03.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" role="group" aria-label="18 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_04.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" role="group" aria-label="19 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_05.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5" role="group" aria-label="20 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_06.png" alt="" /></a>
-                    </div>
-                    
-                    <div className="swiper-slide xb-swiper-slide swiper-slide-duplicate" data-swiper-slide-index="6" role="group" aria-label="21 / 21" style={{opacity:2,width:"184px"}}>
-                      <a href="#!"><img src="assets/img/brand/img_07.png" alt="" /></a>
-                    </div>
-                    </div>
-                  <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-              </div>
-            </div>
-          </div>
-        </section>
+       
+         {/* <!-- brand start --> */}
+         <section className="brand" style={{paddingTop:'130px',paddingBottom:'100px'}}>
+      <div className="container mx-auto">
+      <h2 className="brand-title text-center mb-50">
+      <span>   <span>Media</span></span>
+                </h2>
+        <Swiper
+        style={{overflow:"hidden"}}
+          modules={[Autoplay]}
+          slidesPerView={7}
+          loop={true}
+          centeredSlides={true}
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+          }}
+          speed={400}
+          breakpoints={{
+            1600: { slidesPerView: 7 },
+            1200: { slidesPerView: 6 },
+            992: { slidesPerView: 5, centeredSlides: false },
+            768: { slidesPerView: 4, centeredSlides: false },
+            576: { slidesPerView: 3, centeredSlides: false },
+            0: { slidesPerView: 2 },
+          }}
+        >
+          {brandImages.map((img, idx) => (
+            <SwiperSlide key={idx}>
+              <a href="#!" style={{padding:'20px'}}>
+                <img src={`/assets/img/brand/${img}`} alt={`Brand ${idx + 1}`} />
+              </a>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+      {/* <!-- brand end --> */}
         {/* <!-- brand end --> */}
         
         
@@ -375,6 +322,86 @@ export default function Home() {
         {/* <!-- blog end --> */}
 
         <SuccessStories />
+
+        {/* <!-- coaching start --> */}
+        <section className="coaching pt-130 pb-120">
+            <div className="container">
+               <div className="row d-flex flex-nowrap overflow-auto">
+               <div className="col" style={{ flex: '0 0 20%' }}>
+               <div className="xb-coaching hover-shadow">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--img">
+                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_01.jpg" alt="" /></a>
+                                </div>
+                                <div className="xb-item--holder pos-rel">
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html"> IELTS</a></h3>
+                                    <p className="xb-item--content" style={{textAlign:'justify'}}>IELTS, the international English Language Testing system, provides an assessment of language ability of...</p>
+                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col" style={{ flex: '0 0 20%' }}>
+                    <div className="xb-coaching hover-shadow">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--img">
+                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_02.jpg" alt="" /></a>
+                                </div>
+                                <div className="xb-item--holder pos-rel">
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">TOEFL   IBT</a></h3>
+                                    <p className="xb-item--content" style={{textAlign:'justify'}}>TOEFL IBT is version of the test that is the most widely used today. IBT stands for Internet Based Test. The entire TOEFL..</p>
+                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col" style={{ flex: '0 0 20%' }}>
+                    <div className="xb-coaching hover-shadow">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--img">
+                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_03.jpg" alt="" /></a>
+                                </div>
+                                <div className="xb-item--holder pos-rel">
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html"> GRE</a></h3>
+                                    <p className="xb-item--content" style={{textAlign:'justify'}}>If you're planning on going to graduate school, you'll probably need to take the GRE test (or the Graduate Record Exam)....</p>
+                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col" style={{ flex: '0 0 20%' }}>
+                    <div className="xb-coaching hover-shadow">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--img">
+                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_03.jpg" alt="" /></a>
+                                </div>
+                                <div className="xb-item--holder pos-rel">
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">PTE </a></h3>
+                                    <p className="xb-item--content" style={{textAlign:'justify'}}>PTE test is based on real-life academic and general content. You will come across graphs, summaries, excerpts,..</p>
+                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col" style={{ flex: '0 0 20%' }}>
+                    <div className="xb-coaching hover-shadow">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--img">
+                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_03.jpg" alt=""  /></a>
+                                </div>
+                                <div className="xb-item--holder pos-rel">
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">SAT </a></h3>
+                                    <p className="xb-item--content" style={{textAlign:'justify'}}>The SAT is a standardized test widely used for college admissions in the United States. Introduced in ..</p>
+                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+        </section>
+        {/* <!-- coaching end --> */}
 
       </div>
       <Footer />
