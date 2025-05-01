@@ -143,7 +143,7 @@ export default function Navbar() {
                       <ul className="submenu">
                       <li className="menu-item"><a href="/Gallary"><span>Gallary</span></a></li>
                       <li className="menu-item"><a href="/Videos"><span>Videos</span></a></li>
-                      <li className="menu-item"><a href="/SuccessStories"><span>Success Stories</span></a></li>
+                      <li className="menu-item"><a href="/SuccessStory"><span>Success Stories</span></a></li>
                       <li className="menu-item"><a href="/Activities"><span>Activities</span></a></li>
                       </ul>
                     </li>
@@ -256,7 +256,7 @@ export default function Navbar() {
                     <ul className="sub-menu">
                     <li className="menu-item"><a href="/Gallary"><span>Gallary</span></a></li>
                       <li className="menu-item"><a href="/Videos"><span>Videos</span></a></li>
-                      <li className="menu-item"><a href="/SuccessStories"><span>Success Stories</span></a></li>
+                      <li className="menu-item"><a href="/SuccessStory"><span>Success Stories</span></a></li>
                       <li className="menu-item"><a href="/Activities"><span>Activities</span></a></li>
                     </ul>
                   </li>
