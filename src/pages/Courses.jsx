@@ -53,6 +53,143 @@ const Courses = () => {
         </div>
       </section>
       {/* <!-- breadcrumb end --> */}
+         {/* What is a visa start  */}
+         <section class="about pos-rel  pt-120">
+        <div class="container">
+          <div class="row align-items-center mt-none-30">
+            <div class="col-xl-8 col-lg-8 mt-30">
+              <div class="sec-title sec-title--big style-2 mb-20">
+                
+
+                <p>
+                Around 3 lakh students go abroad every year for higher education. Now, the craze for studying abroad may be taken adversely as it is brain-drain for the country, or the positive aspect for the individual may be noted.
+                </p>
+                <p>
+                Nevertheless, the process of flying overseas to study is a tedious one. Apart from the various passport and immigration complexities, a student has to prepare for various exams to be merely eligible for getting into the college and course he/she aspires for.
+                </p>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 mt-30">
+              <div class="xb-about-img" style={{marginTop:'1px'}}>
+                <img src="/assets/pic/visa-service.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="sec-title sec-title--big style-2 mb-20">
+            <p>As IELTS/TOEFL/PTE, GRE/GMAT/SAT and other options for all such exams can confuse students, to help them out, here are the top 5 international exams that are taken by students aspiring to study abroad:</p>
+            <span class="sec-title--sub" style={{marginTop:'25px'}}>
+              <img src="assets/img/icon/h_star.png" alt="" />
+              Which exam to give for which course to study abroad?
+              <img src="assets/img/icon/h_star.png" alt="" />
+            </span>
+
+            <p>
+            If you are planning to study abroad, the admission process will require you to give one language exam and one standardized exam. However, depending on the country, course or college you are targeting, you may be exempt from standardized exams, but you would still be required to take one language exam to show English language proficiency. Depending on the course and college, you may also be required to provide scores of one standardized test.
+            </p>
+
+          
+          
+            
+            <ul style={{ paddingBottom: "10px", listStyle:"none" }}>
+              <li style={{ textAlign: "justify" }}>
+              <span class="sec-title--sub" style={{marginTop:'25px'}}>
+              <img src="assets/img/icon/h_star.png" alt="" />
+              Language    exams
+              <img src="assets/img/icon/h_star.png" alt="" />
+            </span>
+             
+               <p>The language exams show your English proficiency skills. You need to give either one of the language exams to get admission to any university in an English speaking country. These are required for almost all courses; Undergraduate courses, Postgraduate courses, Certificates or Diplomas (unless mentioned).
+
+Different countries give preference to one language exam over others. TOEFL is the preferred exam for universities at US and Canada, while it is not accepted at many colleges in UK. On the other hand, IELTS is the preferred exam for getting admission to universities at UK, Australia and New Zealand. PTE is accepted at a few colleges in US and most colleges in UK. CAE and CPE are given preference by the British universities.</p>
+              </li>
+              <li style={{ textAlign: "justify" }}>
+              <span class="sec-title--sub"  style={{marginTop:'25px'}}>
+              <img src="assets/img/icon/h_star.png" alt="" />
+              Standardized     Exams
+              <img src="assets/img/icon/h_star.png" alt="" />
+            </span>
+             
+               <p>The exams required for various courses will be different. Depending on the courses of your choice, you will be required to give only one standardized test.
+
+Here is a table describing exam requirement according to the course of your choice –</p>
+              </li>
+             
+            </ul>
+           <br />
+           <table class="table table-bordered">
+
+                            <thead>
+
+                                <tr><th>Courses/Programs</th>
+
+                                <th>Standardized Tests</th>
+
+                                <th>Preferred English Language Tests on country basis</th>
+
+                            </tr></thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <th>Undergraduate</th>
+
+                                    <td>SAT or ACT</td>
+
+                                    <td>TOEFL for US, IELTS or PTE for  Canada,UK, Australia, New Zealand CAE or CPE for UK</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <th>MBA</th>
+
+                                    <td>GMAT or GRE</td>
+
+                                    <td>TOEFL for US, IELTS or PTE for Canada,UK, Australia, New Zealand CAE or CPE for UK</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <th>MS or PG degree</th>
+
+                                    <td>GRE</td>
+
+                                    <td>TOEFL for US, IELTS or PTE for Canada, UK, Australia, New Zealand CAE or CPE for UK</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <th>Certificate course</th>
+
+                                    <td>-</td>
+
+                                    <td>TOEFL for US, IELTS or PTE for Canada, UK, Australia, New Zealand CAE or CPE for UK</td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+          </div>
+        </div>
+        <div class="about-shape">
+          <div class="shape shape--1">
+            <div class="shape-inner" data-parallax='{"x":-50,"y":-80}'>
+              <img src="assets/img/shape/a_shape1.png" alt="" />
+            </div>
+          </div>
+          <div class="shape shape--2" style={{ top: "70%", right: "7%" }}>
+            <div class="shape-inner" data-parallax='{"x":50,"y":-80}'>
+              <img src="assets/img/shape/a_shape2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What is a visa end  */}
       {/* <!-- about start --> */}
         <section className="about pos-rel pb-130 pt-80">
             <div className="container">
