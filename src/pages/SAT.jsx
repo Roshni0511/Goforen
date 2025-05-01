@@ -2,23 +2,24 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-const IELTS = () => {
-        const [background, setBackground] = useState("");
-        
-          useEffect(() => {
-            const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
-            setBackground(backgroundUrl);
-          }, []);
-          const [background1, setBackground1] = useState("");
-        
-          useEffect(() => {
-            const backgroundUrl1 = "https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg";
-            setBackground1(backgroundUrl1);
-          }, []);
+const SAT = () => {
+      const [background, setBackground] = useState("");
+                        
+                          useEffect(() => {
+                            const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
+                            setBackground(backgroundUrl);
+                          }, []);
+                          const [background1, setBackground1] = useState("");
+                        
+                          useEffect(() => {
+                            const backgroundUrl1 = "https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg";
+                            setBackground1(backgroundUrl1);
+                          }, []);
   return (
     <>
-       <Navbar />
-       <div>
+      <div>
+        <Navbar />
+        <div>
             {/* <!-- breadcrumb start --> */}
       <section
         className="breadcrumb pos-rel bg_img"
@@ -26,12 +27,12 @@ const IELTS = () => {
       >
         <div className="container">
           <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">IELTS</h2>
+            <h2 className="breadcrumb__title">SAT</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
               </li>
-              <li className="breadcrumb-item">IELTS</li>
+              <li className="breadcrumb-item">SAT</li>
             </ul>
           </div>
         </div>
@@ -66,7 +67,7 @@ const IELTS = () => {
             <div className="row">
                 <div className="col-8">
                 <blockquote>
-                                    <p>"IELTS, the international English Language Testing system, provides an assessment of language ability of candidates who need to study or train in the medium of English."</p>
+                                    <p>"The SAT is a standardized test widely used for college admissions in the United States. Introduced in 1926, its name and scoring have changed several times; originally called the Scholastic Aptitude Test, it was later called the Scholastic Assessment Test, then the SAT I: Reasoning Test, then the SAT Reasoning Test, and now, simply the SAT."</p>
                                     
                                     <div class="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
                                 </blockquote>
@@ -77,11 +78,13 @@ const IELTS = () => {
                                
    
                            
-                                <p style={{margin:'15px 0px'}}>IELTS is regarded as an entrance requirement by most universities in the United Kingdom, Australia, New Zealand and Canada. It is also gaining recognition among universities and other educational institutes in the United States of America.</p>
+                                <p style={{margin:'20px 0px 10px'}}>The SAT is owned, developed, and published by the College Board, a private, non-profit organization in the United States. It is administered on behalf of the College Board by the Education Testing Service, which until recently developed the SAT as well. The test is intended to assess students' readiness for college. The SAT was originally designed not to be aligned with high school curricula, but several adjustments were made for the version of the SAT introduced in 2016, and College Board president, David Coleman, has said that he also wanted to make the test reflect more closely what students learned in high school.
+
+</p>
                             
-                          <p style={{margin:'10px 0px'}}>In India test is held at many test centers inclusive of SURAT, which arrange test administrations according to local demand.</p>
-                          <p style={{margin:'10px 0px'}}>The University of Cambridge Local Examinations Syndicate (UCLES), the British council and IDP Education Australia jointly manage the IELTS.</p>
-                          <p style={{margin:'20px 0px'}}>Candidates must select either the Academic or the general Training Modules depending on the stated requirement of their sponsor or receiving institution.</p>
+                          <p style={{margin:'2px '}}>SAT is a standardized test administered by the College Board and is required to be taken by students seeking admission in undergraduate schools. SAT exam has been developed to evaluate the written, verbal and mathematical skills of the candidates.</p>
+                      
+            
                                 <div style={{marginBottom:'40px'}}>
                                     <button style={{padding:'10px 20px',background:'#00cc99',color:'#fff',borderRadius:'10px'}}>Read More</button>
                                 </div>
@@ -100,10 +103,10 @@ const IELTS = () => {
                             <div class="widget">
                                 <h3 class="widget-title">Courses</h3>
                                 <ul class="widget__category list-unstyled">
-                                    <li><a href="/TOEFLIBT"><i class="far fa-arrow-up"></i> TOEFL IBT</a></li>
-                                    <li><a href="/GRE"><i class="far fa-arrow-up"></i> GRE</a></li>
-                                    <li><a href="/PTE"><i class="far fa-arrow-up"></i> PTE</a></li>
-                                    <li><a href="SAT"><i class="far fa-arrow-up"></i> SAT</a></li>
+                                    <li><a href="#!"><i class="far fa-arrow-up"></i> IELTS</a></li>
+                                    <li><a href="/TOEFLIBT                                                                                                                             EM                "><i class="far fa-arrow-up"></i> TOEFL IBT</a></li>
+                                    <li><a href="#!"><i class="far fa-arrow-up"></i> GRE</a></li>
+                                    <li><a href="#!"><i class="far fa-arrow-up"></i> PTE</a></li>
                            
                                </ul>
                             </div>
@@ -116,9 +119,10 @@ const IELTS = () => {
          </div>
    {/* new content end */}
        </div>
-       <Footer />
+        <Footer />
+      </div>
     </>
   )
 }
 
-export default IELTS
+export default SAT
