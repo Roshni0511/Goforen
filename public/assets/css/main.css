@@ -2840,6 +2840,15 @@ h6 {
         @media only screen and (min-width: 1200px) and (max-width: 1500px) {
           .main-menu ul li:not(:last-child) {
             margin-right: 15px; } }
+            .menu-item-has-children:hover > .submenu {
+              display: block;
+            }
+            
+            /* Left-align nested submenu */
+            .menu-item-has-children .menu-item-has-children .submenu {
+              left: auto;
+              right: 100%;
+            }
       .main-menu ul li .submenu li {
         margin-right: 0; }
       .main-menu ul li a {
@@ -6980,7 +6989,7 @@ blockquote {
   bottom: 0;
   margin: 0;
   z-index: 1010;
-  overflow: hidden;
+  overflow: scroll;
   -webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   -khtml-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   -moz-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -7011,7 +7020,7 @@ blockquote {
   visibility: visible; }
 
 .xb-header-menu-scroll {
-  padding: 50px 25px 40px; }
+  padding: 50px 17px 40px; }
 
 .xb-header-menu-scroll .xb-close {
   position: absolute;
@@ -8218,7 +8227,7 @@ a.ui-button:active, .ui-button:active,
   margin-bottom: 25px;
   letter-spacing: -0.6px; }
 .footer__cta li {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.72px;
   color: var(--color-dark); }
@@ -8263,9 +8272,15 @@ a.ui-button:active, .ui-button:active,
       -o-transition: 0.3s;
       transition: 0.3s; }
 .footer__custom-col {
-  width: 23%; }
+  width: 18%; }
   .footer__custom-col:first-child {
-    width: 31%; }
+    width: 20%; }
+    @media (max-width: 1024px) {
+      .footer__custom-col:first-child{
+        width: 50%;
+      }
+      .footer__custom-col {
+        width: 50%; } }
     @media (max-width: 991px) {
       .footer__custom-col:first-child {
         width: 50%; } }
@@ -8285,10 +8300,11 @@ a.ui-button:active, .ui-button:active,
     .footer__custom-col {
       width: 50%; } }
   .footer__custom-col:not(:first-child) .footer__widget {
-    padding-left: 80px; }
+    padding-left: 30px; }
+  
     @media (max-width: 1199px) {
       .footer__custom-col:not(:first-child) .footer__widget {
-        padding-left: 30px; } }
+        padding-left: 40px; } }
     @media (max-width: 991px) {
       .footer__custom-col:not(:first-child) .footer__widget {
         padding-left: 0; } }

@@ -1,12 +1,74 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import { useLocation } from 'react-router-dom';
+
 export default function Contact() {
+
+  const location = useLocation();
+
+  const isVisitorVisa = location.pathname === '/visitor';
+  const isInvestorVisa = location.pathname === '/investor';
+  const canvasRef = useRef(null);
   // data-background img start
   const [background, setBackground] = useState("");
+  const [captchaCode, setCaptchaCode] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
+
+  const visaServices = [
+    { name: "Student Visa", info: false },
+    { name: "PR Visa", info: false },
+    { name: "Visitor Visa", info: true },
+    { name: "Investor Visa", info: true },
+    { name: "Work Permit Visa", info: false },
+  ];
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
+  const generateCaptcha = () => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let captcha = "";
+
+    for (let i = 0; i < 6; i++) {
+      const char = chars.charAt(Math.floor(Math.random() * chars.length));
+      captcha += char;
+      ctx.font = `${20 + Math.random() * 10}px Arial`;
+      ctx.fillStyle = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+        Math.random() * 256
+      )}, ${Math.floor(Math.random() * 256)})`;
+      const angle = (Math.random() - 0.5) * 0.5;
+      ctx.save();
+      ctx.translate(30 * i + 20, canvas.height / 2);
+      ctx.rotate(angle);
+      ctx.fillText(char, 0, 0);
+      ctx.restore();
+    }
+
+    setCaptchaCode(captcha);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (captchaInput !== captchaCode) {
+      alert("Invalid captcha code. Please try again.");
+      generateCaptcha();
+      setCaptchaInput("");
+      return;
+    }
+    alert("Form submitted successfully!");
+    // Reset your form here
+    generateCaptcha();
+    setCaptchaInput("");
+  };
 
   useEffect(() => {
     const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
@@ -19,7 +81,7 @@ export default function Contact() {
   const handleSwitchChange = (event) => {
     setShowCourse(event.target.checked);
   };
-  
+
   return (
     <div>
       <Navbar />
@@ -74,7 +136,7 @@ export default function Contact() {
           <div className="xb-contact pos-rel">
             <div className="row">
               <div className="col-lg-6">
-                <div className="xb-item--inner">
+                <div className="xb-item--inner" style={{ boxShadow: "none" }}>
                   <div className="xb-item--holder mb-25">
                     <span>
                       <img src="assets/img/icon/n_pad.svg" alt="" />
@@ -85,7 +147,7 @@ export default function Contact() {
                   <form className="xb-item--form contact-from" action="#!">
                     <div className="row">
                       <div className="col-lg-6">
-                            <label htmlFor="">Name :</label>
+                        <label htmlFor="">Name :</label>
                         <div className="xb-item--field">
                           <span>
                             <img src="assets/img/icon/c_user.svg" alt="" />
@@ -94,7 +156,7 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="col-lg-6">
-                      <label htmlFor="">Email :</label>
+                        <label htmlFor="">Email :</label>
                         <div className="xb-item--field">
                           <span>
                             <img src="assets/img/icon/c_mail.svg" alt="" />
@@ -103,7 +165,7 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="col-lg-6">
-                      <label htmlFor="">Number :</label>
+                        <label htmlFor="">Number :</label>
                         <div className="xb-item--field">
                           <span>
                             <img src="assets/img/icon/c_call.svg" alt="" />
@@ -112,7 +174,7 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="col-lg-6">
-                      <label htmlFor="">Desired Country :</label>
+                        <label htmlFor="">Desired Country :</label>
                         <div className="xb-item--field">
                           <span>
                             <img src="assets/img/icon/c_select.svg" alt="" />
@@ -150,7 +212,7 @@ export default function Contact() {
                       </div>
 
                       <div className="col-lg-6">
-                      <label htmlFor="">Desired Visa Service :</label>
+                        <label htmlFor="">Desired Visa Service :</label>
                         <div className="xb-item--field">
                           <span>
                             <img src="assets/img/icon/c_select.svg" alt="" />
@@ -198,7 +260,7 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="col-lg-6">
-                      <label htmlFor="">Resume :</label>
+                        <label htmlFor="">Resume :</label>
                         <div className="xb-item--field">
                           <span>
                             <img src="assets/img/icon/c_upload.svg" alt="" />
@@ -213,72 +275,76 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="row">
-      {/* Coaching Switch */}
-      <div className="col-lg-6">
-        <div className="xb-item--field">
-          <label><strong>Are You Interested In Coaching ?*</strong></label>
-          <FormGroup row>
-            <label style={{ marginRight: "10px" }}>No</label>
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={showCourse}
-                  onChange={handleSwitchChange}
-                  color="primary"
-                />
-              }
-              label="Yes"
-            />
-          </FormGroup>
-        </div>
-      </div>
-
-      {/* Conditional Course Dropdown */}
-      {showCourse && (
-        <div className="col-lg-6">
-          <div className="xb-item--field">
-            <label><strong>Course*</strong></label>
-           
-            <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_select.svg" alt="" />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">
-                            Select Course
-                            </span>
-                            <ul className="list">
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                IELTS
-                              </li>
-                              <li data-value="2" className="option">
-                              TOEFL IBT
-                              </li>
-                              <li data-value="3" className="option">
-                              GRE
-                              </li>
-                              <li data-value="4" className="option">
-                              PTE
-                              </li>
-                              <li data-value="4" className="option">
-                              SAT
-                              </li>
-                              <li data-value="4" className="option">
-                              Other
-                              </li>
-                             
-                            </ul>
+                        {/* Coaching Switch */}
+                        <div className="col-lg-6">
+                          <div className="xb-item--field">
+                            <label>
+                              <strong>Are You Interested In Coaching ?*</strong>
+                            </label>
+                            <FormGroup row>
+                              <label style={{ marginRight: "10px" }}>No</label>
+                              <FormControlLabel
+                                control={
+                                  <Switch
+                                    checked={showCourse}
+                                    onChange={handleSwitchChange}
+                                    color="primary"
+                                  />
+                                }
+                                label="Yes"
+                              />
+                            </FormGroup>
                           </div>
                         </div>
-          </div>
-        </div>
-      )}
-    </div>
+
+                        {/* Conditional Course Dropdown */}
+                        {showCourse && (
+                          <div className="col-lg-6">
+                            <div className="xb-item--field">
+                              <label>
+                                <strong>Course*</strong>
+                              </label>
+
+                              <div className="xb-item--field">
+                                <span>
+                                  <img
+                                    src="assets/img/icon/c_select.svg"
+                                    alt=""
+                                  />
+                                </span>
+                                <div className="nice-select" tabindex="0">
+                                  <span className="current">Select Course</span>
+                                  <ul className="list">
+                                    <li
+                                      data-value="1"
+                                      className="option selected focus"
+                                    >
+                                      IELTS
+                                    </li>
+                                    <li data-value="2" className="option">
+                                      TOEFL IBT
+                                    </li>
+                                    <li data-value="3" className="option">
+                                      GRE
+                                    </li>
+                                    <li data-value="4" className="option">
+                                      PTE
+                                    </li>
+                                    <li data-value="4" className="option">
+                                      SAT
+                                    </li>
+                                    <li data-value="4" className="option">
+                                      Other
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                       <div className="col-12">
-                      <label htmlFor="">Message :</label>
+                        <label htmlFor="">Message :</label>
                         <div className="xb-item--field">
                           <span>
                             <img src="assets/img/icon/c_message.svg" alt="" />
@@ -292,16 +358,42 @@ export default function Contact() {
                           ></textarea>
                         </div>
                       </div>
-                      <div class="col-lg-12 mt-3">
-                  <label for="captcha-input" class="form-label">Enter Captcha</label>
-                  <div class="d-flex align-items-center mb-2">
-                    <canvas id="captcha" width="200" height="50" style={{border:"1px solid #ccc"}}></canvas>
-                    <button type="button" id="refresh-captcha" style={{marginLeft:" 10px"}}>↻</button>
-                  </div>
-                  <input type="text" class="form-control" id="captcha-input" required />
-                </div>
                       <div className="col-12">
-                      
+                        <label>Captcha :</label>
+
+                        <div className="row align-items-center g-2 mb-2">
+                          <div className="col-md-auto">
+                            <canvas
+                              ref={canvasRef}
+                              width={200}
+                              height={50}
+                              style={{
+                                border: "1px solid #ccc",
+                                display: "block",
+                              }}
+                            />
+                          </div>
+                          <div className="col-md-auto">
+                            <button
+                              type="button"
+                              className="btn btn-secondary"
+                              onClick={generateCaptcha}
+                            >
+                              Refresh
+                            </button>
+                          </div>
+                        </div>
+
+                        <div className="xb-item--field">
+                          <input
+                            type="text"
+                            placeholder="Enter Captcha"
+                            value={captchaInput}
+                            onChange={(e) => setCaptchaInput(e.target.value)}
+                            required
+                            className="form-control"
+                          />
+                        </div>
                       </div>
 
                       <div className="col-12">
@@ -321,6 +413,103 @@ export default function Contact() {
         </div>
       </section>
       {/* <!-- contact end --> */}
+
+      <div className="container py-5">
+        <span className="sec-title--sub">
+          <img src="assets/img/icon/h_star.png" alt="" />
+          IF YOU WANT YOUR PROFILE TO BE ASSESSED IN DETAIL PLEASE FILL UP THE
+          REQUIRED FORM
+          <img src="assets/img/icon/h_star.png" alt="" />
+        </span>
+
+        <ul className="list-unstyled">
+          {visaServices.map((service, idx) => (
+            <li key={idx} className="mb-2 d-flex align-items-center">
+              <span className=" me-2">●</span>
+              <a href="#" className="fw-bold text-dark text-decoration-none">
+                {service.name}
+                {service.info && (
+                  <i
+                    className="bi bi-info-circle-fill ms-1"
+                    title="More Info"
+                  ></i>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Cards Grid */}
+        <center>
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-4">
+            <div className="col">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h6 className="card-title fw-bold">Address</h6>
+                  <p className="card-text" style={{ textAlign: "center" }}>
+                    701-702, 7<sup>th</sup> floor, Joyos Hubtown, Adajan Bus
+                    port, Surat-395009
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h6 className="card-title fw-bold">Phone</h6>
+                  <p className="card-text" style={{ textAlign: "center" }}>
+                    +91 76 00 90 90 90
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h6 className="card-title fw-bold">WhatsApp</h6>
+                  <p className="card-text" style={{ textAlign: "center" }}>
+                    +91 85 1111 0 221
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h6 className="card-title fw-bold">Mail</h6>
+                  <p className="card-text" style={{ textAlign: "center" }}>
+                    <a href="mailto:info@goforen.com" className="text-dark">
+                      info@goforen.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </center>
+      </div>
+
+      {/* new page start  */}
+      <div className="contact-page">
+
+{/* ✅ Common Contact Page Content */}
+{/* <h2>Contact Us</h2> */}
+{/* ... your form or contact info ... */}
+
+{/* ✅ Show alert only for visitor or investor */}
+{(isVisitorVisa || isInvestorVisa) && (
+  <div className="container">
+    <div className="alert alert-warning">
+      <i className="fa fa-info-circle"></i>&nbsp;
+      Visitor Visa / Investor Visa does not require detailed assessment.
+      Please fill up the below form and we will guide on proceeding further.
+    </div>
+  </div>
+)}
+
+</div>
+      {/* new page end */}
+
       <Footer />
     </div>
   );

@@ -15,6 +15,7 @@ import SAT from "./pages/SAT";
 import Studentvisa from "./pages/Student-visa";
 import Gallary from "./pages/Gallary";
 import Videos from "./pages/Videos";
+import Contact from "./pages/Contact";
 
 import Activities from "./pages/Activities";
 import Visitorvisa from "./pages/Visitor-visa";
@@ -22,9 +23,16 @@ import Investorvisa from "./pages/Investor-visa";
 import Workpermitvisa from "./pages/Work-permit-visa";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
-import Contact from "./pages/Contact";
 
 import SuccessStory from "./pages/SuccessStory";
+import Uploadcv from "./pages/Upload-cv";
+import Inquiry_association from "./pages/Inquiry-association";
+import Inquiryassociation from "./pages/Inquiry-association";
+import Studentvisainquiry from "./pages/Student-visa-inquiry";
+import Prvisainquiry from "./pages/Pr-visa-inquiry";
+import Privacypolicy from "./pages/Privacy-policy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import Declaration from "./pages/Declaration";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -106,6 +114,16 @@ function App() {
         <Route path="/BlogDetails" element={<BlogDetails />} />
         <Route path="/Activities" element={<Activities />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/visitor" element={<Contact />} />
+        <Route path="/investor" element={<Contact />} />
+     
+        <Route path="/Upload-cv" element={<Uploadcv />} />
+        <Route path="/Inquiry-association" element={<Inquiryassociation />} />
+        <Route path="/Student-visa-inquiry" element={<Studentvisainquiry />} />
+        <Route path="/Pr-visa-inquiry" element={<Prvisainquiry />} />
+        <Route path="/Privacy-policy" element={<Privacypolicy />} />
+        <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+        <Route path="/Declaration" element={<Declaration />} />
       </Routes>
     </>
   );
