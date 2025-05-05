@@ -1,4 +1,106 @@
+/*  */
+.btn-floating {
+  position: fixed;
+  right: 25px;
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+  /* border-radius: 100px; */
+  border: 0;
+  z-index: 9999;
+  color: white;
+  transition: .2s;
+}
 
+.btn-floating:hover {
+  width: auto;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.btn-floating span {
+  font-size: 16px;
+  margin-left: 5px;
+  transition: .2s;
+  line-height: 0px;
+  display: none;
+}
+
+.btn-floating:hover span {
+  display: inline-block;
+}
+
+/* Phone */
+.btn-floating.phone {
+right: 0px;
+  bottom: 465px;
+  /* bottom: 62%; */
+  background-color: #3db8e5;
+}
+
+.btn-floating.phone:hover {
+  background-color: #3db8e5;
+}
+
+/* WhatsApp */
+.btn-floating.whatsapp {
+right: 0px;
+  background-color: #34af23;
+  bottom: 417px;
+
+}
+
+.btn-floating.whatsapp:hover {
+  background-color: #1f7a12
+}
+/* email */
+.btn-floating.email {
+  right: 0px;
+    background-color: #555;
+    bottom: 368px;
+
+  }
+  
+  .btn-floating.email:hover {
+    background-color: #555
+  }
+
+/* facebook */
+.btn-floating.facebook {
+right: 0px;
+  background-color:#3B5998;
+  bottom: 320px;
+ 
+}
+
+.btn-floating.facebook:hover {
+  background-color:#3B5998;
+}
+/* Youtube */
+.btn-floating.Youtube {
+right: 0px;
+  background-color:#e33c28;
+  bottom: 272px;
+
+}
+
+.btn-floating.Youtube:hover {
+  background-color:#e33c28;
+}
+
+/* rating */
+.btn-floating.rating {
+  right: 0px;
+    background-color:#e7711b;
+    bottom: 223px;
+  
+  }
+  
+  .btn-floating.rating:hover {
+    background-color:#e7711b;
+  }
+
+  /*  */
 p{
   font-size: 16px !important;
   text-align: justify;
@@ -234,17 +336,56 @@ p{
     transform: translateX(-50%);
   }
 }
-                                         
+                                                                                
+.experience-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
 
-                                        
-                                            
+.experience-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 22px;
+}
 
-                                        
-                                            
+.experience-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.experience-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(204, 204, 204);
+  border-radius: 22px;
+  transition: 0.4s;
+}
+
+.experience-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 1px;
+  background-color: black;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.experience-toggle-switch input:checked + .experience-slider:before {
+  transform: translateX(22px);
+}
 
 
 
-
+    
                                         
                                             
 
