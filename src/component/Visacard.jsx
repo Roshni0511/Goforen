@@ -84,7 +84,7 @@ const Visacard = () => {
 const VisaCard = ({ title, icon, news }) => (
   <div className="col-lg-4 col-md-6 mt-30">
     <div className="xb-service">
-      <div className="xb-item--inner" style={{ padding: '35px 10px' }}>
+      <div className="xb-item--inner" style={{ padding: '35px 10px',marginBottom:'25px' }}>
         <div className="xb-item--icon mb-20">
           <img src={`assets/img/icon/${icon}`} alt="" />
         </div>

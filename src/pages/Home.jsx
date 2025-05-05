@@ -298,12 +298,12 @@ export default function Home() {
                                     </div>
                                     <div className="xb-item--holder">
                                         
-                                        <h3 className="xb-item--title border-effect" style={{display:'flex',textAlign:'center'}}><a href="blog-single.html" >Immigration - PR Visa</a></h3>
+                                        <h3 className="xb-item--title border-effect" style={{display:'flex',textAlign:'center'}}><a href="/Immigration-pr-visa" >Immigration - PR Visa</a></h3>
                                         <p style={{marginBottom:'20px'}}>Any foreign national who wishes to relocate to any other country, on a permanent basis need an immigration visa or in general terms called a PR (permanent residency) of a particular country.</p>
-                                        <a className="xb-item--link " href="blog-single.html" style={{color:'#000',fontSize:'20px',}}>Read the article<span><img
+                                        <a className="xb-item--link " href="/Immigration-pr-visa" style={{color:'#000',fontSize:'20px',}}>Read the article<span><img
                                                 src="assets/img/icon/right_arrow.svg" alt="" /></span></a>
                                     </div>
-                                    <a className="xb-overlay xb-overlay-link" href="blog-single.html"></a>
+                                    <a className="xb-overlay xb-overlay-link" href="/Immigration-pr-visa"></a>
                                 </div>
                             </div>
                         </div>
@@ -317,14 +317,14 @@ export default function Home() {
                                     </div>
                                     <div className="xb-item--holder">
                                        
-                                        <h3 className="xb-item--title border-effect"  style={{display:'flex',textAlign:'center'}}><a href="blog-single.html" >Student Visa.</a></h3>
+                                        <h3 className="xb-item--title border-effect"  style={{display:'flex',textAlign:'center'}}><a href="/Student-visa" >Student Visa.</a></h3>
                                         <p style={{marginBottom:'20px'}}>
                                         Most countries will issue student visas in order to allow foreign students to attend school within their borders. However, in most cases the student must be enrolled at a postsecondary institution of higher learning. Foreign exchange students must..
                                         </p>
-                                        <a className="xb-item--link" href="blog-single.html" style={{color:'#000',fontSize:'20px',}}>Read the article<span><img
+                                        <a className="xb-item--link" href="/Student-visa" style={{color:'#000',fontSize:'20px',}}>Read the article<span><img
                                                 src="assets/img/icon/right_arrow.svg" alt="" /></span></a>
                                     </div>
-                                    <a className="xb-overlay xb-overlay-link" href="blog-single.html"></a>
+                                    <a className="xb-overlay xb-overlay-link" href="/Student-visa"></a>
                                 </div>
                             </div>
                         </div>
@@ -338,14 +338,14 @@ export default function Home() {
                                     </div>
                                     <div className="xb-item--holder">
                                        
-                                        <h3 className="xb-item--title border-effect"  style={{display:'flex',textAlign:'center'}}><a href="blog-single.html" >Visitor Visa</a></h3>
+                                        <h3 className="xb-item--title border-effect"  style={{display:'flex',textAlign:'center'}}><a href="/visitor" >Visitor Visa</a></h3>
                                         <p style={{marginBottom:'20px'}} >
                                         Tourist/Visitors visas are conditional authorization granted by a country to foreigners to enter and temporarily remain within that country. Visas typically include limits on the duration of the foreigner's stay, territory within the country they...
                                         </p>
-                                        <a className="xb-item--link" href="blog-single.html" style={{color:'#000',fontSize:'20px',}}>Read the article<span><img
+                                        <a className="xb-item--link" href="/visitor" style={{color:'#000',fontSize:'20px',}}>Read the article<span><img
                                                 src="assets/img/icon/right_arrow.svg" alt="" /></span></a>
                                     </div>
-                                    <a className="xb-overlay xb-overlay-link" href="blog-single.html"></a>
+                                    <a className="xb-overlay xb-overlay-link" href="/visitor"></a>
                                 </div>
                             </div>
                         </div>
@@ -369,9 +369,9 @@ export default function Home() {
                                     <a href="coaching-single.html"><img src="/assets/pic/exam1.jpg" alt="" style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
-                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html"> IELTS</a></h3>
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="/IELTS"> IELTS</a></h3>
                                     <p className="xb-item--content" style={{textAlign:'justify'}}>IELTS, the international English Language Testing system, provides an assessment of language ability of...</p>
-                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                    <a className="xb-item--link" href="/IELTS" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -383,9 +383,9 @@ export default function Home() {
                                     <a href="coaching-single.html"><img src="/assets/pic/exam2.jpg" alt="" style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
-                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">TOEFL   IBT</a></h3>
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="/TOEFLIBT">TOEFL   IBT</a></h3>
                                     <p className="xb-item--content" style={{textAlign:'justify'}}>TOEFL IBT is version of the test that is the most widely used today. IBT stands for Internet Based Test. The entire TOEFL..</p>
-                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                    <a className="xb-item--link" href="/TOEFLIBT" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -397,9 +397,9 @@ export default function Home() {
                                     <a href="coaching-single.html"><img src="/assets/pic/exam3.jpg" alt="" style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
-                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html"> GRE</a></h3>
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="/GRE"> GRE</a></h3>
                                     <p className="xb-item--content" style={{textAlign:'justify'}}>If you're planning on going to graduate school, you'll probably need to take the GRE test (or the Graduate Record Exam)....</p>
-                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                    <a className="xb-item--link" href="/GRE" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -411,9 +411,9 @@ export default function Home() {
                                     <a href="coaching-single.html"><img src="/assets/pic/exam4.jpg" alt="" style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
-                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">PTE </a></h3>
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="/PTE">PTE </a></h3>
                                     <p className="xb-item--content" style={{textAlign:'justify'}}>PTE test is based on real-life academic and general content. You will come across graphs, summaries, excerpts,..</p>
-                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                    <a className="xb-item--link" href="/PTE" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
@@ -425,9 +425,9 @@ export default function Home() {
                                     <a href="coaching-single.html"><img src="/assets/pic/exam5.jpg" alt=""  style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
-                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">SAT </a></h3>
+                                    <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="/SAT">SAT </a></h3>
                                     <p className="xb-item--content" style={{textAlign:'justify'}}>The SAT is a standardized test widely used for college admissions in the United States. Introduced in ..</p>
-                                    <a className="xb-item--link" href="coaching-single.html" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
+                                    <a className="xb-item--link" href="/SAT" title='Read More'><img src="assets/img/icon/long_arrow_right.svg" alt="" /></a>
                                 </div>
                             </div>
                         </div>
