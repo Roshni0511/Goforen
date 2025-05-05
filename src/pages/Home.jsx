@@ -14,7 +14,7 @@ export default function Home() {
   const [background, setBackground] = useState("");
 
   useEffect(() => {
-    const backgroundUrl = "/assets/img/bg/hero_bg.jpg";
+    const backgroundUrl = "https://www.goforen.com/images/slider-4.jpg";
     setBackground(backgroundUrl);
   }, []);
   // data-background img end
@@ -259,7 +259,7 @@ export default function Home() {
 
                                 <div className="xb-item--inner">
                                     <div className="xb-item--img">
-                                        <img src="assets/img/blog/img_01.jpg" alt="" />
+                                        <img src="/assets/pic/why1.jpg" alt="" />
                                     </div>
                                     <div className="xb-item--holder">
                                         
@@ -278,7 +278,7 @@ export default function Home() {
 
                                 <div className="xb-item--inner">
                                     <div className="xb-item--img">
-                                        <a href="blog-single.html"><img src="assets/img/blog/img_02.jpg" alt="" /></a>
+                                        <a href="blog-single.html"><img src="/assets/pic/why2.jpg" alt="" /></a>
                                     </div>
                                     <div className="xb-item--holder">
                                        
@@ -299,7 +299,7 @@ export default function Home() {
 
                                 <div className="xb-item--inner">
                                     <div className="xb-item--img">
-                                        <a href="blog-single.html"><img src="assets/img/blog/img_03.jpg" alt="" /></a>
+                                        <a href="blog-single.html"><img src="/assets/pic/why3.jpg" alt="" /></a>
                                     </div>
                                     <div className="xb-item--holder">
                                        
@@ -331,7 +331,7 @@ export default function Home() {
                <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
-                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_01.jpg" alt="" /></a>
+                                    <a href="coaching-single.html"><img src="/assets/pic/exam1.jpg" alt="" style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
                                     <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html"> IELTS</a></h3>
@@ -345,7 +345,7 @@ export default function Home() {
                     <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
-                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_02.jpg" alt="" /></a>
+                                    <a href="coaching-single.html"><img src="/assets/pic/exam2.jpg" alt="" style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
                                     <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">TOEFL   IBT</a></h3>
@@ -359,7 +359,7 @@ export default function Home() {
                     <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
-                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_03.jpg" alt="" /></a>
+                                    <a href="coaching-single.html"><img src="/assets/pic/exam3.jpg" alt="" style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
                                     <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html"> GRE</a></h3>
@@ -373,7 +373,7 @@ export default function Home() {
                     <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
-                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_03.jpg" alt="" /></a>
+                                    <a href="coaching-single.html"><img src="/assets/pic/exam4.jpg" alt="" style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
                                     <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">PTE </a></h3>
@@ -387,7 +387,7 @@ export default function Home() {
                     <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
-                                    <a href="coaching-single.html"><img src="assets/img/coaching/img_03.jpg" alt=""  /></a>
+                                    <a href="coaching-single.html"><img src="/assets/pic/exam5.jpg" alt=""  style={{minHeight:'100px'}}/></a>
                                 </div>
                                 <div className="xb-item--holder pos-rel">
                                     <h3 className="xb-item--title" style={{display:'flex',justifyContent:'center'}}><a href="coaching-single.html">SAT </a></h3>

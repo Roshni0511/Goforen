@@ -11,7 +11,7 @@ export default function Aboutusrace() {
       const [background, setBackground] = useState("");
     
       useEffect(() => {
-        const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
+        const backgroundUrl = "https://www.goforen.com/images/bg/breadcrumb-bg.jpg";
         setBackground(backgroundUrl);
       }, []);
       // data-background img end
@@ -29,20 +29,37 @@ export default function Aboutusrace() {
 
       {/* <!-- breadcrumb start --> */}
       <section
-        className="breadcrumb pos-rel bg_img"
-        style={{ backgroundImage: `url(${background})` }}
-      >
-        <div className="container">
-          <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">About Us</h2>
-            <ul className="breadcrumb__list clearfix">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-              <li className="breadcrumb-item">About Us - RACE</li>
-            </ul>
-          </div>
-        </div>
+  className="breadcrumb pos-rel bg_img"
+  style={{ 
+    backgroundImage: `url(${background})`, 
+    minHeight: '400px',
+    position: 'relative',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}
+>
+  {/* Overlay */}
+  <div style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
+    zIndex: 1
+  }}></div>
+
+  <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+    <div className="breadcrumb__content">
+      <h2 className="breadcrumb__title" style={{color:'#fff'}}>About Us</h2>
+      <ul className="breadcrumb__list clearfix">
+        <li className="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li className="breadcrumb-item" >About Us - RACE</li>
+      </ul>
+    </div>
+  </div>
         <div className="breadcrumb__circle">
           <span
             className="big"
@@ -102,7 +119,7 @@ export default function Aboutusrace() {
                         className="inner-img d-inline-block wow skewIn"
                         data-wow-delay="200ms"
                       >
-                        <img src="assets/img/bg/mission.jpg" alt="" />
+                        <img src="/assets/pic/mission.webp" alt="" />
                       </div>
                     </div>
                   </div>
@@ -121,7 +138,7 @@ export default function Aboutusrace() {
                   <div className="col-lg-6 mt-30">
                     <div className="mission__img">
                       <div className="inner-img d-inline-block wow skewIn">
-                        <img src="assets/img/bg/vission.jpg" alt="" />
+                        <img src="/assets/pic/viisiion.jpg" alt="" />
                       </div>
                     </div>
                   </div>

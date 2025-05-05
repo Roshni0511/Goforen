@@ -320,7 +320,7 @@ p{
 }
 
 .slide {
-  width: 220px;
+  width: 220px  ;
   height: 150px;
   margin-right: 20px;
   object-fit: cover;

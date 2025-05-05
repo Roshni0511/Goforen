@@ -74,7 +74,7 @@ export default function FooterTop() {
               </div>
             </div>
             <div className="xb-newsletter__img">
-              <img src="assets/img/bg/newsletter_img.png" alt="" />
+              <img src="/assets/pic/BannerMob.jpg" alt="" />
             </div>
           </div>
         </div>
