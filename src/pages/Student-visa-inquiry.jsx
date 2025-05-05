@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import FormGroup from "@mui/material/FormGroup";
@@ -17,6 +17,10 @@ import HouseIcon from "@mui/icons-material/House";
 import AddRoadIcon from "@mui/icons-material/AddRoad";
 import PinDropIcon from "@mui/icons-material/PinDrop";
 import AddLocationIcon from "@mui/icons-material/AddLocation";
+import IntendedStudyDetails from "../component/IntendedStudyDetails";
+import AttemptedInternationalExams from "../component/AttemptedInternationalExams";
+import UploadYourResume from "../component/UploadYourResume";
+import AdditionalDetails from "../component/AdditionalDetails";
 
 const initialRows = [
   {
@@ -118,6 +122,8 @@ const streamOptions = [
 ];
 
 export default function Studentvisainquiry() {
+ 
+ 
   // data-background img start
   const [background, setBackground] = useState("");
 
@@ -181,7 +187,6 @@ export default function Studentvisainquiry() {
     setRows(updatedRows);
   };
 
-  
   return (
     <div>
       <Navbar />
@@ -1398,7 +1403,7 @@ export default function Studentvisainquiry() {
                           </div>
                           <div className="col-4">
                             <button
-                              style={{ backgroundColor: "red", color: "white" }}
+                              style={{ backgroundColor: "tomato", color: "white" }}
                               onClick={() => removeRow(index)}
                               disabled={rows.length <= 1}
                             >
@@ -1423,8 +1428,10 @@ export default function Studentvisainquiry() {
               <div className="custom-experience-wrapper">
                 <div className="custom-experience-header">
                   <div className="experience-toggle-wrapper">
-                    <h3 className="wow skewIn ">Do you have any working experience?</h3>
-                    <span style={{ marginRight: "8px", marginLeft: "10px" }}>
+                    <h3 className="wow skewIn ">
+                      Do you have any working experience?
+                    </h3>
+                    <span style={{ marginRight: "8px", marginLeft: "10px"}}>
                       {" "}
                       No
                     </span>
@@ -2669,7 +2676,7 @@ export default function Studentvisainquiry() {
                               <button
                                 className="custom-btn-remove"
                                 onClick={() => removeExperienceRow(index)}
-                                style={{ background: "red", color: "white" }}
+                                style={{ background: "tomato", color: "white" }}
                               >
                                 -
                               </button>
@@ -2685,6 +2692,22 @@ export default function Studentvisainquiry() {
           </div>
         </div>
         {/* any working experience end  */}
+
+        {/* Intended Study Details start  */}
+        <IntendedStudyDetails />
+        {/* Intended Study Details end  */}
+
+        {/* Attempted Any International Exams start  */}
+        <AttemptedInternationalExams />
+        {/* Attempted Any International Exams end */}
+
+        {/* Upload Your Resume start  */}
+        <UploadYourResume />
+        {/* Upload Your Resume end  */}
+
+        {/* Additional Details start  */}
+        <AdditionalDetails />
+        {/* Additional Details end */}
       </section>
       {/* <!-- contact end --> */}
       <Footer />
