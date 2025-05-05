@@ -1,28 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControl from "@mui/material/FormControl";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import CallIcon from "@mui/icons-material/Call";
-import RingVolumeIcon from "@mui/icons-material/RingVolume";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import EmailIcon from "@mui/icons-material/Email";
-import PublicIcon from "@mui/icons-material/Public";
-import HouseIcon from "@mui/icons-material/House";
-import AddRoadIcon from "@mui/icons-material/AddRoad";
-import PinDropIcon from "@mui/icons-material/PinDrop";
-import AddLocationIcon from "@mui/icons-material/AddLocation";
-import IntendedStudyDetails from "../component/IntendedStudyDetails";
-import AttemptedInternationalExams from "../component/AttemptedInternationalExams";
-import UploadYourResume from "../component/UploadYourResume";
-import AdditionalDetails from "../component/AdditionalDetails";
-import DetailsAboutSpouse from "../component/DetailsAboutSpouse";
-
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 const initialRows = [
   {
     qualification: "10th SSC",
@@ -121,24 +99,32 @@ const streamOptions = [
   "MVSC",
   "Other",
 ];
+export default function DetailsAboutSpouse() {
+  const [rows, setRows] = useState(initialRows);
 
-export default function Studentvisainquiry() {
- 
-  const [showSpouseDetails, setShowSpouseDetails] = useState(false); // default: No
-
-  const handleToggle = (e) => {
-    setShowSpouseDetails(e.target.checked); // true = Yes, false = No
+  const handleChange = (index, field, value) => {
+    const updatedRows = [...rows];
+    updatedRows[index][field] = value;
+    setRows(updatedRows);
   };
-  // data-background img start
-  const [background, setBackground] = useState("");
 
-  useEffect(() => {
-    const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
-    setBackground(backgroundUrl);
-  }, []);
-  // data-background img end
+  const addRow = () => {
+    setRows([
+      ...rows,
+      {
+        qualification: "",
+        stream: "",
+        major: "",
+        year: "",
+        percentage: "",
+        backlog: "",
+      },
+    ]);
+  };
 
-  const [hasExperience, setHasExperience] = useState(false);
+//   
+
+ const [hasExperience, setHasExperience] = useState(false);
   const [experienceData, setExperienceData] = useState([
     { company: "", designation: "", from: "", to: "", years: "" },
   ]);
@@ -165,1299 +151,189 @@ export default function Studentvisainquiry() {
     setExperienceData(updated);
   };
 
-  const [rows, setRows] = useState(initialRows);
-
-  const handleChange = (index, field, value) => {
-    const updatedRows = [...rows];
-    updatedRows[index][field] = value;
-    setRows(updatedRows);
-  };
-
-  const addRow = () => {
-    setRows([
-      ...rows,
-      {
-        qualification: "",
-        stream: "",
-        major: "",
-        year: "",
-        percentage: "",
-        backlog: "",
-      },
-    ]);
-  };
-
   const removeRow = (index) => {
     const updatedRows = rows.filter((_, i) => i !== index);
     setRows(updatedRows);
   };
-
   return (
     <div>
-      <Navbar />
-      {/* <!-- breadcrumb start --> */}
-      <section
-        className="breadcrumb pos-rel bg_img"
-        style={{ backgroundImage: `url(${background})` }}
-      >
-        <div className="container">
-          <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">Student Visa</h2>
-            <ul className="breadcrumb__list clearfix">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-
-              <li className="breadcrumb-item">Student Visa</li>
-            </ul>
-          </div>
-        </div>
-        <div className="breadcrumb__circle">
-          <span
-            className="big"
-            data-parallax='{"y" : 100, "scale" : 0.1}'
-          ></span>
-          <span
-            className="small"
-            data-parallax='{"y" : 100, "scale" : 0.1}'
-          ></span>
-        </div>
-        <div className="breadcrumb__shape">
-          <div className="shape shape--1">
-            <div className="shape-inner" data-parallax='{"x":-50,"y":80}'>
-              <img src="assets/img/shape/br_shape1.png" alt="" />
+      <div className="container mt-5">
+        <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
+          <div className="p-5">
+            <div className="xb-item--holder mb-25">
+              <h3 className="wow skewIn ">
+                Please Provide Details About Your Spouse
+              </h3>
             </div>
-          </div>
-          <div className="shape shape--2">
-            <div className="shape-inner" data-parallax='{"x":50,"y":-90}'>
-              <img src="assets/img/shape/br_shape2.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- breadcrumb end --> */}
-
-      {/* <!-- contact start --> */}
-      <section
-        className="contact  gray-bg"
-        style={{ paddingBottom: "60px", paddingTop: "100px" }}
-      >
-        <div>
-          <div className="container">
-            <blockquote>
-              <p>
-                Most countries will issue student visas in order to allow
-                foreign students to attend school within their borders. However,
-                in most cases the student must be enrolled at a postsecondary
-                institution of higher learning. Foreign exchange students must
-                therefore usually obtain a different type of visa, such as for
-                temporary residence.
-              </p>
-
-              <div className="quote">
-                <img src="assets/img/icon/quote.png" alt="" />
-              </div>
-            </blockquote>
-          </div>
-        </div>
-        {/* Primary Details start  */}
-        <div className="container">
-          <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
+            <form className="xb-item--form contact-from" action="#!">
             <div className="row">
-              <div className="col-12">
-                <div className="p-5">
-                  <div className="xb-item--holder mb-25">
-                    <h3 className="wow skewIn ">Primary Details</h3>
-                  </div>
-                  <form className="xb-item--form contact-from" action="#!">
-                    <div className="row">
-                      <div className="col-12">
-                        <FormControl>
-                          <RadioGroup
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue="Father"
-                            name="radio-buttons-group"
-                            style={{ display: "block" }}
-                          >
-                            <FormControlLabel
-                              value="Father"
-                              control={<Radio />}
-                              label="Father"
-                            />
-                            <FormControlLabel
-                              value="Spouse"
-                              control={<Radio />}
-                              label="Spouse"
-                            />
-                          </RadioGroup>
-                        </FormControl>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Your Full Name :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <PermIdentityIcon />
-                          </span>
-                          <input type="text" placeholder="Enter your Name" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Your Father Name :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <PermIdentityIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter your Father Name"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Contact No. (Mobile) :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <CallIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter Your Contact Number"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="col-lg-6">
-                        <label htmlFor=""> Landline Number (If Any) :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <RingVolumeIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder=" Enter Your Landline Number"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="col-lg-6">
-                        <label htmlFor="">
-                          Alternate Contact No. (Mobile) :
-                        </label>
-                        <div className="xb-item--field">
-                          <span>
-                            <CallIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter Your Contact Number"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Email :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <EmailIcon />
-                          </span>
-                          <input type="text" placeholder="Enter Your Email" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Date Of Birth :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <CalendarMonthIcon />
-                          </span>
-                          <input
-                            type="Date"
-                            placeholder="Enter Your DOB"
-                            style={{ width: "100%" }}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Desired Country :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <PublicIcon />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">Select Country</span>
-                            <ul className="list">
-                              <li
-                                data-value="1"
-                                className="option multiple focus"
-                              >
-                                Canada
-                              </li>
-                              <li data-value="2" className="option">
-                                Australia
-                              </li>
-                              <li data-value="3" className="option">
-                                New Zealand
-                              </li>
-                              <li data-value="4" className="option">
-                                USA
-                              </li>
-                              <li data-value="4" className="option">
-                                UK
-                              </li>
-                              <li data-value="4" className="option">
-                                Europe
-                              </li>
-                              <li data-value="4" className="option">
-                                Any Other
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <div className="xb-item--field">
-                          <label>
-                            <strong>
-                              If you are married, Do you want dependent visa for
-                              your spouse ?
-                            </strong>
-                          </label>
-                          <FormGroup row>
-                            <label style={{ marginRight: "10px" }}>No</label>
-                            <FormControlLabel
-                              control={<Switch color="black"  checked={showSpouseDetails}
-                              onChange={handleToggle}/>}
-                              label="Yes"
-                            />
-                          </FormGroup>
-                        </div>
-                      </div>
-
-                    </div>
-                  </form>
+              <div className="col-lg-6 ">
+                <label htmlFor="">Full Name :</label>
+                <div className="xb-item--field">
+                  <span>
+                    <PermIdentityIcon />
+                  </span>
+                  <input type="text" style={{ width: "100%" }} />
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <label htmlFor="">Date Of Birth :</label>
+                <div className="xb-item--field">
+                  <span>
+                    <CalendarMonthIcon />
+                  </span>
+                  <input
+                    type="date"
+                    placeholder="Enter Your DOB"
+                    style={{ width: "100%" }}
+                  />
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        {/* Primary Details end  */}
+            </form>
 
-        {showSpouseDetails && <DetailsAboutSpouse />}
-
-        {/* Residential Details start  */}
-        <div className="container mt-5">
-          <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-            <div className="row">
-              <div className="col-12">
-                <div className="p-5">
-                  <div className="xb-item--holder mb-25">
-                    <h3 className="wow skewIn ">Residential Details</h3>
-                  </div>
-                  <form className="xb-item--form contact-from" action="#!">
-                    <div className="row">
-                      <div className="col-lg-6">
-                        <label htmlFor="">Flat / Block No. :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <HouseIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter your Flat / Block No.."
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Name Of The Building :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <HouseIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter your Building Name"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Road / Street/ Locality :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <AddRoadIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter your Road / Street/ Locality"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="col-lg-6">
-                        <label htmlFor=""> Pincode :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <PinDropIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder=" Enter Your Pincode"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="col-lg-6">
-                        <label htmlFor="">Area (Only For City Surat) :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <AddLocationIcon />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">Select Area</span>
-                            <ul
-                              className="list"
-                              style={{ height: "300px", overflowY: "auto" }}
-                            >
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Palanpur Jakatnaka{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Sarthana{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Laskana{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Hazira{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Dindoli{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Navagam{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Limbayat{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Parvat Patiya{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Sachin{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bhestan{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Pandesara{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Udhna{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Vesu{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Dumas{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Piplod{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Citylight road{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Ghod dod road{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Athwalines{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Nanpura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                L.H.Road{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Puna Gam{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Varachha{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Kosad{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Amroli{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Ved Road{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Katargam{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Navapura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Begampura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Gopipura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bhagal{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Ring Road{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Jahangirpura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Rander{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Adajan{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Rughnathpura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Umarwada{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Majuragate{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bhesan{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bhatha{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Dabholi{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Godadara{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Abrama{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Pal{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Lalgate{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Chowk{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Sahara Darwaja{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Vareli{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Sayan{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Olpad{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Hirabazar{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Ichchapor{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Palsana{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Kadodara{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Kamrej{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Pandesara GIDC{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Sachin GIDC{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Unn{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                A K Road{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Sagrampura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Textile Market{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                U.M Road{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bhatar{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Delhi gate{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Singanpore{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Lal Darwaja{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Rampura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Salabatpura{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bamroli Road{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Any Where In Surat{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Parle Point{" "}
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">City :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <AddLocationIcon />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">Select City</span>
-                            <ul
-                              className="list"
-                              style={{ height: "300px", overflowY: "auto" }}
-                            >
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Vyara{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Vapi{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Valsad{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Umargm{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Surat{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Songadh{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Silvassa{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Rajpipada{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Navsari{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Mandvi{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Kosamba{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Jambusar{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Hasot{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Dang{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Daman{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Dahej{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Chikhali{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bilimora{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Auckland{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bharuch{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bardoli{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Ankleshwar{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Ahwa{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Mosali{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Vadodra{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Modasa{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Amritsar{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Bengaluru{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Mumbai{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Other{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Surendranagar{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Jalaun{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Ahmedabad{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                Dakor{" "}
-                              </li>
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                {" "}
-                                FINLAND{" "}
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Residential Details end  */}
-
-        {/* Educational Qualification start  */}
-
-        <div className="container mt-5">
-          <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-            <div className="p-5">
-              <div className="xb-item--holder mb-25">
-                <h3 className="wow skewIn ">Educational Qualification</h3>
-              </div>
-              <table
-                style={{ width: "100%", borderCollapse: "collapse" }}
-                border="1"
-              >
-                <thead>
-                  <tr
-                    style={{ backgroundColor: "#edf3f5", textAlign: "center" }}
-                  >
-                    <th>Qualification</th>
-                    <th>Stream Of Degree</th>
-                    <th>Major Subjects</th>
-                    <th>Year Of Completion</th>
-                    <th>Percentage</th>
-                    <th>Total ATKT or Backlog</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((row, index) => (
-                    <tr key={index}>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          defaultValue={row.qualification}
-                          onBlur={(e) =>
-                            handleChange(index, "qualification", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <select
-                          style={{
-                            padding: "15px",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          value={row.stream}
-                          onChange={(e) =>
-                            handleChange(index, "stream", e.target.value)
-                          }
-                        >
-                          {streamOptions.map((opt, idx) => (
-                            <option key={idx} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </td>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          value={row.major}
-                          onChange={(e) =>
-                            handleChange(index, "major", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px ",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          value={row.year}
-                          onChange={(e) =>
-                            handleChange(index, "year", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          value={row.percentage}
-                          onChange={(e) =>
-                            handleChange(index, "percentage", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px   ",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          value={row.backlog}
-                          onChange={(e) =>
-                            handleChange(index, "backlog", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <div className="row">
-                          <div className="col-4">
-                            <button
-                              style={{
-                                backgroundColor: "green",
-                                color: "white",
-                              }}
-                              onClick={addRow}
-                            >
-                              +
-                            </button>
-                          </div>
-                          <div className="col-4">
-                            <button
-                              style={{ backgroundColor: "tomato", color: "white" }}
-                              onClick={() => removeRow(index)}
-                              disabled={rows.length <= 1}
-                            >
-                              -
-                            </button>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        {/* Educational Qualification end */}
-
-        {/* any working experience start  */}
-        <div className="container mt-5">
-          <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-            <div className="p-5">
-              <div className="custom-experience-wrapper">
-                <div className="custom-experience-header">
-                  <div className="experience-toggle-wrapper">
-                    <h3 className="wow skewIn ">
-                      Do you have any working experience?
-                    </h3>
-                    <span style={{ marginRight: "8px", marginLeft: "10px"}}>
-                      {" "}
-                      No
-                    </span>
-                    <label className="experience-toggle-switch">
+            <label><strong>Educational Details :</strong></label>
+            <table
+              style={{ width: "100%", borderCollapse: "collapse" }}
+              border="1"
+            >
+              <thead>
+                <tr style={{ backgroundColor: "#edf3f5", textAlign: "center" }}>
+                  <th>Qualification</th>
+                  <th>Stream Of Degree</th>
+                  <th>Major Subjects</th>
+                  <th>Year Of Completion</th>
+                  <th>Percentage</th>
+                  <th>Total ATKT or Backlog</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row, index) => (
+                  <tr key={index}>
+                    <td>
                       <input
-                        type="checkbox"
-                        checked={hasExperience}
-                        onChange={toggleExperience}
+                        style={{
+                          padding: "15px",
+                          border: "1px solid #EDF3F5",
+                          borderRadius: "10px",
+                        }}
+                        type="text"
+                        defaultValue={row.qualification}
+                        onBlur={(e) =>
+                          handleChange(index, "qualification", e.target.value)
+                        }
                       />
-                      <span className="experience-slider"></span>
-                    </label>
-                    <span style={{ marginLeft: "8px" }}>Yes</span>
-                  </div>
-                </div>
-
-                {hasExperience && (
-                  <table
+                    </td>
+                    <td>
+                      <select
+                        style={{
+                          padding: "15px",
+                          border: "1px solid #EDF3F5",
+                          borderRadius: "10px",
+                        }}
+                        value={row.stream}
+                        onChange={(e) =>
+                          handleChange(index, "stream", e.target.value)
+                        }
+                      >
+                        {streamOptions.map((opt, idx) => (
+                          <option key={idx} value={opt}>
+                            {opt}
+                          </option>
+                        ))}
+                      </select>
+                    </td>
+                    <td>
+                      <input
+                        style={{
+                          padding: "15px",
+                          border: "1px solid #EDF3F5",
+                          borderRadius: "10px",
+                        }}
+                        type="text"
+                        value={row.major}
+                        onChange={(e) =>
+                          handleChange(index, "major", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style={{
+                          padding: "15px ",
+                          border: "1px solid #EDF3F5",
+                          borderRadius: "10px",
+                        }}
+                        type="text"
+                        value={row.year}
+                        onChange={(e) =>
+                          handleChange(index, "year", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style={{
+                          padding: "15px",
+                          border: "1px solid #EDF3F5",
+                          borderRadius: "10px",
+                        }}
+                        type="text"
+                        value={row.percentage}
+                        onChange={(e) =>
+                          handleChange(index, "percentage", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        style={{
+                          padding: "15px   ",
+                          border: "1px solid #EDF3F5",
+                          borderRadius: "10px",
+                        }}
+                        type="text"
+                        value={row.backlog}
+                        onChange={(e) =>
+                          handleChange(index, "backlog", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <div className="row">
+                        <div className="col-4">
+                          <button
+                            style={{
+                              backgroundColor: "green",
+                              color: "white",
+                            }}
+                            onClick={addRow}
+                          >
+                            +
+                          </button>
+                        </div>
+                        <div className="col-4">
+                          <button
+                            style={{
+                              backgroundColor: "tomato",
+                              color: "white",
+                            }}
+                            onClick={() => removeRow(index)}
+                            disabled={rows.length <= 1}
+                          >
+                            -
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <br />
+            <label><strong>Employeement Details :</strong></label>
+            <table
                     id="experience-table"
                     className="custom-experience-table"
                     border="1"
@@ -2694,38 +1570,14 @@ export default function Studentvisainquiry() {
                         </tr>
                       ))}
                     </tbody>
-                  </table>
-                )}
-              </div>
-            </div>
+             </table>
+
+             <br />
+
+             
           </div>
         </div>
-        {/* any working experience end  */}
-
-        {/* Intended Study Details start  */}
-        <IntendedStudyDetails />
-        {/* Intended Study Details end  */}
-
-        {/* Attempted Any International Exams start  */}
-        <AttemptedInternationalExams />
-        {/* Attempted Any International Exams end */}
-
-        {/* Upload Your Resume start  */}
-        <UploadYourResume />
-        {/* Upload Your Resume end  */}
-
-        {/* Additional Details start  */}
-        <AdditionalDetails />
-        {/* Additional Details end */}
-
-        <div className="container">
-        <button style={{background:'#00cc99',padding:'10px 20px', margin:'10px',borderRadius:'10px'}}>
-          <a href="" style={{color:'white'}}> submit</a>
-        </button>
-        </div>
-      </section>
-      {/* <!-- contact end --> */}
-      <Footer />
+      </div>
     </div>
   );
 }
