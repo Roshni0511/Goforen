@@ -6,7 +6,7 @@ const SuccessStory = () => {
             const [background, setBackground] = useState("");
             
               useEffect(() => {
-                const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
+                const backgroundUrl = "https://www.goforen.com/images/bg/breadcrumb-bg.jpg";
                 setBackground(backgroundUrl);
               }, []);
               const [background1, setBackground1] = useState("");
@@ -20,20 +20,39 @@ const SuccessStory = () => {
       <Navbar />
           {/* <!-- breadcrumb start --> */}
           <section
-        className="breadcrumb pos-rel bg_img"
-        style={{ backgroundImage: `url(${background})` }}
-      >
-        <div className="container">
-          <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">Success Stories</h2>
+  className="breadcrumb pos-rel bg_img"
+  style={{ 
+    backgroundImage: `url(${background})`, 
+    minHeight: '400px',
+    position: 'relative',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}
+>
+  {/* Overlay */}
+  <div style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
+    zIndex: 1
+  }}></div>
+
+  <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+    <div className="breadcrumb__content">
+    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Success Stories</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
               </li>
               <li className="breadcrumb-item">Success Stories</li>
             </ul>
-          </div>
-        </div>
+    </div>
+  </div>
+      
+        
         <div className="breadcrumb__circle">
           <span
             className="big"
@@ -68,7 +87,7 @@ const SuccessStory = () => {
                                 <div className="xb-item--inner">
                                     <div className="xb-item--author-info ul_li mb-40">
                                         <div className="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar1.png" alt="" />
+                                            <img src="/assets/pic/bd3.png" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">RISHI MODI - STV CANADA</h3>
@@ -87,7 +106,7 @@ const SuccessStory = () => {
                                 <div className="xb-item--inner">
                                     <div className="xb-item--author-info ul_li mb-40">
                                         <div className="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar2.png" alt="" />
+                                            <img src="/assets/pic/bd3.png" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">
@@ -107,7 +126,7 @@ const SuccessStory = () => {
                                 <div className="xb-item--inner">
                                     <div className="xb-item--author-info ul_li mb-40">
                                         <div className="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar3.png" alt="" />
+                                            <img src="/assets/pic/bd3.png" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">MUBASHARA MALBARI - STV CANADA </h3>
@@ -126,7 +145,7 @@ const SuccessStory = () => {
                                 <div className="xb-item--inner">
                                     <div className="xb-item--author-info ul_li mb-40">
                                         <div className="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar4.png" alt="" />
+                                            <img src="/assets/pic/bd3.png" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">Tushar Javeri - TRV Europe </h3>
@@ -145,7 +164,7 @@ const SuccessStory = () => {
                                 <div className="xb-item--inner">
                                     <div className="xb-item--author-info ul_li mb-40">
                                         <div className="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar5.png" alt="" />
+                                            <img src="/assets/pic/bd3.png" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">
@@ -165,7 +184,7 @@ const SuccessStory = () => {
                                 <div className="xb-item--inner">
                                     <div className="xb-item--author-info ul_li mb-40">
                                         <div className="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar6.png" alt="" />
+                                            <img src="/assets/pic/bd3.png" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">Pooja D. Parekh - STV UK </h3>
@@ -184,7 +203,7 @@ const SuccessStory = () => {
                                 <div className="xb-item--inner">
                                     <div className="xb-item--author-info ul_li mb-40">
                                         <div className="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar7.png" alt="" />
+                                            <img src="/assets/pic/bd3.png" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">
@@ -203,7 +222,7 @@ const SuccessStory = () => {
                                 <div className="xb-item--inner">
                                     <div className="xb-item--author-info ul_li mb-40">
                                         <div className="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar1.png" alt="" />
+                                            <img src="/assets/pic/bd3.png" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">Mansi Bhavsar, PRV - Canada</h3>

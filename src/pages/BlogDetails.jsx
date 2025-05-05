@@ -72,7 +72,7 @@ export default function BlogDetails() {
                         <div className="blog-post-wrapper">
                             <article className="post-details">
                                 <div className="post-thumb">
-                                    <img src="assets/img/blog/post_02.jpg" alt="" />
+                                    <img src="/assets/pic/bd1.webp" alt="" />
                                 </div>
                                 <ul className="post-meta ul_li">
                                     <li><span><i className="far fa-user"></i><span className="author vcard">Admin</span></span></li>
@@ -91,7 +91,7 @@ export default function BlogDetails() {
                                 <p>Visa consultants provide continuous support, helping you navigate any additional requests from immigration authorities and addressing any concerns that may arise during the processing period.</p>
                                 <div className="row align-items-center mt-none-20 mb-30">
                                     <div className="col-lg-6 col-md-6 mt-30">
-                                        <img src="assets/img/blog/post_04.jpg" alt="" />
+                                        <img src="/assets/pic/bd2.png" alt="" />
                                     </div>
                                     <div className="col-lg-6 col-md-6 mt-30">
                                         <ul className="post-info-list list-unstyled">
@@ -154,7 +154,7 @@ export default function BlogDetails() {
                                                 <li>
                                                     <div className="comments-box">
                                                         <div className="comments-avatar">
-                                                            <img src="assets/img/blog/avatar1.png" alt="" />
+                                                            <img src="/assets/pic/bd3.png" alt="" />
                                                         </div>
                                                         <div className="comments-text">
                                                             <div className="avatar-name">
@@ -171,7 +171,7 @@ export default function BlogDetails() {
                                                 <li className="children">
                                                     <div className="comments-box">
                                                         <div className="comments-avatar">
-                                                            <img src="assets/img/blog/avatar2.png" alt="" />
+                                                            <img src="/assets/pic/bd3.png" alt="" />
                                                         </div>
                                                         <div className="comments-text">
                                                             <div className="avatar-name">
@@ -189,7 +189,7 @@ export default function BlogDetails() {
                                                 <li>
                                                     <div className="comments-box">
                                                         <div className="comments-avatar">
-                                                            <img src="assets/img/blog/avatar3.png" alt="" />
+                                                            <img src="/assets/pic/bd3.png" alt="" />
                                                         </div>
                                                         <div className="comments-text">
                                                             <div className="avatar-name">
@@ -256,7 +256,7 @@ export default function BlogDetails() {
                                 <div className="widget__post">
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="blog-single.html"><img src="assets/img/blog/w_01.jpg" alt="" /></a>
+                                            <a href="blog-single.html"><img src="/assets/pic/blog4.webp" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">nov 28,2023 </span>
@@ -265,7 +265,7 @@ export default function BlogDetails() {
                                     </div>
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="blog-single.html"><img src="assets/img/blog/w_02.jpg" alt="" /></a>
+                                            <a href="blog-single.html"><img src="/assets/pic/blog5.webp" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">July 16,2023</span>
@@ -274,7 +274,7 @@ export default function BlogDetails() {
                                     </div>
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="blog-single.html"><img src="assets/img/blog/w_03.jpg" alt="" /></a>
+                                            <a href="blog-single.html"><img src="/assets/pic/blog6.jpg" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">July 25,2023</span>

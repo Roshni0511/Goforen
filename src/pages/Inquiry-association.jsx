@@ -8,7 +8,7 @@ export default function Inquiryassociation() {
     const [background, setBackground] = useState("");
   
     useEffect(() => {
-      const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
+      const backgroundUrl = "https://www.goforen.com/images/bg/breadcrumb-bg.jpg";
       setBackground(backgroundUrl);
     }, []);
     // data-background img end
@@ -49,12 +49,29 @@ export default function Inquiryassociation() {
       <Navbar />
        {/* <!-- breadcrumb start --> */}
        <section
-        className="breadcrumb pos-rel bg_img"
-        style={{ backgroundImage: `url(${background})` }}
-      >
-        <div className="container">
-          <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">Inquiry For Assocation with us</h2>
+  className="breadcrumb pos-rel bg_img"
+  style={{ 
+    backgroundImage: `url(${background})`, 
+    minHeight: '400px',
+    position: 'relative',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}
+>
+  {/* Overlay */}
+  <div style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
+    zIndex: 1
+  }}></div>
+
+  <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+    <div className="breadcrumb__content">
+    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Inquiry For Assocation with us</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
@@ -64,8 +81,10 @@ export default function Inquiryassociation() {
               </li>
               <li className="breadcrumb-item">Inquiry For Assocation with us</li>
             </ul>
-          </div>
-        </div>
+    </div>
+  </div>
+      
+       
         <div className="breadcrumb__circle">
           <span
             className="big"

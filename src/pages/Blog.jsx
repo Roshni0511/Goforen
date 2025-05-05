@@ -8,7 +8,7 @@ export default function Blog() {
       const [background, setBackground] = useState("");
     
       useEffect(() => {
-        const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
+        const backgroundUrl = "https://www.goforen.com/images/bg/breadcrumb-bg.jpg";
         setBackground(backgroundUrl);
       }, []);
       // data-background img end
@@ -25,12 +25,29 @@ export default function Blog() {
       <Navbar />
        {/* <!-- breadcrumb start --> */}
        <section
-        className="breadcrumb pos-rel bg_img"
-        style={{ backgroundImage: `url(${background})` }}
-      >
-        <div className="container">
-          <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">Blog</h2>
+  className="breadcrumb pos-rel bg_img"
+  style={{ 
+    backgroundImage: `url(${background})`, 
+    minHeight: '400px',
+    position: 'relative',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}
+>
+  {/* Overlay */}
+  <div style={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
+    zIndex: 1
+  }}></div>
+
+  <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+    <div className="breadcrumb__content">
+    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Blog</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
@@ -38,8 +55,10 @@ export default function Blog() {
               
               <li className="breadcrumb-item">Blog</li>
             </ul>
-          </div>
-        </div>
+    </div>
+  </div>
+      
+      
         <div className="breadcrumb__circle">
           <span
             className="big"
@@ -73,7 +92,7 @@ export default function Blog() {
                         <div className="blog-post-wrapper">
                             <article className="single-post-item">
                                 <div className="post-thumbnail-wrapper">
-                                    <a href="/BlogDetails"><img src="assets/img/blog/post_02.jpg" alt="" /></a>
+                                    <a href="/BlogDetails"><img src="/assets/pic/blog1.webp" alt="" /></a>
                                 </div>
                                 <div className="post-content-wrapper">
                                     <ul className="post-meta ul_li">
@@ -92,7 +111,7 @@ export default function Blog() {
                             </article>
                             <article className="single-post-item">
                                 <div className="post-thumbnail-wrapper">
-                                    <a href="/BlogDetails"><img src="assets/img/blog/post_01.jpg" alt="" /></a>
+                                    <a href="/BlogDetails"><img src="/assets/pic/blog2.jpg" alt="" /></a>
                                 </div>
                                 <div className="post-content-wrapper">
                                     <ul className="post-meta ul_li">
@@ -111,7 +130,7 @@ export default function Blog() {
                             </article>
                             <article className="single-post-item">
                                 <div className="post-thumbnail-wrapper">
-                                    <a href="/BlogDetails"><img src="assets/img/blog/post_03.jpg" alt="" /></a>
+                                    <a href="/BlogDetails"><img src="/assets/pic/blog3.jpg" alt="" /></a>
                                 </div>
                                 <div className="post-content-wrapper">
                                     <ul className="post-meta ul_li">
@@ -154,7 +173,7 @@ export default function Blog() {
                                 <div className="widget__post">
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="/BlogDetails"><img src="assets/img/blog/w_01.jpg" alt="" /></a>
+                                            <a href="/BlogDetails"><img src="/assets/pic/blog4.webp" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">nov 28,2023 </span>
@@ -163,7 +182,7 @@ export default function Blog() {
                                     </div>
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="/BlogDetails"><img src="assets/img/blog/w_02.jpg" alt="" /></a>
+                                            <a href="/BlogDetails"><img src="/assets/pic/blog5.webp" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">July 16,2023</span>
@@ -172,7 +191,7 @@ export default function Blog() {
                                     </div>
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="/BlogDetails"><img src="assets/img/blog/w_03.jpg" alt="" /></a>
+                                            <a href="/BlogDetails"><img src="/assets/pic/blog6.jpg" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">July 25,2023</span>
