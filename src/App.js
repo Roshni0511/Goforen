@@ -146,7 +146,7 @@ function App() {
         <a href="https://search.google.com/local/writereview?placeid=ChIJldkI5_tP4DsRzytjjdBFin4" target="_blank">
         <button class="btn-floating rating">
           <StarRateIcon />
-          <span>Youtube</span>
+          <span>Rate Us</span>
         </button>
       </a>
       {/* rating end  */}
