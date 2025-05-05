@@ -7,7 +7,7 @@ export default function Prvisainquiry() {
   const [background, setBackground] = useState("");
 
   useEffect(() => {
-    const backgroundUrl = "https://www.goforen.com/images/bg/breadcrumb-bg.jpg";
+    const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
     setBackground(backgroundUrl);
   }, []);
   // data-background img end

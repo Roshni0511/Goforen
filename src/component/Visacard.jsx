@@ -7,7 +7,7 @@ const Visacard = () => {
 
   useEffect(() => {
     setBackground1('assets/img/bg/service_bg.png');
-    setBackground2('assets/img/service/img_01.jpg');
+    setBackground2('https://www.thedreamvisa.com/images/online-img.jpg');
   }, []);
 
   // Different news for each card
@@ -53,7 +53,7 @@ const Visacard = () => {
         <div className="service-wrap pos-rel">
           <div className="service-img-wrap">
             <div className="service-bg" style={{ backgroundImage: `url(${background1})` }}></div>
-            <div className="service-img wow skewIn" data-wow-delay="100ms" style={{ backgroundImage: `url(${background2})` }}></div>
+            <div className="service-img wow skewIn" data-wow-delay="100ms" style={{ backgroundImage: `url(${background2})`,backgroundSize:'cover' }}></div>
           </div>
 
           <div className="sec-title wow skewIn pt-120">

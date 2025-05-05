@@ -126,7 +126,7 @@ export default function Navbar() {
             <div className="header__inner ul_li_between">
               <div className="header__logo">
                 <a href="/">
-                  <img src="assets/img/logo/logo.svg" alt="" />
+                  <img src="/assets/pic/newgof.png" alt="" />
                 </a>
               </div>
               <div className="main-menu__wrap ul_li navbar navbar-expand-lg">

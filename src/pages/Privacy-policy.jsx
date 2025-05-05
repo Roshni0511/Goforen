@@ -8,7 +8,7 @@ export default function Privacypolicy() {
       const [background, setBackground] = useState("");
     
       useEffect(() => {
-        const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
+        const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
         setBackground(backgroundUrl);
       }, []);
       // data-background img end

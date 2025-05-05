@@ -5,7 +5,8 @@ import Visacard from '../component/Visacard';
 import SuccessStories from '../component/SuccessStories';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Carousel } from 'react-bootstrap';
 export default function Home() {
   const scrollRef = useRef(null);
   const itemHeight = 70;
@@ -85,22 +86,56 @@ export default function Home() {
       <div className="body_wrap">
 
         {/* <!-- hero start --> */}
-        <section className="hero hero__style-one bg_img" style={{ backgroundImage: `url(${background})` }}>
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-xl-6 col-lg-7">
-                <div className="hero__content">
-                  <h2 className="wow skewIn" style={{fontSize:'50px',marginBottom:'30px'}}>Get a free assessment / advice</h2>
-                  <p className="wow fadeInUp" data-wow-delay="200ms" data-wow-duration=".6s" style={{marginBottom:'50px'}}>Expert Fill up a quick inquiry form / Upload your cv and we will help you out with your queries!</p>
+        <section className="hero hero__style-one bg_img" style={{minHeight:'0px' }}>
+        <Carousel fade interval={2000} style={{width:'100%',height:'600px'}}>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="	https://www.goforen.com/images/slider-1.jpg" // 1290x600 image
+          alt="Our Mission"
+          style={{ height: '600px', objectFit: 'cover' }}
+        />
+   
+      </Carousel.Item>
 
-                  <div className="btns wow fadeInUp" data-wow-delay="600ms" data-wow-duration=".6s">
-                    <a className="thm-btn" href="contact.html">QUICK INQUIRY</a>
-                    <a className="thm-btn thm-btn--white" href="about.html">UPLOAD CV</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://www.goforen.com/images/slider-2.jpg" // 1290x600 image
+          alt="Our Vision"
+          style={{ height: '600px', objectFit: 'cover' }}
+        />
+   
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="  https://www.goforen.com/images/slider-3.jpg" // 1290x600 image
+          alt="Our Vision"
+          style={{ height: '600px', objectFit: 'cover' }}
+        />
+
+      </Carousel.Item>
+    
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src=" 	https://www.goforen.com/images/slider-4.jpg" // 1290x600 image
+          alt="Our Vision"
+          style={{ height: '600px', objectFit: 'cover' }}
+        />
+  
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src=" 	https://www.goforen.com/images/slider-5.jpg" // 1290x600 image
+          alt="Our Vision"
+          style={{ height: '600px', objectFit: 'cover' }}
+        />
+      
+      </Carousel.Item>
+    </Carousel>
         </section>
         {/* <!-- hero end --> */}
 

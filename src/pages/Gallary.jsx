@@ -10,7 +10,7 @@ const Gallary = () => {
      const [background, setBackground] = useState(" " );
             
               useEffect(() => {
-                const backgroundUrl = "https://www.goforen.com/images/bg/breadcrumb-bg.jpg" ;
+                const backgroundUrl ="/assets/pic/breadcrumb-bg.jpg" ;
                 setBackground(backgroundUrl);
               }, []);
               const [background1, setBackground1] = useState(" " );
