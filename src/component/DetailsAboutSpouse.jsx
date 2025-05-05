@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import AttemptedInternationalExams from "./AttemptedInternationalExams";
+
+
 const initialRows = [
   {
     qualification: "10th SSC",
@@ -159,7 +162,7 @@ export default function DetailsAboutSpouse() {
     <div>
       <div className="container mt-5">
         <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-          <div className="p-5">
+          <div className="p-5 pb-0">
             <div className="xb-item--holder mb-25">
               <h3 className="wow skewIn ">
                 Please Provide Details About Your Spouse
@@ -1572,10 +1575,10 @@ export default function DetailsAboutSpouse() {
                     </tbody>
              </table>
 
-             <br />
-
+          
              
           </div>
+             <AttemptedInternationalExams />
         </div>
       </div>
     </div>

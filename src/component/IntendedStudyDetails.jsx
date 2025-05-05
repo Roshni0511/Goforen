@@ -288,14 +288,14 @@ export default function IntendedStudyDetails() {
                         </div>
                       </div>
                     </div>
-                    <div>
+                    <div style={{ overflowX: "auto" }}>
                       <label>
                         <strong>Intake :</strong>
                       </label>
                       <table
                         border="1"
                         cellPadding="10"
-                        style={{ width: "100%", borderCollapse: "collapse" }}
+                        style={{ width: "100%", borderCollapse: "collapse", minWidth: "500px",}}
                       >
                         <thead>
                           <tr>

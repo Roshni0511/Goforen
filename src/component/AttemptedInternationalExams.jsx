@@ -157,7 +157,7 @@ const [rows2, setRows2] = useState([
                 {showForm1 ? (
                   <form className="xb-item--form contact-from" action="">
                     <div className="row">
-                      <div>
+                      <div style={{ overflowX: "auto" }}>
                         <label>
                           <strong>Language Tests :</strong>
                         </label>
@@ -337,7 +337,7 @@ const [rows2, setRows2] = useState([
                       </div>
 
                       {/*  */}
-                      <div className="mt-5">
+                      <div className="mt-5" style={{ overflowX: "auto" }}>
                         <label>
                           <strong>College Admission Tests :</strong>
                         </label>
@@ -501,7 +501,7 @@ const [rows2, setRows2] = useState([
                 ) : (
                   <form>
                     <div className="row">
-                    <div>
+                    <div style={{ overflowX: "auto" }}>
                         <label>
                           <strong>Probable Joining Dates For Courses :</strong>
                         </label>

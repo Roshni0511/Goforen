@@ -11,6 +11,7 @@ export default function FooterTop() {
           'img_05.png',
           'img_06.png',
           'img_07.png',
+          'img_01.png',
         ];
   return (
     <div>

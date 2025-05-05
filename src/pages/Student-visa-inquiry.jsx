@@ -123,12 +123,6 @@ const streamOptions = [
 ];
 
 export default function Studentvisainquiry() {
- 
-  const [showSpouseDetails, setShowSpouseDetails] = useState(false); // default: No
-
-  const handleToggle = (e) => {
-    setShowSpouseDetails(e.target.checked); // true = Yes, false = No
-  };
   // data-background img start
   const [background, setBackground] = useState("");
 
@@ -137,6 +131,12 @@ export default function Studentvisainquiry() {
     setBackground(backgroundUrl);
   }, []);
   // data-background img end
+  const [showSpouseDetails, setShowSpouseDetails] = useState(false); // default: No
+
+  const handleToggle = (e) => {
+    setShowSpouseDetails(e.target.checked); // true = Yes, false = No
+  };
+ 
 
   const [hasExperience, setHasExperience] = useState(false);
   const [experienceData, setExperienceData] = useState([
@@ -441,7 +441,7 @@ export default function Studentvisainquiry() {
         </div>
         {/* Primary Details end  */}
 
-        {showSpouseDetails && <DetailsAboutSpouse />}
+     
 
         {/* Residential Details start  */}
         <div className="container mt-5">
@@ -1283,151 +1283,160 @@ export default function Studentvisainquiry() {
         {/* Educational Qualification start  */}
 
         <div className="container mt-5">
-          <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-            <div className="p-5">
-              <div className="xb-item--holder mb-25">
-                <h3 className="wow skewIn ">Educational Qualification</h3>
-              </div>
-              <table
-                style={{ width: "100%", borderCollapse: "collapse" }}
-                border="1"
-              >
-                <thead>
-                  <tr
-                    style={{ backgroundColor: "#edf3f5", textAlign: "center" }}
+  <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
+    <div className="p-5">
+      <div className="xb-item--holder mb-25">
+        <h3 className="wow skewIn">Educational Qualification</h3>
+      </div>
+
+      {/* Responsive table wrapper */}
+      <div style={{ overflowX: "auto" }}>
+        <table
+          style={{
+            width: "100%",
+            borderCollapse: "collapse",
+            minWidth: "800px", // forces horizontal scroll on small devices
+          }}
+          border="1"
+        >
+          <thead>
+            <tr style={{ backgroundColor: "#edf3f5", textAlign: "center" }}>
+              <th>Qualification</th>
+              <th>Stream Of Degree</th>
+              <th>Major Subjects</th>
+              <th>Year Of Completion</th>
+              <th>Percentage</th>
+              <th>Total ATKT or Backlog</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, index) => (
+              <tr key={index}>
+                <td>
+                  <input
+                    style={{
+                      padding: "15px",
+                      border: "1px solid #EDF3F5",
+                      borderRadius: "10px",
+                      width: "100%",
+                    }}
+                    type="text"
+                    defaultValue={row.qualification}
+                    onBlur={(e) =>
+                      handleChange(index, "qualification", e.target.value)
+                    }
+                  />
+                </td>
+                <td>
+                  <select
+                    style={{
+                      padding: "15px",
+                      border: "1px solid #EDF3F5",
+                      borderRadius: "10px",
+                      width: "100%",
+                    }}
+                    value={row.stream}
+                    onChange={(e) =>
+                      handleChange(index, "stream", e.target.value)
+                    }
                   >
-                    <th>Qualification</th>
-                    <th>Stream Of Degree</th>
-                    <th>Major Subjects</th>
-                    <th>Year Of Completion</th>
-                    <th>Percentage</th>
-                    <th>Total ATKT or Backlog</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((row, index) => (
-                    <tr key={index}>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          defaultValue={row.qualification}
-                          onBlur={(e) =>
-                            handleChange(index, "qualification", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <select
-                          style={{
-                            padding: "15px",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          value={row.stream}
-                          onChange={(e) =>
-                            handleChange(index, "stream", e.target.value)
-                          }
-                        >
-                          {streamOptions.map((opt, idx) => (
-                            <option key={idx} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </td>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          value={row.major}
-                          onChange={(e) =>
-                            handleChange(index, "major", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px ",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          value={row.year}
-                          onChange={(e) =>
-                            handleChange(index, "year", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          value={row.percentage}
-                          onChange={(e) =>
-                            handleChange(index, "percentage", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <input
-                          style={{
-                            padding: "15px   ",
-                            border: "1px solid #EDF3F5",
-                            borderRadius: "10px",
-                          }}
-                          type="text"
-                          value={row.backlog}
-                          onChange={(e) =>
-                            handleChange(index, "backlog", e.target.value)
-                          }
-                        />
-                      </td>
-                      <td>
-                        <div className="row">
-                          <div className="col-4">
-                            <button
-                              style={{
-                                backgroundColor: "green",
-                                color: "white",
-                              }}
-                              onClick={addRow}
-                            >
-                              +
-                            </button>
-                          </div>
-                          <div className="col-4">
-                            <button
-                              style={{ backgroundColor: "tomato", color: "white" }}
-                              onClick={() => removeRow(index)}
-                              disabled={rows.length <= 1}
-                            >
-                              -
-                            </button>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+                    {streamOptions.map((opt, idx) => (
+                      <option key={idx} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                </td>
+                <td>
+                  <input
+                    style={{
+                      padding: "15px",
+                      border: "1px solid #EDF3F5",
+                      borderRadius: "10px",
+                      width: "100%",
+                    }}
+                    type="text"
+                    value={row.major}
+                    onChange={(e) =>
+                      handleChange(index, "major", e.target.value)
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    style={{
+                      padding: "15px",
+                      border: "1px solid #EDF3F5",
+                      borderRadius: "10px",
+                      width: "100%",
+                    }}
+                    type="text"
+                    value={row.year}
+                    onChange={(e) =>
+                      handleChange(index, "year", e.target.value)
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    style={{
+                      padding: "15px",
+                      border: "1px solid #EDF3F5",
+                      borderRadius: "10px",
+                      width: "100%",
+                    }}
+                    type="text"
+                    value={row.percentage}
+                    onChange={(e) =>
+                      handleChange(index, "percentage", e.target.value)
+                    }
+                  />
+                </td>
+                <td>
+                  <input
+                    style={{
+                      padding: "15px",
+                      border: "1px solid #EDF3F5",
+                      borderRadius: "10px",
+                      width: "100%",
+                    }}
+                    type="text"
+                    value={row.backlog}
+                    onChange={(e) =>
+                      handleChange(index, "backlog", e.target.value)
+                    }
+                  />
+                </td>
+                <td>
+                  <div className="row">
+                    <div className="col-4">
+                      <button
+                        style={{ backgroundColor: "green", color: "white" }}
+                        onClick={addRow}
+                      >
+                        +
+                      </button>
+                    </div>
+                    <div className="col-4">
+                      <button
+                        style={{ backgroundColor: "tomato", color: "white" }}
+                        onClick={() => removeRow(index)}
+                        disabled={rows.length <= 1}
+                      >
+                        -
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
         {/* Educational Qualification end */}
 
         {/* any working experience start  */}
@@ -1457,13 +1466,15 @@ export default function Studentvisainquiry() {
                 </div>
 
                 {hasExperience && (
-                  <table
+                 <div  style={{ overflowX: "auto" }}>
+                   <table
                     id="experience-table"
                     className="custom-experience-table"
                     border="1"
                     cellPadding="10"
                     cellSpacing="0"
-                    style={{ width: "100%", marginTop: "10px" }}
+                    style={{ width: "100%", marginTop: "10px", borderCollapse: "collapse",
+                      minWidth: "800px",  }}
                   >
                     <thead className="custom-experience-thead">
                       <tr>
@@ -2695,6 +2706,7 @@ export default function Studentvisainquiry() {
                       ))}
                     </tbody>
                   </table>
+                 </div>
                 )}
               </div>
             </div>
@@ -2713,6 +2725,11 @@ export default function Studentvisainquiry() {
         {/* Upload Your Resume start  */}
         <UploadYourResume />
         {/* Upload Your Resume end  */}
+
+        {/* Please Provide Details About Your Spouse start  */}
+
+        {showSpouseDetails && <DetailsAboutSpouse />}
+        {/* Please Provide Details About Your Spouse end */}
 
         {/* Additional Details start  */}
         <AdditionalDetails />
