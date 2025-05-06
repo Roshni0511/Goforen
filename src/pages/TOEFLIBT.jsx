@@ -87,7 +87,7 @@ const TOEFLIBT = () => {
         <div className="container">
          <div className="col-12">
             <div className="row">
-                <div className="col-8">
+                <div className="col-lg-8 col-md-12 mb-4">
                 <blockquote>
                                     <p>"TOEFL IBT is version of the test that is the most widely used today. IBT stands for Internet Based Test. The entire TOEFL IBT is done on a computer and it is the first TOEFL test to have Speaking questions. It started in 2005 and replaced the CBT (Computer Based Test) which started the trend towards computer-based testing. From 1964 to 1998, the only TOEFL version available was the PBT (Paper Based Test). The PBT test is still used in some countries where computer access is not available."</p>
                                     
@@ -109,7 +109,7 @@ const TOEFLIBT = () => {
                                 </div>
                                 </div>
                 </div>
-                <div className="col-4 mt-40">
+                <div className="col-lg-4 col-md-12 mt-40">
                 <div className="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
                 >
                                 <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />

@@ -45,11 +45,11 @@ const Visaservice = () => {
     <>
     <Navbar />
        <div style={{padding:'80px 0px'}}>
-        <div className="container">
-            <div className="col-12">
-                <div className="row">
+        <div className="container" style={{background: "#f8f8f8"}}>
+            <div className="col-12" >
+                <div className="row" style={{justifyContent:'center'}}>
                   
-                    <div className="col-4 ">
+                    <div className="col-4 mt-40">
                     <div style={{
       background: '#fff',
       padding: '30px 20px',

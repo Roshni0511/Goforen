@@ -84,7 +84,7 @@ const SAT = () => {
         <div className="container">
          <div className="col-12">
             <div className="row">
-                <div className="col-8">
+                <div className="col-lg-8 col-md-12 mb-4">
                 <blockquote>
                                     <p>"The SAT is a standardized test widely used for college admissions in the United States. Introduced in 1926, its name and scoring have changed several times; originally called the Scholastic Aptitude Test, it was later called the Scholastic Assessment Test, then the SAT I: Reasoning Test, then the SAT Reasoning Test, and now, simply the SAT."</p>
                                     
@@ -109,7 +109,7 @@ const SAT = () => {
                                 </div>
                                 </div>
                 </div>
-                <div className="col-4 mt-40">
+                <div className="col-lg-4 col-md-12 mt-40">
                 <div className="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
                 >
                                 <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />

@@ -135,7 +135,7 @@ Here is a table describing exam requirement according to the course of your choi
             </ul>
            <br />
            <div class="table-responsive">
-           {/* <!-- Responsive Table Wrapper --> */}
+      
 <div class="table-responsive">
     <table class="table table-bordered">
         <thead class="thead-light">
@@ -216,7 +216,9 @@ Here is a table describing exam requirement according to the course of your choi
                                             <div className="xb-item--description">
                                             IELTS, the international English Language Testing system, provides an assessment of language ability of...
                                             </div>
-                                            <button style={{marginTop:'15px'}}>Read More</button>
+                                         <a href="/IELTS">
+                                         <button style={{marginTop:'15px'}}>Read More</button>
+                                          </a> 
                                         </div>
                                     </div>
                                 </li>
@@ -228,7 +230,8 @@ Here is a table describing exam requirement according to the course of your choi
                                             <div className="xb-item--description">
                                             TOEFL IBT is version of the test that is the most widely used today. IBT stands for Internet Based Test....
                                             </div>
-                                            <button style={{marginTop:'15px'}}>Read More</button>
+                                            <a href="/TOEFLIBT">  <button style={{marginTop:'15px'}}>Read More</button></a>
+                                          
                                         </div>
                                     </div>
                                 </li>
@@ -240,7 +243,7 @@ Here is a table describing exam requirement according to the course of your choi
                                             <div className="xb-item--description">
                                             If you're planning on going to graduate school, you'll probably need to take the GRE test...
                                             </div>
-                                            <button style={{marginTop:'15px'}}>Read More</button>
+                                            <a href="/GRE"><button style={{marginTop:'15px'}}>Read More</button></a>
                                         </div>
                                     </div>
                                 </li>
@@ -252,7 +255,7 @@ Here is a table describing exam requirement according to the course of your choi
                                             <div className="xb-item--description">
                                             PTE test is based on real-life academic and general content. You will come across graphs, summaries...
                                             </div>
-                                            <button style={{marginTop:'15px'}}>Read More</button>
+                                           <a href="/PTE"><button style={{marginTop:'15px'}}>Read More</button></a> 
                                         </div>
                                     </div>
                                 </li>
@@ -264,7 +267,7 @@ Here is a table describing exam requirement according to the course of your choi
                                             <div className="xb-item--description">
                                             The SAT is a standardized test widely used for college admissions in the United States. Introduced in 1926...
                                             </div>
-                                            <button style={{marginTop:'15px'}}>Read More</button>
+                                           <a href="/SAT"><button style={{marginTop:'15px'}}>Read More</button></a> 
                                         </div>
                                     </div>
                                 </li>
@@ -273,9 +276,9 @@ Here is a table describing exam requirement according to the course of your choi
                     </div>
                 </div>
             </div>
-            <div className="about__img">
+            {/* <div className="about__img">
                 <img src="/assets/pic/main (1).jpeg" alt="" />
-            </div>
+            </div> */}
         </section>
         {/* <!-- about end --> */}
           <Footer />

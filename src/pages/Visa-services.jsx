@@ -208,7 +208,7 @@ export default function Visaservices() {
       {/* <!-- GO FOREN  start --> */}
       <section className="blog ">
         <div className="container">
-          <div className="blog-wrap">
+         
             <div className="sec-title mb-60 text-center">
               <p>
                 GO FOREN provides service in the area of immigration/ PR visa,
@@ -237,7 +237,7 @@ export default function Visaservices() {
                         className="xb-item--title border-effect"
                         style={{ display: "flex", textAlign: "center" }}
                       >
-                        <a href="blog-single.html">Immigration - PR Visa</a>
+                        <a href="/Immigration-pr-visa" >Immigration - PR Visa</a>
                       </h3>
                       <p style={{ marginBottom: "20px" }}>
                         Any foreign national who wishes to relocate to any other
@@ -247,7 +247,7 @@ export default function Visaservices() {
                       </p>
                       <a
                         className="xb-item--link "
-                        href="blog-single.html"
+                        href="/Immigration-pr-visa"
                         style={{ color: "#000", fontSize: "20px" }}
                       >
                         Read the article
@@ -258,7 +258,7 @@ export default function Visaservices() {
                     </div>
                     <a
                       className="xb-overlay xb-overlay-link"
-                      href="blog-single.html"
+                      href="/Immigration-pr-visal"
                     ></a>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ export default function Visaservices() {
                 <div className="xb-blog w-100 d-flex flex-column">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <a href="blog-single.html">
+                      <a href="/Student-visa">
                         <img src="/assets/pic/3-image.jpg" alt="" />
                       </a>
                     </div>
@@ -276,7 +276,7 @@ export default function Visaservices() {
                         className="xb-item--title border-effect"
                         style={{ display: "flex", textAlign: "center" }}
                       >
-                        <a href="blog-single.html">Student Visa.</a>
+                        <a href="/Student-visa" >Student Visa.</a>
                       </h3>
                       <p style={{ marginBottom: "20px" }}>
                         Most countries will issue student visas in order to
@@ -287,7 +287,7 @@ export default function Visaservices() {
                       </p>
                       <a
                         className="xb-item--link"
-                        href="blog-single.html"
+                        href="/Student-visa"
                         style={{ color: "#000", fontSize: "20px" }}
                       >
                         Read the article
@@ -298,7 +298,7 @@ export default function Visaservices() {
                     </div>
                     <a
                       className="xb-overlay xb-overlay-link"
-                      href="blog-single.html"
+                      href="/Student-visa"
                     ></a>
                   </div>
                 </div>
@@ -307,7 +307,7 @@ export default function Visaservices() {
                 <div className="xb-blog w-100 d-flex flex-column">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <a href="blog-single.html">
+                      <a href="/visitor">
                         <img src="/assets/pic/4-image.jpg" alt="" />
                       </a>
                     </div>
@@ -316,7 +316,7 @@ export default function Visaservices() {
                         className="xb-item--title border-effect"
                         style={{ display: "flex", textAlign: "center" }}
                       >
-                        <a href="blog-single.html">Visitor Visa</a>
+                        <a href="/visitor">Visitor Visa</a>
                       </h3>
                       <p style={{ marginBottom: "20px" }}>
                         Tourist/Visitors visas are conditional authorization
@@ -327,7 +327,7 @@ export default function Visaservices() {
                       </p>
                       <a
                         className="xb-item--link"
-                        href="blog-single.html"
+                        href="/visitor"
                         style={{ color: "#000", fontSize: "20px" }}
                       >
                         Read the article
@@ -338,7 +338,7 @@ export default function Visaservices() {
                     </div>
                     <a
                       className="xb-overlay xb-overlay-link"
-                      href="blog-single.html"
+                      href="/visitor"
                     ></a>
                   </div>
                 </div>
@@ -347,7 +347,7 @@ export default function Visaservices() {
                 <div className="xb-blog w-100 d-flex flex-column">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <a href="blog-single.html">
+                      <a href="/Investor-visa">
                         <img src="/assets/pic/7-image.jpg" alt="" />
                       </a>
                     </div>
@@ -356,14 +356,14 @@ export default function Visaservices() {
                         className="xb-item--title border-effect"
                         style={{ display: "flex", textAlign: "center" }}
                       >
-                        <a href="blog-single.html">Investor Visa</a>
+                        <a href="/Investor-visa">Investor Visa</a>
                       </h3>
                       <p style={{ marginBottom: "20px" }}>
                       Investor Visas allow you to invest in an overseas country where you can settle permanently. The minimum amount of investment varies from country to country. Visas are issued to businessmen and self employed people who..
                       </p>
                       <a
                         className="xb-item--link"
-                        href="blog-single.html"
+                        href="/Investor-visa"
                         style={{ color: "#000", fontSize: "20px" }}
                       >
                         Read the article
@@ -374,7 +374,7 @@ export default function Visaservices() {
                     </div>
                     <a
                       className="xb-overlay xb-overlay-link"
-                      href="blog-single.html"
+                      href="/Investor-visa"
                     ></a>
                   </div>
                 </div>
@@ -383,7 +383,7 @@ export default function Visaservices() {
                 <div className="xb-blog w-100 d-flex flex-column">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <a href="blog-single.html">
+                      <a href="/Work-permit-visa">
                         <img src="/assets/pic/8-image.jpg" alt="" />
                       </a>
                     </div>
@@ -392,14 +392,14 @@ export default function Visaservices() {
                         className="xb-item--title border-effect"
                         style={{ display: "flex", textAlign: "center" }}
                       >
-                        <a href="blog-single.html">Work Permit Visa</a>
+                        <a href="/Work-permit-visa">Work Permit Visa</a>
                       </h3>
                       <p style={{ marginBottom: "20px" }}>
                         A work Permit visa is a type of visa that grants the holder authorization to accept employment in a foreign country.
                       </p>
                       <a
                         className="xb-item--link"
-                        href="blog-single.html"
+                        href="/Work-permit-visa"
                         style={{ color: "#000", fontSize: "20px" }}
                       >
                         Read the article
@@ -410,7 +410,7 @@ export default function Visaservices() {
                     </div>
                     <a
                       className="xb-overlay xb-overlay-link"
-                      href="blog-single.html"
+                      href="/Work-permit-visa"
                     ></a>
                   </div>
                 </div>
@@ -421,7 +421,7 @@ export default function Visaservices() {
               data-bg-color="#EDF3F5"
               data-background="assets/img/bg/blog_bg.png"
             ></div>
-          </div>
+        
         </div>
       </section>
       {/* <!-- GO FOREN  end --> */}

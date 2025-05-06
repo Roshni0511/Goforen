@@ -81,62 +81,113 @@ const PTE = () => {
       </section>
       {/* <!-- breadcrumb end --> */}
       {/* new content start */}
-    <div className='pt-40'>
-        <div className="container">
-         <div className="col-12">
-            <div className="row">
-                <div className="col-8">
-                <blockquote>
-                                    <p>"PTE test is based on real-life academic and general content. You will come across graphs, summaries, excerpts, and many more items that belong to things around you. The test also contains accents from both native and non-native speakers exactly that you hear on the television, movies, and real conversation encountered in day-to-day life."</p>
-                                    
-                                    <div className="quote"><img src="assets/img/icon/quote.png" alt=" "/></div>
-                                </blockquote>
-                                <div className="post-thumb">
-                                    <img src="/assets/pic/pte.jpg" alt="" />
-                                </div>
-                                <div>
-                               
-   
-                           
-                                <p style={{margin:'20px 0px 10px'}}>Aussizz Group brings you the best way to digitally access your reading, speaking, listening, and writing skills. The three-hour test session will help you evaluate your answers thoroughly so that you can recognize the flaws and improve for the final exam.
+   {/* new content start */}
+<div className="pt-40">
+  <div className="container">
+    <div className="row">
+      {/* Left Column */}
+      <div className="col-lg-8 col-md-12 mb-4">
+        <blockquote>
+          <p>
+            "PTE test is based on real-life academic and general content. You
+            will come across graphs, summaries, excerpts, and many more items
+            that belong to things around you. The test also contains accents from
+            both native and non-native speakers exactly that you hear on the
+            television, movies, and real conversation encountered in day-to-day
+            life."
+          </p>
+          <div className="quote">
+            <img src="assets/img/icon/quote.png" alt=" " />
+          </div>
+        </blockquote>
 
-</p>
-                            
-                          <p style={{margin:'2px '}}>To take the PTE test, you need to go to a secure Pearson test center where you'll be given with a computer and a headset to get on all the four modules. While speaking and writing modules are combined in one session, listening and reading have separate sections. Ranging from MCQs to essay writing, and reading out the sentences to choosing a proper word, there are twenty types of question formats.</p>
-                      
-            <p style={{marginBottom:'30px'}}>Upon release, it was recognized by nearly 6,000 organizations. For instance, the test is approved for use by the Australia Border Agency and the Australian Department of Immigration and Citizenship for visa</p>
-                                <div style={{marginBottom:'40px'}}>
-                                    <button style={{padding:'10px 20px',background:'#00cc99',color:'#fff',borderRadius:'10px'}}>Read More</button>
-                                </div>
-                                </div>
-                </div>
-                <div className="col-4 mt-40">
-                <div className="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
-                >
-                                <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
-                                <h4>Detailed Information</h4>
-                                <a className="thm-btn" href="#!">Contact Us</a>
-                            </div>
-                            <div className='pt-30'>
-                            <div className="blog-sidebar" >
+        <div className="post-thumb mb-4">
+          <img src="/assets/pic/pte.jpg" alt="" className="img-fluid" />
+        </div>
 
-                            <div className="widget">
-                                <h3 className="widget-title">Courses</h3>
-                                <ul className="widget__category list-unstyled">
-                                    <li><a href="/IELTS"><i className="far fa-arrow-up"></i> IELTS</a></li>
-                                    <li><a href="/TOEFLIBT"><i className="far fa-arrow-up"></i> TOEFL IBT</a></li>
-                                    <li><a href="/GRE"><i className="far fa-arrow-up"></i> GRE</a></li>
-                                    <li><a href="/SAT"><i className="far fa-arrow-up"></i> SAT</a></li>
-                           
-                               </ul>
-                            </div>
-                            </div>
-                            </div>
-                </div>
+        <div>
+          <p style={{ margin: "20px 0px 10px" }}>
+            Aussizz Group brings you the best way to digitally access your
+            reading, speaking, listening, and writing skills...
+          </p>
+
+          <p style={{ margin: "2px" }}>
+            To take the PTE test, you need to go to a secure Pearson test center
+            where you'll be given with a computer and a headset...
+          </p>
+
+          <p style={{ marginBottom: "30px" }}>
+            Upon release, it was recognized by nearly 6,000 organizations...
+          </p>
+
+          <div style={{ marginBottom: "40px" }}>
+            <button
+              style={{
+                padding: "10px 20px",
+                background: "#00cc99",
+                color: "#fff",
+                borderRadius: "10px",
+              }}
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Column (Sidebar) */}
+      <div className="col-lg-4 col-md-12 mt-40">
+        <div
+          className="widget widget-banner text-center mb-4"
+          style={{
+            backgroundImage: `url(${background1})`,
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            width: "100%",
+          }}
+        >
+          <img className="mb-4" src="assets/img/icon/b_icon.png" alt="" />
+          <h4>Detailed Information</h4>
+          <a className="thm-btn" href="#!">
+            Contact Us
+          </a>
+        </div>
+
+        <div className="pt-3">
+          <div className="blog-sidebar">
+            <div className="widget">
+              <h3 className="widget-title">Courses</h3>
+              <ul className="widget__category list-unstyled">
+                <li>
+                  <a href="/IELTS">
+                    <i className="far fa-arrow-up"></i> IELTS
+                  </a>
+                </li>
+                <li>
+                  <a href="/TOEFLIBT">
+                    <i className="far fa-arrow-up"></i> TOEFL IBT
+                  </a>
+                </li>
+                <li>
+                  <a href="/GRE">
+                    <i className="far fa-arrow-up"></i> GRE
+                  </a>
+                </li>
+                <li>
+                  <a href="/SAT">
+                    <i className="far fa-arrow-up"></i> SAT
+                  </a>
+                </li>
+              </ul>
             </div>
-         </div>
-         </div>
-         </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
    {/* new content end */}
        </div>
         <Footer />

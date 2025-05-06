@@ -86,7 +86,7 @@ const GRE = () => {
         <div className="container">
          <div className="col-12">
             <div className="row">
-                <div className="col-8">
+                <div className="col-lg-8 col-md-12 mb-4">
                 <blockquote>
                                     <p>"If you're planning on going to graduate school, you'll probably need to take the GRE test (or the Graduate Record Exam). It's the most commonly required admission test for grad school."</p>
                                     
@@ -113,7 +113,7 @@ const GRE = () => {
                                 </div>
                                 </div>
                 </div>
-                <div className="col-4 mt-40">
+                <div className="col-lg-4 col-md-12 mt-40">
                 <div className="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
                 >
                                 <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />

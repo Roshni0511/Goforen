@@ -77,11 +77,11 @@ export default function Home() {
     'img_07.png',
   ];
   const slides = [
-    "	https://www.goforen.com/images/slider-1.jpg",
-    "	https://www.goforen.com/images/slider-2.jpg",
-    "https://www.goforen.com/images/slider-3.jpg",
-    "	https://www.goforen.com/images/slider-4.jpg",
-    "	https://www.goforen.com/images/slider-5.jpg",
+    "/assets/pic/slide1.jpg",
+    "/assets/pic/slider-2.jpg",
+    "/assets/pic/slider-3.jpg",
+    "/assets/pic/slider-4.jpg",
+    "/assets/pic/slider-5.jpg",
   ];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -102,7 +102,7 @@ export default function Home() {
 
         {/* <!-- hero start --> */}
         <section className="hero hero__style-one bg_img" style={{minHeight:'0px' }}>
-            {/* slider start  */}
+
             <div className="sliderr">
           {slides.map((image, index) => (
             <div
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        {/* slider end  */}
+    
         </section>
         {/* <!-- hero end --> */}
 
@@ -160,7 +160,7 @@ export default function Home() {
                           <div className="scroll-inner" ref={scrollRef}>
                             {extendedItems.map((text, i) => (
                               <div className="scroll-item" key={i}>
-                                <div className="xb-item--description">{text}</div>
+                                <div className="xb-item--description" style={{fontSize:'14px'}}>{text}</div>
                               </div>
                             ))}
                           </div>
@@ -312,7 +312,7 @@ export default function Home() {
 
                                 <div className="xb-item--inner">
                                     <div className="xb-item--img">
-                                        <a href="blog-single.html"><img src="/assets/pic/why3.jpg" alt="" /></a>
+                                        <a href="/visitor"><img src="/assets/pic/why3.jpg" alt="" /></a>
                                     </div>
                                     <div className="xb-item--holder">
                                        

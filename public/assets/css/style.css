@@ -387,31 +387,42 @@ p{
 .sliderr {
   position: relative;
   width: 100%;
-  height: 600px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
 .slides {
   display: none;
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
 .slides img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* This ensures images fill without distortion */
   display: block;
 }
 
 .slides.active {
   display: block;
+  position: relative;
+}
+@media (max-width: 576px) {
+  .sliderr {
+    aspect-ratio: 4 / 3;
+  }
 }
 .blog-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 30px;
-  background: #f8f8f8;
+  
 }
 
 .blog-box {
@@ -514,6 +525,50 @@ p{
   padding: 5px 12px;
   border-radius: 4px;
   font-size: 12px;
+}
+
+/* Scroll Container */
+.scroll-container {
+  width: 100%;
+  max-height: 150px; /* adjust as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Inner Scrolling Content */
+.scroll-inner {
+  display: flex;
+  flex-direction: column;
+  transition: top 0.5s ease-in-out;
+  position: relative;
+}
+
+/* Individual Scroll Item */
+.scroll-item {
+  padding: 5px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Description Styling */
+.xb-item--description {
+  font-size: 14px;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .scroll-container {
+    max-height: 200px; /* increase for mobile if needed */
+  }
+
+  .scroll-item {
+    padding: 8px 12px;
+  }
+
+  .xb-item--description {
+    font-size: 16px; /* slightly larger for readability */
+  }
 }
 
 

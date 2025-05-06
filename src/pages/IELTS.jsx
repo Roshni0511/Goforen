@@ -87,117 +87,90 @@ const IELTS = () => {
         {/* <!-- breadcrumb end --> */}
         {/* new content start */}
         <div className="pt-40">
-          <div className="container">
-            <div className="col-12">
-              <div className="row">
-                <div className="col-8">
-                  <blockquote>
-                    <p>
-                      "IELTS, the international English Language Testing system,
-                      provides an assessment of language ability of candidates
-                      who need to study or train in the medium of English."
-                    </p>
+  <div className="container">
+    <div className="row">
+      {/* Left content */}
+      <div className="col-lg-8 col-md-12 mb-4">
+        <blockquote>
+          <p>
+            "IELTS, the international English Language Testing system,
+            provides an assessment of language ability of candidates
+            who need to study or train in the medium of English."
+          </p>
+          <div className="quote">
+            <img src="assets/img/icon/quote.png" alt=" " />
+          </div>
+        </blockquote>
+        <div className="post-thumb mb-4">
+          <img src="/assets/pic/ielts.jpg" alt="" className="img-fluid" />
+        </div>
+        <div>
+          <p style={{ margin: "15px 0px" }}>
+            IELTS is regarded as an entrance requirement by most
+            universities in the United Kingdom, Australia, New Zealand
+            and Canada...
+          </p>
+          <p style={{ margin: "10px 0px" }}>
+            In India test is held at many test centers inclusive of
+            SURAT...
+          </p>
+          <p style={{ margin: "10px 0px" }}>
+            The University of Cambridge Local Examinations Syndicate...
+          </p>
+          <p style={{ margin: "20px 0px" }}>
+            Candidates must select either the Academic or the General...
+          </p>
+          <div style={{ marginBottom: "40px" }}>
+            <button
+              style={{
+                padding: "10px 20px",
+                background: "#00cc99",
+                color: "#fff",
+                borderRadius: "10px",
+              }}
+            >
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
 
-                    <div className="quote">
-                      <img src="assets/img/icon/quote.png" alt=" " />
-                    </div>
-                  </blockquote>
-                  <div className="post-thumb">
-                    <img src="/assets/pic/ielts.jpg" alt="" />
-                  </div>
-                  <div>
-                    <p style={{ margin: "15px 0px" }}>
-                      IELTS is regarded as an entrance requirement by most
-                      universities in the United Kingdom, Australia, New Zealand
-                      and Canada. It is also gaining recognition among
-                      universities and other educational institutes in the
-                      United States of America.
-                    </p>
-
-                    <p style={{ margin: "10px 0px" }}>
-                      In India test is held at many test centers inclusive of
-                      SURAT, which arrange test administrations according to
-                      local demand.
-                    </p>
-                    <p style={{ margin: "10px 0px" }}>
-                      The University of Cambridge Local Examinations Syndicate
-                      (UCLES), the British council and IDP Education Australia
-                      jointly manage the IELTS.
-                    </p>
-                    <p style={{ margin: "20px 0px" }}>
-                      Candidates must select either the Academic or the general
-                      Training Modules depending on the stated requirement of
-                      their sponsor or receiving institution.
-                    </p>
-                    <div style={{ marginBottom: "40px" }}>
-                      <button
-                        style={{
-                          padding: "10px 20px",
-                          background: "#00cc99",
-                          color: "#fff",
-                          borderRadius: "10px",
-                        }}
-                      >
-                        Read More
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-4 mt-40">
-                  <div
-                    className="widget widget-banner text-center "
-                    style={{
-                      backgroundImage: `url(${background1})`,
-                      backgroundPosition: "center center",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      width: "100%",
-                    }}
-                  >
-                    <img
-                      className="mb-40"
-                      src="assets/img/icon/b_icon.png"
-                      alt=""
-                    />
-                    <h4>Detailed Information</h4>
-                    <a className="thm-btn" href="#!">
-                      Contact Us
-                    </a>
-                  </div>
-                  <div className="pt-30">
-                    <div className="blog-sidebar">
-                      <div className="widget">
-                        <h3 className="widget-title">Courses</h3>
-                        <ul className="widget__category list-unstyled">
-                          <li>
-                            <a href="/TOEFLIBT">
-                              <i className="far fa-arrow-up"></i> TOEFL IBT
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/GRE">
-                              <i className="far fa-arrow-up"></i> GRE
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/PTE">
-                              <i className="far fa-arrow-up"></i> PTE
-                            </a>
-                          </li>
-                          <li>
-                            <a href="SAT">
-                              <i className="far fa-arrow-up"></i> SAT
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Right sidebar */}
+      <div className="col-lg-4 col-md-12 mt-40">
+        <div
+          className="widget widget-banner text-center mb-4"
+          style={{
+            backgroundImage: `url(${background1})`,
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            width: "100%",
+          }}
+        >
+          <img className="mb-4" src="assets/img/icon/b_icon.png" alt="" />
+          <h4>Detailed Information</h4>
+          <a className="thm-btn" href="#!">
+            Contact Us
+          </a>
+        </div>
+        <div className="pt-3">
+          <div className="blog-sidebar">
+            <div className="widget">
+              <h3 className="widget-title">Courses</h3>
+              <ul className="widget__category list-unstyled">
+                <li><a href="/TOEFLIBT"><i className="far fa-arrow-up"></i> TOEFL IBT</a></li>
+                <li><a href="/GRE"><i className="far fa-arrow-up"></i> GRE</a></li>
+                <li><a href="/PTE"><i className="far fa-arrow-up"></i> PTE</a></li>
+                <li><a href="/SAT"><i className="far fa-arrow-up"></i> SAT</a></li>
+              </ul>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
         {/* new content end */}
       </div>
       <Footer />
