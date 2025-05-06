@@ -39,6 +39,12 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import StarRateIcon from '@mui/icons-material/StarRate';
+
+
+
+
+
+import Visaservice from "./pages/Visaservice";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -188,6 +194,13 @@ function App() {
         <Route path="/Privacy-policy" element={<Privacypolicy />} />
         <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
         <Route path="/Declaration" element={<Declaration />} />
+
+
+
+
+
+
+        <Route path="/Visaservice" element={<Visaservice />} />
       </Routes>
     </>
   );

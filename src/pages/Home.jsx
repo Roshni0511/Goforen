@@ -42,6 +42,7 @@ export default function Home() {
 
   // Add a duplicate of the first item to the end for looping
   const extendedItems = [...items, items[0]];
+  const [currentSlide, setCurrentSlide] = useState(0);
   const extendvisa = [...visa,visa[0]];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -75,6 +76,19 @@ export default function Home() {
     'img_06.png',
     'img_07.png',
   ];
+  const slides = [
+    "	https://www.goforen.com/images/slider-1.jpg",
+    "	https://www.goforen.com/images/slider-2.jpg",
+    "https://www.goforen.com/images/slider-3.jpg",
+    "	https://www.goforen.com/images/slider-4.jpg",
+    "	https://www.goforen.com/images/slider-5.jpg",
+  ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3000); // change slide every 3 seconds
+    return () => clearInterval(interval);
+  }, [slides.length]);
   return (
     <div>
       <Navbar />
@@ -88,55 +102,18 @@ export default function Home() {
 
         {/* <!-- hero start --> */}
         <section className="hero hero__style-one bg_img" style={{minHeight:'0px' }}>
-        {/* <Carousel fade interval={2000} style={{width:'100%',height:'600px'}}>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="	https://www.goforen.com/images/slider-1.jpg" // 1290x600 image
-          alt="Our Mission"
-          style={{ height: '600px', objectFit: 'cover' }}
-        />
-   
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://www.goforen.com/images/slider-2.jpg" // 1290x600 image
-          alt="Our Vision"
-          style={{ height: '600px', objectFit: 'cover' }}
-        />
-   
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="  https://www.goforen.com/images/slider-3.jpg" // 1290x600 image
-          alt="Our Vision"
-          style={{ height: '600px', objectFit: 'cover' }}
-        />
-
-      </Carousel.Item>
-    
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src=" 	https://www.goforen.com/images/slider-4.jpg" // 1290x600 image
-          alt="Our Vision"
-          style={{ height: '600px', objectFit: 'cover' }}
-        />
-  
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src=" 	https://www.goforen.com/images/slider-5.jpg" // 1290x600 image
-          alt="Our Vision"
-          style={{ height: '600px', objectFit: 'cover' }}
-        />
-      
-      </Carousel.Item>
-    </Carousel> */}
+            {/* slider start  */}
+            <div className="sliderr">
+          {slides.map((image, index) => (
+            <div
+              key={index}
+              className={`slides ${index === currentSlide ? "active" : ""}`}
+            >
+              <img src={image} alt={`Image ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+        {/* slider end  */}
         </section>
         {/* <!-- hero end --> */}
 
@@ -191,7 +168,7 @@ export default function Home() {
 
                         {/* Button */}
                         <div className="text-center mt-20">
-                          <a href="#" className="btn" style={{ background: '#00cc99', color: '#fff' }}>
+                          <a href="/News" className="btn" style={{ background: '#00cc99', color: '#fff' }}>
                             View All
                           </a>
                         </div>
