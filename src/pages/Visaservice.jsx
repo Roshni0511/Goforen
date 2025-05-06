@@ -4,6 +4,16 @@ import Footer from './Footer';
 import { FaCalendarAlt, FaTags, FaFacebookF, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
 const Visaservice = () => {
        const [background1, setBackground1] = useState("");
+       const [visaType, setVisaType] = useState('');
+       const [country, setCountry] = useState('');
+       const [month, setMonth] = useState('');
+       const [year, setYear] = useState('');
+     
+       const handleSearch = () => {
+         // Add your filter logic here
+         console.log({ visaType, country, month, year });
+       };
+     
                         
                           useEffect(() => {
                             const backgroundUrl1 = "https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg";
@@ -40,12 +50,162 @@ const Visaservice = () => {
                 <div className="row">
                   
                     <div className="col-4 ">
-                <div className="widget widget-banner text-center " style={{ backgroundImage: `url(${background1})`, backgroundPosition:'center center',backgroundSize:'cover',backgroundRepeat:'no-repeat',width:'100%' }}
-                >
-                                <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
-                                <h4>Detailed Information</h4>
-                                <a className="thm-btn" href="#!">Contact Us</a>
-                            </div>
+                    <div style={{
+      background: '#fff',
+      padding: '30px 20px',
+      boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+      borderRadius: '8px',
+      maxWidth: '100%'
+    }}>
+      <h4 style={{ textAlign: 'center', marginBottom: '20px' }}>
+        Search Blogs
+        <div style={{
+          width: '30px',
+          height: '3px',
+          background: '#00cc99',
+          margin: '5px auto 0'
+        }}></div>
+      </h4>
+
+      <div style={{ marginBottom: '15px' }}>
+  <label style={{ fontWeight: 'bold' }}>Visa Type</label>
+  <select
+    value={visaType}
+    onChange={(e) => setVisaType(e.target.value)}
+    style={{
+        height:'40px',
+      width: '100%',
+      padding: '8px',
+      marginTop: '5px',
+      border: '1px solid #ccc',
+      borderRadius: '4px',
+      outline: 'none'
+    }}
+  >
+    <option value="">Select</option>
+    <option value="Immigration - PR Visa">Immigration - PR Visa</option>
+    <option value="Visitor Visa">Visitor Visa</option>
+    <option value="Visitor Visa">Student Visa</option>
+    <option value="Visitor Visa">Investore Visa</option>
+    <option value="Visitor Visa">Work Permit Visa</option>
+    
+  </select>
+</div>
+
+<div style={{ marginBottom: '15px' }}>
+  <label style={{ fontWeight: 'bold' }}>Country</label>
+  <select
+    value={country}
+    onChange={(e) => setCountry(e.target.value)}
+    style={{
+        height:'40px',
+      width: '100%',
+      padding: '8px',
+      marginTop: '5px',
+      border: '1px solid #ccc',
+      borderRadius: '4px',
+      outline: 'none'
+    }}
+  >
+    <option value="">Select</option>
+    <option value="Canada">Canada</option>
+    <option value="USA">Australia</option>
+    <option value="USA">New Zealand</option>
+    <option value="USA">UK</option>
+    <option value="USA">Europe</option>
+    <option value="USA">Any Other</option>
+   
+
+  </select>
+</div>
+
+
+<div style={{ display: 'flex', gap: '10px', marginBottom: '15px' }}>
+  <div style={{ flex: 1 }}>
+    <label style={{ fontWeight: 'bold' }}>Month</label>
+    <select
+      value={month}
+      onChange={(e) => setMonth(e.target.value)}
+      style={{
+        height:'40px',
+        width: '100%',
+        padding: '8px',
+        marginTop: '5px',
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+        outline: 'none'
+      }}
+    >
+      <option value="">All</option>
+      <option value="01">January</option>
+      <option value="02">February</option>
+      <option value="02">March</option>
+      <option value="02">April</option>
+      <option value="02">May</option>
+      <option value="02">Jun</option>
+      <option value="02">July</option>
+      <option value="02">August</option>
+      <option value="02">September</option>
+      <option value="02">October</option>
+      <option value="02">November</option>
+      <option value="02">December</option>
+      
+    </select>
+  </div>
+  <div style={{ flex: 1 }}>
+  <label style={{ fontWeight: 'bold' }}>Year</label>
+  <select
+    value={year}
+    onChange={(e) => setYear(e.target.value)}
+    style={{
+        height:'40px',
+      width: '100%',
+      padding: '8px',
+      marginTop: '5px',
+      border: '1px solid #ccc',
+      borderRadius: '4px',
+      outline: 'none'
+    }}
+  >
+    <option value="">All</option>
+    <option value="2025">2025</option>
+    <option value="2024">2024</option>
+    <option value="2024">2023</option>
+    <option value="2024">2022</option>
+    <option value="2024">2021</option>
+    <option value="2024">2020</option>
+    <option value="2024">2019</option>
+    <option value="2024">2018</option>
+    <option value="2024">2017</option>
+    <option value="2024">2016</option>
+    <option value="2024">2015</option>
+
+
+  </select>
+</div>
+</div>
+
+
+
+
+
+      <button
+        onClick={handleSearch}
+        style={{
+            height:'40px',
+          width: '100%',
+          padding: '10px',
+          backgroundColor: '#00cc99',
+          border: 'none',
+          color: 'white',
+          fontWeight: 'bold',
+          borderRadius: '4px',
+          cursor: 'pointer'
+        }}
+      >
+        Search
+      </button>
+    </div>
                           
                     </div>
                     <div className="col-6">
@@ -68,7 +228,7 @@ const Visaservice = () => {
   <a href={blog.link} className="read-more">Read More</a>
   <div className="tags">
     {blog.tags.map((tag, i) => (
-      <span className="tag" key={i}><FaTags className="icon" style={{marginRight:'6px' , color:'#ff9900'}}/>{tag}</span>
+      <span className="tag" key={i}><FaTags className="icon" style={{marginRight:'6px' , color:'#00cc99'}}/>{tag}</span>
     ))}
   </div>
 </div>
