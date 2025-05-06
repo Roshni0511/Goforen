@@ -387,35 +387,24 @@ p{
 .sliderr {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* height: 600px; */
   overflow: hidden;
 }
 
 .slides {
   display: none;
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
 .slides img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* This ensures images fill without distortion */
+  height: auto;
   display: block;
 }
 
 .slides.active {
   display: block;
-  position: relative;
-}
-@media (max-width: 576px) {
-  .sliderr {
-    aspect-ratio: 4 / 3;
-  }
 }
 .blog-list {
   display: flex;
@@ -568,6 +557,11 @@ p{
 
   .xb-item--description {
     font-size: 16px; /* slightly larger for readability */
+  }
+  .slides img {
+    width: 100%;
+    height: 220px;
+    display: block;
   }
 }
 
