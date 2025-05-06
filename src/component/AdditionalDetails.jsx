@@ -14,7 +14,7 @@ const options1 = [
   { value: 6, label: "Europe" },
   { value: 7, label: "Any Other" },
 ];
-export default function AdditionalDetails() {
+export default function AdditionalDetails({  onPrevious }) {
 
       const canvasRef = useRef(null);
         const [captchaCode, setCaptchaCode] = useState("");
@@ -82,19 +82,19 @@ export default function AdditionalDetails() {
   return (
     <div>
       <div className="container mt-5">
-        <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
+        <div className="xb-contact pos-rel bg-white shadow rounded p-4" style={{ overflow: "visible" }}>
           <div className="row">
             <div className="col-12">
               <div className="p-5">
                 <div className="xb-item--holder mb-25">
-                  <h3 className="wow skewIn ">Additional Details</h3>
+                  <h3 className="wow skewIn fw-bold border-bottom pb-2">Additional Details</h3>
                 </div>
                 <form className="xb-item--form contact-from" action="#!">
-                  <div className="row">
+                  <div className="row g-4">
                     <div className="col-12 mb-3">
-                      <label htmlFor="">Do You Have A Valid Passport?</label>
+                      <label className="mb-1">Do You Have A Valid Passport?</label>
                       <br />
-                      <div style={{ marginTop: "10px" }}>
+                      <div  style={{ marginTop: "10px" }}>
                         <span
                           style={{ marginRight: "8px", marginBottom: "0px" }}
                         >
@@ -122,12 +122,13 @@ export default function AdditionalDetails() {
                     {hasPassport && (
                       <>
                         <div className="col-lg-4 ">
-                          <label htmlFor="">Date Of Birth :</label>
-                          <div className="xb-item--field">
-                            <span>
-                              <CalendarMonthIcon />
+                          <label className="mb-1">Date Of Birth :</label>
+                          <div className="d-flex align-items-center border rounded px-3 py-2">
+                          <span>  
+                              <CalendarMonthIcon className="me-2 text-muted"/>
                             </span>
                             <input
+                            className="form-control border-0 p-0"
                               type="date"
                               placeholder="Enter Your DOB"
                               style={{ width: "100%" }}
@@ -136,45 +137,45 @@ export default function AdditionalDetails() {
                         </div>
 
                         <div className="col-lg-4">
-                          <label htmlFor="">Citizenship :</label>
-                          <div className="xb-item--field">
+                          <label className="mb-1">Citizenship :</label>
+                          <div className="d-flex align-items-center border rounded px-3 py-2">
                             <span>
-                              <PermIdentityIcon />
+                              <PermIdentityIcon  className="me-2 text-muted" />
                             </span>
-                            <input type="text" />
+                            <input type="text" className="form-control border-0 p-0"/>
                           </div>
                         </div>
 
                         <div className="col-lg-4">
-                          <label htmlFor="">Passport No. :</label>
-                          <div className="xb-item--field">
+                          <label className="mb-1">Passport No. :</label>
+                          <div  className="d-flex align-items-center border rounded px-3 py-2">
                             <span>
-                              <PermIdentityIcon />
+                              <PermIdentityIcon className="me-2 text-muted" />
                             </span>
-                            <input type="text" />
+                            <input type="text" className="form-control border-0 p-0"/>
                           </div>
                         </div>
                       </>
                     )}
 
                     <div className="col-lg-6 ">
-                      <label htmlFor="">Father's Occupation :</label>
-                      <div className="xb-item--field">
+                      <label className="mb-1">Father's Occupation :</label>
+                      <div className="d-flex align-items-center border rounded px-3 py-2">
                         <span>
-                          <PermIdentityIcon />
+                          <PermIdentityIcon className="me-2 text-muted"/>
                         </span>
-                        <input type="text" style={{ width: "100%" }} />
+                        <input type="text" style={{ width: "100%" }} className="form-control border-0 p-0"/>
                       </div>
                     </div>
                     <div className="col-lg-6 ">
-                      <label htmlFor="">
+                      <label  className="mb-1">
                         Approximate Annual Income Of Family :
                       </label>
-                      <div className="xb-item--field">
+                      <div className="d-flex align-items-center border rounded px-3 py-2">
                         <span>
-                          <CurrencyRupeeIcon />
+                          <CurrencyRupeeIcon className="me-2 text-muted"/>
                         </span>
-                        <input type="text" style={{ width: "100%" }} />
+                        <input type="text" style={{ width: "100%" }} className="form-control border-0 p-0"/>
                       </div>
                     </div>
                     <div className="col-lg-6 ">
@@ -210,10 +211,10 @@ export default function AdditionalDetails() {
                     {hasPassport1 && (
                       <>
                         <div className="col-lg-6">
-                          <label htmlFor="">Name Of The Countries :</label>
-                          <div className="xb-item--field">
+                          <label className="mb-1">Name Of The Countries :</label>
+                          <div className="d-flex align-items-center border rounded px-3 py-2">
                             <span>
-                              <PublicIcon />
+                              <PublicIcon className="me-2 text-muted"/>
                             </span>
                             <div
                               className="nice-select"
@@ -262,10 +263,10 @@ export default function AdditionalDetails() {
 
                    <div className="row mt-3">
                    <div className="col-lg-6">  
-                        <label htmlFor="">How did you come to know about us? :</label>
-                        <div className="xb-item--field">
+                        <label className="mb-1">How did you come to know about us? :</label>
+                        <div className="d-flex align-items-center border rounded px-3 py-2">
                           <span>
-                            <PublicIcon />
+                            <PublicIcon className="me-2 text-muted"/>
                           </span>
                           <div className="nice-select" tabindex="0">
                             <span className="current">Please Select </span>
@@ -309,16 +310,17 @@ export default function AdditionalDetails() {
                         </div>
                       </div>
                       <div className="col-lg-6">
-                        <label htmlFor="">Any Additional Information, you would like to write here :</label>
-                        <div className="xb-item--field">
+                        <label className="mb-1">Any Additional Information, you would like to write here :</label>
+                        <div className="d-flex align-items-center border rounded px-3 py-2">
                           <span>
-                            <img src="assets/img/icon/c_message.svg" alt="" />
+                            <img src="assets/img/icon/c_message.svg" alt=""  className="me-2 text-muted"/>
                           </span>
                           <textarea
                             name="message"
                             id="message"
                             cols="20"
                             rows="5"
+                            className="form-control border-0 p-0"
                             placeholder="Write Your Message..."
                           ></textarea>
                         </div>
@@ -349,15 +351,16 @@ export default function AdditionalDetails() {
                           </div>
                         </div>
 
-                        <div className="xb-item--field">
+                        <div className="d-flex align-items-center border rounded px-3 py-2">
                           <input
                           style={{width:'50%'}}
                             type="text"
+                            className="form-control border-0 p-0"
                             placeholder="Enter Captcha"
                             value={captchaInput}
                             onChange={(e) => setCaptchaInput(e.target.value)}
                             required
-                            className="form-control"
+                            
                           />
                         </div>
                       </div>
@@ -366,6 +369,15 @@ export default function AdditionalDetails() {
                 </form>
               </div>
             </div>
+
+            <div className="d-flex justify-content-between mt-3">
+        <button className="btn btn-secondary" onClick={onPrevious}>
+          Previous
+        </button>
+        <button className="btn btn-primary" >
+          Submit
+        </button>
+      </div>
           </div>
         </div>
       </div>

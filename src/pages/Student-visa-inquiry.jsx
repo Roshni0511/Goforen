@@ -123,6 +123,14 @@ const streamOptions = [
 ];
 
 export default function Studentvisainquiry() {
+  const [step, setStep] = useState(1); // Step 1, 2, 3...
+
+  const handleNext = () => {
+    setStep((prev) => prev + 1);
+  };
+  const handlePrevious = () => {
+    setStep((prev) => prev - 1);
+  };
   // data-background img start
   const [background, setBackground] = useState("");
 
@@ -202,7 +210,7 @@ export default function Studentvisainquiry() {
       >
         <div className="container">
           <div className="breadcrumb__content">
-            <h2 className="breadcrumb__title">Student Visa</h2>
+            <h2 className="breadcrumb__title" style={{color:'#fff'}}>Student Visa</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
@@ -261,124 +269,96 @@ export default function Studentvisainquiry() {
           </div>
         </div>
         {/* Primary Details start  */}
-        <div className="container">
-          <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-            <div className="row">
+        {step === 1 && (
+        <div className="container py-5">
+  <div className="xb-contact pos-rel bg-white shadow rounded p-4" style={{ overflow: "visible" }}>
+    <div className="row">
+      <div className="col-12">
+        <div className="p-3">
+          <div className="xb-item--holder mb-4">
+            <h3 className="wow skewIn  fw-bold border-bottom pb-2">Primary Details</h3>
+          </div>
+          <form className="xb-item--form contact-from" action="#!">
+            <div className="row g-4">
+              
               <div className="col-12">
-                <div className="p-5">
-                  <div className="xb-item--holder mb-25">
-                    <h3 className="wow skewIn ">Primary Details</h3>
-                  </div>
-                  <form className="xb-item--form contact-from" action="#!">
-                    <div className="row">
-                      <div className="col-12">
-                        <FormControl>
-                          <RadioGroup
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue="Father"
-                            name="radio-buttons-group"
-                            style={{ display: "block" }}
-                          >
-                            <FormControlLabel
-                              value="Father"
-                              control={<Radio />}
-                              label="Father"
-                            />
-                            <FormControlLabel
-                              value="Spouse"
-                              control={<Radio />}
-                              label="Spouse"
-                            />
-                          </RadioGroup>
-                        </FormControl>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Your Full Name :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <PermIdentityIcon />
-                          </span>
-                          <input type="text" placeholder="Enter your Name" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Your Father Name :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <PermIdentityIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter your Father Name"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Contact No. (Mobile) :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <CallIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter Your Contact Number"
-                          />
-                        </div>
-                      </div>
+                <FormControl>
+                  <label className="mb-2 fw-medium">Select Relation:</label>
+                  <RadioGroup row defaultValue="Father" name="radio-buttons-group">
+                    <FormControlLabel value="Father" control={<Radio />} label="Father" />
+                    <FormControlLabel value="Spouse" control={<Radio />} label="Spouse" />
+                  </RadioGroup>
+                </FormControl>
+              </div>
 
-                      <div className="col-lg-6">
-                        <label htmlFor=""> Landline Number (If Any) :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <RingVolumeIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder=" Enter Your Landline Number"
-                          />
-                        </div>
-                      </div>
+              {/** Your Full Name **/}
+              <div className="col-lg-6">
+                <label className="mb-1">Your Full Name:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <PermIdentityIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter your Name" className="form-control border-0 p-0" />
+                </div>
+              </div>
 
-                      <div className="col-lg-6">
-                        <label htmlFor="">
-                          Alternate Contact No. (Mobile) :
-                        </label>
-                        <div className="xb-item--field">
-                          <span>
-                            <CallIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter Your Contact Number"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Email :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <EmailIcon />
-                          </span>
-                          <input type="text" placeholder="Enter Your Email" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Date Of Birth :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <CalendarMonthIcon />
-                          </span>
-                          <input
-                            type="Date"
-                            placeholder="Enter Your DOB"
-                            style={{ width: "100%" }}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Desired Country :</label>
-                        <div className="xb-item--field">
-                          <span>
+              {/** Father Name **/}
+              <div className="col-lg-6">
+                <label className="mb-1">Your Father Name:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <PermIdentityIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter your Father Name" className="form-control border-0 p-0" />
+                </div>
+              </div>
+
+              {/** Contact **/}
+              <div className="col-lg-6">
+                <label className="mb-1">Contact No. (Mobile):</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <CallIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter Your Contact Number" className="form-control border-0 p-0" />
+                </div>
+              </div>
+
+              {/** Landline **/}
+              <div className="col-lg-6">
+                <label className="mb-1">Landline Number (If Any):</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <RingVolumeIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter Your Landline Number" className="form-control border-0 p-0" />
+                </div>
+              </div>
+
+              {/** Alternate Contact **/}
+              <div className="col-lg-6">
+                <label className="mb-1">Alternate Contact No.:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <CallIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter Alternate Number" className="form-control border-0 p-0" />
+                </div>
+              </div>
+
+              {/** Email **/}
+              <div className="col-lg-6">
+                <label className="mb-1">Email:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <EmailIcon className="me-2 text-muted" />
+                  <input type="email" placeholder="Enter Your Email" className="form-control border-0 p-0" />
+                </div>
+              </div>
+
+              {/** DOB **/}
+              <div className="col-lg-6">
+                <label className="mb-1">Date Of Birth:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <CalendarMonthIcon className="me-2 text-muted" />
+                  <input type="date" className="form-control border-0 p-0" />
+                </div>
+              </div>
+
+              {/** Desired Country **/}
+              <div className="col-lg-6">
+                <label className="mb-1">Desired Country:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                <span>
                             <PublicIcon />
                           </span>
                           <div className="nice-select" tabindex="0">
@@ -410,105 +390,113 @@ export default function Studentvisainquiry() {
                               </li>
                             </ul>
                           </div>
-                        </div>
-                      </div>
-
-                      <div className="col-12">
-                        <div className="xb-item--field">
-                          <label>
-                            <strong>
-                              If you are married, Do you want dependent visa for
-                              your spouse ?
-                            </strong>
-                          </label>
-                          <FormGroup row>
-                            <label style={{ marginRight: "10px" }}>No</label>
-                            <FormControlLabel
-                              control={<Switch color="black"  checked={showSpouseDetails}
-                              onChange={handleToggle}/>}
-                              label="Yes"
-                            />
-                          </FormGroup>
-                        </div>
-                      </div>
-
-                    </div>
-                  </form>
                 </div>
               </div>
+
+              {/** Spouse Visa **/}
+              <div className="col-12 mt-3">
+                <label className="fw-bold mb-2 d-block">
+                  If you are married, do you want dependent visa for your spouse?
+                </label>
+                <FormGroup row>
+                  <label className="me-3">No</label>
+                  <FormControlLabel
+                    control={
+                      <Switch color="primary" checked={showSpouseDetails} onChange={handleToggle} />
+                    }
+                    label="Yes"
+                  />
+                </FormGroup>
+              </div>
+
             </div>
-          </div>
+          </form>
+          
+          <div className="col-12 mt-4 text-end">
+                    <button className="btn btn-primary" onClick={handleNext}>
+                      Next
+                    </button>
+                  </div>
         </div>
+      </div>
+    </div>
+  </div>
+        </div>
+
+)}
         {/* Primary Details end  */}
 
+
+      {/* Step 2: Show Next Section if isNext is true */}
      
 
         {/* Residential Details start  */}
+        {step === 2 && (
         <div className="container mt-5">
-          <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-            <div className="row">
-              <div className="col-12">
-                <div className="p-5">
-                  <div className="xb-item--holder mb-25">
-                    <h3 className="wow skewIn ">Residential Details</h3>
-                  </div>
-                  <form className="xb-item--form contact-from" action="#!">
-                    <div className="row">
-                      <div className="col-lg-6">
-                        <label htmlFor="">Flat / Block No. :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <HouseIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter your Flat / Block No.."
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Name Of The Building :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <HouseIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter your Building Name"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Road / Street/ Locality :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <AddRoadIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="Enter your Road / Street/ Locality"
-                          />
-                        </div>
-                      </div>
+  <div className="xb-contact pos-rel bg-white shadow rounded p-4" style={{ overflow: "visible" }}>
+    <div className="row">
+      <div className="col-12">
+        <div className="p-3">
+          <div className="xb-item--holder mb-4">
+            <h3 className="wow skewIn fw-bold border-bottom pb-2">Residential Details</h3>
+          </div>
+          <form className="xb-item--form contact-from" action="#!">
+            <div className="row g-4">
 
-                      <div className="col-lg-6">
-                        <label htmlFor=""> Pincode :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <PinDropIcon />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder=" Enter Your Pincode"
-                          />
-                        </div>
-                      </div>
+              <div className="col-lg-6">
+                <label className="mb-1">Flat / Block No. :</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <HouseIcon className="me-2 text-muted" />
+                  <input
+                    type="text"
+                    placeholder="Enter your Flat / Block No."
+                    className="form-control border-0 p-0"
+                  />
+                </div>
+              </div>
 
-                      <div className="col-lg-6">
-                        <label htmlFor="">Area (Only For City Surat) :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <AddLocationIcon />
+              <div className="col-lg-6">
+                <label className="mb-1">Name Of The Building :</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <HouseIcon className="me-2 text-muted" />
+                  <input
+                    type="text"
+                    placeholder="Enter your Building Name"
+                    className="form-control border-0 p-0"
+                  />
+                </div>
+              </div>
+
+              <div className="col-lg-6">
+                <label className="mb-1">Road / Street / Locality :</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <AddRoadIcon className="me-2 text-muted" />
+                  <input
+                    type="text"
+                    placeholder="Enter your Road / Street / Locality"
+                    className="form-control border-0 p-0"
+                  />
+                </div>
+              </div>
+
+              <div className="col-lg-6">
+                <label className="mb-1">Pincode :</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <PinDropIcon className="me-2 text-muted" />
+                  <input
+                    type="text"
+                    placeholder="Enter Your Pincode"
+                    className="form-control border-0 p-0"
+                  />
+                </div>
+              </div>
+
+              <div className="col-lg-6">
+                <label className="mb-1">Area (Only For City Surat) :</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <span>
+                  <AddLocationIcon className="me-2 text-muted" />
+                           
                           </span>
                           <div className="nice-select" tabindex="0">
                             <span className="current">Select Area</span>
@@ -1008,13 +996,15 @@ export default function Studentvisainquiry() {
                               </li>
                             </ul>
                           </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">City :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <AddLocationIcon />
+                </div>
+              </div>
+
+              <div className="col-lg-6">
+                <label className="mb-1">City :</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <span>
+                  <AddLocationIcon className="me-2 text-muted" />
+                           
                           </span>
                           <div className="nice-select" tabindex="0">
                             <span className="current">Select City</span>
@@ -1269,45 +1259,54 @@ export default function Studentvisainquiry() {
                               </li>
                             </ul>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
                 </div>
               </div>
+
             </div>
+          </form>
+          <div className="d-flex justify-content-between mt-3">
+            <button className="btn btn-secondary" onClick={handlePrevious}>
+              Previous
+            </button>
+            <button className="btn btn-primary" onClick={handleNext}>
+              Next
+            </button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+        </div>
+)}
         {/* Residential Details end  */}
 
         {/* Educational Qualification start  */}
-
+        {step === 3 && (
         <div className="container mt-5">
-  <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-    <div className="p-5">
-      <div className="xb-item--holder mb-25">
-        <h3 className="wow skewIn">Educational Qualification</h3>
+  <div className="xb-contact pos-rel bg-white shadow rounded p-4" style={{ overflow: "visible" }}>
+    <div className="p-3">
+      <div className="xb-item--holder mb-4">
+        <h3 className="wow skewIn fw-bold border-bottom pb-2">Educational Qualification</h3>
       </div>
 
-      {/* Responsive table wrapper */}
       <div style={{ overflowX: "auto" }}>
         <table
+          className="table table-bordered text-center align-middle"
           style={{
             width: "100%",
             borderCollapse: "collapse",
-            minWidth: "800px", // forces horizontal scroll on small devices
+            minWidth: "900px",
           }}
-          border="1"
         >
-          <thead>
-            <tr style={{ backgroundColor: "#edf3f5", textAlign: "center" }}>
+          <thead style={{ backgroundColor: "#edf3f5" }}>
+            <tr>
               <th>Qualification</th>
               <th>Stream Of Degree</th>
               <th>Major Subjects</th>
               <th>Year Of Completion</th>
               <th>Percentage</th>
               <th>Total ATKT or Backlog</th>
-              <th></th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -1315,13 +1314,8 @@ export default function Studentvisainquiry() {
               <tr key={index}>
                 <td>
                   <input
-                    style={{
-                      padding: "15px",
-                      border: "1px solid #EDF3F5",
-                      borderRadius: "10px",
-                      width: "100%",
-                    }}
                     type="text"
+                    className="form-control rounded"
                     defaultValue={row.qualification}
                     onBlur={(e) =>
                       handleChange(index, "qualification", e.target.value)
@@ -1330,12 +1324,7 @@ export default function Studentvisainquiry() {
                 </td>
                 <td>
                   <select
-                    style={{
-                      padding: "15px",
-                      border: "1px solid #EDF3F5",
-                      borderRadius: "10px",
-                      width: "100%",
-                    }}
+                    className="form-select rounded"
                     value={row.stream}
                     onChange={(e) =>
                       handleChange(index, "stream", e.target.value)
@@ -1350,13 +1339,8 @@ export default function Studentvisainquiry() {
                 </td>
                 <td>
                   <input
-                    style={{
-                      padding: "15px",
-                      border: "1px solid #EDF3F5",
-                      borderRadius: "10px",
-                      width: "100%",
-                    }}
                     type="text"
+                    className="form-control rounded"
                     value={row.major}
                     onChange={(e) =>
                       handleChange(index, "major", e.target.value)
@@ -1365,13 +1349,8 @@ export default function Studentvisainquiry() {
                 </td>
                 <td>
                   <input
-                    style={{
-                      padding: "15px",
-                      border: "1px solid #EDF3F5",
-                      borderRadius: "10px",
-                      width: "100%",
-                    }}
                     type="text"
+                    className="form-control rounded"
                     value={row.year}
                     onChange={(e) =>
                       handleChange(index, "year", e.target.value)
@@ -1380,13 +1359,8 @@ export default function Studentvisainquiry() {
                 </td>
                 <td>
                   <input
-                    style={{
-                      padding: "15px",
-                      border: "1px solid #EDF3F5",
-                      borderRadius: "10px",
-                      width: "100%",
-                    }}
                     type="text"
+                    className="form-control rounded"
                     value={row.percentage}
                     onChange={(e) =>
                       handleChange(index, "percentage", e.target.value)
@@ -1395,13 +1369,8 @@ export default function Studentvisainquiry() {
                 </td>
                 <td>
                   <input
-                    style={{
-                      padding: "15px",
-                      border: "1px solid #EDF3F5",
-                      borderRadius: "10px",
-                      width: "100%",
-                    }}
                     type="text"
+                    className="form-control rounded"
                     value={row.backlog}
                     onChange={(e) =>
                       handleChange(index, "backlog", e.target.value)
@@ -1409,24 +1378,22 @@ export default function Studentvisainquiry() {
                   />
                 </td>
                 <td>
-                  <div className="row">
-                    <div className="col-4">
-                      <button
-                        style={{ backgroundColor: "green", color: "white" }}
-                        onClick={addRow}
-                      >
-                        +
-                      </button>
-                    </div>
-                    <div className="col-4">
-                      <button
-                        style={{ backgroundColor: "tomato", color: "white" }}
-                        onClick={() => removeRow(index)}
-                        disabled={rows.length <= 1}
-                      >
-                        -
-                      </button>
-                    </div>
+                  <div className="d-flex justify-content-center gap-2">
+                    <button
+                      type="button"
+                      className="btn btn-sm btn-success"
+                      onClick={addRow}
+                    >
+                      +
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-sm btn-danger"
+                      onClick={() => removeRow(index)}
+                      disabled={rows.length <= 1}
+                    >
+                      -
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -1434,78 +1401,78 @@ export default function Studentvisainquiry() {
           </tbody>
         </table>
       </div>
+      <div className="d-flex justify-content-between mt-3">
+            <button className="btn btn-secondary" onClick={handlePrevious}>
+              Previous
+            </button>
+            <button className="btn btn-primary" onClick={handleNext}>
+              Next
+            </button>
+          </div>
     </div>
   </div>
 </div>
+        )}
+
         {/* Educational Qualification end */}
 
         {/* any working experience start  */}
+        {step === 4 && (
         <div className="container mt-5">
-          <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
-            <div className="p-5">
-              <div className="custom-experience-wrapper">
-                <div className="custom-experience-header">
-                  <div className="experience-toggle-wrapper">
-                    <h3 className="wow skewIn ">
-                      Do you have any working experience?
-                    </h3>
-                    <span style={{ marginRight: "8px", marginLeft: "10px"}}>
-                      {" "}
-                      No
-                    </span>
-                    <label className="experience-toggle-switch">
-                      <input
-                        type="checkbox"
-                        checked={hasExperience}
-                        onChange={toggleExperience}
-                      />
-                      <span className="experience-slider"></span>
-                    </label>
-                    <span style={{ marginLeft: "8px" }}>Yes</span>
-                  </div>
-                </div>
+  <div className="xb-contact pos-rel bg-white shadow rounded p-4">
+    <div className="p-3">
+      <div className="custom-experience-wrapper">
+        <div className="custom-experience-header mb-4 d-flex align-items-center flex-wrap gap-2">
+          <h3 className="wow skewIn fw-bold mb-0 me-3">
+            Do you have any working experience?
+          </h3>
+          <span>No</span>
+          <label className="experience-toggle-switch">
+            <input
+              type="checkbox"
+              checked={hasExperience}
+              onChange={toggleExperience}
+            />
+            <span className="experience-slider"></span>
+          </label>
+          <span>Yes</span>
+        </div>
 
-                {hasExperience && (
-                 <div  style={{ overflowX: "auto" }}>
-                   <table
-                    id="experience-table"
-                    className="custom-experience-table"
-                    border="1"
-                    cellPadding="10"
-                    cellSpacing="0"
-                    style={{ width: "100%", marginTop: "10px", borderCollapse: "collapse",
-                      minWidth: "800px",  }}
-                  >
-                    <thead className="custom-experience-thead">
-                      <tr>
-                        <th>Company</th>
-                        <th>Designation</th>
-                        <th>From</th>
-                        <th>To</th>
-                        <th>Number Of Years</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody className="custom-experience-tbody">
-                      {experienceData.map((row, index) => (
-                        <tr key={index} className="custom-experience-row">
-                          <td>
-                            <input
-                              style={{
-                                padding: "15px",
-                                border: "1px solid #EDF3F5",
-                                borderRadius: "10px",
-                              }}
-                              type="text"
-                              className="custom-input-company"
-                              value={row.company}
-                              onChange={(e) =>
-                                updateField(index, "company", e.target.value)
-                              }
-                            />
-                          </td>
-                          <td>
-                            <select
+        {hasExperience && (
+          <div style={{ overflowX: "auto" }}>
+            <table
+              className="table table-bordered align-middle text-center"
+              style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                minWidth: "900px",
+              }}
+            >
+              <thead style={{ backgroundColor: "#edf3f5" }}>
+                <tr>
+                  <th>Company</th>
+                  <th>Designation</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Number Of Years</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {experienceData.map((row, index) => (
+                  <tr key={index}>
+                    <td>
+                      <input
+                        type="text"
+                        className="form-control rounded"
+                        value={row.company}
+                        onChange={(e) =>
+                          updateField(index, "company", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                    <select
                               style={{
                                 padding: "15px",
                                 border: "1px solid #EDF3F5",
@@ -2634,112 +2601,131 @@ export default function Studentvisainquiry() {
                                 Division Manager
                               </option>
                             </select>
-                          </td>
-                          <td>
-                            <input
-                              style={{
-                                padding: "15px",
-                                border: "1px solid #EDF3F5",
-                                borderRadius: "10px",
-                              }}
-                              type="date"
-                              className="custom-date-from"
-                              value={row.from}
-                              onChange={(e) =>
-                                updateField(index, "from", e.target.value)
-                              }
-                            />
-                          </td>
-                          <td>
-                            <input
-                              style={{
-                                padding: "15px",
-                                border: "1px solid #EDF3F5",
-                                borderRadius: "10px",
-                              }}
-                              type="date"
-                              className="custom-date-to"
-                              value={row.to}
-                              onChange={(e) =>
-                                updateField(index, "to", e.target.value)
-                              }
-                            />
-                          </td>
-                          <td>
-                            <input
-                              style={{
-                                padding: "15px",
-                                border: "1px solid #EDF3F5",
-                                borderRadius: "10px",
-                              }}
-                              type="text"
-                              className="custom-input-years"
-                              value={row.years}
-                              onChange={(e) =>
-                                updateField(index, "years", e.target.value)
-                              }
-                            />
-                          </td>
-                          <td>
-                            <button
-                              className="custom-btn-add"
-                              onClick={addExperienceRow}
-                              style={{
-                                background: "green",
-                                color: "white",
-                                marginRight: 5,
-                              }}
-                            >
-                              +
-                            </button>
-                            {experienceData.length > 1 && (
-                              <button
-                                className="custom-btn-remove"
-                                onClick={() => removeExperienceRow(index)}
-                                style={{ background: "tomato", color: "white" }}
-                              >
-                                -
-                              </button>
-                            )}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                 </div>
-                )}
-              </div>
-            </div>
+                    </td>
+                    <td>
+                      <input
+                        type="date"
+                        className="form-control rounded"
+                        value={row.from}
+                        onChange={(e) =>
+                          updateField(index, "from", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="date"
+                        className="form-control rounded"
+                        value={row.to}
+                        onChange={(e) =>
+                          updateField(index, "to", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        className="form-control rounded"
+                        value={row.years}
+                        onChange={(e) =>
+                          updateField(index, "years", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <div className="d-flex justify-content-center gap-2">
+                        <button
+                          type="button"
+                          className="btn btn-sm btn-success"
+                          onClick={addExperienceRow}
+                        >
+                          +
+                        </button>
+                        {experienceData.length > 1 && (
+                          <button
+                            type="button"
+                            className="btn btn-sm btn-danger"
+                            onClick={() => removeExperienceRow(index)}
+                          >
+                            -
+                          </button>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </div>
+        )}
+      </div>
+      <div className="d-flex justify-content-between mt-3">
+            <button className="btn btn-secondary" onClick={handlePrevious}>
+              Previous
+            </button>
+            <button className="btn btn-primary" onClick={handleNext}>
+              Next
+            </button>
+          </div>
+    </div>
+  </div>
+</div>
+        )}
+
         {/* any working experience end  */}
 
         {/* Intended Study Details start  */}
-        <IntendedStudyDetails />
+        {step === 5 && (
+  <IntendedStudyDetails 
+    onNext={handleNext} 
+    onPrevious={handlePrevious} 
+  />
+)}
         {/* Intended Study Details end  */}
-
         {/* Attempted Any International Exams start  */}
-        <AttemptedInternationalExams />
+        {step === 6 && (
+        <AttemptedInternationalExams 
+         onNext={handleNext} 
+        onPrevious={handlePrevious} 
+      />
+    )}
+   
         {/* Attempted Any International Exams end */}
-
-        {/* Upload Your Resume start  */}
-        <UploadYourResume />
-        {/* Upload Your Resume end  */}
 
         {/* Please Provide Details About Your Spouse start  */}
 
-        {showSpouseDetails && <DetailsAboutSpouse />}
+        {step === 7 && showSpouseDetails && (
+  <DetailsAboutSpouse 
+    onNext={handleNext}
+    onPrevious={handlePrevious}
+  />
+)}
+{step === 7 && !showSpouseDetails && (
+  <UploadYourResume 
+    onPrevious={handlePrevious}
+    onNext={handleNext}
+  />
+)}
         {/* Please Provide Details About Your Spouse end */}
 
+        {/* Upload Your Resume start  */}
+        {step === 8 && (
+  <UploadYourResume 
+    onPrevious={handlePrevious}
+    onNext={handleNext}
+  />
+)}
+        {/* Upload Your Resume end  */}
+
+      
+
         {/* Additional Details start  */}
-        <AdditionalDetails />
+        {step === 9 && (
+        <AdditionalDetails  onPrevious={handlePrevious}/>
+        )}
         {/* Additional Details end */}
 
-        <div className="container">
-        <button style={{background:'#00cc99',padding:'10px 20px', margin:'10px',borderRadius:'10px'}}>
-          <a href="" style={{color:'white'}}> submit</a>
-        </button>
-        </div>
+        
       </section>
       {/* <!-- contact end --> */}
       <Footer />
