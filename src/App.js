@@ -39,6 +39,8 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import StarRateIcon from '@mui/icons-material/StarRate';
+import News from "./pages/News";
+import Newsdetails from "./pages/News-details";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -188,6 +190,8 @@ function App() {
         <Route path="/Privacy-policy" element={<Privacypolicy />} />
         <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
         <Route path="/Declaration" element={<Declaration />} />
+        <Route path="/News" element={<News />} />
+        <Route path="/Newsdetails" element={<Newsdetails />} />
       </Routes>
     </>
   );
