@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Button, Modal } from "@mui/material";
 
+// import { Modal, Button, Form } from 'react-bootstrap';
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  TextField,
+  MenuItem,
+} from "@mui/material";
 export default function Inquiryassociation() {
    // data-background img start
     const [background, setBackground] = useState("");
   
     useEffect(() => {
-      const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
+      const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
       setBackground(backgroundUrl);
     }, []);
     // data-background img end
@@ -49,29 +58,12 @@ export default function Inquiryassociation() {
       <Navbar />
        {/* <!-- breadcrumb start --> */}
        <section
-  className="breadcrumb pos-rel bg_img"
-  style={{ 
-    backgroundImage: `url(${background})`, 
-    minHeight: '400px',
-    position: 'relative',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  }}
->
-  {/* Overlay */}
-  <div style={{
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
-    zIndex: 1
-  }}></div>
-
-  <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-    <div className="breadcrumb__content">
-    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Inquiry For Assocation with us</h2>
+        className="breadcrumb pos-rel bg_img"
+        style={{ backgroundImage: `url(${background})` }}
+      >
+        <div className="container">
+          <div className="breadcrumb__content">
+            <h2 className="breadcrumb__title">Inquiry For Assocation with us</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
@@ -81,10 +73,8 @@ export default function Inquiryassociation() {
               </li>
               <li className="breadcrumb-item">Inquiry For Assocation with us</li>
             </ul>
-    </div>
-  </div>
-      
-       
+          </div>
+        </div>
         <div className="breadcrumb__circle">
           <span
             className="big"
@@ -140,86 +130,68 @@ export default function Inquiryassociation() {
     </section>
 
      {/* MODAL */}
-     <Modal show={showModal} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Inquiry For Association</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form className="xb-item--form contact-from" >
-            <Form.Group className="mb-2">
-              <Form.Label>Name :</Form.Label>
-              <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_user.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Enter your Name" />
-                        </div>
-            </Form.Group>
-            <Form.Group className="mb-2">
-              <Form.Label>Email :</Form.Label>
-              <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_mail.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Enter Your Email" />
-                        </div>
-            </Form.Group>
-            <Form.Group className="mb-2">
-              <Form.Label>Contact No. :</Form.Label>
-              <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_call.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Enter Your Number" />
-                        </div>
-            </Form.Group>
-            <Form.Group className="mb-2">
-              <Form.Label>Present Occupation :</Form.Label>
-              {/* <Form.Select> */}
-              <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_select.svg" alt="" />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">--Please Select--</span>
-                            <ul className="list">
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                               Travel Agent
-                              </li>
-                              <li data-value="2" className="option">
-                              IELTS Traine
-                              </li>
-                              <li data-value="3" className="option">
-                              Visa Service Agent
-                              </li>
-                             
-                              <li data-value="4" className="option">
-                                Other
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-              {/* </Form.Select> */}
-            </Form.Group>
-            <Form.Group className="mb-2">
-              <Form.Label>Additional Query</Form.Label>
-              <Form.Control as="textarea" rows={3} />
-            </Form.Group>
-            
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button style={{ background: '#00cc99', border: 'none' }}>
-            Send
-          </Button>
-        </Modal.Footer>
-      </Modal>
+     <Dialog open={showModal} onClose={handleClose} fullWidth maxWidth="sm">
+  <DialogTitle>Inquiry For Association</DialogTitle>
+  <DialogContent dividers>
+    <div className="my-2">
+      <TextField
+        fullWidth
+        label="Name"
+        variant="outlined"
+        placeholder="Enter your Name"
+        className="mb-3"
+        margin="dense"
+      />
+      <TextField
+        fullWidth
+        label="Email"
+        variant="outlined"
+        placeholder="Enter your Email"
+        className="mb-3"
+        margin="dense"
+      />
+      <TextField
+        fullWidth
+        label="Contact No."
+        variant="outlined"
+        placeholder="Enter your Number"
+        className="mb-3"
+        margin="dense"
+      />
+      <TextField
+        select
+        fullWidth
+        label="Present Occupation"
+        variant="outlined"
+        defaultValue=""
+        className="mb-3"
+        margin="dense"
+      >
+        <MenuItem value="">--Please Select--</MenuItem>
+        <MenuItem value="1">Travel Agent</MenuItem>
+        <MenuItem value="2">IELTS Trainer</MenuItem>
+        <MenuItem value="3">Visa Service Agent</MenuItem>
+        <MenuItem value="4">Other</MenuItem>
+      </TextField>
+      <TextField
+        fullWidth
+        multiline
+        rows={3}
+        label="Additional Query"
+        variant="outlined"
+        placeholder="Enter your query"
+        className="mb-3"
+        margin="dense"
+      />
+    </div>
+  </DialogContent>
+  <DialogActions>
+    <Button onClick={handleClose}>Close</Button>
+    <Button variant="contained" style={{ background: "#00cc99" }}>
+      Send
+    </Button>
+  </DialogActions>
+</Dialog>
 
 
       <Footer />

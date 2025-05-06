@@ -5,8 +5,9 @@ import Visacard from '../component/Visacard';
 import SuccessStories from '../component/SuccessStories';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Carousel } from 'react-bootstrap';
+
 export default function Home() {
   const scrollRef = useRef(null);
   const itemHeight = 70;
@@ -87,7 +88,7 @@ export default function Home() {
 
         {/* <!-- hero start --> */}
         <section className="hero hero__style-one bg_img" style={{minHeight:'0px' }}>
-        <Carousel fade interval={2000} style={{width:'100%',height:'600px'}}>
+        {/* <Carousel fade interval={2000} style={{width:'100%',height:'600px'}}>
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -135,7 +136,7 @@ export default function Home() {
         />
       
       </Carousel.Item>
-    </Carousel>
+    </Carousel> */}
         </section>
         {/* <!-- hero end --> */}
 
