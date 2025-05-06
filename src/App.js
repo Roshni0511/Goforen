@@ -40,7 +40,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import StarRateIcon from '@mui/icons-material/StarRate';
 
-
+import News from "./pages/News";
+import Newsdetails from "./pages/News-details";
 
 
 
@@ -197,7 +198,8 @@ function App() {
 
 
 
-
+        <Route path="/News" element={<News />} />
+        <Route path="/Newsdetails" element={<Newsdetails />} />
 
 
         <Route path="/Visaservice" element={<Visaservice />} />
