@@ -21,8 +21,9 @@ import AddLocationIcon from "@mui/icons-material/AddLocation";
 
 import UploadYourResume from "../component/UploadYourResume";
 
-import DetailsAboutSpouse from "../component/DetailsAboutSpouse";
-import AttemptedInternationalExam2 from "../component/AttemptedInternationalExams2";
+
+import AttemptedInternationalExam3 from "../component/AttemptedInternationalExam3";
+import UploadYourResume1 from "../component/UploadYourResume1";
 
 const initialRows = [
   {
@@ -133,6 +134,8 @@ const options1 = [
   { value: 7, label: "Any Other" },
 ];
 export default function Prvisainquiry() {
+
+  
   // data-background img start
   const [background, setBackground] = useState("");
 
@@ -1521,7 +1524,7 @@ export default function Prvisainquiry() {
       </div>
     </div>
   </div>
-</div>
+      </div>
 
         {/* Educational Qualification end */}
 
@@ -2764,16 +2767,14 @@ export default function Prvisainquiry() {
               </div>
               {/* any working experience end  */}
       
-              {/* Intended Study Details start  */}
-              {/* <IntendedStudyDetails /> */}
-              {/* Intended Study Details end  */}
+          
       
               {/* Attempted Any International Exams start  */}
-              <AttemptedInternationalExam2 />
+              <AttemptedInternationalExam3 />
               {/* Attempted Any International Exams end */}
       
               {/* Upload Your Resume start  */}
-              <UploadYourResume />
+              <UploadYourResume1 />
               {/* Upload Your Resume end  */}
       
              
@@ -3050,7 +3051,7 @@ export default function Prvisainquiry() {
             </div>
           </div>
         </div>
-      </div>
+              </div>
               {/* Additional Details end */}
       
               <div className="container">
