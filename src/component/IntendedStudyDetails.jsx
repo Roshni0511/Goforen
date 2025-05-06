@@ -112,7 +112,7 @@ const options1 = [
 ];
 
 const monthOptions = ["September", "January", "Summer"];
-export default function IntendedStudyDetails() {
+export default function IntendedStudyDetails({ onNext, onPrevious }) {
   // Intended Study Details
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -173,23 +173,23 @@ export default function IntendedStudyDetails() {
   return (
     <div>
       <div className="container mt-5">
-        <div className="xb-contact pos-rel" style={{ overflow: "visible" }}>
+        <div className="xb-contact pos-rel bg-white shadow rounded p-4" style={{ overflow: "visible" }}>
           <div className="row">
             <div className="col-12">
               <div className="p-5">
                 <div className="xb-item--holder mb-25">
-                  <h3 className="wow skewIn ">Intended Study Details</h3>
+                  <h3 className="wow skewIn  fw-bold border-bottom pb-2">Intended Study Details</h3>
                 </div>
                 <form className="xb-item--form contact-from" action="#!">
                   <div className="row">
                     <div className="col-lg-6">
-                      <label htmlFor="">
+                      <label htmlFor="" className="mb-1">
                         Intended Major Field Of Study(You Can Select More Than
                         One) :
                       </label>
-                      <div className="xb-item--field">
+                      <div className="d-flex align-items-center border rounded px-3 py-2">
                         <span>
-                          <PublicIcon />
+                          <PublicIcon className="me-2 text-muted"/>
                         </span>
                         <div
                           className="nice-select"
@@ -238,13 +238,13 @@ export default function IntendedStudyDetails() {
                     </div>
 
                     <div className="col-lg-6">
-                      <label htmlFor="">
+                      <label htmlFor="" className="mb-1">
                         Which Level Of Study Do You Want To Persue ?(You Can
                         Select More Than One)
                       </label>
-                      <div className="xb-item--field">
+                      <div className="d-flex align-items-center border rounded px-3 py-2">
                         <span>
-                          <PublicIcon />
+                          <PublicIcon  className="me-2 text-muted"/>
                         </span>
                         <div
                           className="nice-select"
@@ -293,11 +293,12 @@ export default function IntendedStudyDetails() {
                         <strong>Intake :</strong>
                       </label>
                       <table
+                       className="table table-bordered text-center align-middle"
                         border="1"
                         cellPadding="10"
                         style={{ width: "100%", borderCollapse: "collapse", minWidth: "500px",}}
                       >
-                        <thead>
+                        <thead style={{ backgroundColor: "#edf3f5" }}>
                           <tr>
                             <th>Month</th>
                             <th>Year</th>
@@ -330,6 +331,7 @@ export default function IntendedStudyDetails() {
                               </td>
                               <td>
                                 <input
+                                className="form-control rounded"
                                  style={{
                                     padding: "15px",
                                     border: "1px solid #EDF3F5",
@@ -347,9 +349,9 @@ export default function IntendedStudyDetails() {
                               <td style={{ textAlign: "center" }}>
                                 <button
                                   onClick={addRow}
+                                   className="btn btn-sm btn-success"
                                   style={{
-                                    backgroundColor: "green",
-                                    color: "white",
+                                    
                                     marginRight: "5px",
                                   }}
                                 >
@@ -358,10 +360,7 @@ export default function IntendedStudyDetails() {
                                 {rows.length > 1 && (
                                   <button
                                     onClick={() => removeRow(index)}
-                                    style={{
-                                      backgroundColor: "tomato",
-                                      color: "white",
-                                    }}
+                                    className="btn btn-sm btn-danger"
                                   >
                                     -
                                   </button>
@@ -374,6 +373,14 @@ export default function IntendedStudyDetails() {
                     </div>
                   </div>
                 </form>
+                <div className="d-flex justify-content-between mt-3">
+        <button className="btn btn-secondary" onClick={onPrevious}>
+          Previous
+        </button>
+        <button className="btn btn-primary" onClick={onNext}>
+          Next
+        </button>
+      </div>
               </div>
             </div>
           </div>
