@@ -68,14 +68,15 @@ export default function Home() {
     }
   }, [index]);
   const brandImages = [
-    'img_01.png',
-    'img_02.png',
-    'img_03.png',
-    'img_04.png',
-    'img_05.png',
-    'img_06.png',
-    'img_07.png',
-  ];
+    'https://www.goforen.com//uploads/gallery/43-image.jpeg',
+    'https://www.goforen.com//uploads/gallery/58-image.jpeg',
+    'https://www.goforen.com//uploads/gallery/81-image.jpg',
+    'https://www.goforen.com//uploads/gallery/60-image.jpg',
+    'https://www.goforen.com//uploads/gallery/48-image.jpg',
+    'https://www.goforen.com//uploads/gallery/94-image.jpg',
+    'https://www.goforen.com//uploads/gallery/29-image.jpg',
+    'https://www.goforen.com//uploads/gallery/96-image.png'
+  ]
   const slides = [
     "/assets/pic/slide1.jpg",
     "/assets/pic/slider-2.jpg",
@@ -220,34 +221,39 @@ export default function Home() {
       <h2 className="brand-title text-center mb-50">
       <span>   <span>Media</span></span>
                 </h2>
-        <Swiper
-        style={{overflow:"hidden"}}
-          modules={[Autoplay]}
-          slidesPerView={7}
-          loop={true}
-          centeredSlides={true}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
-          }}
-          speed={400}
-          breakpoints={{
-            1600: { slidesPerView: 7 },
-            1200: { slidesPerView: 6 },
-            992: { slidesPerView: 5, centeredSlides: false },
-            768: { slidesPerView: 4, centeredSlides: false },
-            576: { slidesPerView: 3, centeredSlides: false },
-            0: { slidesPerView: 2 },
-          }}
-        >
-          {brandImages.map((img, idx) => (
-            <SwiperSlide key={idx}>
-              <a href="#!" style={{padding:'20px'}}>
-                <img src={`/assets/img/brand/${img}`} alt={`Brand ${idx + 1}`} />
-              </a>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                <Swiper
+  style={{ overflow: "hidden" }}
+  modules={[Autoplay]}
+  slidesPerView={7}
+  spaceBetween={30} // 👈 spacing between slides (in pixels)
+  loop={true}
+  centeredSlides={true}
+  autoplay={{
+    delay: 6000,
+    disableOnInteraction: false,
+  }}
+  speed={400}
+  breakpoints={{
+    1600: { slidesPerView: 7, spaceBetween: 30 },
+    1200: { slidesPerView: 6, spaceBetween: 25 },
+    992: { slidesPerView: 5, centeredSlides: false, spaceBetween: 20 },
+    768: { slidesPerView: 4, centeredSlides: false, spaceBetween: 15 },
+    576: { slidesPerView: 3, centeredSlides: false, spaceBetween: 10 },
+    0: { slidesPerView: 2, spaceBetween: 8 },
+  }}
+>
+  {/* {brandImages.map((img, idx) => ( */}
+      {brandImages.map((img, idx) => (
+        <SwiperSlide key={idx}>
+      <a href="#!">
+        <img key={index} src={img} alt={`Brand-${idx + 1}`} />
+        {/* <img src={img} alt={`Brand ${idx + 1}`} style={{ width: '100%', }} /> */}
+      </a>
+    </SwiperSlide>
+      ))}
+  {/* ))} */}
+</Swiper>
+
       </div>
     </section>
       {/* <!-- brand end --> */}
