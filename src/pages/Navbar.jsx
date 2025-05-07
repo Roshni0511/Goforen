@@ -1,8 +1,73 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const query = searchValue.toLowerCase().trim();
+
+    const routeMap = {
+      "home": "/",
+      "about": "/About",
+      "race": "/About-us-race",
+      "founder": "/About-founder",
+      "visa services": "/Visa-services",
+      "immigration": "/Immigration-pr-visa",
+      "student visa": "/Student-visa",
+      "visitor visa": "/Visitor-visa",
+      "investor visa": "/Investor-visa",
+      "work permit": "/Work-permit-visa",
+      "courses": "/Courses",
+      "ielts": "/IELTS",
+      "toefl": "/TOEFLIBT",
+      "gre": "/GRE",
+      "pte": "/PTE",
+      "sat": "/SAT",
+      "gallery": "/Gallary",
+      "videos": "/Videos",
+      "success": "/SuccessStory",
+      "blog": "/Blog",
+      "blog details": "/BlogDetails",
+      "activities": "/Activities",
+      "contact": "/Contact",
+      "cv": "/Upload-cv",
+      "association": "/Inquiry-association",
+      "student inquiry": "/Student-visa-inquiry",
+      "pr inquiry": "/Pr-visa-inquiry",
+      "privacy": "/Privacy-policy",
+      "terms": "/TermsAndConditions",
+      "declaration": "/Declaration",
+      "news": "/News",
+      "news details": "/Newsdetails",
+      "visaservice": "/Visaservice",
+    };
+
+    // Find matching route
+    let matchedPath = null;
+    for (const keyword in routeMap) {
+      if (query.includes(keyword)) {
+        matchedPath = routeMap[keyword];
+        break;
+      }
+    }
+
+    // Navigate
+    if (matchedPath) {
+      navigate(matchedPath);
+    } else {
+      navigate("/");
+    }
+
+    // Close search
+    setSearchOpen(false);
+    setSearchValue("");
+  };
   useEffect(() => {
     // Mobile menu script – EXACTLY your code
     $(".xb-nav-hidden li.menu-item-has-children > a").append(
@@ -372,17 +437,21 @@ export default function Navbar() {
                   <img src="assets/img/logo/logo.svg" alt="" />
                 </a>
               </div>
+
               <div className="xb-header-mobile-search xb-hide-xl">
-                <form role="search" action="#">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    name="s"
-                    className="search-field"
-                  />
-                  <button type="submit" className="search-submit"></button>
-                </form>
+              <form role="search" onSubmit={handleSearch}>
+        <input
+          type="text"
+          placeholder="Search..."
+          name="s"
+          className="search-field"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <button type="submit" className="search-submit"></button>
+      </form>
               </div>
+
               <nav className="xb-header-nav">
                 <ul className="xb-menu-primary clearfix">
                   <li className="menu-item">
@@ -561,23 +630,24 @@ export default function Navbar() {
 
       {/* Search Form Section */}
       <div className={`header-search-form-wrapper ${searchOpen ? "open" : ""}`}>
-        <div
-          className="xb-search-close xb-close"
-          onClick={() => setSearchOpen(false)}
-        ></div>
-        <div className="header-search-container">
-          <form role="search" className="search-form" action="#">
-            <input
-              type="search"
-              className="search-field"
-              placeholder="Search …"
-              name="s"
-              autoFocus={searchOpen}
-            />
-          </form>
-        </div>
+      <div
+        className="xb-search-close xb-close"
+        onClick={() => setSearchOpen(false)}
+      ></div>
+      <div className="header-search-container">
+        <form role="search" className="search-form" onSubmit={handleSearch}>
+          <input
+            type="search"
+            className="search-field"
+            placeholder="Search …"
+            name="s"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            autoFocus={searchOpen}
+          />
+        </form>
       </div>
-
+    </div>
       {/* Body Overlay */}
       <div
         className={`body-overlay ${searchOpen ? "active" : ""}`}
