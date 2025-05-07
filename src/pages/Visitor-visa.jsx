@@ -77,67 +77,27 @@ export default function Visitorvisa() {
       </section>
       {/* <!-- breadcrumb end --> */}
 
-      {/* <!-- blog start --> */}
-      <section className="blog pt-120 pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <div className="blog-post-wrapper">
-                <article className="post-details">
-                  <blockquote>
-                    <p>
-                    Tourist/Visitors visas are conditional authorization granted by a country to foreigners to enter and temporarily remain within that country. Visas typically include limits on the duration of the foreigner's stay, territory within the country they may enter, the dates they may enter, or the number of permitted visits. Visitors Visas are associated with the request for permission to enter a country and thus are, in some countries, distinct from actual formal permission for foreigners and to enter and remain in the country. In each instance, a visa is subject to entry permission by an immigration official at the time of actual entry and can be revoked at any time.
-                    </p>
+         {/* <!-- coaching single start --> */}
+         <section class="coaching-single pt-120 pb-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="sidebar-widget">
+                            <div class="widget">
+                                <ul class="widget-category list-unstyled">
+                                   
+                                    <li><a class="active" href="/Immigration-pr-visa"> Immigration - PR Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Student-visa">Student Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Visitor-visa"> Visitor Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Investor-visa">Investor Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Work-permit-visa"> Work Permit Visa <span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                </ul>
+                            </div>
+                            <div className="blog-sidebar" style={{paddingLeft:'0px'}}>
 
-                    <div className="quote">
-                      <img src="assets/img/icon/quote.png" alt="" />
-                    </div>
-                  </blockquote>
-                  <div className="post-thumb">
-                    <img src="/assets/pic/4-image.jpg" alt="" />
-                  </div>
-
-                  <div className="sec-title sec-title--big style-2 mb-20">
-                    <span className="sec-title--sub">
-                      <img src="assets/img/icon/h_star.png" alt="" />
-                      There are two types of Temporary visas.
-                      <img src="assets/img/icon/h_star.png" alt="" />
-                    </span>
-
-                    <p style={{marginBottom:'0px'}}>
-                      <b>1.Transit visas</b>
-                    </p>
-                    <p>For passing through the country of issue to a destination outside of that country. Validity of transit visas are usually limited by short terms such as several hours to ten days depending on the size of the country or the circumstances of a particular transit itinerary.</p>
-                    <ul style={{ paddingLeft: "10px" }}>
-                      <li>
-                      Airside transit visa, required by some countries for passing through their airports even without going through passport control.
-                      </li>
-                      <li>
-                      Crew member, steward or driver visa, issued to persons employed or trained on aircraft, vessels, trains, trucks, buses and any other means of international transportation, or ships fishing in international waters.
-                      </li>
-                     
-                    </ul>
-                    <div className="text-start mt-20">
-                      <a
-                        href="#"
-                        className="btn"
-                        style={{
-                          background: " rgb(0, 204, 153)",
-                          color: "rgb(255, 255, 255)",
-                        }}
-                      >
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="blog-sidebar">
-                <div className="widget">
+                            <div className="widget">
                   <h3 className="widget-title">
-                  Countries for Visitor Visa
+                  Countries for Student Visa
                   </h3>
                   <div className="widget__post">
                     <div className="widget__post-item ul_li">
@@ -230,58 +190,109 @@ export default function Visitorvisa() {
                         </span>
                       </div>
                     </div>
-                    <div className="widget__post-item ul_li">
-                      <div className="post-thumb">
-                        <a href="blog-single.html">
-                          <img src="/assets/pic/europe.jpg" alt="" />
-                        </a>
-                      </div>
-                      <div className="post-content">
-                        <h4 className="post-title border-effect-2">
-                          <a href="blog-single.html">Europe</a>
-                        </h4>
-                        <span className="post-date">
-                          Read More
-                          <span>
-                            <img src="assets/img/icon/right_arrow.svg" alt="" />
-                          </span>
-                        </span>
-                      </div>
-                    </div>
 
                   </div>
                 </div>
-                <div className="widget">
-                  <h3 className="widget-title">Other Services</h3>
-                  <ul className="widget__category list-unstyled">
-                    <li>
-                      <a href="#!">
-                        <i className="far fa-arrow-up"></i> Immigration - PR Visa
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!">
-                        <i className="far fa-arrow-up"></i> Student Visa
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!">
-                        <i className="far fa-arrow-up"></i>Investor Visa
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!">
-                        <i className="far fa-arrow-up"></i> Work Permit Visa
-                      </a>
-                    </li>
-                  </ul>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="single-content">
+                            <h3>  Immigration - PR Visa</h3>
+                        
+                             <p>
+                      As per the report of BBC-UK people migrate for many
+                      different reasons. These reasons can be classified as
+                      economic, social, political or environmental :
+                    </p>
+                    <ul style={{ paddingLeft: "10px" }}>
+                      <li>
+                        <b>economic migration</b> - moving to find work or
+                        follow a particular career path
+                      </li>
+                      <li>
+                        <b>social migration</b> - moving somewhere for a better
+                        quality of life or to be closer to family or friends
+                      </li>
+                      <li>
+                        <b>political migration</b> - moving to escape political
+                        persecution or war
+                      </li>
+                      <li>
+                        <b>environmental</b> causes of migration include natural
+                        disasters such as flooding Some people choose to
+                        migrate, eg someone who moves to another country to
+                        enhance their career opportunities. Some people are
+                        forced to migrate, eg someone who moves due to war or
+                        famine.
+                      </li>
+                    </ul>
+                            <div class="single-img mt-35 mb-70">
+                                <img src="/assets/pic/visaaa.jpg" />
+                            </div>
+                            <h3>How e.visa work</h3>
+                            <ul class="about-list ul_li list-unstyled">
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number">1</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Choose your visa type</h3>
+                                            <div class="xb-item--description">
+                                                Determine the Visa type for your travel
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-2">2</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Contact our branches</h3>
+                                            <div class="xb-item--description">
+                                                Start your transaction by applying..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-3">3</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Submit All Your Documents</h3>
+                                            <div class="xb-item--description">
+                                                Collect all the required documents  the..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-4">4</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Passport delivery</h3>
+                                            <div class="xb-item--description">
+                                                Receive your visa, which is finalized..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                          
+                            <p style={{marginTop:'20px'}}>Migration usually happens as a result of a combination of these push and pull factors.
+
+We, at GO FOREN, help people migrate from India to an overseas location where we are experts. We support you right from inspiring guidance to documentation and take care of all the associated legal procedures required for positive outcome of your application. Here is the sequence of steps through which you will pass on to make immigration incredibly simple.</p>
+<h3>Conclusion</h3>
+<p>
+Immigrating to Canada can be a complex and time-consuming process, but with Go Foren by your side, you can rest assured that your application will be handled with the utmost care and expertise. Our team of best immigration consultants and registered immigration consultants is dedicated to helping you achieve your Canadian immigration goals. Whether you’re applying for a visa, permanent residency, or citizenship, we offer comprehensive support tailored to your specific needs. Contact Go Foren today to take the first step toward your new life in Canada.</p>
+                          
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- blog end --> */}
+        </section>
+        {/* <!-- coaching single end --> */}
       <Footer />
     </div>
   );

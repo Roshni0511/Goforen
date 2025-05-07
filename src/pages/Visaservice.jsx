@@ -218,7 +218,7 @@ const Visaservice = () => {
             <span className="separator">|</span>
             <span><FaTags className="icon" /> {blog.category}, {blog.country}</span>
           </div>
-          <div
+     <div
   className="d-flex mb-2"
   style={{
     flexWrap: 'wrap',

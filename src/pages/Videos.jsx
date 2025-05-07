@@ -82,6 +82,10 @@ const Videos = () => {
 
             <div>
                 <div className="container">
+
+                    <div style={{margin:'50px 0px 10px 0px',justifyContent:'center',display:'flex',fontSize:'50px'}}>
+                        <h1>Our Videos</h1>
+                    </div>
                     <ul id="youtube-videogallery" class="youtube-videogallery-container youtube-videogallery-allowtitle">
                         <li class="youtube-videogallery-item">
                             <a title="JAYANTI BHAI EXPERIENCE ON VISITOR VISA  (opens in a new window)" data-youtube-id="vCQalqvEexs" href="http://www.youtube.com/watch?v=vCQalqvEexs" class="youtube-videogallery-link" target="_blank">
