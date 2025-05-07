@@ -77,15 +77,10 @@ export default function Visaservices() {
       {/* What is a visa start  */}
       <section className="about pos-rel  pt-120">
         <div className="container">
-          <div className="row align-items-center mt-none-30">
-            <div className="col-xl-8 col-lg-8 mt-30">
+        
+  
               <div className="sec-title sec-title--big style-2 mb-20">
-                <span className="sec-title--sub">
-                  <img src="assets/img/icon/h_star.png" alt="" />
-                  What is a visa?
-                  <img src="assets/img/icon/h_star.png" alt="" />
-                </span>
-
+                <h3 style={{marginBottom:'20px'}}>    What is a visa?</h3>
                 <p>
                   A visa is a paper document affixed to a page of the holder's
                   passport. It permits a person to travel to the State during
@@ -102,21 +97,11 @@ export default function Visaservices() {
                   for a temporary stay within a specified period.
                 </p>
               </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 mt-30">
-              <div className="xb-about-img">
-                <img src="/assets/pic/visa-service.jpg" alt="" />
-              </div>
-            </div>
-          </div>
+         
+        
           <div className="sec-title sec-title--big style-2 mb-20">
-            <span className="sec-title--sub">
-              <img src="assets/img/icon/h_star.png" alt="" />
-              What are the different types of visa?
-              <img src="assets/img/icon/h_star.png" alt="" />
-            </span>
-
-            <p>
+           <h3 style={{marginBottom:'20px'}}> What are the different types of visa?</h3>
+          <p>
               Visas can vary from country to country, but generally speaking
               these are some of the most popular types of visas:
             </p>
@@ -201,231 +186,112 @@ export default function Visaservices() {
             </div>
           </div>
         </div>
+
+        
+              {/* <!-- visa type start --> */}
+              <section className="visa-type pt-120 pb-135">
+            <div className="container">
+                <div className="sec-title text-center mb-60">
+                    <h2 className="wow skewIn">Visa Services </h2> <br />
+                  <p style={{justifyContent:'center',display:'flex',marginTop:'15px'}}>"Comprehensive visa services to simplify your journey abroad, from application to approval."</p>
+                </div>
+                <div className="row justify-content-md-center mt-none-30">
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon mb-50">
+                                    <img src="assets/img/icon/sv_01.svg" alt="" />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/Immigration-pr-visa"> 
+                                    Immigration - PR Visa</a>
+                                    </h3>
+                                    <div className="xb-item--description">
+                                    A PR Visa allows you to live, work, and settle permanently in a foreign country. 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon color2 mb-50">
+                                    <img src="assets/img/icon/sv_02.svg" alt=" "  />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/Student-visa">
+                                        
+Student Visa</a></h3>
+                                    <div className="xb-item--description">
+                                    A Student Visa lets you study abroad and build a bright future with global education opportunities.
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon color6 mb-50">
+                                    <img src="assets/img/icon/sv_02.svg" alt="" />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/Visitor-visa"> 
+                                    Visitor Visa</a></h3>
+                                    <div className="xb-item--description">
+                                    A Visitor Visa allows you to travel abroad for tourism, family visits, and hassle-free.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon color3 mb-50">
+                                    <img src="assets/img/icon/sv_03.svg" alt="" />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/Investor-visa"> 
+                                    Investor Visa</a>
+                                    </h3>
+                                    <div className="xb-item--description">
+                                    Investor Visa lets you live and invest abroad for a secure future.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon color4 mb-50">
+                                    <img src="assets/img/icon/sv_04.svg" alt="" />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/Work-permit-visa">
+                                        
+Work Permit Visa</a></h3>
+                                    <div className="xb-item--description">
+                                    A Work Permit Visa allows you to work abroad with ease and accuracy.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </section>
+        {/* <!-- visa type end --> */}
       </section>
 
       {/* What is a visa end  */}
 
-      {/* <!-- GO FOREN  start --> */}
-      <section className="blog ">
-        <div className="container">
-         
-            <div className="sec-title mb-60 text-center">
-              <p>
-                GO FOREN provides service in the area of immigration/ PR visa,
-                Student visa, visitor visa and entrepreneur / business visa. The
-                immigration segment (a core specialisation) provides end to end
-                support to clients/aspirants who aspire to work and settle in a
-                new prospective country. The support by us is provided not just
-                at the initial stages of counselling, evaluation, application
-                and subsequent immigration, but also extends to air ticketing
-                services, foreign exchange services, and even go far as to
-                provide accommodation in new destination, travel insurance,
-                arrange for a transfer from the airport of the new country
-                within a short period of successful launching of its overseas
-                segment.
-              </p>
-            </div>
-            <div className="row justify-content-md-center mt-none-30">
-              <div className="col-lg-4 col-md-6 mt-30 d-flex">
-                <div className="xb-blog w-100 d-flex flex-column">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/1-image.jpg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3
-                        className="xb-item--title border-effect"
-                        style={{ display: "flex", textAlign: "center" }}
-                      >
-                        <a href="/Immigration-pr-visa" >Immigration - PR Visa</a>
-                      </h3>
-                      <p style={{ marginBottom: "20px" }}>
-                        Any foreign national who wishes to relocate to any other
-                        country, on a permanent basis need an immigration visa
-                        or in general terms called a PR (permanent residency) of
-                        a particular country.
-                      </p>
-                      <a
-                        className="xb-item--link "
-                        href="/Immigration-pr-visa"
-                        style={{ color: "#000", fontSize: "20px" }}
-                      >
-                        Read the article
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a
-                      className="xb-overlay xb-overlay-link"
-                      href="/Immigration-pr-visal"
-                    ></a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30 d-flex">
-                <div className="xb-blog w-100 d-flex flex-column">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <a href="/Student-visa">
-                        <img src="/assets/pic/3-image.jpg" alt="" />
-                      </a>
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3
-                        className="xb-item--title border-effect"
-                        style={{ display: "flex", textAlign: "center" }}
-                      >
-                        <a href="/Student-visa" >Student Visa.</a>
-                      </h3>
-                      <p style={{ marginBottom: "20px" }}>
-                        Most countries will issue student visas in order to
-                        allow foreign students to attend school within their
-                        borders. However, in most cases the student must be
-                        enrolled at a postsecondary institution of higher
-                        learning. Foreign exchange students must..
-                      </p>
-                      <a
-                        className="xb-item--link"
-                        href="/Student-visa"
-                        style={{ color: "#000", fontSize: "20px" }}
-                      >
-                        Read the article
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a
-                      className="xb-overlay xb-overlay-link"
-                      href="/Student-visa"
-                    ></a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30 d-flex">
-                <div className="xb-blog w-100 d-flex flex-column">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <a href="/visitor">
-                        <img src="/assets/pic/4-image.jpg" alt="" />
-                      </a>
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3
-                        className="xb-item--title border-effect"
-                        style={{ display: "flex", textAlign: "center" }}
-                      >
-                        <a href="/visitor">Visitor Visa</a>
-                      </h3>
-                      <p style={{ marginBottom: "20px" }}>
-                        Tourist/Visitors visas are conditional authorization
-                        granted by a country to foreigners to enter and
-                        temporarily remain within that country. Visas typically
-                        include limits on the duration of the foreigner's stay,
-                        territory within the country they...
-                      </p>
-                      <a
-                        className="xb-item--link"
-                        href="/visitor"
-                        style={{ color: "#000", fontSize: "20px" }}
-                      >
-                        Read the article
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a
-                      className="xb-overlay xb-overlay-link"
-                      href="/visitor"
-                    ></a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30 d-flex">
-                <div className="xb-blog w-100 d-flex flex-column">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <a href="/Investor-visa">
-                        <img src="/assets/pic/7-image.jpg" alt="" />
-                      </a>
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3
-                        className="xb-item--title border-effect"
-                        style={{ display: "flex", textAlign: "center" }}
-                      >
-                        <a href="/Investor-visa">Investor Visa</a>
-                      </h3>
-                      <p style={{ marginBottom: "20px" }}>
-                      Investor Visas allow you to invest in an overseas country where you can settle permanently. The minimum amount of investment varies from country to country. Visas are issued to businessmen and self employed people who..
-                      </p>
-                      <a
-                        className="xb-item--link"
-                        href="/Investor-visa"
-                        style={{ color: "#000", fontSize: "20px" }}
-                      >
-                        Read the article
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a
-                      className="xb-overlay xb-overlay-link"
-                      href="/Investor-visa"
-                    ></a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30 d-flex">
-                <div className="xb-blog w-100 d-flex flex-column">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <a href="/Work-permit-visa">
-                        <img src="/assets/pic/8-image.jpg" alt="" />
-                      </a>
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3
-                        className="xb-item--title border-effect"
-                        style={{ display: "flex", textAlign: "center" }}
-                      >
-                        <a href="/Work-permit-visa">Work Permit Visa</a>
-                      </h3>
-                      <p style={{ marginBottom: "20px" }}>
-                        A work Permit visa is a type of visa that grants the holder authorization to accept employment in a foreign country.
-                      </p>
-                      <a
-                        className="xb-item--link"
-                        href="/Work-permit-visa"
-                        style={{ color: "#000", fontSize: "20px" }}
-                      >
-                        Read the article
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a
-                      className="xb-overlay xb-overlay-link"
-                      href="/Work-permit-visa"
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="xb-blog-bg"
-              data-bg-color="#EDF3F5"
-              data-background="assets/img/bg/blog_bg.png"
-            ></div>
-        
-        </div>
-      </section>
-      {/* <!-- GO FOREN  end --> */}
-      <FooterTop />
+
       <Footer />
     </div>
   );

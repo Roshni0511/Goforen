@@ -78,7 +78,7 @@ export default function Immigrationprvisa() {
       {/* <!-- breadcrumb end --> */}
 
       {/* <!-- blog start --> */}
-      <section className="blog pt-120 pb-120">
+      {/* <section className="blog pt-120 pb-120">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -242,8 +242,225 @@ export default function Immigrationprvisa() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- blog end --> */}
+
+        {/* <!-- coaching single start --> */}
+        <section class="coaching-single pt-120 pb-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="sidebar-widget">
+                            <div class="widget">
+                                <ul class="widget-category list-unstyled">
+                                   
+                                    <li><a class="active" href="/Immigration-pr-visa"> Immigration - PR Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Student-visa">Student Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Visitor-visa"> Visitor Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Investor-visa">Investor Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Work-permit-visa"> Work Permit Visa <span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                </ul>
+                            </div>
+                            <div className="blog-sidebar" style={{paddingLeft:'0px'}}>
+
+                            <div className="widget">
+                  <h3 className="widget-title">
+                  Countries for Student Visa
+                  </h3>
+                  <div className="widget__post">
+                    <div className="widget__post-item ul_li">
+                      <div className="post-thumb">
+                        <a href="blog-single.html">
+                          <img src="/assets/pic/canada.png" alt="" />
+                        </a>
+                      </div>
+                      <div className="post-content">
+                        <h4 className="post-title border-effect-2">
+                          <a href="blog-single.html"> Canada </a>
+                        </h4>
+                        <span className="post-date">
+                          Read More
+                          <span>
+                            <img src="assets/img/icon/right_arrow.svg" alt="" />
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="widget__post-item ul_li">
+                      <div className="post-thumb">
+                        <a href="blog-single.html">
+                          <img src="/assets/pic/australia.png" alt="" />
+                        </a>
+                      </div>
+                      <div className="post-content">
+                        <h4 className="post-title border-effect-2">
+                          <a href="blog-single.html"> Australia </a>
+                        </h4>
+                        <span className="post-date">
+                          Read More
+                          <span>
+                            <img src="assets/img/icon/right_arrow.svg" alt="" />
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="widget__post-item ul_li">
+                      <div className="post-thumb">
+                        <a href="blog-single.html">
+                          <img src="/assets/pic/new-zealand.jpg" alt="" />
+                        </a>
+                      </div>
+                      <div className="post-content">
+                        <h4 className="post-title border-effect-2">
+                          <a href="blog-single.html"> New Zealand </a>
+                        </h4>
+                        <span className="post-date">
+                          Read More
+                          <span>
+                            <img src="assets/img/icon/right_arrow.svg" alt="" />
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="widget__post-item ul_li">
+                      <div className="post-thumb">
+                        <a href="blog-single.html">
+                          <img src="/assets/pic/USA.jpg" alt="" />
+                        </a>
+                      </div>
+                      <div className="post-content">
+                        <h4 className="post-title border-effect-2">
+                          <a href="blog-single.html"> USA </a>
+                        </h4>
+                        <span className="post-date">
+                          Read More
+                          <span>
+                            <img src="assets/img/icon/right_arrow.svg" alt="" />
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="widget__post-item ul_li">
+                      <div className="post-thumb">
+                        <a href="blog-single.html">
+                          <img src="/assets/pic/uk.png" alt="" />
+                        </a>
+                      </div>
+                      <div className="post-content">
+                        <h4 className="post-title border-effect-2">
+                          <a href="blog-single.html">UK</a>
+                        </h4>
+                        <span className="post-date">
+                          Read More
+                          <span>
+                            <img src="assets/img/icon/right_arrow.svg" alt="" />
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="single-content">
+                            <h3>  Immigration - PR Visa</h3>
+                        
+                             <p>
+                      As per the report of BBC-UK people migrate for many
+                      different reasons. These reasons can be classified as
+                      economic, social, political or environmental :
+                    </p>
+                    <ul style={{ paddingLeft: "10px" }}>
+                      <li>
+                        <b>economic migration</b> - moving to find work or
+                        follow a particular career path
+                      </li>
+                      <li>
+                        <b>social migration</b> - moving somewhere for a better
+                        quality of life or to be closer to family or friends
+                      </li>
+                      <li>
+                        <b>political migration</b> - moving to escape political
+                        persecution or war
+                      </li>
+                      <li>
+                        <b>environmental</b> causes of migration include natural
+                        disasters such as flooding Some people choose to
+                        migrate, eg someone who moves to another country to
+                        enhance their career opportunities. Some people are
+                        forced to migrate, eg someone who moves due to war or
+                        famine.
+                      </li>
+                    </ul>
+                            <div class="single-img mt-35 mb-70">
+                                <img src="/assets/pic/visaaa.jpg" />
+                            </div>
+                            <h3>How e.visa work</h3>
+                            <ul class="about-list ul_li list-unstyled">
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number">1</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Choose your visa type</h3>
+                                            <div class="xb-item--description">
+                                                Determine the Visa type for your travel
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-2">2</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Contact our branches</h3>
+                                            <div class="xb-item--description">
+                                                Start your transaction by applying..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-3">3</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Submit All Your Documents</h3>
+                                            <div class="xb-item--description">
+                                                Collect all the required documents  the..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-4">4</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Passport delivery</h3>
+                                            <div class="xb-item--description">
+                                                Receive your visa, which is finalized..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                          
+                            <p style={{marginTop:'20px'}}>Migration usually happens as a result of a combination of these push and pull factors.
+
+We, at GO FOREN, help people migrate from India to an overseas location where we are experts. We support you right from inspiring guidance to documentation and take care of all the associated legal procedures required for positive outcome of your application. Here is the sequence of steps through which you will pass on to make immigration incredibly simple.</p>
+<h3>Conclusion</h3>
+<p>
+Immigrating to Canada can be a complex and time-consuming process, but with Go Foren by your side, you can rest assured that your application will be handled with the utmost care and expertise. Our team of best immigration consultants and registered immigration consultants is dedicated to helping you achieve your Canadian immigration goals. Whether you’re applying for a visa, permanent residency, or citizenship, we offer comprehensive support tailored to your specific needs. Contact Go Foren today to take the first step toward your new life in Canada.</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {/* <!-- coaching single end --> */}
       <Footer />
     </div>
   );

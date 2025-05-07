@@ -13,42 +13,9 @@ const Gallary = () => {
                 const backgroundUrl ="/assets/pic/breadcrumb-bg.jpg" ;
                 setBackground(backgroundUrl);
               }, []);
-              const [background1, setBackground1] = useState(" " );
-            
-              useEffect(() => {
-                const backgroundUrl1 = " https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg" ;
-                setBackground1(backgroundUrl1);
-              }, []);
-              useEffect(() => {
-                AOS.init({ duration: 1000 });
-              }, []);
-              const tiltRefs = useRef([])
-
-              useEffect(() => {
-                AOS.init({ duration: 1200 })
-            
-                tiltRefs.current.forEach((ref) => {
-                  if (ref) {
-                    VanillaTilt.init(ref, {
-                      max: 10,
-                      speed: 400,
-                      glare: true,
-                      "max-glare": 0.3,
-                    })
-                  }
-                })
-              }, [])
-              useEffect(() => {
-                AOS.init({ duration: 1000 });
-              }, []);
-            
-              const images = [
-                '96-image.png', '95-image.jpg', '94-image.jpg', '93-image.JPG',
-                '92-image.JPG', '91-image.jpg', '90-image.jpg', '89-image.jpg',
-                '88-image.jpg', '87-image.jpg', '86-image.jpg', '85-image.jpg',
-                
-              ];
-              
+         
+       
+         
   return (
     <>
       <div>
@@ -101,12 +68,12 @@ const Gallary = () => {
         <div className=" breadcrumb__shape" >
           <div className=" shape shape--1" >
             <div className=" shape-inner"  data-parallax='{" x" :-50," y" :80}'>
-              <img src=" assets/img/shape/br_shape1.png"  alt=" "  />
+              <img src=" assets/img/shape/br_shape1.png"    />
             </div>
           </div>
           <div className=" shape shape--2" >
             <div className=" shape-inner"  data-parallax='{" x" :50," y" :-90}'>
-              <img src=" assets/img/shape/br_shape2.png"  alt=" "  />
+              <img src=" assets/img/shape/br_shape2.png"    />
             </div>
           </div>
         </div>
@@ -115,14 +82,14 @@ const Gallary = () => {
 
 
       {/* Gallary start */}
-     <div>
+     {/* <div>
         <div className=" container" >
         <div className="masonry-gallery">
         {images.map((img, idx) => (
           <div className="masonry-item" data-aos="fade-up" key={idx}>
             <img
               src={`https://www.goforen.com/uploads/gallery/${img}`}
-              alt={`gallery-${idx}`}
+              /gallery-${idx}`}
               loading="lazy"
             />
           </div>
@@ -131,9 +98,244 @@ const Gallary = () => {
 
 
         </div>
-     </div>
+     </div> */}
       {/* gallary end */}
-
+      {/* <!-- country start --> */}
+        <section className="country pt-120 pb-130">
+            <div className="container">
+              
+                        <div className="sec-title" style={{display:'flex',justifyContent:'center',marginBottom:'30px'}}>
+                            <h2 className="mb-20 wow skewIn">Our Gallary
+                            </h2>
+                        </div>
+                    
+             
+           
+                <ul className="xb-country-nav nav nav-tabs ul_li_between mb-65" id="myTab" role="tablist">
+                    <li className="nav-item" role="presentation">
+                        <button className="nav-link active" id="xbc-tab1" data-bs-toggle="tab"
+                                data-bs-target="#xbc-tab-pane1" type="button" role="tab" aria-controls="xbc-tab-pane1"
+                                aria-selected="true">Coaching
+                        </button>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                        <button className="nav-link" id="xbc-tab2" data-bs-toggle="tab" data-bs-target="#xbc-tab-pane2"
+                                type="button" role="tab" aria-controls="xbc-tab-pane2" aria-selected="false">
+                            succesfull
+                        </button>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                        <button className="nav-link" id="xbc-tab3" data-bs-toggle="tab" data-bs-target="#xbc-tab-pane3"
+                                type="button" role="tab" aria-controls="xbc-tab-pane3" aria-selected="false">Advertisment
+                        </button>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                        <button className="nav-link" id="xbc-tab4" data-bs-toggle="tab" data-bs-target="#xbc-tab-pane4"
+                                type="button" role="tab" aria-controls="xbc-tab-pane4" aria-selected="false">
+                            Offer
+                        </button>
+                    </li>
+                  
+                </ul>
+                <div className="tab-content" id="myTabContent">
+                <div className="tab-pane animated fadeInUp show active" id="xbc-tab-pane1" role="tabpanel"
+     aria-labelledby="xbc-tab1" tabIndex="0">
+    <div className="xb-country ul_li">
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/g1.jpg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/g2.webp" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/g3.webp" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/g4.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/g5.webp" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/g6.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/g7.jpg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/g8.jpeg" className="uniform-img" />
+            </a>
+        </div>
+    </div>
+</div>
+<div className="tab-pane animated fadeInUp" id="xbc-tab-pane2" role="tabpanel"
+     aria-labelledby="xbc-tab2" tabIndex="0">
+    <div className="xb-country ul_li">
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/s1.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/s2.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/s3.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/s4.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/s5.jpeg" className="uniform-img" />
+            </a>
+        </div>
+    </div>
+</div>
+<div className="tab-pane animated fadeInUp" id="xbc-tab-pane3" role="tabpanel"
+     aria-labelledby="xbc-tab3" tabIndex="0">
+    <div className="xb-country ul_li">
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a1.webp
+                " className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a2.webp" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a3.webp" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a4.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a5.webp" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a6.jpg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a7.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a8.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a9.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a10.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a11.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/a12.jpeg" className="uniform-img" />
+            </a>
+        </div>
+    </div>
+</div>
+<div className="tab-pane animated fadeInUp" id="xbc-tab-pane4" role="tabpanel"
+     aria-labelledby="xbc-tab4" tabIndex="0">
+    <div className="xb-country ul_li">
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q1.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q2.png" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q3.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q4.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q5.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q6.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q7.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q8.jpeg" className="uniform-img" />
+            </a>
+        </div>
+        <div className="xb-item--item">
+            <a href="country-single.html" className="xb-item--inner ul_li">
+                <img src="/assets/pic/q9.png" className="uniform-img" />
+            </a>
+        </div>
+    </div>
+</div>
+                    
+               
+                  
+                </div>
+            </div>
+        </section>
+        {/* <!-- country end --> */}
         <Footer />
       </div>
     </>

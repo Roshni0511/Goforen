@@ -82,7 +82,7 @@ const GRE = () => {
       </section>
       {/* <!-- breadcrumb end --> */}
       {/* new content start */}
-    <div className='pt-40'>
+    {/* <div className='pt-40'>
         <div className="container">
          <div className="col-12">
             <div className="row">
@@ -139,8 +139,101 @@ const GRE = () => {
             </div>
          </div>
          </div>
-         </div>
+         </div> */}
    {/* new content end */}
+           {/* <!-- coaching single start --> */}
+           <section class="coaching-single pt-120 pb-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="sidebar-widget">
+                            <div class="widget">
+                                <ul class="widget-category list-unstyled">
+                                   
+                                    <li><a class="active" href="/IELTS">IELTS<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/TOEFLIBT">TOEFL IBT<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/GRE">GRE<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/PTE">PTE<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/SAT">SAT <span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                </ul>
+                            </div>
+                          
+                            <div class="widget widget-banner text-center bg_img" data-background="assets/img/bg/b_bg.jpg">
+                                <img class="mb-40" src="assets/img/icon/b_icon.png" />
+                                <h4>Assured Approval – <br /> Guaranteed</h4>
+                                <a class="thm-btn" href="contact.html">Get in Touch</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="single-content">
+                            <h3>IELTS</h3>
+                          
+                            <p>IELTS, the international English Language Testing system, provides an assessment of language ability of candidates who need to study or train in the medium of English.</p>
+                          <p>IELTS is regarded as an entrance requirement by most universities in the United Kingdom, Australia, New Zealand and Canada. It is also gaining recognition among universities and other educational institutes in the United States of America.</p>
+                            <div class="single-img mt-35 mb-70">
+                                <img src="/assets/pic/mainielts.jpg" />
+                            </div>
+                            <h3>How e.visa work</h3>
+                            <ul class="about-list ul_li list-unstyled">
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number">1</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Choose your visa type</h3>
+                                            <div class="xb-item--description">
+                                                Determine the Visa type for your travel
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-2">2</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Contact our branches</h3>
+                                            <div class="xb-item--description">
+                                                Start your transaction by applying..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-3">3</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Submit All Your Documents</h3>
+                                            <div class="xb-item--description">
+                                                Collect all the required documents  the..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-4">4</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Passport delivery</h3>
+                                            <div class="xb-item--description">
+                                                Receive your visa, which is finalized..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                          
+                            <p style={{marginTop:'20px'}}>The Academic Reading and Writing Modules assess whether a candidate is ready to study or train in the medium of English at an undergraduate or postgraduate level.
+
+General Training is suitable for candidates who are going to English speaking countries to complete their secondary education, to undertake work experience or for immigration purposes to Australia, New Zealand & Canada.</p>
+<p>The University of Cambridge Local Examinations Syndicate (UCLES), the British council and IDP Education Australia jointly manage the IELTS.Candidates must select either the Academic or the general Training Modules depending on the stated requirement of their sponsor or receiving institution.</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {/* <!-- coaching single end --> */}
        </div>
         <Footer />
       </div>

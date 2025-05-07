@@ -72,36 +72,17 @@ const Courses = () => {
       </section>
       {/* <!-- breadcrumb end --> */}
          {/* What is a visa start  */}
-         <section class="about pos-rel  pt-120">
-        <div class="container">
-          <div class="row align-items-center mt-none-30">
-            <div class="col-xl-8 col-lg-8 mt-30">
-              <div class="sec-title sec-title--big style-2 mb-20">
-                
+         <section className="about pos-rel  pt-120">
+        <div className="container">
+          
+          <div className="sec-title sec-title--big style-2 mb-20">
+       
+              <h3 style={{marginBottom:'15px'}}>    Which exam to give for which course to study abroad?</h3>
+          
+            
+      
 
-                <p>
-                Around 3 lakh students go abroad every year for higher education. Now, the craze for studying abroad may be taken adversely as it is brain-drain for the country, or the positive aspect for the individual may be noted.
-                </p>
-                <p>
-                Nevertheless, the process of flying overseas to study is a tedious one. Apart from the various passport and immigration complexities, a student has to prepare for various exams to be merely eligible for getting into the college and course he/she aspires for.
-                </p>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 mt-30">
-              <div class="xb-about-img" style={{marginTop:'1px'}}>
-                <img src="/assets/pic/visa-service.jpg" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="sec-title sec-title--big style-2 mb-20">
-            <p>As IELTS/TOEFL/PTE, GRE/GMAT/SAT and other options for all such exams can confuse students, to help them out, here are the top 5 international exams that are taken by students aspiring to study abroad:</p>
-            <span class="sec-title--sub" style={{marginTop:'25px'}}>
-              <img src="assets/img/icon/h_star.png" alt="" />
-              Which exam to give for which course to study abroad?
-              <img src="assets/img/icon/h_star.png" alt="" />
-            </span>
-
-            <p>
+            <p style={{marginBottom:'30px'}}> 
             If you are planning to study abroad, the admission process will require you to give one language exam and one standardized exam. However, depending on the country, course or college you are targeting, you may be exempt from standardized exams, but you would still be required to take one language exam to show English language proficiency. Depending on the course and college, you may also be required to provide scores of one standardized test.
             </p>
 
@@ -110,19 +91,125 @@ const Courses = () => {
             
             <ul style={{ paddingBottom: "10px", listStyle:"none" }}>
               <li style={{ textAlign: "justify" }}>
-              <span class="sec-title--sub" style={{marginTop:'25px'}}>
-              <img src="assets/img/icon/h_star.png" alt="" />
+       
+           
+              <h3 style={{marginBottom:'15px'}}>
               Language    exams
-              <img src="assets/img/icon/h_star.png" alt="" />
-            </span>
+              </h3>
+        
+         
              
                <p>The language exams show your English proficiency skills. You need to give either one of the language exams to get admission to any university in an English speaking country. These are required for almost all courses; Undergraduate courses, Postgraduate courses, Certificates or Diplomas (unless mentioned).
 
 Different countries give preference to one language exam over others. TOEFL is the preferred exam for universities at US and Canada, while it is not accepted at many colleges in UK. On the other hand, IELTS is the preferred exam for getting admission to universities at UK, Australia and New Zealand. PTE is accepted at a few colleges in US and most colleges in UK. CAE and CPE are given preference by the British universities.</p>
               </li>
+
+
+
+
+              {/* <!-- visa type start --> */}
+        <section className="visa-type pt-120 pb-135">
+            <div className="container">
+                <div className="sec-title text-center mb-60">
+                    <h2 className="wow skewIn">Couses </h2> <br />
+                  <p style={{justifyContent:'center',display:'flex',marginTop:'15px'}}>"Explore a wide range of career-focused courses tailored to help you qualify for your desired visa destination."</p>
+                </div>
+                <div className="row justify-content-md-center mt-none-30">
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon mb-50">
+                                    <img src="assets/img/icon/sv_01.svg" alt="" />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/IELTS"> IELTS</a>
+                                    </h3>
+                                    <div className="xb-item--description">
+                                    Prepare for the globally recognized IELTS exam to enhance your chances of studying or migrating abroad.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon color2 mb-50">
+                                    <img src="assets/img/icon/sv_02.svg" alt=" "  />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/TOEFLIBT">
+                                        TOEFL IBT</a></h3>
+                                    <div className="xb-item--description">
+                                    Boost your English proficiency with TOEFL iBT, accepted by universities and immigration bodies worldwide.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon color6 mb-50">
+                                    <img src="assets/img/icon/sv_02.svg" alt="" />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/GRE"> GRE</a></h3>
+                                    <div className="xb-item--description">
+                                    Achieve your academic and career goals with the GRE – a powerful gateway essential for graduate admissions globally.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon color3 mb-50">
+                                    <img src="assets/img/icon/sv_03.svg" alt="" />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/PTE"> PTE</a>
+                                    </h3>
+                                    <div className="xb-item--description">
+                                    Get fast, reliable results with PTE Academic — ideal for study, work, or migration.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6 mt-30">
+                        <div className="xb-service">
+                            <div className="xb-item--inner">
+                                <div className="xb-item--icon color4 mb-50">
+                                    <img src="assets/img/icon/sv_04.svg" alt="" />
+                                </div>
+                                <div className="xb-item--holder">
+                                    <h3 className="xb-item--title mb-20"><a href="/SAT">
+                                        SAT</a></h3>
+                                    <div className="xb-item--description">
+                                    Open doors to top  universities with strong SAT scores designed for undergraduate programs.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </section>
+        {/* <!-- visa type end --> */}
+
+
+
+
+
+
+
+
               <li style={{ textAlign: "justify" }}>
-              <span class="sec-title--sub"  style={{marginTop:'25px'}}>
-              <img src="assets/img/icon/h_star.png" alt="" />
+              <span className="sec-title--sub"  style={{marginTop:'25px'}}>
+ <img src="assets/img/icon/h_star.png" alt="" />
               Standardized     Exams
               <img src="assets/img/icon/h_star.png" alt="" />
             </span>
@@ -134,11 +221,11 @@ Here is a table describing exam requirement according to the course of your choi
              
             </ul>
            <br />
-           <div class="table-responsive">
+           <div className="table-responsive">
       
-<div class="table-responsive">
-    <table class="table table-bordered">
-        <thead class="thead-light">
+<div className="table-responsive">
+    <table className="table table-bordered">
+        <thead className="thead-light">
             <tr>
                 <th>Courses/Programs</th>
                 <th>Standardized Tests</th>
@@ -182,14 +269,14 @@ Here is a table describing exam requirement according to the course of your choi
 
           </div>
         </div>
-        <div class="about-shape">
-          <div class="shape shape--1">
-            <div class="shape-inner" data-parallax='{"x":-50,"y":-80}'>
+        <div className="about-shape">
+          <div className="shape shape--1">
+            <div className="shape-inner" data-parallax='{"x":-50,"y":-80}'>
               <img src="assets/img/shape/a_shape1.png" alt="" />
             </div>
           </div>
-          <div class="shape shape--2" style={{ top: "70%", right: "7%" }}>
-            <div class="shape-inner" data-parallax='{"x":50,"y":-80}'>
+          <div className="shape shape--2" style={{ top: "70%", right: "7%" }}>
+            <div className="shape-inner" data-parallax='{"x":50,"y":-80}'>
               <img src="assets/img/shape/a_shape2.png" alt="" />
             </div>
           </div>
@@ -197,90 +284,7 @@ Here is a table describing exam requirement according to the course of your choi
       </section>
 
       {/* What is a visa end  */}
-      {/* <!-- about start --> */}
-        <section className="about pos-rel pb-130 pt-80">
-            <div className="container">
-                <div className="sec-title mb-55">
-                    <h3 className="mb-10 wow skewIn" style={{fontSize:'35px'}}>International Exam Preparation Courses</h3>
-                    <p>Your one-stop coaching destination for IELTS, TOEFL, GRE, PTE, SAT & more</p>
-                </div>
-                <div className="row align-items-center">
-                    <div className="col-lg-10">
-                        <div className="about__content">
-                            <ul className="about-list ul_li list-unstyled">
-                                <li>
-                                    <div className="xb-item--inner" style={{padding:'35px 25px'}}>
-                                        <div className="xb-item--number">1</div>
-                                        <div className="xb-item--holder">
-                                            <h3 className="xb-item--title mb-10">IELTS</h3>
-                                            <div className="xb-item--description">
-                                            IELTS, the international English Language Testing system, provides an assessment of language ability of...
-                                            </div>
-                                         <a href="/IELTS">
-                                         <button style={{marginTop:'15px'}}>Read More</button>
-                                          </a> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="xb-item--inner" style={{padding:'35px 25px'}}>
-                                        <div className="xb-item--number color-2">2</div>
-                                        <div className="xb-item--holder">
-                                            <h3 className="xb-item--title mb-10">TOEFL IBT</h3>
-                                            <div className="xb-item--description">
-                                            TOEFL IBT is version of the test that is the most widely used today. IBT stands for Internet Based Test....
-                                            </div>
-                                            <a href="/TOEFLIBT">  <button style={{marginTop:'15px'}}>Read More</button></a>
-                                          
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="xb-item--inner" style={{padding:'35px 25px'}}>
-                                        <div className="xb-item--number color-3">3</div>
-                                        <div className="xb-item--holder">
-                                            <h3 className="xb-item--title mb-10">GRE</h3>
-                                            <div className="xb-item--description">
-                                            If you're planning on going to graduate school, you'll probably need to take the GRE test...
-                                            </div>
-                                            <a href="/GRE"><button style={{marginTop:'15px'}}>Read More</button></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="xb-item--inner" style={{padding:'35px 25px'}}>
-                                        <div className="xb-item--number color-4">4</div>
-                                        <div className="xb-item--holder">
-                                            <h3 className="xb-item--title mb-10">PTE</h3>
-                                            <div className="xb-item--description">
-                                            PTE test is based on real-life academic and general content. You will come across graphs, summaries...
-                                            </div>
-                                           <a href="/PTE"><button style={{marginTop:'15px'}}>Read More</button></a> 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li >
-                                    <div className="xb-item--inner" style={{padding:'35px 25px'}}>
-                                        <div className="xb-item--number color-5">5</div>
-                                        <div className="xb-item--holder">
-                                            <h3 className="xb-item--title mb-10">SAT</h3>
-                                            <div className="xb-item--description">
-                                            The SAT is a standardized test widely used for college admissions in the United States. Introduced in 1926...
-                                            </div>
-                                           <a href="/SAT"><button style={{marginTop:'15px'}}>Read More</button></a> 
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* <div className="about__img">
-                <img src="/assets/pic/main (1).jpeg" alt="" />
-            </div> */}
-        </section>
-        {/* <!-- about end --> */}
+  
           <Footer />
       </div>
     </>
