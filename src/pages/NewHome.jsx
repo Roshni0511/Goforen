@@ -106,7 +106,7 @@ export default function NewHome() {
 
   useEffect(() => {
     const backgroundUrl3 =
-      "https://html.xpressbuddy.com/e.visa/assets/img/bg/counter_bg.jpg";
+      "/assets/pic/cards.jpg";
     setBackground3(backgroundUrl3);
   }, []);
   // data-background img end
@@ -541,7 +541,7 @@ export default function NewHome() {
         </div>
         <div className="about__img">
           <img
-            src="	https://html.xpressbuddy.com/e.visa/assets/img/about/about_img.png"
+            src="/assets/pic/why.png"
             alt=""
           />
         </div>
