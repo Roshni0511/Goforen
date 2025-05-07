@@ -215,7 +215,7 @@ export default function Home() {
         {/* <!-- visa type end --> */}
        
          {/* <!-- brand start --> */}
-         <section className="brand" style={{paddingTop:'130px',paddingBottom:'100px'}}>
+         <section className="brand" style={{paddingBottom:'100px'}}>
       <div className="container mx-auto">
       <h2 className="brand-title text-center mb-50">
       <span>   <span>Media</span></span>
@@ -340,7 +340,15 @@ export default function Home() {
         <section className="coaching pt-130 pb-120">
             <div className="container">
                <div className="row d-flex flex-nowrap overflow-auto">
-               <div className="col" style={{ flex: '0 0 20%' }}>
+               <div className="col"  style={{
+    flex: `0 0 ${
+      window.innerWidth <= 480
+        ? '60%'
+        : window.innerWidth <= 768
+        ? '40%'
+        : '20%'
+    }`,
+  }}>
                <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
@@ -354,7 +362,15 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="col" style={{ flex: '0 0 20%' }}>
+                    <div className="col"  style={{
+    flex: `0 0 ${
+      window.innerWidth <= 480
+        ? '60%'
+        : window.innerWidth <= 768
+        ? '40%'
+        : '20%'
+    }`,
+  }}>
                     <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
@@ -368,7 +384,15 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="col" style={{ flex: '0 0 20%' }}>
+                    <div className="col"  style={{
+    flex: `0 0 ${
+      window.innerWidth <= 480
+        ? '60%'
+        : window.innerWidth <= 768
+        ? '40%'
+        : '20%'
+    }`,
+  }}>
                     <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
@@ -382,7 +406,15 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="col" style={{ flex: '0 0 20%' }}>
+                    <div className="col"  style={{
+    flex: `0 0 ${
+      window.innerWidth <= 480
+        ? '60%'
+        : window.innerWidth <= 768
+        ? '40%'
+        : '20%'
+    }`,
+  }}>
                     <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
@@ -396,7 +428,15 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="col" style={{ flex: '0 0 20%' }}>
+                    <div className="col"  style={{
+    flex: `0 0 ${
+      window.innerWidth <= 480
+        ? '60%'
+        : window.innerWidth <= 768
+        ? '40%'
+        : '20%'
+    }`,
+  }}>
                     <div className="xb-coaching hover-shadow">
                             <div className="xb-item--inner">
                                 <div className="xb-item--img">
