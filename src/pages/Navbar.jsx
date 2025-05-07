@@ -104,17 +104,19 @@ export default function Navbar() {
           <div className="container">
             <div className="header__top ul_li_between">
               <div className="header__top-cta">
+              <a href="tel:+917600909090" style={{color:"#000"}}>
                 <img src="assets/img/icon/n_pad.svg" alt="" />
-                <span>Help Desk :</span> +91 590 088 55
+                <span>Help Desk :</span>  +91 76 00 90 90 90
+                </a>
               </div>
               <ul className="header__top-info ul_li">
                 <li>
                   <img src="assets/img/icon/time.svg" alt=" " />
-                  Monday - Friday 09:00 am - 05:00 Pm
+                  Monday - Saturday : 10.00 a.m. to 6.30 p.m.
                 </li>
                 <li>
                   <img src="assets/img/icon/location.svg" alt="" />
-                  456 Elm Avenue Springfield, IL 62701
+                  701-702, 7th floor, Joyos Hubtown, Adajan Bus port
                 </li>
               </ul>
             </div>

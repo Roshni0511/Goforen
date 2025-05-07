@@ -14,7 +14,7 @@ const options1 = [
   { value: 6, label: "Europe" },
   { value: 7, label: "Any Other" },
 ];
-export default function AdditionalDetails({  onPrevious }) {
+export default function AdditionalDetails1() {
 
      
   const [hasPassport, setHasPassport] = useState(true); // default: Yes
@@ -126,26 +126,7 @@ export default function AdditionalDetails({  onPrevious }) {
                       </>
                     )}
 
-                    <div className="col-lg-6 ">
-                      <label className="mb-1">Father's Occupation :</label>
-                      <div className="d-flex align-items-center border rounded px-3 py-2">
-                        <span>
-                          <PermIdentityIcon className="me-2 text-muted"/>
-                        </span>
-                        <input type="text" style={{ width: "100%" }} className="form-control border-0 p-0"/>
-                      </div>
-                    </div>
-                    <div className="col-lg-6 ">
-                      <label  className="mb-1">
-                        Approximate Annual Income Of Family :
-                      </label>
-                      <div className="d-flex align-items-center border rounded px-3 py-2">
-                        <span>
-                          <CurrencyRupeeIcon className="me-2 text-muted"/>
-                        </span>
-                        <input type="text" style={{ width: "100%" }} className="form-control border-0 p-0"/>
-                      </div>
-                    </div>
+                    
                     <div className="col-lg-6 ">
                       <label htmlFor="">
                         Do You Have Any Relatives (In Blood Relation) / Siblings
@@ -300,14 +281,7 @@ export default function AdditionalDetails({  onPrevious }) {
               </div>
             </div>
 
-            <div className="d-flex justify-content-between mt-3">
-        <button className="btn btn-secondary" onClick={onPrevious}>
-          Previous
-        </button>
-        <button className="btn btn-primary" >
-          Submit
-        </button>
-      </div>
+            
           </div>
         </div>
       </div>

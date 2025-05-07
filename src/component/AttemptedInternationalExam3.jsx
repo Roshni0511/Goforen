@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const examOptions = ["IELTS", "TOEFL", "PTE", "TFI(French Test)"];
 const examOptions1 = ["GRE", "GMAT", "SAT"];
 const examOptions2 = ["IELTS", "TOEFL", "PTE", "TFI(French Test)","GRE", "GMAT", "SAT"];
-export default function AttemptedInternationalExam3() {
+export default function AttemptedInternationalExam3({ onNext, onPrevious }) {
   const [showForm1, setShowForm1] = useState(true); // default is true (Form 1)
 
   const handleToggle = (e) => {
@@ -564,7 +564,14 @@ const [rows2, setRows2] = useState([
                 )}
               </div>
             </div>
-           
+            <div className="d-flex justify-content-between mt-3">
+        <button className="btn btn-secondary" onClick={onPrevious}>
+          Previous
+        </button>
+        <button className="btn btn-primary" onClick={onNext}>
+          Next
+        </button>
+      </div>
           </div>
         </div>
       </div>

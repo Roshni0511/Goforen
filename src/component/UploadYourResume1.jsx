@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UploadYourResume1() {
+export default function UploadYourResume1({ onNext, onPrevious }) {
   return (
     <div>
       <div className="container mt-5">
@@ -36,7 +36,14 @@ export default function UploadYourResume1() {
               </div>
            
             </div>
-           
+            <div className="d-flex justify-content-between mt-3">
+        <button className="btn btn-secondary" onClick={onPrevious}>
+          Previous
+        </button>
+        <button className="btn btn-primary" onClick={onNext}>
+          Next
+        </button>
+      </div>
           </div>
         </div>
       </div>
