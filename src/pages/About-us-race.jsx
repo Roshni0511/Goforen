@@ -187,7 +187,10 @@ export default function Aboutusrace() {
       {/* <!-- img start responsive pandding--> */}
         <section className="blog pb-130">
             <div className="container">
-                <div className="blog-wrap">
+                <div className="blog-wrap " style={{
+    margin: '0px',
+    padding: window.innerWidth <= 768 ? '0px 30px' : '0px 100px',
+  }}>
                     
                     <div className="row justify-content-md-center mt-none-30">
                         <div className="col-lg-6 col-md-12 mt-30">
