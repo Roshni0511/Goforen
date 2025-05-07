@@ -4248,7 +4248,21 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
 .service-wrap {
   margin: 0 -100px;
   padding: 0 100px; }
-
+  @media (max-width: 991px) {
+    .service-wrap {
+      margin: 0 -30px;
+      padding: 0 60px; }
+  }
+  @media (max-width: 425px) {
+    .service-wrap {
+      margin: 0 -10px;
+      padding: 0 40px; }
+  }
+  @media (max-width: 375px) {
+    .service-wrap {
+      margin: 0 -10px;
+      padding: 0 20px; }
+  }
 .service-bottom-pb {
   padding-bottom: 310px; }
 
@@ -4280,7 +4294,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: -1;
-  right: -13px; }
+  right: 0px; }
   @media (max-width: 1199px) {
     .about__img {
       width: 46%; } }
@@ -4898,7 +4912,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   .xb-team:hover .xb-item--social li:nth-child(3) {
     transition-delay: .2s; }
 .xb-team .xb-item--img {
-  margin-right: -33px;
+  margin-right: 0px;
   max-width: 302px; }
 .xb-team .xb-item--inner {
   border: 1px solid #EDF3F5;
@@ -4958,6 +4972,21 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   padding: 0 100px;
   margin: 0 -100px; }
 
+  @media (max-width: 991px) {
+    .team-wrap {
+      margin: 0 -30px;
+      padding: 0 60px; }
+  }
+  @media (max-width: 425px) {
+    .team-wrap {
+      margin: 0 -10px;
+      padding: 0 40px; }
+  }
+  @media (max-width: 375px) {
+    .team-wrap {
+      margin: 0 -10px;
+      padding: 0 20px; }
+  }
 .xb-team-bg .xb-bg {
   position: absolute;
   bottom: 15%;
@@ -5636,6 +5665,22 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   padding-top: 120px;
   margin: 0 -100px;
   position: relative; }
+
+  @media (max-width: 991px) {
+    .blog-wrap {
+      margin: 0 -30px;
+      padding: 0 60px; }
+  }
+  @media (max-width: 425px) {
+    .blog-wrap {
+      margin: 0 -10px;
+      padding: 0 40px; }
+  }
+  @media (max-width: 375px) {
+    .blog-wrap {
+      margin: 0 -10px;
+      padding: 0 20px; }
+  }
   .blog-wrap .xb-blog-bg {
     position: absolute;
     top: 0;

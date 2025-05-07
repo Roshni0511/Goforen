@@ -9,9 +9,7 @@ import { Autoplay } from 'swiper/modules';
 // import { Carousel } from 'react-bootstrap';
 
 export default function Home() {
-  const scrollRef = useRef(null);
-  const itemHeight = 70;
-  const [index, setIndex] = useState(0);
+  
   // data-background img start
   const [background, setBackground] = useState("");
 
@@ -20,7 +18,9 @@ export default function Home() {
     setBackground(backgroundUrl);
   }, []);
   // data-background img end
-
+  const scrollRef = useRef(null);
+  const itemHeight = 70;
+  const [index, setIndex] = useState(0);
   const items = [
     "Poland Introduced e-Konsulat for Work Visa Applications in India.",
     "Australian Universities Impose Restrictions on Students from Six Indian Regions.",

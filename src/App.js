@@ -46,6 +46,7 @@ import Newsdetails from "./pages/News-details";
 
 
 import Visaservice from "./pages/Visaservice";
+import NewHome from "./pages/NewHome";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -161,7 +162,8 @@ function App() {
 
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<NewHome />} />
         <Route path="/About" element={<About />} />
         <Route path="/About-us-race" element={<Aboutusrace />} />
         <Route path="/About-founder" element={<Aboutfounder />} />
