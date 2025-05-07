@@ -49,7 +49,7 @@ const Visaservice = () => {
             <div className="col-12" >
                 <div className="row" style={{justifyContent:'center'}}>
                   
-                    <div className="col-4 mt-40">
+                <div className="col-12 col-md-4 mt-4">
                     <div style={{
       background: '#fff',
       padding: '30px 20px',
@@ -208,7 +208,7 @@ const Visaservice = () => {
     </div>
                           
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-md-8 mt-4">
                     <div className="blog-list">
       {blogs.map((blog) => (
         <div className="blog-box" key={blog.id}>
@@ -218,14 +218,55 @@ const Visaservice = () => {
             <span className="separator">|</span>
             <span><FaTags className="icon" /> {blog.category}, {blog.country}</span>
           </div>
-          <div className="share-buttons">
-            <button className="share fb"><FaFacebookF className="icon" /> Share</button>
-            <button className="share wa"><FaWhatsapp className="icon" /> WhatsApp</button>
-            <button className="share li"><FaLinkedinIn className="icon" /> Share</button>
-          </div>
+          <div
+  className="d-flex mb-2"
+  style={{
+    flexWrap: 'wrap',
+    gap: '8px',
+    justifyContent: 'flex-start',
+    justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start'
+  }}
+>
+  <button
+    className="btn btn-sm btn-primary"
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '4px',
+      whiteSpace: 'nowrap'
+    }}
+  >
+    <FaFacebookF /> Share
+  </button>
+
+  <button
+    className="btn btn-sm btn-success"
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '4px',
+      whiteSpace: 'nowrap'
+    }}
+  >
+    <FaWhatsapp /> WhatsApp
+  </button>
+
+  <button
+    className="btn btn-sm btn-info text-white"
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '4px',
+      whiteSpace: 'nowrap'
+    }}
+  >
+    <FaLinkedinIn /> Share
+  </button>
+</div>
+
           <p className="blog-desc">{blog.description}</p>
           <div className="read-more-tag-row">
-  <a href={blog.link} className="read-more">Read More</a>
+
   <div className="tags">
     {blog.tags.map((tag, i) => (
       <span className="tag" key={i}><FaTags className="icon" style={{marginRight:'6px' , color:'#00cc99'}}/>{tag}</span>

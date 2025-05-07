@@ -82,7 +82,7 @@ export default function Newsdetails() {
         <div className="container" style={{background: "#f8f8f8"}}>
           <div className="col-12" >
             <div className="row" style={{justifyContent:'center'}}>
-            <div className="col-6" style={{padding:'50px 0px'}}>
+            <div className="col-lg-7 col-md-12" style={{ padding: '50px 15px' }}>
   <div style={{
     backgroundColor: '#fff',
     padding: '25px',
@@ -93,20 +93,29 @@ export default function Newsdetails() {
     <h4 style={{ color: '#00cc99', marginBottom: '10px' }}>
       Netherlands Sees Rise in Undocumented Workers, Raising Exploitation Concerns
     </h4>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '10px' }}>
-      <span style={{ color: '#f90', display: 'flex', alignItems: 'center', gap: '5px' }}>
-        <FaCalendarAlt /> 05 May, 2025
-      </span>
-      <span style={{ color: '#666', display: 'flex', alignItems: 'center', gap: '5px' }}>
-        <FaTags /> Immigration - PR Visa, Europe
-      </span>
-    </div>
-    <div style={{ display: 'flex', gap: '10px', marginBottom: '15px',marginTop:'15px' }}>
-      <button className="btn btn-sm btn-primary"><FaFacebookF /> Share</button>
-      <button className="btn btn-sm btn-info"><FaLinkedinIn /> Share</button>
-      <button className="btn btn-sm btn-dark">X Post</button>
-      <button className="btn btn-sm btn-success"><FaWhatsapp /> Whatsapp</button>
-    </div>
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '15px', marginBottom: '10px' }}>
+            <span style={{ color: '#f90', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <FaCalendarAlt /> 05 May, 2025
+            </span>
+            <span style={{ color: '#666', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <FaTags /> Immigration - PR Visa, Europe
+            </span>
+          </div>
+          <div
+  className="d-flex mb-2"
+  style={{
+    flexWrap: 'wrap',
+    gap: '8px',
+    justifyContent: 'flex-start',
+    justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start'
+  }}
+>
+  <button className="btn btn-sm btn-primary"><FaFacebookF /> Share</button>
+  <button className="btn btn-sm btn-info"><FaLinkedinIn /> Share</button>
+  <button className="btn btn-sm btn-dark">X Post</button>
+  <button className="btn btn-sm btn-success"><FaWhatsapp /> Whatsapp</button>
+</div>
+
     <p style={{ lineHeight: '1.7' }}>
       The Netherlands is witnessing a surge in unauthorised employment of third-country nationals, with tens of thousands,
       including 35,000 Brazilians in Amsterdam alone, working without proper permits. These undocumented workers are mostly
@@ -129,7 +138,7 @@ export default function Newsdetails() {
   </div>
 </div>
 
-<div className="col-4"  style={{padding:'50px 30px'}}>
+<div className="col-lg-4 col-md-12" style={{ padding: '50px 15px' }}>
   <div style={{
     backgroundColor: '#fff',
     padding: '20px',
