@@ -5006,8 +5006,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
     right: 0;
     bottom: 35%; }
 
-.team-single__inner {
-  padding-right: 133px; }
+
   @media (max-width: 1199px) {
     .team-single__inner {
       padding-right: 0; } }

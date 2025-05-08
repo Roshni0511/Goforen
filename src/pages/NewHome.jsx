@@ -75,14 +75,14 @@ export default function NewHome() {
   // data-background img end
   //   category slider start
   const images = [
-    "https://www.goforen.com//uploads/gallery/43-image.jpeg",
-    "https://www.goforen.com//uploads/gallery/58-image.jpeg",
-    "https://www.goforen.com//uploads/gallery/81-image.jpg",
-    "https://www.goforen.com//uploads/gallery/60-image.jpg",
-    "https://www.goforen.com//uploads/gallery/48-image.jpg",
-    "https://www.goforen.com//uploads/gallery/94-image.jpg",
-    "https://www.goforen.com//uploads/gallery/29-image.jpg",
-    "https://www.goforen.com//uploads/gallery/96-image.png",
+    "/assets/pic/media1.jpeg",
+    "/assets/pic/media2.jpeg",
+    "/assets/pic/media3.jpg",
+    "/assets/pic/media4.jpg",
+    "/assets/pic/media5.jpg",
+    "/assets/pic/media6.jpg",
+    "/assets/pic/media7.jpg",
+    "/assets/pic/media8.png",
   ];
   //   category slider end
   // data-background img start
@@ -228,7 +228,7 @@ export default function NewHome() {
       <section
         class="package package-bg pos-rel pt-120 pb-120"
         style={{
-          // backgroundImage: `url(${background5})`,
+          backgroundImage: `url(${background4})`,
           // minHeight: '400px',
           position: "relative",
           backgroundSize: "cover",
@@ -1526,7 +1526,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner" data-parallax='{"scale" : 1}'>
                     <div class="xb-item--img">
-                      <img src="assets/img/team/img_01.png" alt="" />
+                      <img src="/assets/pic/profile1.jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1558,7 +1558,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner">
                     <div class="xb-item--img">
-                      <img src="assets/img/team/img_02.png" alt="" />
+                      <img src="/assets/pic/profile4.jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1592,7 +1592,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner">
                     <div class="xb-item--img">
-                      <img src="assets/img/team/img_03.png" alt="" />
+                      <img src="/assets/pic/profile5.jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1624,7 +1624,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner">
                     <div class="xb-item--img">
-                      <img src="assets/img/team/img_04.png" alt="" />
+                      <img src="/assets/pic/profile2.jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1656,7 +1656,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner">
                     <div class="xb-item--img">
-                      <img src="assets/img/team/img_05.png" alt="" />
+                      <img src="/assets/pic/profile6.jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1688,7 +1688,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner">
                     <div class="xb-item--img">
-                      <img src="assets/img/team/img_06.png" alt="" />
+                      <img src="/assets/pic/profile3.jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1725,7 +1725,7 @@ export default function NewHome() {
         </div>
       </section>
       {/* <!-- team end --> */}
-
+      <SuccessStories />
       {/* <!-- faq start --> */}
       <section className="faq pt-120 pb-120">
         <div className="container">
@@ -2057,8 +2057,122 @@ export default function NewHome() {
         </div>
       </section>
       {/* <!-- blog end --> */}
+    
+  {/* <!-- newsletter start --> */}
+  <section className="newsletter mt-5">
+        <div className="container">
+          <div className="xb-newsletter pos-rel">
+            <div className="row">
+              <div className="col-lg-7">
+                <div className="">
+                  <div className="xb-item--holder mb-30">
+                    <span>newsletter</span>
+                    <h3>
+                      Subscribe to the free newsletter to receive the latest{" "}
+                      <br /> news & case studies!
+                    </h3>
+                  </div>
+                  <form className="xb-item--form" action="#!">
+                    <input type="text" placeholder="Your e-mail address" />
+                    <button className="thm-btn">Subscribe</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div className="xb-newsletter__img">
+              <img src="/assets/pic/BannerMob.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- newsletter end --> */}
 
-      <SuccessStories />
+      {/* <!-- contact start --> */}
+      <section className="contact contact-pt gray-bg">
+        <div className="container">
+          <div className="xb-contact pos-rel">
+            <div className="row">
+              <div className="col-lg-6">
+                <div className="xb-item--inner">
+                  <div className="xb-item--holder mb-25">
+                    <span>
+                      <img src="assets/img/icon/n_pad.svg" alt="" />
+                      Contact Us
+                    </span>
+                    <h3>
+                      Do you have questions or went more <br /> information?
+                    </h3>
+                  </div>
+                  <form className="xb-item--form contact-from" action="#!">
+                    <div className="row">
+                      <div className="col-lg-6">
+                        <div className="xb-item--field">
+                          <span>
+                            <img src="assets/img/icon/c_user.svg" alt="" />
+                          </span>
+                          <input type="text" placeholder="Goladria Gomez" />
+                        </div>
+                      </div>
+                      <div className="col-lg-6">
+                        <div className="xb-item--field">
+                          <span>
+                            <img src="assets/img/icon/c_mail.svg" alt="" />
+                          </span>
+                          <input
+                            type="text"
+                            placeholder="e.visa@services.com"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-lg-6">
+                        <div className="xb-item--field">
+                          <span>
+                            <img src="assets/img/icon/c_select.svg" alt="" />
+                          </span>
+                         
+                          <div className="nice-select" tabindex="0"><span className="current">Student Visa</span><ul className="list"><li data-value="1" className="option selected focus">Student Visa</li><li data-value="2" className="option">Tourist Visa</li><li data-value="3" className="option">Commercial Visa</li><li data-value="4" className="option">Residence Visa</li><li data-value="4" className="option">Working Visa</li></ul></div>
+                        </div>
+                      </div>
+                      <div className="col-lg-6">
+                        <div className="xb-item--field">
+                          <span>
+                            <img src="assets/img/icon/c_call.svg" alt="" />
+                          </span>
+                          <input type="text" placeholder="+888 -8867 3333" />
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="xb-item--field">
+                          <span>
+                            <img src="assets/img/icon/c_message.svg" alt="" />
+                          </span>
+                          <textarea
+                            name="message"
+                            id="message"
+                            cols="30"
+                            rows="10"
+                            placeholder="Write Your Message..."
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <button className="thm-btn" type="submit">
+                          Send Message
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div className="google-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.254272231177!2d90.3654215!3d23.7985508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1592852423971!5m2!1sen!2sbd"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- contact end --> */}
+      
       <Footer />
     </div>
   );
