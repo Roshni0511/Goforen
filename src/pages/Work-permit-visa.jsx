@@ -230,7 +230,7 @@ export default function Workpermitvisa() {
                       </li>
                     </ul>
                             <div class="single-img mt-35 mb-70">
-                                <img src="/assets/pic/visaaa.jpg" />
+                            <img src="/assets/pic/visa1.png" />
                             </div>
                             <h3>How Go Foren work</h3>
                             <ul class="about-list ul_li list-unstyled">
