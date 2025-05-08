@@ -16,7 +16,7 @@ export default function FooterTop() {
   return (
     <div>
       {/* <!-- brand start --> */}
-      <section className="brand" style={{paddingTop:'130px',paddingBottom:'100px'}}>
+      <section className="brand" style={{paddingBottom:'100px'}}>
       <div className="container mx-auto">
       <h2 className="brand-title text-center mb-50">
                     <span><span>We're proud to work with our preferred partners</span></span>

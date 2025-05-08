@@ -201,8 +201,9 @@ export default function Immigrationprvisa() {
                     </div>
                     <div class="col-lg-8">
                         <div class="single-content">
-                            <h3>  Immigration - PR Visa</h3>
-                        
+                            <h3> </h3>
+                            <h3> Immigration - PR Visa</h3>
+                            <h4>Turning Your Immigration Dreams into Reality.</h4>
                              <p>
                       As per the report of BBC-UK people migrate for many
                       different reasons. These reasons can be classified as
@@ -281,13 +282,22 @@ export default function Immigrationprvisa() {
                                 </li>
                             </ul>
                             
-                          
-                            <p style={{marginTop:'20px'}}>Migration usually happens as a result of a combination of these push and pull factors.
-
-We, at GO FOREN, help people migrate from India to an overseas location where we are experts. We support you right from inspiring guidance to documentation and take care of all the associated legal procedures required for positive outcome of your application. Here is the sequence of steps through which you will pass on to make immigration incredibly simple.</p>
-<h3>Conclusion</h3>
-<p>
-Immigrating to Canada can be a complex and time-consuming process, but with Go Foren by your side, you can rest assured that your application will be handled with the utmost care and expertise. Our team of best immigration consultants and registered immigration consultants is dedicated to helping you achieve your Canadian immigration goals. Whether you’re applying for a visa, permanent residency, or citizenship, we offer comprehensive support tailored to your specific needs. Contact Go Foren today to take the first step toward your new life in Canada.</p>
+                          <h3 class="mt-70">Conclusion</h3>
+                            <p>Immigrating to Canada can be a complex and time-consuming process, but with Go Foren by your side, you can rest assured that your application will be handled with the utmost care and expertise. Our team of best immigration consultants and registered immigration consultants is dedicated to helping you achieve your Canadian immigration goals. . </p>
+                            <div class="row align-items-center mt-10">
+                                <div class="col-lg-6 mt-30">
+                                    <img src="assets/img/visa/img_02.jpg" alt="" />
+                                </div>
+                                <div class="col-lg-6 mt-30">
+                                    <ul class="single-content-list list-unstyled pl-25">
+                                        <li><img src="assets/img/icon/star.svg" alt="" />Cultural Enrichmen</li>
+                                        <li><img src="assets/img/icon/star.svg" alt="" />Language Proficiency</li>
+                                        <li><img src="assets/img/icon/star.svg" alt="" />Quality of Life</li>
+                                        <li><img src="assets/img/icon/star.svg" alt="" />Career Opportunities</li>
+                                        <li><img src="assets/img/icon/star.svg" alt="" />Business Setup</li>
+                                    </ul>
+                                </div>
+                            </div>
                           
                         </div>
                     </div>
