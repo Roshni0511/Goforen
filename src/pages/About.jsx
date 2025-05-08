@@ -15,6 +15,14 @@ export default function About() {
     const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
     setBackground(backgroundUrl);
   }, []);
+
+
+  const [background1, setBackground1] = useState("");
+
+  useEffect(() => {
+    const backgroundUrl1 = "http://127.0.0.1:5500/assets/img/bg/team_bg.jpg";
+    setBackground1(backgroundUrl1);
+  }, []);
   // data-background img end
  
   return (
@@ -86,7 +94,7 @@ export default function About() {
             <div className="col-lg-6">
               <div className="sec-title mb-20">
                 <h2 className="wow skewIn">
-                  Committed to Your Visa <br /> <span>Success - About us</span>
+                  Committed to Your Visa <br /> <span  style={{fontSize:'35px'}}>Success - About us</span>
                 </h2>
               </div>
             </div>
@@ -121,7 +129,7 @@ export default function About() {
                     <div class="col-lg-6 mt-30">
                         <div class="mission__content">
                             <div class="sec-title">
-                                <h2 class="mb-20 wow skewIn">Inception of GO FOREN<br /> <span>Immigration Mission</span></h2>
+                                <h2 class="mb-20 wow skewIn">Inception of GO FOREN<br /> <span  style={{fontSize:'35px'}}>Immigration Mission</span></h2>
                                 <p>The birth of GO FOREN, the immigration consultation and overseas education advising division, holds a captivating tale. Situated in South Gujarat, India, GO FOREN is widely regarded as one of the top establishments in its field. Its origins trace back to our parent company, RACHNA ACADEMY OF CAREER EDUCATION (RACE), which has been actively engaged in providing career guidance and facilitating government and private sector job placements in India since 2006. Mr. Rajesh Bhavsar, our esteemed founder, has been instrumental in assisting and guiding numerous individuals in their pursuit of settling abroad, whether as students or permanent residents.</p>
                             </div>
                         </div>
@@ -138,7 +146,7 @@ export default function About() {
                     <div class="col-lg-6 mt-30">
                         <div class="mission__content">
                             <div class="sec-title">
-                                <h2 class="mb-20 wow skewIn" data-wow-delay="200ms">About scope of GO FOREN <br /> <span>Visa Guidance</span></h2>
+                                <h2 class="mb-20 wow skewIn" data-wow-delay="200ms">About scope of GO FOREN <br /> <span  style={{fontSize:'35px'}}>Visa Guidance</span></h2>
                                 <p>GO FOREN specializes in immigration/PR visa, student visa, visitor visa, entrepreneur/business visa and work permit visa services. Our core expertise lies in the immigration field, where we offer comprehensive assistance to clients who wish to work and settle in a new country. Our support extends beyond initial counselling, evaluation, application, and immigration processes. We also provide additional services such as air ticketing, foreign exchange, accommodation arrangements, travel insurance, and airport transfers upon successful relocation to the new country.</p>
                             </div>
                         </div>
@@ -149,11 +157,11 @@ export default function About() {
 
 
         {/* <!-- team start --> */}
-        <section class="team pt-120 pb-130 bg_img" data-background="assets/img/bg/team_bg.jpg">
+        <section class="team pt-120 pb-130 bg_img" style={{  backgroundImage: `url(${background1})`, }}>
             <div class="container">
                 <div class="sec-title text-center mb-65">
-                    <h2 class="mb-40 wow skewIn">Our trusted immigration <br /> <span> support team</span></h2>
-                    <p>At the heart of our commitment to providing exceptional <br /> immigration solutions stands</p>
+                    <h2 class="mb-40 wow skewIn">Our trusted immigration <br /> <span  style={{fontSize:'35px'}}> support team</span></h2>
+                    <p style={{textAlign:'center',justifyContent:'center',display:'flex'}}>At the heart of our commitment to providing exceptional <br /> immigration solutions stands</p>
                 </div>
                 <div class="row mt-none-30">
                     <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
@@ -306,7 +314,7 @@ export default function About() {
         {/* <!-- team end --> */}
 
       {/* <!-- mission,vission,value start --> */}
-      <section className="mission pt-130 pb-130">
+      <section className="mission  pt-100 pb-130">
         <div className="container">
           <div className="row align-items-center flex-row-reverse mt-none-30">
             <div className="col-lg-6 mt-30">
@@ -322,7 +330,7 @@ export default function About() {
             <div className="col-lg-6 mt-30">
               <div className="mission__content">
                 <div className="sec-title">
-                  <h2 className="mb-20 wow skewIn">Our Vision</h2>
+                <h2 class="mb-20 wow skewIn">OUR VISION<br /> <span style={{fontSize:'35px'}}>  Visa Vision</span></h2>
                   <p>
                     Empowering Indian aspirants abroad, we strive as a
                     trustworthy, cost-effective, and ethical immigration/visa
@@ -344,9 +352,8 @@ export default function About() {
             <div className="col-lg-6 mt-30">
               <div className="mission__content">
                 <div className="sec-title">
-                  <h2 className="mb-20 wow skewIn" data-wow-delay="200ms">
-                    Our Mission
-                  </h2>
+                <h2 class="mb-20 wow skewIn"> Our Mission<br /> <span style={{fontSize:'35px'}}>   Foreign Guidance</span></h2>
+                 
                   <p>
                     <ul style={{listStyle:'none'}}>
                       <li style={{ alignItems: "baseline" }}>
@@ -413,7 +420,9 @@ export default function About() {
             <div className="col-lg-6 mt-100">
               <div className="mission__content">
                 <div className="sec-title">
-                  <h2 className="mb-20 wow skewIn">Our Values</h2>
+                <h2 class="mb-20 wow skewIn"> Our Values<br /> <span style={{fontSize:'35px'}}> Trusted Service</span></h2>
+                 
+          
                   <p>
                     KNOWLEDGE GENERATION for ourselves and for clients. Only
                     information on knowledge can help you become winner.
@@ -446,109 +455,8 @@ export default function About() {
       </section>
       {/* <!-- mission,vission,value end --> */}
 
-      {/* <!-- Why With Us text start --> */}
-      <section className="team-signle pb-120">
-        <div className="container">
-          <div className="team-single__inner">
-            <div className="team-single__content" style={{ paddingTop: "0px" }}>
-              <h3>Why Should You Register With Us</h3>
-              <p>
-                {" "}
-                At GO FOREN we firmly believe that further education requires
-                proper planning to ensure that, students choose the appropriate
-                academic pathway. With this in mind, we assist students by
-                giving comprehensive information about study opportunities in
-                various countries worldwide. We continuously believe in
-                providing professional services to students, parents and our
-                institutional clients at all times.
-              </p>
 
-              <p>
-                <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    We are not totally different from others but we have few
-                    things that make us one of the best in market
-                  </li>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    We have more than 15 years experience in dealing with youth
-                    between 21 and 35 ages.
-                  </li>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    We have best professional partnership to offer you admission
-                    in Colleges & Universities worldwide.
-                  </li>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    We provide best possible assistance in immigration filing
-                    process for PR in Canada, Australia, and New Zealand.
-                  </li>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    Our staff is best trained for helping Students go to study
-                    abroad or for a person applying for PR.
-                  </li>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    We are capable to provide comprehensive backup services for
-                    Indian Students throughout their studies and help them apply
-                    for PR after.
-                  </li>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    We conduct guidance pre-departure seminars to prepare
-                    students before they leave for studies.
-                  </li>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    Proper infrastructure and facility for coaching of vital
-                    exams whether computer-based or not.
-                  </li>
-                  <li style={{ alignItems: "baseline" }}>
-                    <FontAwesomeIcon
-                      icon={faCircle}
-                      style={{ marginRight: 8, fontSize: "8px" }}
-                    />
-                    In-house R&D to ensure up-to-date info on courses and
-                    changes in immigration rules.
-                  </li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- Why With Us text end --> */}
 
-      {/* <!-- testimonial start --> */}
-      <SuccessStories />
-      {/* <!-- testimonial end --> */}
       <FooterTop />
       <Footer />
     </div>

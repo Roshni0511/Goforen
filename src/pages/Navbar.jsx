@@ -206,20 +206,21 @@ export default function Navbar() {
                     </li>
 
                     <li className="menu-item-has-children">
-                      <a href="/About">
+                      <a>
                         <span>About us</span>
                       </a>
                       <ul className="submenu">
+                      <li>
+                          <a href="/About">
+                            <span>About Goforen</span>
+                          </a>
+                        </li>
                         <li>
                           <a href="/About-us-race">
                             <span>About Race Group</span>
                           </a>
                         </li>
-                        <li>
-                          <a href="/About">
-                            <span>About Goforen</span>
-                          </a>
-                        </li>
+                       
                         <li>
                           <a href="/About-founder">
                             <span>About Founder</span>
@@ -238,22 +239,22 @@ export default function Navbar() {
                           </a>
                         </li>
                         <li>
-                          <a href="/Student-visa">
+                          <a href="/Immigration-pr-visa">
                             <span>Student Visa</span>
                           </a>
                         </li>
                         <li>
-                          <a href="/Visitor-visa">
+                          <a href="/Immigration-pr-visa">
                             <span> Visitor Visa</span>
                           </a>
                         </li>
                         <li>
-                          <a href="/Investor-visa">
+                          <a href="/Immigration-pr-visa">
                             <span> Investor Visa</span>
                           </a>
                         </li>
                         <li>
-                          <a href="/Work-permit-visa">
+                          <a href="/Immigration-pr-visa">
                             <span> Work Permit Visa</span>
                           </a>
                         </li>
@@ -271,22 +272,22 @@ export default function Navbar() {
                           </a>
                         </li>
                         <li>
-                          <a href="/TOEFLIBT">
+                          <a href="/IELTS">
                             <span>TOEFL IBT</span>
                           </a>
                         </li>
                         <li>
-                          <a href="/GRE">
+                          <a href="/IELTS">
                             <span>GRE</span>
                           </a>
                         </li>
                         <li>
-                          <a href="/PTE">
+                          <a href="/IELTS">
                             <span>PTE</span>
                           </a>
                         </li>
                         <li>
-                          <a href="/SAT">
+                          <a href="/IELTS">
                             <span>SAT</span>
                           </a>
                         </li>

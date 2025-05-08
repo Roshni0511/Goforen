@@ -3,6 +3,10 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import SuccessStories from '../component/SuccessStories'
 import FooterTop from "../component/FooterTop";
+import Counter from "../component/Counter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function Aboutfounder() {
      // data-background img start
@@ -12,6 +16,12 @@ export default function Aboutfounder() {
             const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
             setBackground(backgroundUrl);
           }, []);
+            const [background1, setBackground1] = useState("");
+          
+            useEffect(() => {
+              const backgroundUrl1 = "http://127.0.0.1:5500/assets/img/bg/team_bg.jpg";
+              setBackground1(backgroundUrl1);
+            }, []);
           // data-background img end
   return (
     <div>
@@ -75,42 +85,253 @@ export default function Aboutfounder() {
       </section>
       {/* <!-- breadcrumb end --> */}
 
-      {/* <!-- about text start --> */}
-      <section className="team-signle pt-120 pb-120">
-        <div className="container">
-          <div className="team-single__inner">
-            <div className="team-single__content" style={{ paddingTop: "0px" }}>
-            <div class="rj-img"><img src="/assets/pic/rj.png" class="img-responsive" width={"80px"} style={{marginBottom:'10px'}}/></div>
-              <h3 className="wow skewIn">CAREER OF FOUNDER SIR</h3>
-              <p>
-              Mr. Rajesh Bhavsar, also popularly addressed as RJ Sir by students, is a distinguished individual with a rich tapestry of experiences. He holds a degree in Civil Engineering from SVNIT, Surat, earned in the 1980s and other qualifications too in life journey. Throughout his journey, he has delved into diverse fields such as engineering, construction, immigration, academics, teaching, banking, and ultimately, consulting.
-              </p>
-              <p>
-              His remarkable journey began in the 1980s as a civil engineer, where he accumulated a reservoir of profound experiences. Beyond engineering and construction, he ventured into realms like immigration, academia, teaching, and even banking. RJ Sir's journey of accomplishments didn't stop there; he extended his expertise to career counselling, consulting, textiles, and water supply domains. His contributions and experiences over the years have truly shaped him into a remarkable figure with a myriad of talents and expertise.
-              </p>
-              <h3 className="wow skewIn">BUSINESS / PROFESSIONAL JOURNEY</h3>
-              <p>
-              Mr. Rajesh Bhavsar embarked on an extraordinary business journey after his graduation in engineering in 1984. In an era dominated by artificial intelligence and evolving job landscapes, the challenge to identify and nurture talented individuals for leadership roles in various sectors became crucial. After two decades in the fields of Civil Engineering and Textiles, he sought new horizons.
-              </p>
-              <p>In the summer of May 2006, he initiated his foray into the human resource sector aimed at empowering youth between 18 and 35 by founding RACHNA Academy of Career Education (RACE) in South Gujarat. RACE quickly gained recognition as a premier institute specializing in career enhancement training. It catered to competitive exams like UPSC, GPSC, SSC, BANKS, and LIC, contributing significantly to the education landscape.</p>
-              <p>As time progressed, Mr. Bhavsar's focus shifted towards not just training but also placement. This led to the establishment of iROJGAR, a premium placement agency, in which he held the role of Chief Mentor. Through iROJGAR, he honed recruiters' requirements and prepared deserving candidates with necessary job skills, bridging the gap between employers and job seekers.</p>
-              <p>His involvement extended beyond placements. At RACE Academy, where he served as Chief Coach, Mr. Bhavsar cultivated an environment of inter-enterprise coordination. Talented youngsters were not only equipped with refined skills but also empowered with enhanced employment probabilities.</p>
-              <p>Continuing to broaden his horizons, Mr. Bhavsar founded GoForen, excelling in immigration consultancy and VISA services. This venture catered to those aspiring to work, study, or settle in new countries. GoForen emerged as a reliable entity offering comprehensive support in immigration and PR visas, student visas, visitor visas, and entrepreneur/business visas.</p>
-              <p>In 2020, CAREERIAA was conceived as a solution for burgeoning entrepreneurs and consultants. Understanding the financial constraints of start-ups, it provided flexible working environments at affordable rates – be it hourly, daily, weekly, or monthly. This venture encapsulated the idea that success can breed more success, fostering a dynamic entrepreneurial spirit.</p>
-             <p>Mr. Rajesh Bhavsar's professional journey is a testament to his adaptability and visionary approach as a careerguru. Through ventures like RACE, iROJGAR, GoForen, and CAREERIAA, he has left an indelible mark on career training, placement, immigration consultancy, and workspace solutions, contributing significantly to the development and empowerment of the youth and professionals.</p>
 
-             <h3 className="wow skewIn">PATH ON SOCIAL RESPONSIBILITY</h3>
-             <p>Rajesh Bhavsar, after founding the RESET NGO (Rachna Education and Social Enhancement Trust), has shown exceptional social responsibility. Recognizing the skill development gap in both rural and urban areas, he has tirelessly worked towards bridging this divide. His NGO offers career-focused coaching and educational resources to the youth, irrespective of their financial backgrounds.</p>
-             <p>Additionally, he has established libraries and reading rooms, creating spaces that foster learning and growth. Rajesh's commitment to providing affordable skill development solutions and access to education demonstrates his dedication to uplifting communities and nurturing a brighter future for all.</p>
+      {/* <!-- about start --> */}
+      <section className="about pt-130">
+        <div className="container">
+          <div className="row mb-40 align-items-center">
+            <div className="col-lg-6">
+              <div className="sec-title mb-20">
+                <h2 className="wow skewIn">
+                  Committed to Your Visa <br /> <span  style={{fontSize:'35px'}}>Success - About us</span>
+                </h2>
+              </div>
             </div>
+            <div className="col-lg-5 offset-lg-1">
+              <div className="sec-title mb-20">
+                <p>
+                  We deliver budget-friendly visa solutions, removing financial
+                  barriers from your journey. Our goal is to provide quality
+                  services at reasonable rates.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="xb-about__img">
+            <img src="/assets/pic/about (1).jpg" alt="" />
           </div>
         </div>
       </section>
-      {/* <!-- about text end --> */}
+      <Counter />
+      {/* <!-- about end --> */}
 
-       {/* <!-- testimonial start --> */}
-        <SuccessStories />
-        {/* <!-- testimonial end --> */}
+      <section class="mission pt-130 pb-130">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse mt-none-30">
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__img text-lg-end">
+                            <div class="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
+                                <img src="assets/img/bg/mission.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__content">
+                            <div class="sec-title">
+                                <h2 class="mb-20 wow skewIn">CAREER OF FOUNDER SIR<br /> <span  style={{fontSize:'35px'}}>Inspiring Journey</span></h2>
+                                <p>His remarkable journey began in the 1980s as a civil engineer, where he accumulated a reservoir of profound experiences. Beyond engineering and construction, he ventured into realms like immigration, academia, teaching, and even banking. RJ Sir's journey of accomplishments didn't stop there; he extended his expertise to career counselling, consulting, textiles, and water supply domains. His contributions and experiences over the years have truly shaped him into a remarkable figure with a myriad of talents and expertise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center mt-100">
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__img">
+                            <div class="inner-img d-inline-block wow skewIn">
+                                <img src="assets/img/bg/vission.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__content">
+                            <div class="sec-title">
+                                <h2 class="mb-20 wow skewIn" data-wow-delay="200ms">BUSINESS / PROFESSIONAL JOURNEY<br /> <span  style={{fontSize:'35px'}}>Journey of Success</span></h2>
+                                <p>In the summer of May 2006, he initiated his foray into the human resource sector aimed at empowering youth between 18 and 35 by founding RACHNA Academy of Career Education (RACE) in South Gujarat. RACE quickly gained recognition as a premier institute specializing in career enhancement training. It catered to competitive exams like UPSC, GPSC, SSC, BANKS, and LIC, contributing significantly to the education landscape.</p>
+                                <p>As time progressed, Mr. Bhavsar's focus shifted towards not just training but also placement. This led to the establishment of iROJGAR, a premium placement agency, in which he held the role of Chief Mentor. Through iROJGAR, he honed recruiters' requirements and prepared deserving candidates with necessary job skills, bridging the gap between employers and job seekers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center flex-row-reverse mt-100">
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__img text-lg-end">
+                            <div class="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
+                                <img src="assets/img/bg/mission.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__content">
+                            <div class="sec-title">
+                                <h2 class="mb-20 wow skewIn">PATH ON SOCIAL RESPONSIBILITY<br /> <span  style={{fontSize:'35px'}}>Service Commitment</span></h2>
+                                <p>His NGO offers career-focused coaching and educational resources to the youth, irrespective of their financial backgrounds.Additionally, he has established libraries and reading rooms, creating spaces that foster learning and growth. Rajesh's commitment to providing affordable skill development solutions and access to education demonstrates his dedication to uplifting communities and nurturing a brighter future for all.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        {/* <!-- team start --> */}
+        <section class="team pt-120 pb-130 bg_img" style={{  backgroundImage: `url(${background1})`, }}>
+            <div class="container">
+                <div class="sec-title text-center mb-65">
+                    <h2 class="mb-40 wow skewIn">Our trusted immigration <br /> <span  style={{fontSize:'35px'}}> support team</span></h2>
+                    <p style={{textAlign:'center',justifyContent:'center',display:'flex'}}>At the heart of our commitment to providing exceptional <br /> immigration solutions stands</p>
+                </div>
+                <div class="row mt-none-30">
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner" data-parallax='{"scale" : 1}'>
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_01.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Esther Howard</a></h3>
+                                    <span class="xb-item--designation">Legal Advisor</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_02.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Annette Black</a></h3>
+                                    <span class="xb-item--designation">Education Counsellor</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_03.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Andrew Riis</a></h3>
+                                    <span class="xb-item--designation">Visa Specialist</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_04.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Kristin Watson</a></h3>
+                                    <span class="xb-item--designation">Visa Coordinator</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_05.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Jerome Bell</a></h3>
+                                    <span class="xb-item--designation">General Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_06.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Eleanor Pena</a></h3>
+                                    <span class="xb-item--designation">Case Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_07.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Steve Trister</a></h3>
+                                    <span class="xb-item--designation">Visa Coordinator</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_08.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Daniel Lewis</a></h3>
+                                    <span class="xb-item--designation">Case Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {/* <!-- team end --> */}
+
+
+
         <FooterTop />
       <Footer />
     </div>

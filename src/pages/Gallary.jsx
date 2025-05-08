@@ -44,12 +44,12 @@ const Gallary = () => {
 
   <div className="container" style={{ position: 'relative', zIndex: 2 }}>
     <div className="breadcrumb__content">
-    <h2 className=" breadcrumb__title" style={{color:'#fff'}}>Gallary</h2>
+    <h2 className=" breadcrumb__title" style={{color:'#fff'}}>Gallery</h2>
             <ul className=" breadcrumb__list clearfix" >
               <li className=" breadcrumb-item" >
                 <a href=" /" >Home</a>
               </li>
-              <li className=" breadcrumb-item" >Gallary</li>
+              <li className=" breadcrumb-item" >Gallery</li>
             </ul>
     </div>
   </div>
@@ -87,13 +87,15 @@ const Gallary = () => {
             <div className="container">
               
                         <div className="sec-title" style={{display:'flex',justifyContent:'center',marginBottom:'30px'}}>
-                            <h2 className="mb-20 wow skewIn">Our Gallary
+                            <h2 className="mb-20 wow skewIn">Our Gallery
                             </h2>
                         </div>
                     
              
            
-                <ul className="xb-country-nav nav nav-tabs ul_li_between mb-65" id="myTab" role="tablist">
+                        <ul className="xb-country-nav nav nav-tabs d-flex justify-content-between mb-65 w-100" id="myTab" role="tablist">
+
+
                     <li className="nav-item" role="presentation">
                         <button className="nav-link active" id="xbc-tab1" data-bs-toggle="tab"
                                 data-bs-target="#xbc-tab-pane1" type="button" role="tab" aria-controls="xbc-tab-pane1"
@@ -120,197 +122,352 @@ const Gallary = () => {
                   
                 </ul>
                 <div className="tab-content" id="myTabContent">
-                <div className="tab-pane animated fadeInUp show active" id="xbc-tab-pane1" role="tabpanel"
-     aria-labelledby="xbc-tab1" tabIndex="0">
- <div className="xb-countryes">
-  <div className="xb-itemes--itemes ">
-    <a href="" className="xb-item--inner">
-      <img src="/assets/pic/g1.jpg" className="uniform-img" />
-    </a>
-  </div>
-  <div className="xb-itemes--itemes ">
-    <a href="" className="xb-item--inner">
-      <img src="/assets/pic/g2.webp" className="uniform-img" />
-    </a>
-  </div>
-  <div className="xb-itemes--itemes ">
-    <a href="" className="xb-item--inner">
-      <img src="/assets/pic/g3.webp" className="uniform-img" />
-    </a>
-  </div>
-  <div className="xb-itemes--itemes ">
-    <a href="" className="xb-item--inner">
-      <img src="/assets/pic/g4.jpeg" className="uniform-img" />
-    </a>
-  </div>
-  <div className="xb-itemes--itemes ">
-    <a href="" className="xb-item--inner">
-      <img src="/assets/pic/g5.webp" className="uniform-img" />
-    </a>
-  </div>
-  <div className="xb-itemes--itemes ">
-    <a href="" className="xb-item--inner">
-      <img src="/assets/pic/g6.jpeg" className="uniform-img" />
-    </a>
-  </div>
-  <div className="xb-itemes--itemes ">
-    <a href="" className="xb-item--inner">
-      <img src="/assets/pic/g7.jpg" className="uniform-img" />
-    </a>
-  </div>
-  <div className="xb-itemes--itemes ">
-    <a href="" className="xb-item--inner">
-      <img src="/assets/pic/g8.jpeg" className="uniform-img" />
-    </a>
+                <div className="tab-pane animated fadeInUp show active" id="xbc-tab-pane1" role="tabpanel" aria-labelledby="xbc-tab1" tabIndex="0">
+  <div className="xb-countryes">
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/g1.jpg" data-fancybox="gallery" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/g1.jpg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/g2.webp" data-fancybox="gallery" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/g2.webp')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/g3.webp" data-fancybox="gallery" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/g3.webp')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/g4.jpeg" data-fancybox="gallery" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/g4.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/g5.webp" data-fancybox="gallery" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/g5.webp')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/g6.jpeg" data-fancybox="gallery" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/g6.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/g7.jpg" data-fancybox="gallery" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/g7.jpg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/g8.jpeg" data-fancybox="gallery" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/g8.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
   </div>
 </div>
 
-</div>
-<div className="tab-pane animated fadeInUp" id="xbc-tab-pane2" role="tabpanel"
-     aria-labelledby="xbc-tab2" tabIndex="0">
-    <div className="xb-countryes ul_li">
-        <div className="xb-itemes--itemes ">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/s1.jpeg" className="uniform-img" />
-            </a>
+<div className="tab-pane animated fadeInUp" id="xbc-tab-pane2" role="tabpanel" aria-labelledby="xbc-tab2" tabIndex="0">
+  <div className="xb-countryes">
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/s1.jpeg" data-fancybox="gallery2" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/s1.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
         </div>
-        <div className="xb-itemes--itemes ">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/s2.jpeg" className="uniform-img" />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes ">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/s3.jpeg" className="uniform-img" />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes ">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/s4.jpeg" className="uniform-img" />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes ">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/s5.jpeg" className="uniform-img" />
-            </a>
-        </div>
+      </a>
     </div>
-</div>
-<div className="tab-pane animated fadeInUp" id="xbc-tab-pane3" role="tabpanel"
-     aria-labelledby="xbc-tab3" tabIndex="0">
-    <div className="xb-countryes ul_li">
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a1.webp" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/s2.jpeg" data-fancybox="gallery2" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/s2.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
         </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a2.webp" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a3.webp" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a4.jpeg" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a5.webp" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a6.jpg" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a7.jpeg" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a8.jpeg" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a9.jpeg" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a10.jpeg" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a11.jpeg" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/a12.jpeg" className="uniform-img" style={{ padding: '15px' }} />
-            </a>
-        </div>
+      </a>
     </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/s3.jpeg" data-fancybox="gallery2" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/s3.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/s4.jpeg" data-fancybox="gallery2" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/s4.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+  </div>
 </div>
 
-<div className="tab-pane animated fadeInUp" id="xbc-tab-pane4" role="tabpanel"
-     aria-labelledby="xbc-tab4" tabIndex="0">
-    <div className="xb-countryes ul_li">
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q1.jpeg" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
+<div className="tab-pane animated fadeInUp" id="xbc-tab-pane3" role="tabpanel" aria-labelledby="xbc-tab3" tabIndex="0">
+  <div className="xb-countryes">
+  
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a1.webp" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a1.webp')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
         </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q2.png" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q3.jpeg" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q4.jpeg" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q5.jpeg" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q6.jpeg" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q7.jpeg" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q8.jpeg" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
-        </div>
-        <div className="xb-itemes--itemes">
-            <a href="" className="xb-item--inner ul_li">
-                <img src="/assets/pic/q9.png" className="uniform-img" style={{ margin: '15px' }} />
-            </a>
-        </div>
+      </a>
     </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a2.webp" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a2.webp')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a3.webp" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a3.webp')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a4.jpeg" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a4.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a5.webp" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a5.webp')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a6.jpg" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a6.jpg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a7.jpeg" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a7.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a8.jpeg" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a8.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a9.jpeg" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a9.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a10.jpeg" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a10.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a11.jpeg" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a11.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/a12.jpeg" data-fancybox="gallery3" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/a12.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<div className="tab-pane animated fadeInUp" id="xbc-tab-pane4" role="tabpanel" aria-labelledby="xbc-tab4" tabIndex="0">
+  <div className="xb-countryes">
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/q1.jpeg" data-fancybox="gallery4" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/q1.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/q3.jpeg" data-fancybox="gallery4" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/q3.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/q4.jpeg" data-fancybox="gallery4" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/q4.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/q5.jpeg" data-fancybox="gallery4" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/q5.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/q6.jpeg" data-fancybox="gallery4" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/q6.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/q7.jpeg" data-fancybox="gallery4" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/q7.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/q8.jpeg" data-fancybox="gallery4" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/q8.jpeg')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div className="xb-itemes--itemes">
+      <a href="/assets/pic/q9.png" data-fancybox="gallery4" className="xb-item--inner">
+        <div className="image" style={{ backgroundImage: "url('/assets/pic/q9.png')" }}>
+          <div className="overlay">
+            <em className="mdi mdi-magnify-plus"></em>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
 </div>
 
                     

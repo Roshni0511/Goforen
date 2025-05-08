@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import SuccessStories from "../component/SuccessStories";
 import FooterTop from "../component/FooterTop";
+import Counter from "../component/Counter";
 
 export default function Aboutusrace() {
       // data-background img start
@@ -14,14 +15,15 @@ export default function Aboutusrace() {
         const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
         setBackground(backgroundUrl);
       }, []);
-      // data-background img end
-        // data-background img start
-        const [background1, setBackground1] = useState("");
-      
-        useEffect(() => {
-          const backgroundUrl1 = "assets/img/bg/blog_bg.png";
-          setBackground1(backgroundUrl1);
-        }, []);
+   
+   
+        
+          const [background1, setBackground1] = useState("");
+        
+          useEffect(() => {
+            const backgroundUrl1 = "http://127.0.0.1:5500/assets/img/bg/team_bg.jpg";
+            setBackground1(backgroundUrl1);
+          }, []);
         // data-background img end
   return (
     <div>
@@ -85,81 +87,307 @@ export default function Aboutusrace() {
       </section>
       {/* <!-- breadcrumb end --> */}
 
-      {/* <!-- about text start --> */}
-      <section className="team-signle pt-120 pb-120">
+      {/* <!-- about start --> */}
+      <section className="about pt-130">
         <div className="container">
-          <div className="team-single__inner">
-            <div className="team-single__content" style={{ paddingTop: "0px" }}>
-              <h3>Introduction of RACE group</h3>
-              <p>
-              Step into the world of opportunities with the RACE Group (Rachna Academy of Career Education), an esteemed institution nestled in the vibrant heart of South Gujarat, India. Led by the visionary founder, Mr. Rajesh Bhavsar, affectionately known as RJ SIR, the group has become a beacon of hope for countless individuals aspiring to carve a successful career.
-              </p>
-              <p>
-              At RACE, we don't just provide education; we craft destinies. With a diverse range of services, including competitive exam preparation for government jobs, English language exams preparation for foreign admissions, computer training, private sector job placements, assistance with foreign settlement for study or permanent residency, and even offering a co-working space for innovative start-ups, RACE caters to the holistic growth of its students and clients.
-              </p>
-              
-              <p>
-              The group's primary objective is to prepare and provide platform to the YOUTH of India to embark on the right career pathway, armed with knowledge, confidence, and determination. Our team of seasoned experts, teachers, and care takers create an environment that fosters growth and provides unwavering support, driving individuals towards their dreams. So, take the plunge and let RACE propel you towards an extraordinary future.
-              </p>
-             
+          <div className="row mb-40 align-items-center">
+            <div className="col-lg-6">
+              <div className="sec-title mb-20">
+                <h2 className="wow skewIn">
+                  Committed to Your Visa <br /> <span  style={{fontSize:'35px'}}>Success - About us</span>
+                </h2>
+              </div>
             </div>
+            <div className="col-lg-5 offset-lg-1">
+              <div className="sec-title mb-20">
+                <p>
+                  We deliver budget-friendly visa solutions, removing financial
+                  barriers from your journey. Our goal is to provide quality
+                  services at reasonable rates.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="xb-about__img">
+            <img src="/assets/pic/about (1).jpg" alt="" />
           </div>
         </div>
       </section>
-      {/* <!-- about text end --> */}
+      <Counter />
+      {/* <!-- about end --> */}
 
-       {/* <!-- mission,vission,value start --> */}
-            <section className="mission  pb-130">
-              <div className="container">
-                    <h2>Your success story begins here!!!</h2>
-                <div className="row align-items-center flex-row-reverse mt-none-30">
-                  <div className="col-lg-6 mt-30">
-                    <div className="mission__img text-lg-end">
-                      <div
-                        className="inner-img d-inline-block wow skewIn"
-                        data-wow-delay="200ms"
-                      >
-                       <img src="/assets/pic/mission (1).webp" alt="" />
-                      </div>
+      <section class="mission pt-130 pb-130">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse mt-none-30">
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__img text-lg-end">
+                            <div class="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
+                                <img src="assets/img/bg/mission.jpg" alt="" />
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div className="col-lg-6 mt-30">
-                    <div className="mission__content">
-                      <div className="sec-title">
-                        <h2 className="mb-20 wow skewIn">Our Mission</h2>
-                        <p>
-                        Empowering YOUTH by guiding and skilling them towards diverse career opportunities, ensuring successful and fulfilling pathways to a prosperous future.
-                        </p>
-                      </div>
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__content">
+                            <div class="sec-title">
+                                <h2 class="mb-20 wow skewIn">Introduction of RACE group<br /> <span  style={{fontSize:'35px'}}>Prosperous Beginning</span></h2>
+                                <p>Step into the world of opportunities with the RACE Group (Rachna Academy of Career Education), an esteemed institution nestled in the vibrant heart of South Gujarat, India. Led by the visionary founder, Mr. Rajesh Bhavsar, affectionately known as RJ SIR, the group has become a beacon of hope for countless individuals aspiring to carve a successful career. Our team of seasoned experts, teachers, and care takers create an environment that fosters growth and provides unwavering support, driving individuals towards their dreams. So, take the plunge and let RACE propel you towards an extraordinary future.</p>
+                                <p></p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div className="row align-items-center mt-100">
-                  <div className="col-lg-6 mt-30">
-                    <div className="mission__img">
-                      <div className="inner-img d-inline-block wow skewIn">
-                      <img src="/assets/pic/visionn (1).jpeg" alt="" />
-                      </div>
+                <div class="row align-items-center mt-100">
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__img">
+                            <div class="inner-img d-inline-block wow skewIn">
+                                <img src="assets/img/bg/vission.jpg" alt="" />
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div className="col-lg-6 mt-30">
-                    <div className="mission__content">
-                      <div className="sec-title">
-                        <h2 className="mb-20 wow skewIn" data-wow-delay="200ms">
-                        Our Vision
-                        </h2>
-                        <p>
-                        To nurture YOUTH as career-mentors, RACE group strives to be the beacon of encouragement, inspiration, and knowledge. </p>
-                        <p>To capacitate talent, providing top-tier infrastructure enabling them to reach their utmost potential and conquer new heights in their chosen paths.</p>
-                        <p>A brand that provides unparalleled support for success and fosters growth of youth.</p>
-                      </div>
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__content">
+                            <div class="sec-title">
+                                <h2 class="mb-20 wow skewIn" data-wow-delay="200ms">Your Pathway to Success<br /> <span  style={{fontSize:'35px'}}>The Best Opportunities for Youth</span></h2>
+                                <p>At RACE, we don't just provide education; we craft destinies. With a diverse range of services, including competitive exam preparation for government jobs, English language exams preparation for foreign admissions, computer training, private sector job placements, assistance with foreign settlement for study or permanent residency, and even offering a co-working space for innovative start-ups, RACE caters to the holistic growth of its students and clients.
+</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                
+            </div>
+        </section>
+
+
+        {/* <!-- team start --> */}
+        <section class="team pt-120 pb-130 bg_img" style={{  backgroundImage: `url(${background1})`, }}>
+            <div class="container">
+                <div class="sec-title text-center mb-65">
+                    <h2 class="mb-40 wow skewIn">Our trusted immigration <br /> <span  style={{fontSize:'35px'}}> support team</span></h2>
+                    <p style={{textAlign:'center',justifyContent:'center',display:'flex'}}>At the heart of our commitment to providing exceptional <br /> immigration solutions stands</p>
+                </div>
+                <div class="row mt-none-30">
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner" data-parallax='{"scale" : 1}'>
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_01.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Esther Howard</a></h3>
+                                    <span class="xb-item--designation">Legal Advisor</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_02.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Annette Black</a></h3>
+                                    <span class="xb-item--designation">Education Counsellor</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_03.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Andrew Riis</a></h3>
+                                    <span class="xb-item--designation">Visa Specialist</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_04.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Kristin Watson</a></h3>
+                                    <span class="xb-item--designation">Visa Coordinator</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_05.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Jerome Bell</a></h3>
+                                    <span class="xb-item--designation">General Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_06.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Eleanor Pena</a></h3>
+                                    <span class="xb-item--designation">Case Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_07.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Steve Trister</a></h3>
+                                    <span class="xb-item--designation">Visa Coordinator</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_08.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Daniel Lewis</a></h3>
+                                    <span class="xb-item--designation">Case Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {/* <!-- team end --> */}
+
+      {/* <!-- mission,vission,value start --> */}
+      <section className="mission pt-100 pb-130">
+        <div className="container">
+          <div className="row align-items-center flex-row-reverse mt-none-30">
+            <div className="col-lg-6 mt-30">
+              <div className="mission__img text-lg-end">
+                <div
+                  className="inner-img d-inline-block wow skewIn"
+                  data-wow-delay="200ms"
+                >
+                  <img src="/assets/pic/visionn (1).jpeg" alt="" />
+                </div>
               </div>
-            </section>
-            {/* <!-- mission,vission,value end --> */}
+            </div>
+            <div className="col-lg-6 mt-30">
+              <div className="mission__content">
+                <div className="sec-title">
+                <h2 class="mb-20 wow skewIn">OUR VISION<br /> <span style={{fontSize:'35px'}}>  Visa Vision</span></h2>
+                  <p>
+                  To nurture YOUTH as career-mentors, RACE group strives to be the beacon of encouragement, inspiration, and knowledge.
+                  </p>
+                  <p>To capacitate talent, providing top-tier infrastructure enabling them to reach their utmost potential and conquer new heights in their chosen paths.</p>
+
+                  <p>A brand that provides unparalleled support for success and fosters growth of youth.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row align-items-center mt-100">
+            <div className="col-lg-6 mt-30">
+              <div className="mission__img">
+                <div className="inner-img d-inline-block wow skewIn">
+                  <img src="/assets/pic/mission (1).webp" alt="" />
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 mt-30">
+              <div className="mission__content">
+                <div className="sec-title">
+                <h2 class="mb-20 wow skewIn"> Our Mission<br /> <span style={{fontSize:'35px'}}>   Foreign Guidance</span></h2>
+                 
+                  <p>
+                  Empowering YOUTH by guiding and skilling them towards diverse career opportunities, ensuring successful and fulfilling pathways to a prosperous future.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </section>
+      {/* <!-- mission,vission,value end --> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
          {/* <!-- about text start --> */}
       <section className="team-signle pb-120">
@@ -276,9 +504,7 @@ export default function Aboutusrace() {
       </section>
       {/* <!-- about text end --> */}
 
-        {/* <!-- testimonial start --> */}
-        <SuccessStories />
-        {/* <!-- testimonial end --> */}
+  
 
         <FooterTop />
 
