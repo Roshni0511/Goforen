@@ -151,42 +151,42 @@ const Activities = () => {
      aria-labelledby="xbc-tab1" tabIndex="0">
     <div className="xb-country ul_li">
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/g1.jpg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/g2.webp" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/g3.webp" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/g4.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/g5.webp" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/g6.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/g7.jpg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/g8.jpeg" className="uniform-img" />
             </a>
         </div>
@@ -196,27 +196,27 @@ const Activities = () => {
      aria-labelledby="xbc-tab2" tabIndex="0">
     <div className="xb-country ul_li">
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/s1.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/s2.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/s3.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/s4.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/s5.jpeg" className="uniform-img" />
             </a>
         </div>
@@ -226,63 +226,63 @@ const Activities = () => {
      aria-labelledby="xbc-tab3" tabIndex="0">
     <div className="xb-country ul_li">
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a1.webp
                 " className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a2.webp" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a3.webp" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a4.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a5.webp" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a6.jpg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a7.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a8.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a9.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a10.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a11.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/a12.jpeg" className="uniform-img" />
             </a>
         </div>
@@ -292,47 +292,47 @@ const Activities = () => {
      aria-labelledby="xbc-tab4" tabIndex="0">
     <div className="xb-country ul_li">
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q1.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q2.png" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q3.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q4.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q5.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q6.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q7.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q8.jpeg" className="uniform-img" />
             </a>
         </div>
         <div className="xb-item--item">
-            <a href="country-single.html" className="xb-item--inner ul_li">
+            <a href="" className="xb-item--inner ul_li">
                 <img src="/assets/pic/q9.png" className="uniform-img" />
             </a>
         </div>

@@ -149,7 +149,7 @@ export default function Contact() {
       {/* <!-- contact start --> */}
       <section
         className="contact contact-pt gray-bg"
-        style={{ paddingBottom: "60px" }}
+        style={{ paddingBottom: "60px",paddingTop:'100px' }}
       >
         <div className="container">
           <div className="xb-contact pos-rel">

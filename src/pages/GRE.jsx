@@ -161,7 +161,7 @@ const GRE = () => {
                             <div class="widget widget-banner text-center bg_img" data-background="assets/img/bg/b_bg.jpg">
                                 <img class="mb-40" src="assets/img/icon/b_icon.png" />
                                 <h4>Assured Approval – <br /> Guaranteed</h4>
-                                <a class="thm-btn" href="contact.html">Get in Touch</a>
+                                <a class="thm-btn" href="">Get in Touch</a>
                             </div>
                         </div>
                     </div>

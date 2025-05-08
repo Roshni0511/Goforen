@@ -289,13 +289,13 @@ export default function Studentvisainquiry() {
                   <div className="widget__post">
                     <div className="widget__post-item ul_li">
                       <div className="post-thumb">
-                        <a href="blog-single.html">
+                        <a href="">
                           <img src="/assets/pic/canada.png" alt="" />
                         </a>
                       </div>
                       <div className="post-content">
                         <h4 className="post-title border-effect-2">
-                          <a href="blog-single.html"> Canada </a>
+                          <a href=""> Canada </a>
                         </h4>
                         <span className="post-date">
                           Read More
@@ -307,13 +307,13 @@ export default function Studentvisainquiry() {
                     </div>
                     <div className="widget__post-item ul_li">
                       <div className="post-thumb">
-                        <a href="blog-single.html">
+                        <a href="">
                           <img src="/assets/pic/australia.png" alt="" />
                         </a>
                       </div>
                       <div className="post-content">
                         <h4 className="post-title border-effect-2">
-                          <a href="blog-single.html"> Australia </a>
+                          <a href=""> Australia </a>
                         </h4>
                         <span className="post-date">
                           Read More
@@ -325,13 +325,13 @@ export default function Studentvisainquiry() {
                     </div>
                     <div className="widget__post-item ul_li">
                       <div className="post-thumb">
-                        <a href="blog-single.html">
+                        <a href="">
                           <img src="/assets/pic/new-zealand.jpg" alt="" />
                         </a>
                       </div>
                       <div className="post-content">
                         <h4 className="post-title border-effect-2">
-                          <a href="blog-single.html"> New Zealand </a>
+                          <a href=""> New Zealand </a>
                         </h4>
                         <span className="post-date">
                           Read More
@@ -343,13 +343,13 @@ export default function Studentvisainquiry() {
                     </div>
                     <div className="widget__post-item ul_li">
                       <div className="post-thumb">
-                        <a href="blog-single.html">
+                        <a href="">
                           <img src="/assets/pic/USA.jpg" alt="" />
                         </a>
                       </div>
                       <div className="post-content">
                         <h4 className="post-title border-effect-2">
-                          <a href="blog-single.html"> USA </a>
+                          <a href=""> USA </a>
                         </h4>
                         <span className="post-date">
                           Read More
@@ -361,13 +361,13 @@ export default function Studentvisainquiry() {
                     </div>
                     <div className="widget__post-item ul_li">
                       <div className="post-thumb">
-                        <a href="blog-single.html">
+                        <a href="">
                           <img src="/assets/pic/uk.png" alt="" />
                         </a>
                       </div>
                       <div className="post-content">
                         <h4 className="post-title border-effect-2">
-                          <a href="blog-single.html">UK</a>
+                          <a href="">UK</a>
                         </h4>
                         <span className="post-date">
                           Read More
