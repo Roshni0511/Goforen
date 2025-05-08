@@ -7458,7 +7458,8 @@ a.ui-button:active, .ui-button:active,
     position: absolute; }
     .breadcrumb__shape .shape--1 {
       top: 30%;
-      left: 0; }
+      left: 0; 
+    z-index: 1;}
       @media only screen and (min-width: 1200px) and (max-width: 1500px) {
         .breadcrumb__shape .shape--1 {
           display: none; } }
@@ -7467,7 +7468,8 @@ a.ui-button:active, .ui-button:active,
           display: none; } }
     .breadcrumb__shape .shape--2 {
       right: 20%;
-      top: 28%; }
+      top: 28%;
+    z-index: 1; }
   .breadcrumb__circle {
     position: absolute;
     top: 19%;
