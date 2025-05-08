@@ -18,13 +18,7 @@ export default function Contact() {
   const [captchaCode, setCaptchaCode] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
 
-  const visaServices = [
-    { name: "Student Visa", info: false },
-    { name: "PR Visa", info: false },
-    { name: "Visitor Visa", info: true },
-    { name: "Investor Visa", info: true },
-    { name: "Work Permit Visa", info: false },
-  ];
+
   useEffect(() => {
     generateCaptcha();
   }, []);
@@ -434,30 +428,7 @@ export default function Contact() {
       {/* <!-- contact end --> */}
 
       <div className="container py-5">
-        <span className="sec-title--sub">
-          <img src="assets/img/icon/h_star.png" alt="" />
-          IF YOU WANT YOUR PROFILE TO BE ASSESSED IN DETAIL PLEASE FILL UP THE
-          REQUIRED FORM
-          <img src="assets/img/icon/h_star.png" alt="" />
-        </span>
-
-        <ul className="list-unstyled">
-          {visaServices.map((service, idx) => (
-            <li key={idx} className="mb-2 d-flex align-items-center">
-              <span className=" me-2">●</span>
-              <a href="#" className="fw-bold text-dark text-decoration-none">
-                {service.name}
-                {service.info && (
-                  <i
-                    className="bi bi-info-circle-fill ms-1"
-                    title="More Info"
-                  ></i>
-                )}
-              </a>
-            </li>
-          ))}
-        </ul>
-
+        
         {/* Cards Grid */}
         <center>
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-4">
@@ -506,7 +477,7 @@ export default function Contact() {
             </div>
           </div>
         </center>
-      </div>
+     </div>
 
       {/* new page start  */}
       <div className="contact-page">

@@ -8,6 +8,14 @@ import $ from "jquery";
 import SuccessStories from "../component/SuccessStories";
 
 export default function NewHome() {
+     // data-background img start
+      const [background8, setBackground8] = useState("");
+    
+      useEffect(() => {
+        const backgroundUrl8 = "assets/img/shape/country_shape.png";
+        setBackground8(backgroundUrl8);
+      }, []);
+      // data-background img end
   const scrollRef = useRef(null);
   const itemHeight = 70;
   const [index, setIndex] = useState(0);
@@ -226,7 +234,7 @@ export default function NewHome() {
 
       {/* <!-- package start --> */}
       <section
-        class="package package-bg pos-rel pt-120 pb-120"
+        className="package package-bg pos-rel pt-120 pb-120"
         style={{
           backgroundImage: `url(${background4})`,
           // minHeight: '400px',
@@ -235,15 +243,15 @@ export default function NewHome() {
           backgroundPosition: "center",
         }}
       >
-        <div class="container">
-          <div class="sec-title sec-title--travel text-center mb-55">
+        <div className="container">
+          <div className="sec-title sec-title--travel text-center mb-55">
             <h2>Latest News</h2>
           </div>
-          <div class="row mt-none-30 d-flex justify-content-center">
-            <div class="col-lg-10 co-12">
-              <div class="xb-package mt-30">
-                <div class="xb-item--inner">
-                  <div class="xb-item--img">
+          <div className="row mt-none-30 d-flex justify-content-center">
+            <div className="col-lg-10 co-12">
+              <div className="xb-package mt-30">
+                <div className="xb-item--inner">
+                  <div className="xb-item--img">
                     <a
                       href="#!"
                       style={{ display: "flex", justifyContent: "center" }}
@@ -261,7 +269,7 @@ export default function NewHome() {
                         <div className="scroll-item" key={i}>
                           <div
                             className="xb-item--description"
-                            style={{ fontSize: "14px", textAlign: "center" }}
+                            style={{ fontSize: "18px", textAlign: "center" }}
                           >
                             {text}
                           </div>
@@ -291,16 +299,16 @@ export default function NewHome() {
                 </div>
               </div>
             </div>
-            {/* <div class="col-lg-4 col-12">
-              <div class="xb-package mt-30">
-                <div class="xb-item--inner">
-                  <div class="xb-item--img">
+            {/* <div className="col-lg-4 col-12">
+              <div className="xb-package mt-30">
+                <div className="xb-item--inner">
+                  <div className="xb-item--img">
                     <a href="#!">
                       <img src="/assets/pic/Plane-on-takeoff.webp" alt="" />
                     </a>
                   </div>
-                  <div class="xb-item--holder">
-                    <h2 class="xb-item--title ul_li_center mb-2">
+                  <div className="xb-item--holder">
+                    <h2 className="xb-item--title ul_li_center mb-2">
                       <a href="#!">ACTIVITIES</a>
                     </h2>
                     <p style={{ textAlign: "center" }}>Comming Soon!</p>
@@ -314,7 +322,7 @@ export default function NewHome() {
       {/* <!-- package end --> */}
 
       {/* <!-- visa type start --> */}
-      <section className="visa type pt-100 pb-135">
+      <section className="visa type pb-135">
         <div className="container">
           <div className="service-wrap pos-rel">
             <div className="service-img-wrap">
@@ -341,11 +349,17 @@ export default function NewHome() {
               ></div>
             </div>
             <div className="sec-title wow skewIn pt-120">
-              <h2 className="mb-20">Courses </h2>
-              <p>
-                Explore a wide range of career-focused courses tailored <br />{" "}
-                to help you qualify for your desired visa destination.
-              </p>
+             
+              <div className="sec-title mb-45">
+            <h2 className="mb-40 wow skewIn">
+              Courses <br />
+              <span> Build Skills for Global Success</span>
+            </h2>
+            <p>
+            Explore a wide range of career-focused courses tailored <br />{" "}
+            to help you qualify for your desired visa destination.
+            </p>
+          </div>
             </div>
             <div className="row justify-content-md-center mt-none-30">
               <div className="col-lg-4 col-md-6 mt-30">
@@ -445,19 +459,89 @@ export default function NewHome() {
       </section>
       {/* <!-- visa type end --> */}
 
+      {/* <!-- country start --> */}
+        <section className="country pt-md-100 pos-rel pt-170 pb-120">
+            <div className="xb-country3__wrap ul_li_between">
+                <div className="xb-country3">
+                    <div className="xb-item--inner">
+                        <div className="xb-item--flag">
+                            <img src="assets/img/country/trv_flag_01.png" alt="" />
+                        </div>
+                        <h3 className="xb-item--title">Germany</h3>
+                    </div>
+                </div>
+                <div className="xb-country3">
+                    <div className="xb-item--inner">
+                        <div className="xb-item--flag">
+                            <img src="assets/img/country/trv_flag_02.png" alt="" />
+                        </div>
+                        <h3 className="xb-item--title">Belgium</h3>
+                    </div>
+                </div>
+                <div className="xb-country3">
+                    <div className="xb-item--inner">
+                        <div className="xb-item--flag">
+                            <img src="assets/img/country/trv_flag_03.png" alt="" />
+                        </div>
+                        <h3 className="xb-item--title">Switzerland</h3>
+                    </div>
+                </div>
+                <div className="xb-country3">
+                    <div className="xb-item--inner">
+                        <div className="xb-item--flag">
+                            <img src="assets/img/country/trv_flag_04.png" alt="" />
+                        </div>
+                        <h3 className="xb-item--title">Vietnam</h3>
+                    </div>
+                </div>
+            </div>
+            <div className="country-shape"   style={{
+          backgroundImage: `url(${background8})`,
+          // minHeight: '400px',
+          position: "absolute",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}></div>
+         {/* <h2 class="xb-strock-text-cat xb-strock-text">Popular Destination</h2> */}
+            <div class="country-icon-shape">
+                <div class="shape shape--1">
+                    <img src="assets/img/icon/cs_01.png" alt="" />
+                </div>
+                <div class="shape shape--2">
+                    <img src="assets/img/icon/cs_02.png" alt="" />
+                </div>
+                <div class="shape shape--3">
+                    <img src="assets/img/icon/cs_03.png" alt="" />
+                </div>
+                <div class="shape shape--4">
+                    <img src="assets/img/icon/cs_04.png" alt="" />
+                </div>
+            </div>
+          
+        </section>
+        {/* <!-- country end --> */}
+
       {/* <!-- about start --> */}
       <section className="about pos-rel pb-130">
         <div className="container">
           <div className="sec-title mb-55">
-            <h2 className="mb-30 wow skewIn">Why Us</h2>
+
+
+           
+            <div className="sec-title mb-45">
+            <h2 className="mb-40 wow skewIn">
+            Why Us <br />
+              <span> Trusted Guidance for Your Future</span>
+            </h2>
             <p>
-              GO FOREN offers services for immigration/PR visas, student visas,
+            GO FOREN offers services for immigration/PR visas, student visas,
               visitor visas, <br /> and business/entrepreneur visas. We provide
               complete support — from counseling <br /> and application to visa
               processing. Our assistance also includes air ticketing, foreign{" "}
               <br /> exchange, travel insurance, accommodation, and airport
               transfers, ensuring a smooth <br /> transition to your new country
             </p>
+          </div>
           </div>
           <div className="row align-items-center">
             <div className="col-lg-10">
@@ -635,18 +719,18 @@ export default function NewHome() {
       {/* <!-- counter end --> */}
 
       {/* <!-- country start --> */}
-      <section class="country pt-120 pb-130">
-        <div class="container">
-          <div class="row mb-30 align-items-center">
-            <div class="col-lg-6">
-              <div class="sec-title">
-                <h2 class="mb-20 wow skewIn">
+      <section className="country pt-120 pb-130">
+        <div className="container">
+          <div className="row mb-30 align-items-center">
+            <div className="col-lg-6">
+              <div className="sec-title">
+                <h2 className="mb-20 wow skewIn">
                   Make Your Choice for the <br /> <span>Preferred Nation</span>
                 </h2>
               </div>
             </div>
-            <div class="col-lg-5 offset-lg-1">
-              <div class="sec-title mb-20">
+            <div className="col-lg-5 offset-lg-1">
+              <div className="sec-title mb-20">
                 <p>
                   Choosing the ideal destination for immigration is a pivotal
                   decision that can shape the trajectory of your{" "}
@@ -655,13 +739,13 @@ export default function NewHome() {
             </div>
           </div>
           <ul
-            class="xb-country-nav nav nav-tabs ul_li_between mb-65"
+            className="xb-country-nav nav nav-tabs ul_li_between mb-65"
             id="myTab"
             role="tablist"
           >
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link active"
+                className="nav-link active"
                 id="xbc-tab1"
                 data-bs-toggle="tab"
                 data-bs-target="#xbc-tab-pane1"
@@ -673,9 +757,9 @@ export default function NewHome() {
                 Europe
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link"
+                className="nav-link"
                 id="xbc-tab2"
                 data-bs-toggle="tab"
                 data-bs-target="#xbc-tab-pane2"
@@ -687,9 +771,9 @@ export default function NewHome() {
                 North America
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link"
+                className="nav-link"
                 id="xbc-tab3"
                 data-bs-toggle="tab"
                 data-bs-target="#xbc-tab-pane3"
@@ -701,9 +785,9 @@ export default function NewHome() {
                 Asia
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link"
+                className="nav-link"
                 id="xbc-tab4"
                 data-bs-toggle="tab"
                 data-bs-target="#xbc-tab-pane4"
@@ -715,9 +799,9 @@ export default function NewHome() {
                 Latin America
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link"
+                className="nav-link"
                 id="xbc-tab5"
                 data-bs-toggle="tab"
                 data-bs-target="#xbc-tab-pane5"
@@ -729,9 +813,9 @@ export default function NewHome() {
                 Oceania
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link"
+                className="nav-link"
                 id="xbc-tab6"
                 data-bs-toggle="tab"
                 data-bs-target="#xbc-tab-pane6"
@@ -743,9 +827,9 @@ export default function NewHome() {
                 Africa
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link"
+                className="nav-link"
                 id="xbc-tab7"
                 data-bs-toggle="tab"
                 data-bs-target="#xbc-tab-pane7"
@@ -758,745 +842,745 @@ export default function NewHome() {
               </button>
             </li>
           </ul>
-          <div class="tab-content" id="myTabContent">
+          <div className="tab-content" id="myTabContent">
             <div
-              class="tab-pane animated fadeInUp show active"
+              className="tab-pane animated fadeInUp show active"
               id="xbc-tab-pane1"
               role="tabpanel"
               aria-labelledby="xbc-tab1"
               tabindex="0"
             >
-              <div class="xb-country ul_li">
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+              <div className="xb-country ul_li">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_01.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Canada</h3>
+                    <h3 className="xb-item--title">Canada</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_02.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Belgium</h3>
+                    <h3 className="xb-item--title">Belgium</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_03.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Denmark</h3>
+                    <h3 className="xb-item--title">Denmark</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_04.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Australia</h3>
+                    <h3 className="xb-item--title">Australia</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_05.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">France</h3>
+                    <h3 className="xb-item--title">France</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_06.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Germany</h3>
+                    <h3 className="xb-item--title">Germany</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_07.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Greece</h3>
+                    <h3 className="xb-item--title">Greece</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_08.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Hungary</h3>
+                    <h3 className="xb-item--title">Hungary</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_09.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Iceland</h3>
+                    <h3 className="xb-item--title">Iceland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_10.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Ireland</h3>
+                    <h3 className="xb-item--title">Ireland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_11.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Italy</h3>
+                    <h3 className="xb-item--title">Italy</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_12.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Luxembourg</h3>
+                    <h3 className="xb-item--title">Luxembourg</h3>
                   </a>
                 </div>
               </div>
             </div>
             <div
-              class="tab-pane animated fadeInUp"
+              className="tab-pane animated fadeInUp"
               id="xbc-tab-pane2"
               role="tabpanel"
               aria-labelledby="xbc-tab2"
               tabindex="0"
             >
-              <div class="xb-country ul_li">
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+              <div className="xb-country ul_li">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_02.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Belgium</h3>
+                    <h3 className="xb-item--title">Belgium</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_03.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Denmark</h3>
+                    <h3 className="xb-item--title">Denmark</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_09.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Iceland</h3>
+                    <h3 className="xb-item--title">Iceland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_04.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Australia</h3>
+                    <h3 className="xb-item--title">Australia</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_05.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">France</h3>
+                    <h3 className="xb-item--title">France</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_01.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Canada</h3>
+                    <h3 className="xb-item--title">Canada</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_06.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Germany</h3>
+                    <h3 className="xb-item--title">Germany</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_08.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Hungary</h3>
+                    <h3 className="xb-item--title">Hungary</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_12.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Luxembourg</h3>
+                    <h3 className="xb-item--title">Luxembourg</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_10.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Ireland</h3>
+                    <h3 className="xb-item--title">Ireland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_07.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Greece</h3>
+                    <h3 className="xb-item--title">Greece</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_11.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Italy</h3>
+                    <h3 className="xb-item--title">Italy</h3>
                   </a>
                 </div>
               </div>
             </div>
             <div
-              class="tab-pane animated fadeInUp"
+              className="tab-pane animated fadeInUp"
               id="xbc-tab-pane3"
               role="tabpanel"
               aria-labelledby="xbc-tab3"
               tabindex="0"
             >
-              <div class="xb-country ul_li">
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+              <div className="xb-country ul_li">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_02.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Belgium</h3>
+                    <h3 className="xb-item--title">Belgium</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_06.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Germany</h3>
+                    <h3 className="xb-item--title">Germany</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_03.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Denmark</h3>
+                    <h3 className="xb-item--title">Denmark</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_05.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">France</h3>
+                    <h3 className="xb-item--title">France</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_07.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Greece</h3>
+                    <h3 className="xb-item--title">Greece</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_11.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Italy</h3>
+                    <h3 className="xb-item--title">Italy</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_08.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Hungary</h3>
+                    <h3 className="xb-item--title">Hungary</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_01.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Canada</h3>
+                    <h3 className="xb-item--title">Canada</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_10.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Ireland</h3>
+                    <h3 className="xb-item--title">Ireland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_04.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Australia</h3>
+                    <h3 className="xb-item--title">Australia</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_12.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Luxembourg</h3>
+                    <h3 className="xb-item--title">Luxembourg</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_09.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Iceland</h3>
+                    <h3 className="xb-item--title">Iceland</h3>
                   </a>
                 </div>
               </div>
             </div>
             <div
-              class="tab-pane animated fadeInUp"
+              className="tab-pane animated fadeInUp"
               id="xbc-tab-pane4"
               role="tabpanel"
               aria-labelledby="xbc-tab4"
               tabindex="0"
             >
-              <div class="xb-country ul_li">
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+              <div className="xb-country ul_li">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_06.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Germany</h3>
+                    <h3 className="xb-item--title">Germany</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_04.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Australia</h3>
+                    <h3 className="xb-item--title">Australia</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_05.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">France</h3>
+                    <h3 className="xb-item--title">France</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_07.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Greece</h3>
+                    <h3 className="xb-item--title">Greece</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_12.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Luxembourg</h3>
+                    <h3 className="xb-item--title">Luxembourg</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_09.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Iceland</h3>
+                    <h3 className="xb-item--title">Iceland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_01.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Canada</h3>
+                    <h3 className="xb-item--title">Canada</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_02.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Belgium</h3>
+                    <h3 className="xb-item--title">Belgium</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_03.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Denmark</h3>
+                    <h3 className="xb-item--title">Denmark</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_10.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Ireland</h3>
+                    <h3 className="xb-item--title">Ireland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_08.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Hungary</h3>
+                    <h3 className="xb-item--title">Hungary</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_11.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Italy</h3>
+                    <h3 className="xb-item--title">Italy</h3>
                   </a>
                 </div>
               </div>
             </div>
             <div
-              class="tab-pane animated fadeInUp"
+              className="tab-pane animated fadeInUp"
               id="xbc-tab-pane5"
               role="tabpanel"
               aria-labelledby="xbc-tab5"
               tabindex="0"
             >
-              <div class="xb-country ul_li">
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+              <div className="xb-country ul_li">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_06.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Germany</h3>
+                    <h3 className="xb-item--title">Germany</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_07.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Greece</h3>
+                    <h3 className="xb-item--title">Greece</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_11.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Italy</h3>
+                    <h3 className="xb-item--title">Italy</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_09.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Iceland</h3>
+                    <h3 className="xb-item--title">Iceland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_10.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Ireland</h3>
+                    <h3 className="xb-item--title">Ireland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_12.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Luxembourg</h3>
+                    <h3 className="xb-item--title">Luxembourg</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_01.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Canada</h3>
+                    <h3 className="xb-item--title">Canada</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_08.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Hungary</h3>
+                    <h3 className="xb-item--title">Hungary</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_02.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Belgium</h3>
+                    <h3 className="xb-item--title">Belgium</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_03.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Denmark</h3>
+                    <h3 className="xb-item--title">Denmark</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_04.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Australia</h3>
+                    <h3 className="xb-item--title">Australia</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_05.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">France</h3>
+                    <h3 className="xb-item--title">France</h3>
                   </a>
                 </div>
               </div>
             </div>
             <div
-              class="tab-pane animated fadeInUp"
+              className="tab-pane animated fadeInUp"
               id="xbc-tab-pane6"
               role="tabpanel"
               aria-labelledby="xbc-tab6"
               tabindex="0"
             >
-              <div class="xb-country ul_li">
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+              <div className="xb-country ul_li">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_08.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Hungary</h3>
+                    <h3 className="xb-item--title">Hungary</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_10.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Ireland</h3>
+                    <h3 className="xb-item--title">Ireland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_11.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Italy</h3>
+                    <h3 className="xb-item--title">Italy</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_12.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Luxembourg</h3>
+                    <h3 className="xb-item--title">Luxembourg</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_01.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Canada</h3>
+                    <h3 className="xb-item--title">Canada</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_09.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Iceland</h3>
+                    <h3 className="xb-item--title">Iceland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_02.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Belgium</h3>
+                    <h3 className="xb-item--title">Belgium</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_03.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Denmark</h3>
+                    <h3 className="xb-item--title">Denmark</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_04.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Australia</h3>
+                    <h3 className="xb-item--title">Australia</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_07.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Greece</h3>
+                    <h3 className="xb-item--title">Greece</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_05.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">France</h3>
+                    <h3 className="xb-item--title">France</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_06.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Germany</h3>
+                    <h3 className="xb-item--title">Germany</h3>
                   </a>
                 </div>
               </div>
             </div>
             <div
-              class="tab-pane animated fadeInUp"
+              className="tab-pane animated fadeInUp"
               id="xbc-tab-pane7"
               role="tabpanel"
               aria-labelledby="xbc-tab7"
               tabindex="0"
             >
-              <div class="xb-country ul_li">
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+              <div className="xb-country ul_li">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_06.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Germany</h3>
+                    <h3 className="xb-item--title">Germany</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_07.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Greece</h3>
+                    <h3 className="xb-item--title">Greece</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_08.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Hungary</h3>
+                    <h3 className="xb-item--title">Hungary</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_09.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Iceland</h3>
+                    <h3 className="xb-item--title">Iceland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_01.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Canada</h3>
+                    <h3 className="xb-item--title">Canada</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_11.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Italy</h3>
+                    <h3 className="xb-item--title">Italy</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_12.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Luxembourg</h3>
+                    <h3 className="xb-item--title">Luxembourg</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_02.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Belgium</h3>
+                    <h3 className="xb-item--title">Belgium</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_10.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Ireland</h3>
+                    <h3 className="xb-item--title">Ireland</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_03.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Denmark</h3>
+                    <h3 className="xb-item--title">Denmark</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_05.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">France</h3>
+                    <h3 className="xb-item--title">France</h3>
                   </a>
                 </div>
-                <div class="xb-item--item">
-                  <a href="" class="xb-item--inner ul_li">
-                    <div class="xb-item--flag">
+                <div className="xb-item--item">
+                  <a href="" className="xb-item--inner ul_li">
+                    <div className="xb-item--flag">
                       <img src="assets/img/country/img_04.png" alt="" />
                     </div>
-                    <h3 class="xb-item--title">Australia</h3>
+                    <h3 className="xb-item--title">Australia</h3>
                   </a>
                 </div>
               </div>
@@ -1507,13 +1591,13 @@ export default function NewHome() {
       {/* <!-- country end --> */}
 
       {/* <!-- team start --> */}
-      <section class="team pb-120">
-        <div class="container">
-          <div class="team-wrap pos-rel">
-            <div class="row mt-none-30">
-              <div class="col-xl-6 mt-30">
-                <div class="sec-title mb-45">
-                  <h2 class="mb-40 wow skewIn">
+      <section className="team pb-120">
+        <div className="container">
+          <div className="team-wrap pos-rel">
+            <div className="row mt-none-30">
+              <div className="col-xl-6 mt-30">
+                <div className="sec-title mb-45">
+                  <h2 className="mb-40 wow skewIn">
                     Our trusted immigration <br /> <span> support team</span>
                   </h2>
                   <p>
@@ -1522,194 +1606,194 @@ export default function NewHome() {
                   </p>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div class="xb-team text-center">
-                  <div class="xb-item--inner" data-parallax='{"scale" : 1}'>
-                    <div class="xb-item--img">
+              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
+                <div className="xb-team text-center">
+                  <div className="xb-item--inner" data-parallax='{"scale" : 1}'>
+                    <div className="xb-item--img">
                       <img src="/assets/pic/profile1.jpg" alt="" />
                     </div>
-                    <div class="xb-item--holder">
-                      <h3 class="xb-item--name">
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--name">
                         <a href="">Janvi Patel</a>
                       </h3>
-                      <span class="xb-item--designation">Legal Advisor</span>
+                      <span className="xb-item--designation">Legal Advisor</span>
                     </div>
-                    <ul class="xb-item--social list-unstyled">
+                    <ul className="xb-item--social list-unstyled">
                       <li>
                         <a href="#!">
-                          <i class="fab fa-twitter"></i>
+                          <i className="fab fa-twitter"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-linkedin-in"></i>
+                          <i className="fab fa-linkedin-in"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-facebook-f"></i>
+                          <i className="fab fa-facebook-f"></i>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div class="xb-team text-center">
-                  <div class="xb-item--inner">
-                    <div class="xb-item--img">
+              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
+                <div className="xb-team text-center">
+                  <div className="xb-item--inner">
+                    <div className="xb-item--img">
                       <img src="/assets/pic/profile4.jpg" alt="" />
                     </div>
-                    <div class="xb-item--holder">
-                      <h3 class="xb-item--name">
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--name">
                         <a href="">Vivek Sharma</a>
                       </h3>
-                      <span class="xb-item--designation">
+                      <span className="xb-item--designation">
                         Education Counsellor
                       </span>
                     </div>
-                    <ul class="xb-item--social list-unstyled">
+                    <ul className="xb-item--social list-unstyled">
                       <li>
                         <a href="#!">
-                          <i class="fab fa-twitter"></i>
+                          <i className="fab fa-twitter"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-linkedin-in"></i>
+                          <i className="fab fa-linkedin-in"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-facebook-f"></i>
+                          <i className="fab fa-facebook-f"></i>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div class="xb-team text-center">
-                  <div class="xb-item--inner">
-                    <div class="xb-item--img">
+              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
+                <div className="xb-team text-center">
+                  <div className="xb-item--inner">
+                    <div className="xb-item--img">
                       <img src="/assets/pic/profile5 (3).jpg" alt="" />
                     </div>
-                    <div class="xb-item--holder">
-                      <h3 class="xb-item--name">
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--name">
                         <a href="">Kunal Mehta</a>
                       </h3>
-                      <span class="xb-item--designation">Visa Specialist</span>
+                      <span className="xb-item--designation">Visa Specialist</span>
                     </div>
-                    <ul class="xb-item--social list-unstyled">
+                    <ul className="xb-item--social list-unstyled">
                       <li>
                         <a href="#!">
-                          <i class="fab fa-twitter"></i>
+                          <i className="fab fa-twitter"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-linkedin-in"></i>
+                          <i className="fab fa-linkedin-in"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-facebook-f"></i>
+                          <i className="fab fa-facebook-f"></i>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div class="xb-team text-center">
-                  <div class="xb-item--inner">
-                    <div class="xb-item--img">
+              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
+                <div className="xb-team text-center">
+                  <div className="xb-item--inner">
+                    <div className="xb-item--img">
                       <img src="/assets/pic/profile1 (2).jpg" alt="" />
                     </div>
-                    <div class="xb-item--holder">
-                      <h3 class="xb-item--name">
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--name">
                         <a href="">Krishna Varma</a>
                       </h3>
-                      <span class="xb-item--designation">Visa Coordinator</span>
+                      <span className="xb-item--designation">Visa Coordinator</span>
                     </div>
-                    <ul class="xb-item--social list-unstyled">
+                    <ul className="xb-item--social list-unstyled">
                       <li>
                         <a href="#!">
-                          <i class="fab fa-twitter"></i>
+                          <i className="fab fa-twitter"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-linkedin-in"></i>
+                          <i className="fab fa-linkedin-in"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-facebook-f"></i>
+                          <i className="fab fa-facebook-f"></i>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div class="xb-team text-center">
-                  <div class="xb-item--inner">
-                    <div class="xb-item--img">
+              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
+                <div className="xb-team text-center">
+                  <div className="xb-item--inner">
+                    <div className="xb-item--img">
                       <img src="/assets/pic/profile6.jpg" alt="" />
                     </div>
-                    <div class="xb-item--holder">
-                      <h3 class="xb-item--name">
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--name">
                         <a href="">Jay Patel</a>
                       </h3>
-                      <span class="xb-item--designation">General Manager</span>
+                      <span className="xb-item--designation">General Manager</span>
                     </div>
-                    <ul class="xb-item--social list-unstyled">
+                    <ul className="xb-item--social list-unstyled">
                       <li>
                         <a href="#!">
-                          <i class="fab fa-twitter"></i>
+                          <i className="fab fa-twitter"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-linkedin-in"></i>
+                          <i className="fab fa-linkedin-in"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-facebook-f"></i>
+                          <i className="fab fa-facebook-f"></i>
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div class="xb-team text-center">
-                  <div class="xb-item--inner">
-                    <div class="xb-item--img">
+              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
+                <div className="xb-team text-center">
+                  <div className="xb-item--inner">
+                    <div className="xb-item--img">
                       <img src="/assets/pic/profile7 (1).jpg" alt="" />
                     </div>
-                    <div class="xb-item--holder">
-                      <h3 class="xb-item--name">
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--name">
                         <a href="">Drashti Vora</a>
                       </h3>
-                      <span class="xb-item--designation">Case Manager</span>
+                      <span className="xb-item--designation">Case Manager</span>
                     </div>
-                    <ul class="xb-item--social list-unstyled">
+                    <ul className="xb-item--social list-unstyled">
                       <li>
                         <a href="#!">
-                          <i class="fab fa-twitter"></i>
+                          <i className="fab fa-twitter"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-linkedin-in"></i>
+                          <i className="fab fa-linkedin-in"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#!">
-                          <i class="fab fa-facebook-f"></i>
+                          <i className="fab fa-facebook-f"></i>
                         </a>
                       </li>
                     </ul>
@@ -1717,9 +1801,9 @@ export default function NewHome() {
                 </div>
               </div>
             </div>
-            <div class="xb-team-bg">
-              <div class="xb-bg xb-bg--1"></div>
-              <div class="xb-bg xb-bg--2"></div>
+            <div className="xb-team-bg">
+              <div className="xb-bg xb-bg--1"></div>
+              <div className="xb-bg xb-bg--2"></div>
             </div>
           </div>
         </div>
@@ -1905,11 +1989,12 @@ export default function NewHome() {
       {/* <!-- category start --> */}
       <div style={{ margin: "60px 0px " }}>
         <div className="d-flex justify-content-center">
-          <span className="wow skewIn sec-title--sub">
-            <img src="assets/img/icon/h_star.png" alt="" />
-            Media
-            <img src="assets/img/icon/h_star.png" alt="" />
-          </span>
+        <div className="sec-title mb-60 text-center">
+              <h2 className="mb-30 wow skewIn">
+              Every photo tells our story<br /> <span> Media</span>
+              </h2>
+              
+            </div>
         </div>
         <Swiper
           className="xb-category-slider"
@@ -1933,11 +2018,11 @@ export default function NewHome() {
           }}
         >
           {images.map((src, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} >
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
-                style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+                style={{ width: "300px", height: "250px", borderRadius: "8px" }}
               />
             </SwiperSlide>
           ))}
