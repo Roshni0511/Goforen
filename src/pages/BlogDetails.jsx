@@ -274,29 +274,29 @@ export default function BlogDetails() {
                                 <div className="widget__post">
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="blog-single.html"><img src="/assets/pic/blog4.webp" alt="" /></a>
+                                            <a href=""><img src="/assets/pic/blog4.webp" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">nov 28,2023 </span>
-                                            <h4 className="post-title border-effect-2"><a href="blog-single.html">Your Comprehensive Guide to Student Visa...</a></h4>
+                                            <h4 className="post-title border-effect-2"><a href="">Your Comprehensive Guide to Student Visa...</a></h4>
                                         </div>
                                     </div>
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="blog-single.html"><img src="/assets/pic/blog5.webp" alt="" /></a>
+                                            <a href=""><img src="/assets/pic/blog5.webp" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">July 16,2023</span>
-                                            <h4 className="post-title border-effect-2"><a href="blog-single.html">How Visa Consultants Make It Happen...</a></h4>
+                                            <h4 className="post-title border-effect-2"><a href="">How Visa Consultants Make It Happen...</a></h4>
                                         </div>
                                     </div>
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="blog-single.html"><img src="/assets/pic/blog6.jpg" alt="" /></a>
+                                            <a href=""><img src="/assets/pic/blog6.jpg" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">July 25,2023</span>
-                                            <h4 className="post-title border-effect-2"><a href="blog-single.html">Visa Consultants Make Global Moves Easier...</a></h4>
+                                            <h4 className="post-title border-effect-2"><a href="">Visa Consultants Make Global Moves Easier...</a></h4>
                                         </div>
                                     </div>
                                 </div>

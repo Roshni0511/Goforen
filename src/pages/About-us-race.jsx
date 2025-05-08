@@ -213,12 +213,12 @@ export default function Aboutusrace() {
                             <div className="xb-blog">
                                 <div className="xb-item--inner">
                                     <div className="xb-item--img" style={{border:'1px solid #000'}}>
-                                        <a href="blog-single.html"><img src="/assets/pic/corporate-structure.jpg" alt="" /></a>
+                                        <a href=""><img src="/assets/pic/corporate-structure.jpg" alt="" /></a>
                                     </div>
                                     <div className="xb-item--holder">
                                         <a className="xb-item--category color-2" href="#!">corporate structure</a>
                                        
-                                        <h3 className="xb-item--title border-effect"><a href="blog-single.html">CHART – RACE COMMUNITY</a></h3>
+                                        <h3 className="xb-item--title border-effect"><a href="">CHART – RACE COMMUNITY</a></h3>
                                    
                                     </div>
                                    

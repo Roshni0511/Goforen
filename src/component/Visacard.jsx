@@ -88,7 +88,7 @@ const VisaCard = ({ title, icon, news }) => (
         <div className="xb-item--icon mb-20">
           <img src={`assets/img/icon/${icon}`} alt="" />
         </div>
-        <h3 className="xb-item--title mb-20"><a href="visa-single.html">{title}</a></h3>
+        <h3 className="xb-item--title mb-20"><a href="">{title}</a></h3>
         <Newscroller news={news} />
         <div className="text-center mt-20">
           <a href="/Visaservice" className="btn" style={{ background: '#00cc99', color: '#fff' }}>View All</a>
