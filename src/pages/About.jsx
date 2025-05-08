@@ -105,81 +105,205 @@ export default function About() {
           </div>
         </div>
       </section>
+      <Counter />
       {/* <!-- about end --> */}
 
-      {/* <!-- about text start --> */}
-      <section className="team-signle pt-120 pb-120">
-        <div className="container">
-          <div className="team-single__inner">
-            <div className="team-single__content" style={{ paddingTop: "0px" }}>
-              <h3>Inception of GO FOREN</h3>
-              <p>
-                The birth of GO FOREN, the immigration consultation and overseas
-                education advising division, holds a captivating tale. Situated
-                in South Gujarat, India, GO FOREN is widely regarded as one of
-                the top establishments in its field. Its origins trace back to
-                our parent company, RACHNA ACADEMY OF CAREER EDUCATION (RACE),
-                which has been actively engaged in providing career guidance and
-                facilitating government and private sector job placements in
-                India since 2006. Mr. Rajesh Bhavsar, our esteemed founder, has
-                been instrumental in assisting and guiding numerous individuals
-                in their pursuit of settling abroad, whether as students or
-                permanent residents.
-              </p>
-              <p>
-                Over time, the beneficiaries of our services grew, and they
-                expressed a persistent desire for us to establish our own
-                venture. This demand arose due to the unparalleled quality of
-                our services and the satisfaction we brought to our students and
-                aspirants. Finally, the day arrived when GO FOREN was conceived
-                and brought into existence to fulfil these aspirations.
-              </p>
-              <h3>About scope of GO FOREN</h3>
-              <p>
-                GO FOREN specializes in immigration/PR visa, student visa,
-                visitor visa, entrepreneur/business visa and work permit visa
-                services. Our core expertise lies in the immigration field,
-                where we offer comprehensive assistance to clients who wish to
-                work and settle in a new country. Our support extends beyond
-                initial counselling, evaluation, application, and immigration
-                processes. We also provide additional services such as air
-                ticketing, foreign exchange, accommodation arrangements, travel
-                insurance, and airport transfers upon successful relocation to
-                the new country.
-              </p>
-              <p>
-                For students seeking assistance in pursuing higher education
-                abroad, GO FOREN offers coaching services. This segment has
-                grown organically to address the need for in-house coaching,
-                leveraging the strength of Rachna Academy of Career Education.
-                We provide dedicated coaching for various mandatory entrance
-                tests, including IELTS, TOEFL, PTE, GRE, GMAT, and SAT, ensuring
-                our clients achieve the required results. These results are
-                crucial for securing university admissions or meeting minimum
-                point requirements for PR visa applications.
-              </p>
-              <p>
-                Committed to delivering the best service to our clients, GO
-                FOREN has established memberships, professional partnerships,
-                and an in-house research team. Our satisfied clients can attest
-                that we consistently go above and beyond to help them realize
-                their dreams of living overseas.
-              </p>
-              <p>
-                In summary, GO FOREN is a comprehensive solution provider for
-                all overseas requirements, catering to students, working
-                professionals, companies, visitors, foreign travellers,
-                entrepreneurs, and businessmen.
-              </p>
+      <section class="mission pt-130 pb-130">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse mt-none-30">
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__img text-lg-end">
+                            <div class="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
+                                <img src="assets/img/bg/mission.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__content">
+                            <div class="sec-title">
+                                <h2 class="mb-20 wow skewIn">Inception of GO FOREN<br /> <span>Immigration Mission</span></h2>
+                                <p>The birth of GO FOREN, the immigration consultation and overseas education advising division, holds a captivating tale. Situated in South Gujarat, India, GO FOREN is widely regarded as one of the top establishments in its field. Its origins trace back to our parent company, RACHNA ACADEMY OF CAREER EDUCATION (RACE), which has been actively engaged in providing career guidance and facilitating government and private sector job placements in India since 2006. Mr. Rajesh Bhavsar, our esteemed founder, has been instrumental in assisting and guiding numerous individuals in their pursuit of settling abroad, whether as students or permanent residents.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center mt-100">
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__img">
+                            <div class="inner-img d-inline-block wow skewIn">
+                                <img src="assets/img/bg/vission.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-30">
+                        <div class="mission__content">
+                            <div class="sec-title">
+                                <h2 class="mb-20 wow skewIn" data-wow-delay="200ms">About scope of GO FOREN <br /> <span>Visa Guidance</span></h2>
+                                <p>GO FOREN specializes in immigration/PR visa, student visa, visitor visa, entrepreneur/business visa and work permit visa services. Our core expertise lies in the immigration field, where we offer comprehensive assistance to clients who wish to work and settle in a new country. Our support extends beyond initial counselling, evaluation, application, and immigration processes. We also provide additional services such as air ticketing, foreign exchange, accommodation arrangements, travel insurance, and airport transfers upon successful relocation to the new country.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- about text end --> */}
+        </section>
 
-      {/* <!-- fanfact start --> */}
-      <Counter />
-      {/* <!-- fanfact end --> */}
+
+        {/* <!-- team start --> */}
+        <section class="team pt-120 pb-130 bg_img" data-background="assets/img/bg/team_bg.jpg">
+            <div class="container">
+                <div class="sec-title text-center mb-65">
+                    <h2 class="mb-40 wow skewIn">Our trusted immigration <br /> <span> support team</span></h2>
+                    <p>At the heart of our commitment to providing exceptional <br /> immigration solutions stands</p>
+                </div>
+                <div class="row mt-none-30">
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner" data-parallax='{"scale" : 1}'>
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_01.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Esther Howard</a></h3>
+                                    <span class="xb-item--designation">Legal Advisor</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_02.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Annette Black</a></h3>
+                                    <span class="xb-item--designation">Education Counsellor</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_03.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Andrew Riis</a></h3>
+                                    <span class="xb-item--designation">Visa Specialist</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_04.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Kristin Watson</a></h3>
+                                    <span class="xb-item--designation">Visa Coordinator</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_05.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Jerome Bell</a></h3>
+                                    <span class="xb-item--designation">General Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_06.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Eleanor Pena</a></h3>
+                                    <span class="xb-item--designation">Case Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_07.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Steve Trister</a></h3>
+                                    <span class="xb-item--designation">Visa Coordinator</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
+                        <div class="xb-team text-center">
+                            <div class="xb-item--inner">
+                                <div class="xb-item--img">
+                                    <img src="assets/img/team/img_08.png" alt="" />
+                                </div>
+                                <div class="xb-item--holder">
+                                    <h3 class="xb-item--name"><a href="team-single.html">Daniel Lewis</a></h3>
+                                    <span class="xb-item--designation">Case Manager</span>
+                                </div>
+                                <ul class="xb-item--social list-unstyled">
+                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {/* <!-- team end --> */}
 
       {/* <!-- mission,vission,value start --> */}
       <section className="mission pt-130 pb-130">

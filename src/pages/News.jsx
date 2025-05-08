@@ -6,7 +6,7 @@ export default function News() {
   return (
     <div>
       <Navbar />
-      <section className="blog pt-120 pb-120">
+      {/* <section className="blog pt-120 pb-120">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -114,7 +114,7 @@ export default function News() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 
