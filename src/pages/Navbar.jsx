@@ -293,7 +293,7 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
-                      <a href="">
+                      <a >
                         <span>Media</span>
                       </a>
                       <ul className="submenu">
