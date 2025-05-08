@@ -7471,7 +7471,8 @@ a.ui-button:active, .ui-button:active,
   .breadcrumb__circle {
     position: absolute;
     top: 19%;
-    right: 3%; }
+    right: 3%;
+  z-index: 1; }
     @media (max-width: 1199px) {
       .breadcrumb__circle {
         top: 17%;

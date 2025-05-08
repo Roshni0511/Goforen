@@ -1592,7 +1592,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner">
                     <div class="xb-item--img">
-                      <img src="/assets/pic/profile5.jpg" alt="" />
+                      <img src="/assets/pic/profile5 (3).jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1624,7 +1624,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner">
                     <div class="xb-item--img">
-                      <img src="/assets/pic/profile2.jpg" alt="" />
+                      <img src="/assets/pic/profile1 (2).jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1688,7 +1688,7 @@ export default function NewHome() {
                 <div class="xb-team text-center">
                   <div class="xb-item--inner">
                     <div class="xb-item--img">
-                      <img src="/assets/pic/profile3.jpg" alt="" />
+                      <img src="/assets/pic/profile7 (1).jpg" alt="" />
                     </div>
                     <div class="xb-item--holder">
                       <h3 class="xb-item--name">
@@ -1988,7 +1988,7 @@ export default function NewHome() {
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
                       <a href="/Blog">
-                        <img src="/assets/pic/img_02blog.jpg" alt="" />
+                        <img src="/assets/pic/img_03blog.jpg" alt="" />
                       </a>
                     </div>
                     <div className="xb-item--holder">
@@ -2017,7 +2017,7 @@ export default function NewHome() {
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
                       <a href="/Blog">
-                        <img src="/assets/pic/img_03blog.jpg" alt="" />
+                        <img src="/assets/pic/img_02blog.jpg" alt="" />
                       </a>
                     </div>
                     <div className="xb-item--holder">
