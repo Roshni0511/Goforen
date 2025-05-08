@@ -79,9 +79,11 @@ export default function Privacypolicy() {
             <div className="col-12 mt-30">
               <div className="sec-title sec-title--big style-2 mb-20">
                 <span className="wow skewIn sec-title--sub">
-                  <img src="assets/img/icon/h_star.png" alt="" />
+   <h3 style={{letterSpacing:'4px'}}>
+
                   Privacy Policy of Goforen
-                  <img src="assets/img/icon/h_star.png" alt="" />
+   </h3>
+                 
                 </span>
 
                 <p>
@@ -97,9 +99,11 @@ export default function Privacypolicy() {
           </div>
           <div className="sec-title sec-title--big style-2 mb-20">
             <span className="wow skewIn sec-title--sub">
-              <img src="assets/img/icon/h_star.png" alt="" />
+            <h3 style={{letterSpacing:'4px'}}>
+
               Links to other websites
-              <img src="assets/img/icon/h_star.png" alt="" />
+            </h3>
+           
             </span>
 
             <p>

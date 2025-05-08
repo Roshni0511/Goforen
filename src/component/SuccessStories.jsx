@@ -70,7 +70,7 @@ export default function SuccessStories() {
                   <div className="xb-testimonial">
                     <div className="xb-item--inner text-center">
                       <div className="xb-item--img">
-                        <img src="assets/img/icon/trustpilot.png" alt="" />
+                        <img src="/assets/pic/newgof.png" alt="" />
                       </div>
                       <div className="xb-item--content">
                       “ Very helpful and supportive staff. Had a great support from these guys during visa process. ”
@@ -90,7 +90,7 @@ export default function SuccessStories() {
                   <div className="xb-testimonial">
                     <div className="xb-item--inner text-center">
                       <div className="xb-item--img">
-                        <img src="assets/img/icon/trustpilot.png" alt="" />
+                      <img src="/assets/pic/newgof.png" alt="" />
                       </div>
                       <div className="xb-item--content">
                       “ Had a great experience at Go Foren. Really helped me a lot to get my Canada student VISA. ”
@@ -110,7 +110,7 @@ export default function SuccessStories() {
                   <div className="xb-testimonial">
                     <div className="xb-item--inner text-center">
                       <div className="xb-item--img">
-                        <img src="assets/img/icon/trustpilot.png" alt="" />
+                      <img src="/assets/pic/newgof.png" alt="" />
                       </div>
                       <div className="xb-item--content">
                       “ I want to thank the entire team of Go Foren for sharing vital details about visa and explaining them properly. The team has helped me with great support for getting the USA Green Card done. ”
@@ -129,7 +129,7 @@ export default function SuccessStories() {
                   <div className="xb-testimonial">
                     <div className="xb-item--inner text-center">
                       <div className="xb-item--img">
-                        <img src="assets/img/icon/trustpilot.png" alt="" />
+                      <img src="/assets/pic/newgof.png" alt="" />
                       </div>
                       <div className="xb-item--content">
                       “ Go Foren has great coaching classes for IELTS, the faculties of which imparts detailed information necessary for getting a good score. It also has helped me get my visa. ”
