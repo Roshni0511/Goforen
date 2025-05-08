@@ -240,7 +240,7 @@ export default function BlogDetails() {
                                                 <div className="col-lg-6">
                                                     <div className="xb-item--field">
                                                         <span><img src="assets/img/icon/c_mail.svg" alt="" /></span>
-                                                        <input type="text" placeholder="e.visa@services.com" />
+                                                        <input type="text" placeholder="goforen@services.com" />
                                                     </div>
                                                 </div>
                                                 <div className="col-12">

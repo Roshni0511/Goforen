@@ -388,7 +388,9 @@ const Footer = () => {
           </div>
           <div className="footer__copyright ul_li_between">
             <div className="footer__copyright-text mt-15">
-            All rights reserved @ Go Foren
+            All rights reserved @ Go Foren <br /> Proudly Powered by : Success Innovative Technologies Pvt. Ltd.
+
+
             </div>
             <div className="footer__copyright-img mt-20">
               <img src="assets/img/icon/card_img.png" alt="" />
