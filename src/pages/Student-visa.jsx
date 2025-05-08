@@ -78,75 +78,24 @@ export default function Studentvisa() {
       {/* <!-- breadcrumb end --> */}
 
       {/* <!-- blog start --> */}
-      <section className="blog pt-120 pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <div className="blog-post-wrapper">
-                <article className="post-details">
-                  <blockquote>
-                    <p>
-                      Most countries will issue student visas in order to allow
-                      foreign students to attend school within their borders.
-                      However, in most cases the student must be enrolled at a
-                      postsecondary institution of higher learning. Foreign
-                      exchange students must therefore usually obtain a
-                      different type of visa, such as for temporary residence.
-                    </p>
+      <section class="coaching-single pt-120 pb-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="sidebar-widget">
+                            <div class="widget">
+                                <ul class="widget-category list-unstyled">
+                                   
+                                    <li><a class="active" href="/Immigration-pr-visa"> Immigration - PR Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Student-visa">Student Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Visitor-visa"> Visitor Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Investor-visa">Investor Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a href="/Work-permit-visa"> Work Permit Visa <span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                </ul>
+                            </div>
+                            <div className="blog-sidebar" style={{paddingLeft:'0px'}}>
 
-                    <div className="quote">
-                      <img src="assets/img/icon/quote.png" alt="" />
-                    </div>
-                  </blockquote>
-                  <div className="post-thumb">
-                    <img src="/assets/pic/3-image.jpg" alt="" />
-                  </div>
-
-                  <div className="sec-title sec-title--big style-2 mb-20">
-                    <p>
-                      The best way to enter a country is through its campus.
-                      Staying there allows one to assimilate into the local
-                      culture much easier than if one enters on a work visa or a
-                      PR visa.
-                    </p>
-                    <p>
-                      Studying abroad is once-in-a-lifetime experience that, if
-                      done right, leads on to fortune and if neglected does just
-                      the opposite.
-                    </p>
-                    <p>
-                      Indians who aspire to have an overseas experience in their
-                      lifetime allocate a lot of their precious budget to
-                      studying abroad. If invested smartly, then entire
-                      generations, see a new bright future. To others it turns
-                      out to be a nightmare when they are burdened by the yoke
-                      of a student loan they can barely service.
-                    </p>
-                    <p>
-                      That is why applicants have to be very cautious when they
-                      set out on this journey filled with several pitfalls. They
-                      fall prey to many agents who sell them a path for which
-                      they are incentivized by commissions paid by
-                    </p>
-                    <div className="text-start mt-20">
-                      <a
-                        href="#"
-                        className="btn"
-                        style={{
-                          background: " rgb(0, 204, 153)",
-                          color: "rgb(255, 255, 255)",
-                        }}
-                      >
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="blog-sidebar">
-                <div className="widget">
+                            <div className="widget">
                   <h3 className="widget-title">
                   Countries for Student Visa
                   </h3>
@@ -244,36 +193,105 @@ export default function Studentvisa() {
 
                   </div>
                 </div>
-                <div className="widget">
-                  <h3 className="widget-title">Other Services</h3>
-                  <ul className="widget__category list-unstyled">
-                    <li>
-                      <a href="#!">
-                        <i className="far fa-arrow-up"></i> Immigration - PR Visa
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!">
-                        <i className="far fa-arrow-up"></i> Visitor Visa
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!">
-                        <i className="far fa-arrow-up"></i>Investor Visa
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!">
-                        <i className="far fa-arrow-up"></i> Work Permit Visa
-                      </a>
-                    </li>
-                  </ul>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="single-content">
+                            <h3>  Immigration - PR Visa</h3>
+                        
+                             <p>
+                      As per the report of BBC-UK people migrate for many
+                      different reasons. These reasons can be classified as
+                      economic, social, political or environmental :
+                    </p>
+                    <ul style={{ paddingLeft: "10px" }}>
+                      <li>
+                        <b>economic migration</b> - moving to find work or
+                        follow a particular career path
+                      </li>
+                      <li>
+                        <b>social migration</b> - moving somewhere for a better
+                        quality of life or to be closer to family or friends
+                      </li>
+                      <li>
+                        <b>political migration</b> - moving to escape political
+                        persecution or war
+                      </li>
+                      <li>
+                        <b>environmental</b> causes of migration include natural
+                        disasters such as flooding Some people choose to
+                        migrate, eg someone who moves to another country to
+                        enhance their career opportunities. Some people are
+                        forced to migrate, eg someone who moves due to war or
+                        famine.
+                      </li>
+                    </ul>
+                            <div class="single-img mt-35 mb-70">
+                                <img src="/assets/pic/visaaa.jpg" />
+                            </div>
+                            <h3>How Go Foren work</h3>
+                            <ul class="about-list ul_li list-unstyled">
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number">1</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Choose your visa type</h3>
+                                            <div class="xb-item--description">
+                                                Determine the Visa type for your travel
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-2">2</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Contact our branches</h3>
+                                            <div class="xb-item--description">
+                                                Start your transaction by applying..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-3">3</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Submit All Your Documents</h3>
+                                            <div class="xb-item--description">
+                                                Collect all the required documents  the..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="xb-item--inner">
+                                        <div class="xb-item--number color-4">4</div>
+                                        <div class="xb-item--holder">
+                                            <h3 class="xb-item--title mb-10">Passport delivery</h3>
+                                            <div class="xb-item--description">
+                                                Receive your visa, which is finalized..
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                          
+                            <p style={{marginTop:'20px'}}>Migration usually happens as a result of a combination of these push and pull factors.
+
+We, at GO FOREN, help people migrate from India to an overseas location where we are experts. We support you right from inspiring guidance to documentation and take care of all the associated legal procedures required for positive outcome of your application. Here is the sequence of steps through which you will pass on to make immigration incredibly simple.</p>
+<h3>Conclusion</h3>
+<p>
+Immigrating to Canada can be a complex and time-consuming process, but with Go Foren by your side, you can rest assured that your application will be handled with the utmost care and expertise. Our team of best immigration consultants and registered immigration consultants is dedicated to helping you achieve your Canadian immigration goals. Whether you’re applying for a visa, permanent residency, or citizenship, we offer comprehensive support tailored to your specific needs. Contact Go Foren today to take the first step toward your new life in Canada.</p>
+                          
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
       {/* <!-- blog end --> */}
       <Footer />
     </div>

@@ -101,7 +101,7 @@ export default function About() {
             </div>
           </div>
           <div className="xb-about__img">
-            <img src="/assets/pic/about.jpg" alt="" />
+            <img src="/assets/pic/about (1).jpg" alt="" />
           </div>
         </div>
       </section>
@@ -191,7 +191,7 @@ export default function About() {
                   className="inner-img d-inline-block wow skewIn"
                   data-wow-delay="200ms"
                 >
-                  <img src="/assets/pic/viisiion.jpg" alt="" />
+                  <img src="/assets/pic/visionn (1).jpeg" alt="" />
                 </div>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function About() {
             <div className="col-lg-6 mt-30">
               <div className="mission__img">
                 <div className="inner-img d-inline-block wow skewIn">
-                  <img src="/assets/pic/mission.webp" alt="" />
+                  <img src="/assets/pic/mission (1).webp" alt="" />
                 </div>
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function About() {
                   className="inner-img d-inline-block wow skewIn"
                   data-wow-delay="200ms"
                 >
-                  <img src="/assets/pic/values.png" alt="" />
+                  <img src="/assets/pic/values (1).png" alt="" />
                 </div>
               </div>
             </div>

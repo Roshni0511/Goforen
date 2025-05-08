@@ -119,7 +119,7 @@ export default function Aboutusrace() {
                         className="inner-img d-inline-block wow skewIn"
                         data-wow-delay="200ms"
                       >
-                        <img src="/assets/pic/mission.webp" alt="" />
+                       <img src="/assets/pic/mission (1).webp" alt="" />
                       </div>
                     </div>
                   </div>
@@ -138,7 +138,7 @@ export default function Aboutusrace() {
                   <div className="col-lg-6 mt-30">
                     <div className="mission__img">
                       <div className="inner-img d-inline-block wow skewIn">
-                        <img src="/assets/pic/viisiion.jpg" alt="" />
+                      <img src="/assets/pic/visionn (1).jpeg" alt="" />
                       </div>
                     </div>
                   </div>

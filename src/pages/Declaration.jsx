@@ -83,9 +83,11 @@ export default function Declaration() {
             <div className="col-12 mt-30">
               <div className="sec-title sec-title--big style-2 mb-20">
                 <span className="wow skewIn sec-title--sub">
-                  <img src="assets/img/icon/h_star.png" alt="" />
+           <h3 style={{letterSpacing:'4px'}}>
+
                   DECLARATION OF ENTITY NOMENCLATURE AND REFERENCE
-                  <img src="assets/img/icon/h_star.png" alt="" />
+           </h3>
+            
                 </span>
 
                 <p>
