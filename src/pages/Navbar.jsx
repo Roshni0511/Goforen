@@ -179,10 +179,10 @@ export default function Navbar() {
                   <img src="assets/img/icon/time.svg" alt=" " />
                   Monday - Saturday : 10.00 a.m. to 6.30 p.m.
                 </li>
-                <li>
+                {/* <li>
                   <img src="assets/img/icon/location.svg" alt="" />
                   701-702, 7th floor, Joyos Hubtown, Adajan Bus port
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -394,7 +394,7 @@ export default function Navbar() {
               </div>
 
               <ul className="header__action ul_li">
-                <li>
+                {/* <li>
                   <button
                     type="button"
                     style={{ background: "none" }}
@@ -404,7 +404,7 @@ export default function Navbar() {
                     <img src="assets/img/icon/search.svg" alt="" />
                     Search
                   </button>
-                </li>
+                </li> */}
                 {/* <li>
                   <div className="header__language">
                     <ul>
@@ -434,11 +434,11 @@ export default function Navbar() {
               <div className="xb-menu-close xb-hide-xl xb-close"></div>
               <div className="xb-logo-mobile xb-hide-xl">
                 <a href="/" rel="home">
-                  <img src="assets/img/logo/logo.svg" alt="" />
+                  <img src="/assets/pic/newgof.png" alt=""  style={{width:'100px',height:'100%'}}/>
                 </a>
               </div>
 
-              <div className="xb-header-mobile-search xb-hide-xl">
+              {/* <div className="xb-header-mobile-search xb-hide-xl">
               <form role="search" onSubmit={handleSearch}>
         <input
           type="text"
@@ -450,7 +450,7 @@ export default function Navbar() {
         />
         <button type="submit" className="search-submit"></button>
       </form>
-              </div>
+              </div> */}
 
               <nav className="xb-header-nav">
                 <ul className="xb-menu-primary clearfix">

@@ -237,10 +237,10 @@ export default function NewHome() {
       >
         <div class="container">
           <div class="sec-title sec-title--travel text-center mb-55">
-            <h2>Latest NEWS</h2>
+            <h2>Latest News</h2>
           </div>
           <div class="row mt-none-30 d-flex justify-content-center">
-            <div class="col-lg-7 co-12">
+            <div class="col-lg-10 co-12">
               <div class="xb-package mt-30">
                 <div class="xb-item--inner">
                   <div class="xb-item--img">
@@ -291,7 +291,7 @@ export default function NewHome() {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-12">
+            {/* <div class="col-lg-4 col-12">
               <div class="xb-package mt-30">
                 <div class="xb-item--inner">
                   <div class="xb-item--img">
@@ -307,7 +307,7 @@ export default function NewHome() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
