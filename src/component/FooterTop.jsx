@@ -115,7 +115,7 @@ export default function FooterTop() {
                           </span>
                           <input
                             type="text"
-                            placeholder="e.visa@services.com"
+                            placeholder="goforen@services.com"
                           />
                         </div>
                       </div>

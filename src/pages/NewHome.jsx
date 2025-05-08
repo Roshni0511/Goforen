@@ -2120,7 +2120,7 @@ export default function NewHome() {
                           </span>
                           <input
                             type="text"
-                            placeholder="e.visa@services.com"
+                            placeholder="gofren@services.com"
                           />
                         </div>
                       </div>
