@@ -96,7 +96,7 @@ export default function NewHome() {
   const [background, setBackground] = useState("");
 
   useEffect(() => {
-    const backgroundUrl = "/assets/pic/hero_bg.jpg";
+    const backgroundUrl = "/assets/pic/mainpage.png";
     setBackground(backgroundUrl);
   }, []);
   // data-background img end
@@ -479,7 +479,7 @@ export default function NewHome() {
                         <a href="/SAT">SAT</a>
                       </h3>
                       <p >
-                        Open doors to top international universities with strong
+                        Open doors to top  universities with strong
                         SAT scores designed for undergraduate programs.
                       </p>
                     </div>
@@ -596,9 +596,9 @@ export default function NewHome() {
                           <h3 className="xb-item--title mb-10">
                             Immigration - PR Visa
                           </h3>
-                          <div className="xb-item--description">
+                          <p style={{color:'#787B84'}}>
                             Settle Abroad with Permanent Residency Support
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </a>
@@ -609,9 +609,9 @@ export default function NewHome() {
                         <div className="xb-item--number color-2">2</div>
                         <div className="xb-item--holder">
                           <h3 className="xb-item--title mb-10">Student Visa</h3>
-                          <div className="xb-item--description">
+                          <p style={{color:'#787B84'}}>
                             Study Overseas with Full Visa Guidance
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </a>
@@ -622,9 +622,9 @@ export default function NewHome() {
                         <div className="xb-item--number color-3">3</div>
                         <div className="xb-item--holder">
                           <h3 className="xb-item--title mb-10">Visitor Visa</h3>
-                          <div className="xb-item--description">
+                          <p style={{color:'#787B84'}}>
                             Travel Abroad Hassle-Free with Our Help
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </a>
@@ -637,9 +637,9 @@ export default function NewHome() {
                           <h3 className="xb-item--title mb-10">
                             Investor Visa
                           </h3>
-                          <div className="xb-item--description">
+                          <p style={{color:'#787B84'}}>
                             Invest and Relocate with Business Visa
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </a>
@@ -652,9 +652,9 @@ export default function NewHome() {
                           <h3 className="xb-item--title mb-10">
                             Work Permit Visa
                           </h3>
-                          <div className="xb-item--description">
+                          <p style={{color:'#787B84'}}>
                             Build Your Career Abroad with Ease
-                          </div>
+                          </p>
                         </div>
                       </div>
                     </a>
@@ -765,6 +765,21 @@ export default function NewHome() {
             </div>
             <div className="xb-feature-right-line"></div>
           </div>
+
+        </div>
+        <div style={{justifyContent:'center',display:'flex',marginTop:'50px'}}>
+
+        <button
+                      style={{
+                        padding: "10px 20px",
+                        background: "#00cc99",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      <a style={{ color: "#fff" }} href="/Inquiry-association">
+                      Inquiry For Association
+                      </a>
+                    </button>
         </div>
         <div className="feature-shape">
           <div className="shape shape--1">
@@ -999,7 +1014,7 @@ export default function NewHome() {
             </div>
           </div>
         </div>
-        <div className="service-shape">
+        {/* <div className="service-shape">
           <div className="shape shape--1">
             <div className="shape-inner" data-parallax='{"x":-50,"y":-70}'>
               <img src="assets/img/shape/s_shape1.png" alt="" />
@@ -1020,7 +1035,7 @@ export default function NewHome() {
               <img src="assets/img/shape/s_shape4.png" alt="" />
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
   
       {/* <!-- services end --> */}
@@ -2398,26 +2413,28 @@ export default function NewHome() {
           </div>
         </div>
         <Swiper
-          className="xb-category-slider"
-          modules={[Autoplay]}
-          spaceBetween={30}
-          slidesPerView={7}
-          loop={true}
-          loopAdditionalSlides={30}
-          autoplay={{
-            delay: 6000,
-            disableOnInteraction: false,
-          }}
-          speed={400}
-          breakpoints={{
-            1600: { slidesPerView: 7 },
-            1200: { slidesPerView: 6 },
-            992: { slidesPerView: 5 },
-            768: { slidesPerView: 4 },
-            576: { slidesPerView: 3 },
-            0: { slidesPerView: 2 },
-          }}
-        >
+  className="xb-category-slider"
+  modules={[Autoplay]}
+  spaceBetween={30}
+  slidesPerView={7}
+  loop={true}
+  loopAdditionalSlides={30}
+  autoplay={{
+    delay: 2500,
+    disableOnInteraction: false,
+  }}
+  allowTouchMove={true}
+  grabCursor={true}
+  speed={150} // 🔥 faster feel
+  breakpoints={{
+    1600: { slidesPerView: 7 },
+    1200: { slidesPerView: 6 },
+    992: { slidesPerView: 5 },
+    768: { slidesPerView: 4 },
+    576: { slidesPerView: 3 },
+    0: { slidesPerView: 2 },
+  }}
+>
           {images.map((src, index) => (
             <SwiperSlide key={index}>
               <img

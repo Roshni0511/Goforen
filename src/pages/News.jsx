@@ -6,7 +6,7 @@ export default function News() {
   return (
     <div>
       <Navbar />
-      {/* <section className="blog pt-120 pb-120">
+      <section className="blog pt-120 pb-120">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -114,13 +114,13 @@ export default function News() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
 
 
 
 
-       <section class="coaching-single pt-120 pb-130">
+       {/* <section class="coaching-single pt-120 pb-130">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -302,7 +302,7 @@ export default function News() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> */}
       <Footer />
     </div>
   );
