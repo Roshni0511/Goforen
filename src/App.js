@@ -39,7 +39,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import StarRateIcon from '@mui/icons-material/StarRate';
-
+import { FaWhatsapp } from 'react-icons/fa'; 
 import News from "./pages/News";
 import Newsdetails from "./pages/News-details";
 
@@ -104,61 +104,72 @@ function App() {
       </div>
       {/* back to top end  */}
 
-    <div>
+      <a 
+      href="https://wa.me/YourPhoneNumber" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="whatsapp-button"
+    >
+      <FaWhatsapp size={40} />
+    </a>
+
+    {/* <div> */}
         {/* phone start  */}
-        <a href="tel:+917600909090">
+        {/* <a href="tel:+917600909090">
         <button class="btn-floating phone">
           <LocalPhoneIcon />
           <span>+91 76 00 90 90 90</span>
         </button>
-      </a>
+      </a> */}
       {/* phone end  */}
 
       {/* whatsapp start  */}
-      <a href="https://api.whatsapp.com/send?phone=918511110221" target="_blank">
+      {/* <a href="https://api.whatsapp.com/send?phone=918511110221" target="_blank">
         <button class="btn-floating whatsapp">
           <WhatsAppIcon />
           <span>+91 8511110221</span>
         </button>
-      </a>
+      </a> */}
       {/* whatsapp end  */}
 
       {/* email start  */}
-      <a href="mailto:goforen@gmail.com" target="_blank">
+      {/* <a href="mailto:goforen@gmail.com" target="_blank">
         <button class="btn-floating email">
           <EmailIcon />
           <span>goforen@gmail.com</span>
         </button>
-      </a>
+      </a> */}
       {/* email end  */}
 
        {/* facebook start  */}
-       <a href="https://www.facebook.com/go.foren.3" target="_blank">
+       {/* <a href="https://www.facebook.com/go.foren.3" target="_blank">
         <button class="btn-floating facebook">
           <FacebookIcon />
           <span>Facebook</span>
         </button>
-      </a>
+      </a> */}
       {/* facebook end  */}
 
        {/* Youtube start  */}
-       <a href="https://www.youtube.com/channel/UCL-fnyf8LuCfrqjbCcGLbag" target="_blank">
+       {/* <a href="https://www.youtube.com/channel/UCL-fnyf8LuCfrqjbCcGLbag" target="_blank">
         <button class="btn-floating Youtube">
           <YouTubeIcon />
           <span>Youtube</span>
         </button>
-      </a>
+      </a> */}
       {/* Youtube end  */}
 
         {/* rating start  */}
-        <a href="https://search.google.com/local/writereview?placeid=ChIJldkI5_tP4DsRzytjjdBFin4" target="_blank">
+        {/* <a href="https://search.google.com/local/writereview?placeid=ChIJldkI5_tP4DsRzytjjdBFin4" target="_blank">
         <button class="btn-floating rating">
           <StarRateIcon />
           <span>Rate Us</span>
         </button>
-      </a>
+      </a> */}
       {/* rating end  */}
-    </div>
+
+      
+    {/* </div> */}
 
 
       <Routes>

@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import CallIcon from "@mui/icons-material/Call";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailIcon from "@mui/icons-material/Mail";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 
 const Footer = () => {
@@ -448,6 +451,77 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
+              <div style={{marginTop:'20px',display:'flex'}}>
+              <a 
+  href="https://www.facebook.com/login" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  style={{ textDecoration: "none" }} // Remove underline from the link
+>
+  <span 
+    style={{
+      background: '#fff',
+      width: '45px',
+      height: '45px',
+      marginRight: '10px',
+      alignItems: 'center',
+      justifyContent: 'center',
+      display: 'flex',
+      borderRadius: '50%',
+      boxShadow: 'rgba(48, 69, 75, 0.03) 0px 4px 4px',
+    }}
+  >
+    <FacebookIcon style={{ color: "#787b84" }} />
+  </span>
+</a>
+
+<a 
+  href="https://www.instagram.com/accounts/login/" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  style={{ textDecoration: "none" }} // Remove underline from the link
+>
+  <span 
+    style={{
+      background: '#fff',
+      width: '45px',
+      height: '45px',
+      marginRight: '10px',
+      alignItems: 'center',
+      justifyContent: 'center',
+      display: 'flex',
+      borderRadius: '50%',
+      boxShadow: 'rgba(48, 69, 75, 0.03) 0px 4px 4px',
+    }}
+  >
+    <InstagramIcon style={{ color: "#787b84" }} />
+  </span>
+</a>
+
+<a 
+  href="https://accounts.google.com/ServiceLogin?service=youtube" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  style={{ textDecoration: "none" }} // Remove underline from the link
+>
+  <span 
+    style={{
+      background: '#fff',
+      width: '45`€px',
+      height: '45px',
+      marginRight: '10px',
+      alignItems: 'center',
+      justifyContent: 'center',
+      display: 'flex',
+      borderRadius: '50%',
+      boxShadow: 'rgba(48, 69, 75, 0.03) 0px 4px 4px',
+    }}
+  >
+    <YouTubeIcon style={{ color: "#787b84" }} />
+  </span>
+</a>
+
+              </div>
             </div>
             <div className="col-lg-3 mt-30 col-md-6 footer__custom-col">
               <div className="footer__widget">
@@ -728,9 +802,7 @@ const Footer = () => {
                 Success Innovative Technologies Pvt. Ltd.
               </a>
             </div>
-            <div className="footer__copyright-img mt-20">
-              <img src="assets/img/icon/card_img.png" alt="" />
-            </div>
+            
           </div>
         </div>
       </footer>
