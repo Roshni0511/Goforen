@@ -3,19 +3,38 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
+import SchoolIcon from "@mui/icons-material/School";
 import $ from "jquery";
 import SuccessStories from "../component/SuccessStories";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 
 export default function NewHome() {
-     // data-background img start
-      const [background8, setBackground8] = useState("");
-    
-      useEffect(() => {
-        const backgroundUrl8 = "assets/img/shape/country_shape.png";
-        setBackground8(backgroundUrl8);
-      }, []);
-      // data-background img end
+  const brandImages = [
+    "assets/img/brand/trv_brand_01.png",
+    "assets/img/brand/trv_brand_02.png",
+    "assets/img/brand/trv_brand_03.png",
+    "assets/img/brand/trv_brand_01.png",
+    "assets/img/brand/trv_brand_02.png",
+    "assets/img/brand/trv_brand_03.png",
+    "assets/img/brand/trv_brand_01.png",
+  ];
+  // data-background img start
+  const [background12, setBackground12] = useState("");
+
+  useEffect(() => {
+    const backgroundUrl12 = "assets/img/bg/blog_bg.png";
+    setBackground12(backgroundUrl12);
+  }, []);
+  // data-background img end
+  // data-background img start
+  const [background8, setBackground8] = useState("");
+
+  useEffect(() => {
+    const backgroundUrl8 = "assets/img/shape/country_shape.png";
+    setBackground8(backgroundUrl8);
+  }, []);
+  // data-background img end
   const scrollRef = useRef(null);
   const itemHeight = 70;
   const [index, setIndex] = useState(0);
@@ -81,6 +100,14 @@ export default function NewHome() {
     setBackground5(backgroundUrl5);
   }, []);
   // data-background img end
+  // data-background img start
+  const [background10, setBackground10] = useState("");
+
+  useEffect(() => {
+    const backgroundUrl10 = "assets/img/bg/cta_bg.jpg";
+    setBackground10(backgroundUrl10);
+  }, []);
+  // data-background img end
   //   category slider start
   const images = [
     "/assets/pic/media1.jpeg",
@@ -113,8 +140,7 @@ export default function NewHome() {
   const [background3, setBackground3] = useState("");
 
   useEffect(() => {
-    const backgroundUrl3 =
-      "/assets/pic/cards.jpg";
+    const backgroundUrl3 = "/assets/pic/cards.jpg";
     setBackground3(backgroundUrl3);
   }, []);
   // data-background img end
@@ -349,17 +375,16 @@ export default function NewHome() {
               ></div>
             </div>
             <div className="sec-title wow skewIn pt-120">
-             
               <div className="sec-title mb-45">
-            <h2 className="mb-40 wow skewIn">
-              Courses <br />
-              <span> Build Skills for Global Success</span>
-            </h2>
-            <p>
-            Explore a wide range of career-focused courses tailored <br />{" "}
-            to help you qualify for your desired visa destination.
-            </p>
-          </div>
+                <h2 className="mb-40 wow skewIn">
+                  Courses <br />
+                  <span> Build Skills for Global Success</span>
+                </h2>
+                <p>
+                  Explore a wide range of career-focused courses tailored <br />{" "}
+                  to help you qualify for your desired visa destination.
+                </p>
+              </div>
             </div>
             <div className="row justify-content-md-center mt-none-30">
               <div className="col-lg-4 col-md-6 mt-30">
@@ -460,88 +485,96 @@ export default function NewHome() {
       {/* <!-- visa type end --> */}
 
       {/* <!-- country start --> */}
-        <section className="country pt-md-100 pos-rel pt-170 pb-120">
-            <div className="xb-country3__wrap ul_li_between">
-                <div className="xb-country3">
-                    <div className="xb-item--inner">
-                        <div className="xb-item--flag">
-                            <img src="assets/img/country/trv_flag_01.png" alt="" />
-                        </div>
-                        <h3 className="xb-item--title">Germany</h3>
-                    </div>
+      <div
+        style={{
+          background: "#edf3f578",
+          paddingTop: "120px",
+          paddingBottom: "40px",
+        }}
+      >
+        <section className="country pt-md-100 pos-rel  pb-120">
+          <div className="xb-country3__wrap ul_li_between">
+            <div className="xb-country3">
+              <div className="xb-item--inner">
+                <div className="xb-item--flag">
+                  <img src="assets/img/country/trv_flag_01.png" alt="" />
                 </div>
-                <div className="xb-country3">
-                    <div className="xb-item--inner">
-                        <div className="xb-item--flag">
-                            <img src="assets/img/country/trv_flag_02.png" alt="" />
-                        </div>
-                        <h3 className="xb-item--title">Belgium</h3>
-                    </div>
-                </div>
-                <div className="xb-country3">
-                    <div className="xb-item--inner">
-                        <div className="xb-item--flag">
-                            <img src="assets/img/country/trv_flag_03.png" alt="" />
-                        </div>
-                        <h3 className="xb-item--title">Switzerland</h3>
-                    </div>
-                </div>
-                <div className="xb-country3">
-                    <div className="xb-item--inner">
-                        <div className="xb-item--flag">
-                            <img src="assets/img/country/trv_flag_04.png" alt="" />
-                        </div>
-                        <h3 className="xb-item--title">Vietnam</h3>
-                    </div>
-                </div>
+                <h3 className="xb-item--title">Germany</h3>
+              </div>
             </div>
-            <div className="country-shape"   style={{
-          backgroundImage: `url(${background8})`,
-          // minHeight: '400px',
-          position: "absolute",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}></div>
-         {/* <h2 class="xb-strock-text-cat xb-strock-text">Popular Destination</h2> */}
-            <div class="country-icon-shape">
-                <div class="shape shape--1">
-                    <img src="assets/img/icon/cs_01.png" alt="" />
+            <div className="xb-country3">
+              <div className="xb-item--inner">
+                <div className="xb-item--flag">
+                  <img src="assets/img/country/trv_flag_02.png" alt="" />
                 </div>
-                <div class="shape shape--2">
-                    <img src="assets/img/icon/cs_02.png" alt="" />
-                </div>
-                <div class="shape shape--3">
-                    <img src="assets/img/icon/cs_03.png" alt="" />
-                </div>
-                <div class="shape shape--4">
-                    <img src="assets/img/icon/cs_04.png" alt="" />
-                </div>
+                <h3 className="xb-item--title">Belgium</h3>
+              </div>
             </div>
-          
+            <div className="xb-country3">
+              <div className="xb-item--inner">
+                <div className="xb-item--flag">
+                  <img src="assets/img/country/trv_flag_03.png" alt="" />
+                </div>
+                <h3 className="xb-item--title">Switzerland</h3>
+              </div>
+            </div>
+            <div className="xb-country3">
+              <div className="xb-item--inner">
+                <div className="xb-item--flag">
+                  <img src="assets/img/country/trv_flag_04.png" alt="" />
+                </div>
+                <h3 className="xb-item--title">Vietnam</h3>
+              </div>
+            </div>
+          </div>
+          <div
+            className="country-shape"
+            style={{
+              backgroundImage: `url(${background8})`,
+              // minHeight: '400px',
+              position: "absolute",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          {/* <h2 className="xb-strock-text-cat xb-strock-text">Popular Destination</h2> */}
+          <div className="country-icon-shape">
+            <div className="shape shape--1">
+              <img src="assets/img/icon/cs_01.png" alt="" />
+            </div>
+            <div className="shape shape--2">
+              <img src="assets/img/icon/cs_02.png" alt="" />
+            </div>
+            <div className="shape shape--3">
+              <img src="assets/img/icon/cs_03.png" alt="" />
+            </div>
+            <div className="shape shape--4">
+              <img src="assets/img/icon/cs_04.png" alt="" />
+            </div>
+          </div>
         </section>
-        {/* <!-- country end --> */}
+      </div>
+      {/* <!-- country end --> */}
 
       {/* <!-- about start --> */}
-      <section className="about pos-rel pb-130">
+      <section className="about pos-rel pt-120 pb-130">
         <div className="container">
           <div className="sec-title mb-55">
-
-
-           
             <div className="sec-title mb-45">
-            <h2 className="mb-40 wow skewIn">
-            Why Us <br />
-              <span> Trusted Guidance for Your Future</span>
-            </h2>
-            <p>
-            GO FOREN offers services for immigration/PR visas, student visas,
-              visitor visas, <br /> and business/entrepreneur visas. We provide
-              complete support — from counseling <br /> and application to visa
-              processing. Our assistance also includes air ticketing, foreign{" "}
-              <br /> exchange, travel insurance, accommodation, and airport
-              transfers, ensuring a smooth <br /> transition to your new country
-            </p>
-          </div>
+              <h2 className="mb-40 wow skewIn">
+                Why Us <br />
+                <span> Trusted Guidance for Your Future</span>
+              </h2>
+              <p>
+                GO FOREN offers services for immigration/PR visas, student
+                visas, visitor visas, <br /> and business/entrepreneur visas. We
+                provide complete support — from counseling <br /> and
+                application to visa processing. Our assistance also includes air
+                ticketing, foreign <br /> exchange, travel insurance,
+                accommodation, and airport transfers, ensuring a smooth <br />{" "}
+                transition to your new country
+              </p>
+            </div>
           </div>
           <div className="row align-items-center">
             <div className="col-lg-10">
@@ -624,13 +657,364 @@ export default function NewHome() {
           </div>
         </div>
         <div className="about__img">
-          <img
-            src="/assets/pic/why.png"
-            alt=""
-          />
+          <img src="/assets/pic/why.png" alt="" />
         </div>
       </section>
       {/* <!-- about end --> */}
+
+      {/* <!-- feature start --> */}
+      <section className="feature pos-rel gray-bg-2 pt-120 pb-120">
+        <div className="container">
+          <div className="sec-title style-2 text-center mb-60 z-index-2">
+            <span className="sec-title--sub">How we Help Client</span>
+            <h3 className="sec-title--heading mb-30">
+              Expertise from Seasoned <br /> Professionals
+            </h3>
+          </div>
+        </div>
+        <div className="xb-feature2__wrap">
+          <div className="container">
+            <div className="row justify-content-md-center g-0">
+              <div className="col-lg-4 col-md-6">
+                <div className="xb-feature xb-feature2 text-center">
+                  <div className="xb-item--line"></div>
+                  <div className="xb-item--inner">
+                    <div className="xb-item--icon">
+                      <span className="default">
+                        <SchoolIcon
+                          style={{ color: "#00cc99", fontSize: "70px" }}
+                        />
+                      </span>
+                      <span className="hover">
+                        <SchoolIcon
+                          style={{ color: "#fff", fontSize: "70px" }}
+                        />
+                      </span>
+                    </div>
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--title">University Information</h3>
+                      <div className="xb-item--content">
+                        University information is a crucial <br /> component of
+                        your..
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6">
+                <div className="xb-feature xb-feature2 text-center">
+                  <div className="xb-item--line"></div>
+                  <div className="xb-item--inner">
+                    <div className="xb-item--icon">
+                      <span className="default">
+                        {/* <img src="assets/img/icon/fr_02.svg" alt="" /> */}
+                        <CreditCardIcon
+                          style={{ color: "#00cc99", fontSize: "70px" }}
+                        />
+                      </span>
+                      <span className="hover">
+                        <CreditCardIcon
+                          style={{ color: "#fff", fontSize: "70px" }}
+                        />
+                      </span>
+                    </div>
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--title">Student Visa</h3>
+                      <div className="xb-item--content">
+                        A student visa is a legal authorization <br /> that
+                        allows international..
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6">
+                <div className="xb-feature xb-feature2 text-center">
+                  <div className="xb-item--line"></div>
+                  <div className="xb-item--inner">
+                    <div className="xb-item--icon">
+                      <span className="default">
+                        <MenuBookIcon
+                          style={{ color: "#00cc99", fontSize: "70px" }}
+                        />
+                      </span>
+                      <span className="hover">
+                        <MenuBookIcon
+                          style={{ color: "#fff", fontSize: "70px" }}
+                        />
+                      </span>
+                    </div>
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--title">Our Coaching</h3>
+                      <div className="xb-item--content">
+                        Our Coaching offers life coaching that <br /> helps
+                        clients navigate..
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="xb-feature-right-line"></div>
+          </div>
+        </div>
+        <div className="feature-shape">
+          <div className="shape shape--1">
+            <div className="shape-inner" data-parallax='{"x":-50,"y":-80}'>
+              <img src="assets/img/shape/f_shape1.png" alt="" />
+            </div>
+          </div>
+          <div className="shape shape--2">
+            <div className="shape-inner" data-parallax='{"x":50,"y":-80}'>
+              <img src="assets/img/shape/f_shape2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- feature end --> */}
+      {/* <!-- services start --> */}
+      <section className="service service-bottom-pb pos-rel  pt-120" style={{background:'#edf3f57a'}}>
+        <div className="container">
+          <div className="xb-service__top ul_li_between mb-20">
+            <div className="sec-title sec-title--white style-2 mb-20">
+              <span className="sec-title--sub" style={{color:'#110F10'}}>
+                
+                services
+               
+              </span>
+              <h3 className="sec-title--heading"  style={{color:'#110F10'}}>Easy Study Abroad</h3>
+            </div>
+            <div className="xb-service__btn mb-20">
+              <a className="xb-tran-btn" href=""  style={{color:'#110F10'}}>
+                more services
+                <span>
+                  <img src="assets/img/icon/arrow_right.svg" alt="" />
+                </span>
+              </a>
+            </div>
+          </div>
+          <div className="xb-service2__wrap ul_li">
+            <div className="xb-service2">
+              <div className="xb-item--inner" style={{borderRadius:'0px'}}>
+                <div className="xb-item--icon">
+                  <img src="assets/img/icon/s_icon01.svg" alt="" />
+                </div>
+                <div className="xb-item--holder">
+                  <h3 className="xb-item--title">
+                    <a href="">
+                      Career <br /> Counseling
+                    </a>
+                  </h3>
+                  <p className="xb-item--content">
+                    Assessment of eligibility for  different student
+                    visa..
+                  </p>
+                  <a className="xb-item--link" href="">
+                    Read more
+                  </a>
+                </div>
+                <a
+                  className="xb-item--link-full"
+                  href=""
+                ></a>
+              </div>
+            </div>
+            <div className="xb-service2">
+              <div className="xb-item--inner" style={{borderRadius:'0px'}}>
+                <div className="xb-item--icon">
+                  <img src="assets/img/icon/s_icon02.svg" alt="" />
+                </div>
+                <div className="xb-item--holder">
+                  <h3 className="xb-item--title">
+                    <a href="">
+                      Visa <br /> Guidance
+                    </a>
+                  </h3>
+                  <p className="xb-item--content">
+                    Offering information about visa requirements,
+                  ..
+                  </p>
+                  <a className="xb-item--link" href="">
+                    Read more
+                  </a>
+                </div>
+                <a
+                  className="xb-item--link-full"
+                  href=""
+                ></a>
+              </div>
+            </div>
+            <div className="xb-service2">
+              <div className="xb-item--inner" style={{borderRadius:'0px'}}>
+                <div className="xb-item--icon">
+                  <img src="assets/img/icon/s_icon03.svg" alt="" />
+                </div>
+                <div className="xb-item--holder">
+                  <h3 className="xb-item--title">
+                    <a href="">
+                      Financial <br /> Planning
+                    </a>
+                  </h3>
+                  <p className="xb-item--content">
+                    Advising on demonstrating sufficient financial..
+                  </p>
+                  <a className="xb-item--link" href="">
+                    Read more
+                  </a>
+                </div>
+                <a
+                  className="xb-item--link-full"
+                  href=""
+                ></a>
+              </div>
+            </div>
+            <div className="xb-service2">
+              <div className="xb-item--inner" style={{borderRadius:'0px'}}>
+                <div className="xb-item--icon">
+                  <img src="assets/img/icon/s_icon04.svg" alt="" />
+                </div>
+                <div className="xb-item--holder">
+                  <h3 className="xb-item--title">
+                    <a href="">
+                      Application <br /> Assistance
+                    </a>
+                  </h3>
+                  <p className="xb-item--content">
+                    Assisting with compiling required documents..
+                  </p>
+                  <a className="xb-item--link" href="">
+                    Read more
+                  </a>
+                </div>
+                <a
+                  className="xb-item--link-full"
+                  href=""
+                ></a>
+              </div>
+            </div>
+            <div className="xb-service2">
+              <div className="xb-item--inner" style={{borderRadius:'0px'}}>
+                <div className="xb-item--icon">
+                  <img src="assets/img/icon/s_icon05.svg" alt="" />
+                </div>
+                <div className="xb-item--holder">
+                  <h3 className="xb-item--title">
+                    <a href="">
+                      Document <br /> Preparation
+                    </a>
+                  </h3>
+                  <p className="xb-item--content">
+                    Assisting in gathering such as organizing necessary..
+                  </p>
+                  <a className="xb-item--link" href="">
+                    Read more
+                  </a>
+                </div>
+                <a
+                  className="xb-item--link-full"
+                  href=""
+                ></a>
+              </div>
+            </div>
+            <div className="xb-service2">
+              <div className="xb-item--inner" style={{borderRadius:'0px'}}>
+                <div className="xb-item--icon">
+                  <img src="assets/img/icon/s_icon06.svg" alt="" />
+                </div>
+                <div className="xb-item--holder">
+                  <h3 className="xb-item--title">
+                    <a href="">
+                      Health Insurance <br /> Guidance
+                    </a>
+                  </h3>
+                  <p className="xb-item--content">
+                    Offering information about housing orientation, and..
+                  </p>
+                  <a className="xb-item--link" href="">
+                    Read more
+                  </a>
+                </div>
+                <a
+                  className="xb-item--link-full"
+                  href=""
+                ></a>
+              </div>
+            </div>
+            <div className="xb-service2">
+              <div className="xb-item--inner" style={{borderRadius:'0px'}}>
+                <div className="xb-item--icon">
+                  <img src="assets/img/icon/s_icon07.svg" alt="" />
+                </div>
+                <div className="xb-item--holder">
+                  <h3 className="xb-item--title">
+                    <a href="">
+                      Language <br /> Proficiency Tests
+                    </a>
+                  </h3>
+                  <p className="xb-item--content">
+                    Providing guidance on language proficiency..
+                  </p>
+                  <a className="xb-item--link" href="">
+                    Read more
+                  </a>
+                </div>
+                <a
+                  className="xb-item--link-full"
+                  href=""
+                ></a>
+              </div>
+            </div>
+            <div className="xb-service2">
+              <div className="xb-item--inner" style={{borderRadius:'0px'}}>
+                <div className="xb-item--icon">
+                  <img src="assets/img/icon/s_icon08.svg" alt="" />
+                </div>
+                <div className="xb-item--holder">
+                  <h3 className="xb-item--title">
+                    <a href="">
+                      Visa Submission <br /> and Tracking
+                    </a>
+                  </h3>
+                  <p className="xb-item--content">
+                    Assisting in submitting the visa application to the..
+                  </p>
+                  <a className="xb-item--link" href="">
+                    Read more
+                  </a>
+                </div>
+                <a
+                  className="xb-item--link-full"
+                  href=""
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="service-shape">
+          <div className="shape shape--1">
+            <div className="shape-inner" data-parallax='{"x":-50,"y":-70}'>
+              <img src="assets/img/shape/s_shape1.png" alt="" />
+            </div>
+          </div>
+          <div className="shape shape--2">
+            <div className="shape-inner" data-parallax='{"x":50,"y":-80}'>
+              <img src="assets/img/shape/s_shape2.png" alt="" />
+            </div>
+          </div>
+          <div className="shape shape--3">
+            <div className="shape-inner" data-parallax='{"x":-50,"y":80}'>
+              <img src="assets/img/shape/s_shape3.png" alt="" />
+            </div>
+          </div>
+          <div className="shape shape--4">
+            <div className="shape-inner" data-parallax='{"x":50,"y":80}'>
+              <img src="assets/img/shape/s_shape4.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      {/* <!-- services end --> */}
 
       {/* <!-- counter start --> */}
       <section
@@ -1610,13 +1994,15 @@ export default function NewHome() {
                 <div className="xb-team text-center">
                   <div className="xb-item--inner" data-parallax='{"scale" : 1}'>
                     <div className="xb-item--img">
-                      <img src="/assets/pic/profile1.jpg" alt="" />
+                      <img src="/assets/pic/team.jpg" alt="" />
                     </div>
                     <div className="xb-item--holder">
                       <h3 className="xb-item--name">
                         <a href="">Janvi Patel</a>
                       </h3>
-                      <span className="xb-item--designation">Legal Advisor</span>
+                      <span className="xb-item--designation">
+                        Legal Advisor
+                      </span>
                     </div>
                     <ul className="xb-item--social list-unstyled">
                       <li>
@@ -1682,7 +2068,9 @@ export default function NewHome() {
                       <h3 className="xb-item--name">
                         <a href="">Kunal Mehta</a>
                       </h3>
-                      <span className="xb-item--designation">Visa Specialist</span>
+                      <span className="xb-item--designation">
+                        Visa Specialist
+                      </span>
                     </div>
                     <ul className="xb-item--social list-unstyled">
                       <li>
@@ -1714,7 +2102,9 @@ export default function NewHome() {
                       <h3 className="xb-item--name">
                         <a href="">Krishna Varma</a>
                       </h3>
-                      <span className="xb-item--designation">Visa Coordinator</span>
+                      <span className="xb-item--designation">
+                        Visa Coordinator
+                      </span>
                     </div>
                     <ul className="xb-item--social list-unstyled">
                       <li>
@@ -1746,7 +2136,9 @@ export default function NewHome() {
                       <h3 className="xb-item--name">
                         <a href="">Jay Patel</a>
                       </h3>
-                      <span className="xb-item--designation">General Manager</span>
+                      <span className="xb-item--designation">
+                        General Manager
+                      </span>
                     </div>
                     <ul className="xb-item--social list-unstyled">
                       <li>
@@ -1989,12 +2381,12 @@ export default function NewHome() {
       {/* <!-- category start --> */}
       <div style={{ margin: "60px 0px " }}>
         <div className="d-flex justify-content-center">
-        <div className="sec-title mb-60 text-center">
-              <h2 className="mb-30 wow skewIn">
-              Every photo tells our story<br /> <span> Media</span>
-              </h2>
-              
-            </div>
+          <div className="sec-title mb-60 text-center">
+            <h2 className="mb-30 wow skewIn">
+              Every photo tells our story
+              <br /> <span> Media</span>
+            </h2>
+          </div>
         </div>
         <Swiper
           className="xb-category-slider"
@@ -2018,7 +2410,7 @@ export default function NewHome() {
           }}
         >
           {images.map((src, index) => (
-            <SwiperSlide key={index} >
+            <SwiperSlide key={index}>
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
@@ -2142,11 +2534,166 @@ export default function NewHome() {
         </div>
       </section>
       {/* <!-- blog end --> */}
-    
-  {/* <!-- newsletter start --> */}
-  <section className="newsletter mt-5">
+      {/* <!-- brand start --> */}
+      <section
+        className="brand brand-pb z-1 pos-rel"
+        style={{ background: "#F0F2F6" }}
+      >
+        <div className="sec-title sec-title--travel text-center mb-20">
+          <span className="subtitle mt-5">Our Brand Alliances</span>
+          <h2>Elevating Travel Experiences</h2>
+        </div>
+
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={30}
+          slidesPerView={5}
+          loop={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            320: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 5 },
+          }}
+          className="xb-category-slider"
+        >
+          {brandImages.map((img, index) => (
+            <SwiperSlide key={index} className="xb-brand xb-brand2">
+              <a className="xb-item--inner" href="#!">
+                <img
+                  src={img}
+                  alt={`brand-${index}`}
+                  style={{ maxWidth: "100%", height: "auto" }}
+                />
+              </a>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <h2
+          className="xb-strock-text-brand xb-strock-text text-center mt-5"
+          style={{ opacity: 0.1 }}
+        >
+          Our Brand
+        </h2>
+      </section>
+      {/* <!-- brand end --> */}
+      {/* <!-- cta start --> */}
+      <section className="cta bg-white">
         <div className="container">
-          <div className="xb-newsletter pos-rel">
+          <div className="xb-brand2__mt">
+            <div
+              className="xb-cta2 ul_li_between"
+              style={{
+                backgroundImage: `url(${background10})`,
+                // minHeight: '400px',
+                position: "relative",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="sec-title sec-title--white sec-title--travel mt-20">
+                <span className="subtitle">Wanna travel with Goforen?</span>
+                <h2>
+                  Create Unforgettable <br /> Moments with Us
+                </h2>
+              </div>
+              <a
+                className="thm-btn thm-btn--white thm-btn--trv mt-20"
+                href="/Contact"
+              >
+                Book a Appointment's
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="16"
+                    viewBox="0 0 18 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M6.68164 13.28L11.5716 8.9333C12.1491 8.41997 12.1491 7.57997 11.5716 7.06664L6.68164 2.71997"
+                      stroke="#0F172A"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- cta end --> */}
+      {/* working time  */}
+      <div className="container">
+        <div
+          className="xb-newsletter1 pos-rel "
+          style={{
+            backgroundImage: `url(${background12})`,
+            // minHeight: '400px',
+            position: "relative",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            margin: "30px 0px",
+          }}
+        >
+          <div className="row">
+            <div className="col-12">
+              <div>
+                <div className="sec-title mb-40 text-center">
+                  <h2 className="mb-20 wow skewIn">Our Working Time</h2>
+                  <p style={{ textAlign: "center" }}>
+                    We are available throughout the week to help you with your
+                    visa and training needs.
+                  </p>
+                </div>
+
+                <div className="row justify-content-center text-center">
+                  <div
+                    className="col-lg-3 mt-30 col-md-6"
+                    style={{
+                      boxShadow: " 0px 14px 19px rgb(221 229 236)",
+                      padding: "20px",
+                      margin: "5px",
+                    }}
+                  >
+                    <div>
+                      <h5 className="mb-2">Monday - Saturday :</h5>
+                      <p style={{ textAlign: "center" }}>
+                        10.00 a.m. to 6.30 p.m.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className="col-lg-3 mt-30 col-md-6"
+                    style={{
+                      boxShadow: "0px 14px 19px rgb(221 229 236)",
+                      padding: "20px",
+                      margin: "5px",
+                    }}
+                  >
+                    <h5 className="mb-2">Sunday :</h5>
+                    <p style={{ textAlign: "center" }}>
+                      10.00 a.m. to 12.30 p.m.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* workingtime end  */}
+      {/* <!-- newsletter start --> */}
+      <section className="newsletter mt-5">
+        <div className="container">
+          <div className="xb-newsletter pos-rel ">
             <div className="row">
               <div className="col-lg-7">
                 <div className="">
@@ -2172,92 +2719,6 @@ export default function NewHome() {
       </section>
       {/* <!-- newsletter end --> */}
 
-      {/* <!-- contact start --> */}
-      <section className="contact contact-pt gray-bg">
-        <div className="container">
-          <div className="xb-contact pos-rel">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="xb-item--inner">
-                  <div className="xb-item--holder mb-25">
-                    <span>
-                      <img src="assets/img/icon/n_pad.svg" alt="" />
-                      Contact Us
-                    </span>
-                    <h3>
-                      Do you have questions or went more <br /> information?
-                    </h3>
-                  </div>
-                  <form className="xb-item--form contact-from" action="#!">
-                    <div className="row">
-                      <div className="col-lg-6">
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_user.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Goladria Gomez" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_mail.svg" alt="" />
-                          </span>
-                          <input
-                            type="text"
-                            placeholder="gofren@services.com"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_select.svg" alt="" />
-                          </span>
-                         
-                          <div className="nice-select" tabindex="0"><span className="current">Student Visa</span><ul className="list"><li data-value="1" className="option selected focus">Student Visa</li><li data-value="2" className="option">Tourist Visa</li><li data-value="3" className="option">Commercial Visa</li><li data-value="4" className="option">Residence Visa</li><li data-value="4" className="option">Working Visa</li></ul></div>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_call.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="+888 -8867 3333" />
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_message.svg" alt="" />
-                          </span>
-                          <textarea
-                            name="message"
-                            id="message"
-                            cols="30"
-                            rows="10"
-                            placeholder="Write Your Message..."
-                          ></textarea>
-                        </div>
-                      </div>
-                      <div className="col-12">
-                        <button className="thm-btn" type="submit">
-                          Send Message
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div className="google-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.254272231177!2d90.3654215!3d23.7985508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1592852423971!5m2!1sen!2sbd"></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- contact end --> */}
-      
       <Footer />
     </div>
   );
