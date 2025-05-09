@@ -3,6 +3,14 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 
 const SuccessStory = () => {
+     // data-background img start
+            const [background12, setBackground12] = useState("");
+          
+            useEffect(() => {
+              const backgroundUrl12 = "assets/img/bg/blog_bg.png";
+              setBackground12(backgroundUrl12);
+            }, []);
+            // data-background img end
             const [background, setBackground] = useState("");
             
               useEffect(() => {
@@ -175,7 +183,7 @@ const SuccessStory = () => {
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">
-                                            Lesa  tank  </h3>
+                                            Laksh tank  </h3>
                                             <span class="xb-item--desig">  New Zealand</span>
                                         </div>
                                     </div>
@@ -194,7 +202,7 @@ const SuccessStory = () => {
                                         <img src="/assets/pic/story.jpeg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
-                                            <h3 className="xb-item--name">Pooja D. Parekh </h3>
+                                            <h3 className="xb-item--name">Ketan D. Parekh </h3>
                                             <span class="xb-item--desig">STV UK </span>
                                         </div>
                                     </div>
@@ -232,7 +240,7 @@ const SuccessStory = () => {
                                         <img src="/assets/pic/s1.jpg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
-                                            <h3 className="xb-item--name">Mansi Bhavsar</h3>
+                                            <h3 className="xb-item--name">Manav Bhavsar</h3>
                                             <span class="xb-item--desig"> PRV - Canada</span>
                                         </div>
                                     </div>
@@ -259,7 +267,68 @@ const SuccessStory = () => {
 
 
 
+{/* working time  */}
+<div style={{background:'#edf3f5',padding:'30px 0px'}}>
+  <div className="container">
+        <div
+          className="xb-newsletter1 pos-rel "
+          style={{
+            backgroundImage: `url(${background12})`,
+            // minHeight: '400px',
+            position: "relative",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            margin: "30px 0px",
+          }}
+        >
+          <div className="row">
+            <div className="col-12">
+              <div>
+                <div className="sec-title mb-40 text-center">
+                  <h2 className="mb-20 wow skewIn">Our Working Time</h2>
+                  <p style={{ textAlign: "center" }}>
+                    We are available throughout the week to help you with your
+                    visa and training needs.
+                  </p>
+                </div>
 
+                <div className="row justify-content-center text-center">
+                  <div
+                    className="col-lg-3 mt-30 col-md-6"
+                    style={{
+                      boxShadow: " 0px 14px 19px rgb(221 229 236)",
+                      padding: "20px",
+                      margin: "5px",
+                    }}
+                  >
+                    <div>
+                      <h5 className="mb-2">Monday - Saturday :</h5>
+                      <p style={{ textAlign: "center" }}>
+                        10.00 a.m. to 6.30 p.m.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className="col-lg-3 mt-30 col-md-6"
+                    style={{
+                      boxShadow: "0px 14px 19px rgb(221 229 236)",
+                      padding: "20px",
+                      margin: "5px",
+                    }}
+                  >
+                    <h5 className="mb-2">Sunday :</h5>
+                    <p style={{ textAlign: "center" }}>
+                      10.00 a.m. to 12.30 p.m.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      {/* workingtime end  */}
 
 
 
