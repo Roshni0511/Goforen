@@ -4250,7 +4250,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
       display: none; } }
 
 .service-wrap {
-  margin: 0 -100px;
+  margin: 0 -20px;
   padding: 0 100px; }
   @media (max-width: 991px) {
     .service-wrap {
@@ -4974,7 +4974,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
 
 .team-wrap {
   padding: 0 100px;
-  margin: 0 -100px; }
+  margin: 0 -20px; }
 
   @media (max-width: 991px) {
     .team-wrap {
@@ -5666,7 +5666,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
 .blog-wrap {
   padding: 0 100px;
   padding-top: 120px;
-  margin: 0 -100px;
+  margin: 0 -20px;
   position: relative; }
 
   @media (max-width: 991px) {

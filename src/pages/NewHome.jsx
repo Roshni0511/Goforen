@@ -19,13 +19,14 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 export default function NewHome() {
   const brandImages = [
-    "assets/img/brand/trv_brand_01.png",
-    "assets/img/brand/trv_brand_02.png",
-    "assets/img/brand/trv_brand_03.png",
-    "assets/img/brand/trv_brand_01.png",
-    "assets/img/brand/trv_brand_02.png",
-    "assets/img/brand/trv_brand_03.png",
-    "assets/img/brand/trv_brand_01.png",
+    "/assets/pic/svisa.jpeg",
+    "/assets/pic/Investor-Visa-1200x675.jpg",
+    "/assets/pic/VisitorVisaFI (1).jpg",
+    "/assets/pic/visatypelogobg5 (1).png",
+    "/assets/pic/svisa.jpeg",
+    "/assets/pic/Investor-Visa-1200x675.jpg",
+    "/assets/pic/VisitorVisaFI (1).jpg",
+    "/assets/pic/visatypelogobg5 (1).png",
   ];
   // data-background img start
   const [background12, setBackground12] = useState("");
@@ -2657,6 +2658,7 @@ export default function NewHome() {
       </section>
       {/* <!-- cta end --> */}
       {/* working time  */}
+      
       <div className="container">
         <div
           className="xb-newsletter1 pos-rel "
@@ -2667,6 +2669,7 @@ export default function NewHome() {
             backgroundSize: "cover",
             backgroundPosition: "center",
             margin: "30px 0px",
+            background:'#edf3f5'
           }}
         >
           <div className="row">
