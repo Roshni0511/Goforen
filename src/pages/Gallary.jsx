@@ -123,9 +123,9 @@ const Gallary = () => {
                 </ul>
                 <div className="tab-content" id="myTabContent">
                 <div className="tab-pane animated fadeInUp show active" id="xbc-tab-pane1" role="tabpanel" aria-labelledby="xbc-tab1" tabIndex="0">
-  <div className="xb-countryes">
+  <div className="xb-countryes row">
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/g1.jpg" data-fancybox="gallery" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/g1.jpg')" }}>
           <div className="overlay">
@@ -135,7 +135,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/g2.webp" data-fancybox="gallery" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/g2.webp')" }}>
           <div className="overlay">
@@ -145,7 +145,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/g3.webp" data-fancybox="gallery" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/g3.webp')" }}>
           <div className="overlay">
@@ -155,7 +155,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/g4.jpeg" data-fancybox="gallery" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/g4.jpeg')" }}>
           <div className="overlay">
@@ -165,7 +165,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/g5.webp" data-fancybox="gallery" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/g5.webp')" }}>
           <div className="overlay">
@@ -175,7 +175,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/g6.jpeg" data-fancybox="gallery" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/g6.jpeg')" }}>
           <div className="overlay">
@@ -185,7 +185,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/g7.jpg" data-fancybox="gallery" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/g7.jpg')" }}>
           <div className="overlay">
@@ -195,7 +195,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/g8.jpeg" data-fancybox="gallery" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/g8.jpeg')" }}>
           <div className="overlay">
@@ -209,9 +209,9 @@ const Gallary = () => {
 </div>
 
 <div className="tab-pane animated fadeInUp" id="xbc-tab-pane2" role="tabpanel" aria-labelledby="xbc-tab2" tabIndex="0">
-  <div className="xb-countryes">
+  <div className="xb-countryes row">
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/s1.jpeg" data-fancybox="gallery2" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/s1.jpeg')" }}>
           <div className="overlay">
@@ -221,7 +221,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/s2.jpeg" data-fancybox="gallery2" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/s2.jpeg')" }}>
           <div className="overlay">
@@ -231,7 +231,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/s3.jpeg" data-fancybox="gallery2" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/s3.jpeg')" }}>
           <div className="overlay">
@@ -241,7 +241,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/s4.jpeg" data-fancybox="gallery2" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/s4.jpeg')" }}>
           <div className="overlay">
@@ -256,9 +256,9 @@ const Gallary = () => {
 </div>
 
 <div className="tab-pane animated fadeInUp" id="xbc-tab-pane3" role="tabpanel" aria-labelledby="xbc-tab3" tabIndex="0">
-  <div className="xb-countryes">
+  <div className="xb-countryes row">
   
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a1.webp" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a1.webp')" }}>
           <div className="overlay">
@@ -268,7 +268,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a2.webp" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a2.webp')" }}>
           <div className="overlay">
@@ -278,7 +278,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a3.webp" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a3.webp')" }}>
           <div className="overlay">
@@ -288,7 +288,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a4.jpeg" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a4.jpeg')" }}>
           <div className="overlay">
@@ -298,7 +298,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a5.webp" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a5.webp')" }}>
           <div className="overlay">
@@ -308,7 +308,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a6.jpg" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a6.jpg')" }}>
           <div className="overlay">
@@ -318,7 +318,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a7.jpeg" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a7.jpeg')" }}>
           <div className="overlay">
@@ -328,7 +328,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a8.jpeg" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a8.jpeg')" }}>
           <div className="overlay">
@@ -338,7 +338,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a9.jpeg" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a9.jpeg')" }}>
           <div className="overlay">
@@ -348,7 +348,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a10.jpeg" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a10.jpeg')" }}>
           <div className="overlay">
@@ -358,7 +358,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a11.jpeg" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a11.jpeg')" }}>
           <div className="overlay">
@@ -368,7 +368,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/a12.jpeg" data-fancybox="gallery3" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/a12.jpeg')" }}>
           <div className="overlay">
@@ -383,9 +383,9 @@ const Gallary = () => {
 
 
 <div className="tab-pane animated fadeInUp" id="xbc-tab-pane4" role="tabpanel" aria-labelledby="xbc-tab4" tabIndex="0">
-  <div className="xb-countryes">
+  <div className="xb-countryes row">
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/q1.jpeg" data-fancybox="gallery4" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/q1.jpeg')" }}>
           <div className="overlay">
@@ -395,9 +395,7 @@ const Gallary = () => {
       </a>
     </div>
 
-
-
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/q3.jpeg" data-fancybox="gallery4" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/q3.jpeg')" }}>
           <div className="overlay">
@@ -407,7 +405,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/q4.jpeg" data-fancybox="gallery4" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/q4.jpeg')" }}>
           <div className="overlay">
@@ -417,7 +415,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/q5.jpeg" data-fancybox="gallery4" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/q5.jpeg')" }}>
           <div className="overlay">
@@ -427,7 +425,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/q6.jpeg" data-fancybox="gallery4" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/q6.jpeg')" }}>
           <div className="overlay">
@@ -437,7 +435,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/q7.jpeg" data-fancybox="gallery4" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/q7.jpeg')" }}>
           <div className="overlay">
@@ -447,7 +445,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/q8.jpeg" data-fancybox="gallery4" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/q8.jpeg')" }}>
           <div className="overlay">
@@ -457,7 +455,7 @@ const Gallary = () => {
       </a>
     </div>
 
-    <div className="xb-itemes--itemes">
+    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
       <a href="/assets/pic/q9.png" data-fancybox="gallery4" className="xb-item--inner">
         <div className="image" style={{ backgroundImage: "url('/assets/pic/q9.png')" }}>
           <div className="overlay">
