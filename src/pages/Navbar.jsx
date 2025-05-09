@@ -167,23 +167,14 @@ export default function Navbar() {
       <header className="site-header header-style-one">
         <div className="header__top-wrap gray-bg">
           <div className="container">
-            <div className="header__top ul_li_between">
+            <div className="header__top ul_li_between" style={{justifyContent:'center'}}>
               <div className="header__top-cta">
               <a href="tel:+917600909090" style={{color:"#000"}}>
                 <img src="assets/img/icon/n_pad.svg" alt="" />
                 <span>Help Desk :</span>  +91 76 00 90 90 90
                 </a>
               </div>
-              <ul className="header__top-info ul_li">
-                <li>
-                  <img src="assets/img/icon/time.svg" alt=" " />
-                  Monday - Saturday : 10.00 a.m. to 6.30 p.m.
-                </li>
-                {/* <li>
-                  <img src="assets/img/icon/location.svg" alt="" />
-                  701-702, 7th floor, Joyos Hubtown, Adajan Bus port
-                </li> */}
-              </ul>
+          
             </div>
           </div>
         </div>
@@ -325,34 +316,39 @@ export default function Navbar() {
                         <span>Blog</span>
                       </a>
                     </li>
-                    <li className="menu-item-has-children">
+                    <li>
                       <a href="/Contact">
                         <span>Contact</span>
                       </a>
+                    </li>
+                    <li className="menu-item-has-children">
+                      <a>
+                        <span>Inquiry</span>
+                      </a>
                       <ul className="submenu">
-                        <li className="menu-item">
+                        {/* <li className="menu-item">
                           <a href="/Contact">
                             <span>Quick Inquiry</span>
                           </a>
-                        </li>
-                        <li className="menu-item">
+                        </li> */}
+                        {/* <li className="menu-item">
                           <a href="/Upload-cv">
                             <span>Upload Your CV</span>
                           </a>
-                        </li>
-                        <li className="menu-item menu-item-has-children">
-                          <a href="/Contact">
+                        </li> */}
+                        {/* <li className="menu-item menu-item-has-children"> */}
+                          {/* <a href="/Contact">
                             <span>Inquiry / Request For Assessment </span>
-                          </a>
-                          <ul className="submenu">
-                            <li className="menu-item" style={{background:'rgb(0, 204, 153)',padding:'10px'}}>
-                              {/* <a href=""> */}
+                          </a> */}
+                          {/* <ul className="submenu"> */}
+                            {/* <li className="menu-item" style={{background:'rgb(0, 204, 153)',padding:'10px'}}>
+                           
                                 <span style={{color:'#fff'}}>
                                   If you want your profile to be assessed in
                                   detail please fill up the required form
                                 </span>
-                              {/* </a> */}
-                            </li>
+                             
+                            </li> */}
                             <li className="menu-item">
                               <a href="/Student-visa-inquiry">
                                 <span>Student Visa</span>
@@ -373,13 +369,13 @@ export default function Navbar() {
                                 <span>Investor Visa </span>
                               </a>
                             </li>
-                          </ul>
-                        </li>
-                        <li className="menu-item">
+                          {/* </ul> */}
+                        {/* </li> */}
+                        {/* <li className="menu-item">
                           <a href="/Inquiry-association">
                             <span>Inquiry For Association</span>
                           </a>
-                        </li>
+                        </li> */}
                       </ul>
                     </li>
                   </ul>
@@ -580,26 +576,19 @@ export default function Navbar() {
                       <span>Blog</span>
                     </a>
                   </li>
-                  <li className="menu-item menu-item-has-children">
+                  <li className="menu-item">
                     <a href="/Contact">
                       <span>Contact</span>
                     </a>
+                  </li>
+                  <li className="menu-item menu-item-has-children">
+                    <a href="">
+                      <span>Inquiry</span>
+                    </a>
                     <ul className="sub-menu">
-                      <li className="menu-item">
-                        <a href="/Contact">
-                          <span>Quick Inquiry</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/Upload-cv">
-                          <span>Upload Your CV</span>
-                        </a>
-                      </li>
-                      <li className="menu-item menu-item-has-children">
-                        <a href="/Contact">
-                          <span>Inquiry / Request For Assessment</span>
-                        </a>
-                        <ul className="sub-menu">
+                    
+                   
+                    
                           <li className="menu-item">
                             <a href="/Student-visa-inquiry">Student Visa</a>
                           </li>
@@ -612,13 +601,8 @@ export default function Navbar() {
                           <li className="menu-item">
                             <a href="/investor">Investor Visa </a>
                           </li>
-                        </ul>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/Inquiry-association">
-                          <span>Inquiry For Association</span>
-                        </a>
-                      </li>
+                     
+                      
                     </ul>
                   </li>
                 </ul>
