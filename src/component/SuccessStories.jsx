@@ -17,7 +17,7 @@ export default function SuccessStories() {
       className="testimonial bg_img pt-130 pb-130"
       style={{
         backgroundImage: `url(${background1})`,
-        backgroundColor: '#EDF3F5',
+        backgroundColor: '#edf3f57a',
       }}
     >
       <div className="container">

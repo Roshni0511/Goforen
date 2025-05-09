@@ -5,14 +5,7 @@ import MailIcon from "@mui/icons-material/Mail";
 
 
 const Footer = () => {
-   // data-background img start
-    const [background, setBackground] = useState("");
   
-    useEffect(() => {
-      const backgroundUrl = "assets/img/bg/blog_bg.png";
-      setBackground(backgroundUrl);
-    }, []);
-    // data-background img end
   return (
     <>
       {/* <footer className="site-footer gray-bg pt-65">
@@ -411,40 +404,9 @@ const Footer = () => {
         </div>
       </footer> */}
 
-      <footer className="site-footer gray-bg pt-65">
+      <footer className="site-footer gray-bg pt-125">
         <div className="container">
-          <div class="xb-newsletter1 pos-rel "  style={{
-          backgroundImage: `url(${background})`,
-          // minHeight: '400px',
-          position: "relative",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}>
-            <div class="row">
-              <div class="col-12">
-                <div>
-                  <div className="sec-title mb-40 text-center">
-                    <h2 className="mb-20 wow skewIn">Our Working Time</h2>
-                    <p style={{ textAlign: "center" }}>
-                      We are available throughout the week to help you with your
-                      visa and training needs.
-                    </p>
-                  </div>
-
-                  <div className="row justify-content-center text-center">
-                  <div className="col-lg-3 mt-30 col-md-6" style={{boxShadow:' 0px 14px 19px rgb(221 229 236)',padding:'20px',margin:'5px'}}>
-                     <div><h5 className="mb-2">Monday - Saturday :</h5>
-                     <p style={{textAlign:'center'}}>10.00 a.m. to 6.30 p.m.</p></div>
-                  </div>
-                  <div className="col-lg-3 mt-30 col-md-6" style={{boxShadow:'0px 14px 19px rgb(221 229 236)',padding:'20px',margin:'5px'}}>
-                    <h5 className="mb-2">Sunday :</h5> 
-                    <p style={{textAlign:'center'}}>10.00 a.m. to 12.30 p.m.</p>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         
           <div className="row mt-30 pb-60 justify-content-around">
             <div className="col-lg-3 mt-30 col-md-6 footer__custom-col">
               <div className="footer__widget">

@@ -105,7 +105,7 @@ export default function FooterTop() {
                           <span>
                             <img src="assets/img/icon/c_user.svg" alt="" />
                           </span>
-                          <input type="text" placeholder="Goladria Gomez" />
+                          <input type="text" placeholder="Shivangini Patel" />
                         </div>
                       </div>
                       <div className="col-lg-6">
