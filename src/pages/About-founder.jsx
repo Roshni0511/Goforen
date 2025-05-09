@@ -318,7 +318,7 @@ export default function Aboutfounder() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="/assets/pic/profile9.jpeg" alt="" />
+                                    <img src="/assets/pic/profile9.jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
                                     <h3 class="xb-item--name"><a href="team-single.html">Shivani Dabhi</a></h3>
