@@ -8,7 +8,15 @@ import $ from "jquery";
 import SuccessStories from "../component/SuccessStories";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import DescriptionIcon from '@mui/icons-material/Description';
+import ArticleIcon from '@mui/icons-material/Article';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import GTranslateIcon from '@mui/icons-material/GTranslate';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 export default function NewHome() {
   const brandImages = [
     "assets/img/brand/trv_brand_01.png",
@@ -397,10 +405,10 @@ export default function NewHome() {
                       <h3 className="xb-item--title mb-20">
                         <a href="/IELTS"> IELTS</a>
                       </h3>
-                      <div className="xb-item--description">
+                      <p >
                         Prepare for the globally recognized IELTS exam to
                         enhance your chances of studying or migrating abroad.
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -415,10 +423,10 @@ export default function NewHome() {
                       <h3 className="xb-item--title mb-20">
                         <a href="/TOEFLIBT">TOEFL IBT</a>
                       </h3>
-                      <div className="xb-item--description">
+                      <p>
                         Boost your English proficiency with TOEFL iBT, accepted
                         by universities and immigration bodies worldwide.
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -434,10 +442,10 @@ export default function NewHome() {
                       <h3 className="xb-item--title mb-20">
                         <a href="/GRE">GRE</a>
                       </h3>
-                      <div className="xb-item--description">
+                      <p >
                         Achieve your academic and career goals with the GRE,
                         essential for graduate admissions globally.
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -452,10 +460,10 @@ export default function NewHome() {
                       <h3 className="xb-item--title mb-20">
                         <a href="/PTE"> PTE</a>
                       </h3>
-                      <div className="xb-item--description">
+                      <p >
                         Get fast, reliable results with PTE Academic — ideal for
                         study, work, or migration.
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -470,10 +478,10 @@ export default function NewHome() {
                       <h3 className="xb-item--title mb-20">
                         <a href="/SAT">SAT</a>
                       </h3>
-                      <div className="xb-item--description">
+                      <p >
                         Open doors to top international universities with strong
                         SAT scores designed for undergraduate programs.
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -788,7 +796,7 @@ export default function NewHome() {
               <a className="xb-tran-btn" href=""  style={{color:'#110F10'}}>
                 more services
                 <span>
-                  <img src="assets/img/icon/arrow_right.svg" alt="" />
+                  <ArrowCircleRightIcon />
                 </span>
               </a>
             </div>
@@ -797,7 +805,8 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <img src="assets/img/icon/s_icon01.svg" alt="" />
+                  <BusinessCenterIcon style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                  
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -822,7 +831,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <img src="assets/img/icon/s_icon02.svg" alt="" />
+                  <FlightTakeoffIcon  style={{color:'#00cc99' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -847,7 +856,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <img src="assets/img/icon/s_icon03.svg" alt="" />
+                <AccountBalanceWalletIcon   style={{color:'#00cc99' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -871,7 +880,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <img src="assets/img/icon/s_icon04.svg" alt="" />
+                <DescriptionIcon style={{color:'#00cc99' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -895,7 +904,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <img src="assets/img/icon/s_icon05.svg" alt="" />
+                <ArticleIcon  style={{color:'#00cc99' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -919,7 +928,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <img src="assets/img/icon/s_icon06.svg" alt="" />
+                <LocalHospitalIcon  style={{color:'#00cc99' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -943,7 +952,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <img src="assets/img/icon/s_icon07.svg" alt="" />
+                <GTranslateIcon  style={{color:'#00cc99' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -967,7 +976,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <img src="assets/img/icon/s_icon08.svg" alt="" />
+                <TravelExploreIcon   style={{color:'#00cc99' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">

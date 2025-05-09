@@ -3030,7 +3030,7 @@ h6 {
     height: 2px;
     bottom: 0;
     top: auto;
-    background: var(--color-gradient);
+    background: #00cc99;
     -webkit-transition: 0.3s cubic-bezier(0.67, 0.04, 0.3, 0.91);
     -o-transition: 0.3s cubic-bezier(0.67, 0.04, 0.3, 0.91);
     transition: 0.3s cubic-bezier(0.67, 0.04, 0.3, 0.91); }
@@ -4154,7 +4154,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
     border-right: 0; }
   @media (max-width: 991px) {
     .xb-service2:nth-child(3) .xb-item--inner, .xb-service2:nth-child(4) .xb-item--inner {
-      border-top: 1px solid #1D1D1D; } }
+      border-top: 1px solid #00cc99; } }
   @media (max-width: 991px) {
     .xb-service2:nth-child(2) .xb-item--inner, .xb-service2:nth-child(6) .xb-item--inner {
       border-right: 0; } }
