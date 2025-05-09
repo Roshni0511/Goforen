@@ -286,7 +286,7 @@ export default function Immigrationprvisa() {
                             <p>Immigrating to Canada can be a complex and time-consuming process, but with Go Foren by your side, you can rest assured that your application will be handled with the utmost care and expertise. Our team of best immigration consultants and registered immigration consultants is dedicated to helping you achieve your Canadian immigration goals. . </p>
                             <div class="row align-items-center mt-10">
                                 <div class="col-lg-6 mt-30">
-                                    <img src="assets/img/visa/img_02.jpg" alt="" />
+                                    <img src="/assets/pic/course.jpg" alt="" />
                                 </div>
                                 <div class="col-lg-6 mt-30">
                                     <ul class="single-content-list list-unstyled pl-25">

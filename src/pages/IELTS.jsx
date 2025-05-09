@@ -159,7 +159,7 @@ const IELTS = () => {
                             <p>Choosing the right visa agency can make a world of difference in your journey toward international exploration, growth, and success. At goforen we take   Here are the distinctive benefits of partnering with us:</p>
                             <div class="row align-items-center mt-10">
                                 <div class="col-lg-6 mt-30">
-                                    <img src="assets/img/coaching/c_single2.jpg" alt="" />
+                                    <img src="/assets/pic/benefit (1).jpeg" alt="" />
                                 </div>
                                 <div class="col-lg-6 mt-30">
                                     <ul class="single-content-list list-unstyled pl-25">

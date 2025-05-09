@@ -86,31 +86,32 @@ const SuccessStory = () => {
             <div class="container">
                 <div class="xb-testimonial__masonry">
                     <div class="row grid mt-none-100">
-                        <div class="col-lg-6 grid-item mt-100">
-                            <div class="xb-testimonial3">
-                                <div class="xb-item--inner">
-                                    <div class="xb-item--author-info ul_li mb-40">
-                                        <div class="xb-item--avatar">
-                                            <img src="assets/img/testimonial/avatar1.png" alt="" />
-                                        </div>
-                                        <div class="xb-item--author">
-                                            <h3 class="xb-item--name">RISHI MODI</h3>
-                                            <span class="xb-item--desig">STV CANADA</span>
-                                        </div>
-                                    </div>
-                                    <div class="xb-item--content">
-                                        <p>I would like to thank Go Foren for your assistance during the student visa process for canada.</p>
-                                
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-lg-6 grid-item mt-100">
+    <div class="xb-testimonial3"  style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
+ 
+        <div class="xb-item--inner">
+            <div class="xb-item--author-info ul_li">
+                <div class="xb-item--avatar">
+                    <img src="/assets/pic/s1.jpg" alt="" />
+                </div>
+                <div class="xb-item--author">
+                    <h3 class="xb-item--name">RISHI MODI</h3>
+                    <span class="xb-item--desig">STV CANADA</span>
+                </div>
+            </div>
+            <div class="xb-item--content">
+                <p>I would like to thank Go Foren for your assistance during the student visa process for Canada.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
                         <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-2">
+                            <div className="xb-testimonial3 style-2" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
                                 <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li mb-40">
+                                    <div className="xb-item--author-info ul_li ">
                                         <div className="xb-item--avatar">
-                                            <img src="/assets/pic/bd3.png" alt="" />
+                                            <img src="/assets/pic/story.jpeg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">
@@ -128,11 +129,11 @@ const SuccessStory = () => {
                             </div>
                         </div>
                         <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-3">
+                            <div className="xb-testimonial3 style-3" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
                                 <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li mb-40">
+                                    <div className="xb-item--author-info ul_li ">
                                         <div className="xb-item--avatar">
-                                            <img src="/assets/pic/bd3.png" alt="" />
+                                        <img src="/assets/pic/story.jpeg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">meet patel  </h3>
@@ -147,11 +148,11 @@ const SuccessStory = () => {
                             </div>
                         </div>
                         <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-4">
+                            <div className="xb-testimonial3 style-4" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
                                 <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li mb-40">
+                                    <div className="xb-item--author-info ul_li ">
                                         <div className="xb-item--avatar">
-                                            <img src="/assets/pic/bd3.png" alt="" />
+                                        <img src="/assets/pic/s1.jpg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">Tushar Javeri  </h3>
@@ -166,11 +167,11 @@ const SuccessStory = () => {
                             </div>
                         </div>
                         <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-5">
+                            <div className="xb-testimonial3 style-5" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
                                 <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li mb-40">
+                                    <div className="xb-item--author-info ul_li ">
                                         <div className="xb-item--avatar">
-                                            <img src="/assets/pic/bd3.png" alt="" />
+                                        <img src="/assets/pic/s1.jpg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">
@@ -186,11 +187,11 @@ const SuccessStory = () => {
                             </div>
                         </div>
                         <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-6">
+                            <div className="xb-testimonial3 style-6" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
                                 <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li mb-40">
+                                    <div className="xb-item--author-info ul_li ">
                                         <div className="xb-item--avatar">
-                                            <img src="/assets/pic/bd3.png" alt="" />
+                                        <img src="/assets/pic/story.jpeg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">Pooja D. Parekh </h3>
@@ -205,11 +206,11 @@ const SuccessStory = () => {
                             </div>
                         </div>
                         <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-7">
+                            <div className="xb-testimonial3 style-7" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
                                 <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li mb-40">
+                                    <div className="xb-item--author-info ul_li ">
                                         <div className="xb-item--avatar">
-                                            <img src="/assets/pic/bd3.png" alt="" />
+                                        <img src="/assets/pic/story.jpeg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">
@@ -224,11 +225,11 @@ const SuccessStory = () => {
                             </div>
                         </div>
                         <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3">
+                            <div className="xb-testimonial3" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
                                 <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li mb-40">
+                                    <div className="xb-item--author-info ul_li ">
                                         <div className="xb-item--avatar">
-                                            <img src="/assets/pic/bd3.png" alt="" />
+                                        <img src="/assets/pic/s1.jpg" alt="" />
                                         </div>
                                         <div className="xb-item--author">
                                             <h3 className="xb-item--name">Mansi Bhavsar</h3>
@@ -247,9 +248,7 @@ const SuccessStory = () => {
             </div>
         </section>
         {/* <!-- testimonial end --> */}
-
-
-
+  
 
 
 

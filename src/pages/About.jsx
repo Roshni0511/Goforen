@@ -122,7 +122,7 @@ export default function About() {
                     <div class="col-lg-6 mt-30">
                         <div class="mission__img text-lg-end">
                             <div class="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
-                                <img src="assets/img/bg/mission.jpg" alt="" />
+                                <img src="/assets/pic/canada-passport-1 (1).webp" alt="" />
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ export default function About() {
                     <div class="col-lg-6 mt-30">
                         <div class="mission__img">
                             <div class="inner-img d-inline-block wow skewIn">
-                                <img src="assets/img/bg/vission.jpg" alt="" />
+                                <img src="/assets/pic/aboutpage2.webp" alt="" />
                             </div>
                         </div>
                     </div>
@@ -168,10 +168,10 @@ export default function About() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner" data-parallax='{"scale" : 1}'>
                                 <div class="xb-item--img">
-                                    <img src="assets/img/team/img_01.png" alt="" />
+                                    <img src="/assets/pic/team.jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Esther Howard</a></h3>
+                                    <h3 class="xb-item--name"><a href="team-single.html">Janvi Patel</a></h3>
                                     <span class="xb-item--designation">Legal Advisor</span>
                                 </div>
                                 <ul class="xb-item--social list-unstyled">
@@ -186,10 +186,10 @@ export default function About() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="assets/img/team/img_02.png" alt="" />
+                                <img src="/assets/pic/profile4.jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Annette Black</a></h3>
+                                    <h3 class="xb-item--name"><a href="team-single.html">Vivek Sharma</a></h3>
                                     <span class="xb-item--designation">Education Counsellor</span>
                                 </div>
                                 <ul class="xb-item--social list-unstyled">
@@ -204,10 +204,10 @@ export default function About() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="assets/img/team/img_03.png" alt="" />
+                                <img src="/assets/pic/profile5 (3).jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Andrew Riis</a></h3>
+                                    <h3 class="xb-item--name"><a href="team-single.html">Kunal Mehta</a></h3>
                                     <span class="xb-item--designation">Visa Specialist</span>
                                 </div>
                                 <ul class="xb-item--social list-unstyled">
@@ -222,10 +222,10 @@ export default function About() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="assets/img/team/img_04.png" alt="" />
+                                <img src="/assets/pic/profile1 (2).jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Kristin Watson</a></h3>
+                                    <h3 class="xb-item--name"><a href="team-single.html">Krishna Varma</a></h3>
                                     <span class="xb-item--designation">Visa Coordinator</span>
                                 </div>
                                 <ul class="xb-item--social list-unstyled">
@@ -240,10 +240,10 @@ export default function About() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="assets/img/team/img_05.png" alt="" />
+                                <img src="/assets/pic/profile6.jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Jerome Bell</a></h3>
+                                    <h3 class="xb-item--name"><a href="team-single.html">Jay Patel</a></h3>
                                     <span class="xb-item--designation">General Manager</span>
                                 </div>
                                 <ul class="xb-item--social list-unstyled">
@@ -258,10 +258,10 @@ export default function About() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="assets/img/team/img_06.png" alt="" />
+                                <img src="/assets/pic/profile7 (1).jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Eleanor Pena</a></h3>
+                                    <h3 class="xb-item--name"><a href="team-single.html">Drashti Vora</a></h3>
                                     <span class="xb-item--designation">Case Manager</span>
                                 </div>
                                 <ul class="xb-item--social list-unstyled">
@@ -276,10 +276,10 @@ export default function About() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="assets/img/team/img_07.png" alt="" />
+                                    <img src="/assets/pic/profile8.jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Steve Trister</a></h3>
+                                    <h3 class="xb-item--name"><a href="team-single.html"></a>ketan kakdiya</h3>
                                     <span class="xb-item--designation">Visa Coordinator</span>
                                 </div>
                                 <ul class="xb-item--social list-unstyled">
@@ -294,10 +294,10 @@ export default function About() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="assets/img/team/img_08.png" alt="" />
+                                    <img src="/assets/pic/profile9.jpeg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Daniel Lewis</a></h3>
+                                    <h3 class="xb-item--name"><a href="team-single.html">Shivani Dabhi</a></h3>
                                     <span class="xb-item--designation">Case Manager</span>
                                 </div>
                                 <ul class="xb-item--social list-unstyled">
@@ -323,7 +323,7 @@ export default function About() {
                   className="inner-img d-inline-block wow skewIn"
                   data-wow-delay="200ms"
                 >
-                  <img src="/assets/pic/visionn (1).jpeg" alt="" />
+                  <img src="/assets/pic/myvision.jpeg" alt="" />
                 </div>
               </div>
             </div>
