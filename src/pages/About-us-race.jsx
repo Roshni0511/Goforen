@@ -304,7 +304,7 @@ export default function Aboutusrace() {
                         <div class="xb-team text-center">
                             <div class="xb-item--inner">
                                 <div class="xb-item--img">
-                                    <img src="/assets/pic/profile9.jpeg" alt="" />
+                                    <img src="/assets/pic/profile9.jpg" alt="" />
                                 </div>
                                 <div class="xb-item--holder">
                                     <h3 class="xb-item--name"><a href="team-single.html">Shivani Dabhi</a></h3>
@@ -434,10 +434,10 @@ export default function Aboutusrace() {
                                     <div className="xb-item--img" style={{border:'1px solid #000'}}> 
                                         <img src="/assets/pic/race-community.jpg" alt="" />
                                     </div>
-                                    <div className="xb-item--holder">
+                                    <div className="xb-item--holder" style={{padding:'0px'}}>
                                         <span className="xb-item--category">RACE Community</span>
                                        
-                                        <h3 className="xb-item--title border-effect"><a href="">CHART – RACE COMMUNITY</a></h3>
+                                        <h3 className="xb-item--title border-effect" style={{marginTop:'20px',marginBottom:'0px'}}><a href="">CHART – RACE COMMUNITY</a></h3>
                                        
                                     </div>
                                    
@@ -450,10 +450,10 @@ export default function Aboutusrace() {
                                     <div className="xb-item--img" style={{border:'1px solid #000'}}>
                                         <a href=""><img src="/assets/pic/corporate-structure.jpg" alt="" /></a>
                                     </div>
-                                    <div className="xb-item--holder">
+                                    <div className="xb-item--holder" style={{padding:'0px'}}>
                                         <a className="xb-item--category color-2" href="#!">corporate structure</a>
                                        
-                                        <h3 className="xb-item--title border-effect"><a href="">CHART – RACE COMMUNITY</a></h3>
+                                        <h3 className="xb-item--title border-effect"  style={{marginTop:'20px',marginBottom:'0px'}}><a href="">CHART – RACE COMMUNITY</a></h3>
                                    
                                     </div>
                                    
