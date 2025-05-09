@@ -10,6 +10,12 @@ export default function Visitorvisa() {
     const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
     setBackground(backgroundUrl);
   }, []);
+      const [background12, setBackground12] = useState("");
+        
+          useEffect(() => {
+            const backgroundUrl12 = "assets/img/bg/blog_bg.png";
+            setBackground12(backgroundUrl12);
+          }, []);
   // data-background img end
   return (
     <div>

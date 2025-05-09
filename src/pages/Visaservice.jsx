@@ -8,7 +8,12 @@ const Visaservice = () => {
        const [country, setCountry] = useState('');
        const [month, setMonth] = useState('');
        const [year, setYear] = useState('');
-     
+         const [background12, setBackground12] = useState("");
+           
+             useEffect(() => {
+               const backgroundUrl12 = "assets/img/bg/blog_bg.png";
+               setBackground12(backgroundUrl12);
+             }, []);
        const handleSearch = () => {
          // Add your filter logic here
          console.log({ visaType, country, month, year });
@@ -19,6 +24,8 @@ const Visaservice = () => {
                             const backgroundUrl1 = "https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg";
                             setBackground1(backgroundUrl1);
                           }, []);
+
+
                           const blogs = [
                             {
                               id: 1,
@@ -281,6 +288,69 @@ const Visaservice = () => {
             </div>
         </div>
        </div>
+         {/* working time  */}
+  <div style={{background:'#edf3f5',padding:'30px 0px'}}>
+  <div className="container">
+        <div
+          className="xb-newsletter1 pos-rel "
+          style={{
+            backgroundImage: `url(${background12})`,
+            // minHeight: '400px',
+            position: "relative",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            margin: "30px 0px",
+          }}
+        >
+          <div className="row">
+            <div className="col-12">
+              <div>
+                <div className="sec-title mb-40 text-center">
+                  <h2 className="mb-20 wow skewIn">Our Working Time</h2>
+                  <p style={{ textAlign: "center" }}>
+                    We are available throughout the week to help you with your
+                    visa and training needs.
+                  </p>
+                </div>
+
+                <div className="row justify-content-center text-center">
+                  <div
+                    className="col-lg-3 mt-30 col-md-6"
+                    style={{
+                      boxShadow: " 0px 14px 19px rgb(221 229 236)",
+                      padding: "20px",
+                      margin: "5px",
+                    }}
+                  >
+                    <div>
+                      <h5 className="mb-2">Monday - Saturday :</h5>
+                      <p style={{ textAlign: "center" }}>
+                        10.00 a.m. to 6.30 p.m.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className="col-lg-3 mt-30 col-md-6"
+                    style={{
+                      boxShadow: "0px 14px 19px rgb(221 229 236)",
+                      padding: "20px",
+                      margin: "5px",
+                    }}
+                  >
+                    <h5 className="mb-2">Sunday :</h5>
+                    <p style={{ textAlign: "center" }}>
+                      10.00 a.m. to 12.30 p.m.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      {/* workingtime end  */}
+      
        <Footer />
     </>
   )
