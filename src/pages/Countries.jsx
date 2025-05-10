@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-export default function Immigrationprvisa() {
+export default function Countries() {
   // data-background img start
   const [background, setBackground] = useState("");
 
@@ -46,7 +46,7 @@ export default function Immigrationprvisa() {
 
   <div className="container" style={{ position: 'relative', zIndex: 2 }}>
     <div className="breadcrumb__content">
-    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Immigration - PR Visa</h2>
+    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Countries</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
@@ -54,7 +54,7 @@ export default function Immigrationprvisa() {
               <li className="breadcrumb-item">
                 <a href="/Visa-services">Visa Services</a>
               </li>
-              <li className="breadcrumb-item">Immigration - PR Visa</li>
+              <li className="breadcrumb-item">Countries</li>
       </ul>
     </div>
   </div>
@@ -93,13 +93,11 @@ export default function Immigrationprvisa() {
                     <div class="col-lg-4">
                         <div class="sidebar-widget">
                             <div class="widget">
+                                <h3  className="widget-title">Detailed Information</h3>
                                 <ul class="widget-category list-unstyled">
                                    
-                                    <li><a class="active" href="/Immigration-pr-visa"> Immigration - PR Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
-                                    <li><a href="/Immigration-pr-visa">Student Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
-                                    <li><a href="/Immigration-pr-visa"> Visitor Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
-                                    <li><a href="/Immigration-pr-visa">Investor Visa<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
-                                    <li><a href="/Immigration-pr-visa"> Work Permit Visa <span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                    <li><a class="" href="/Contact"> Contact Us<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                                   
                                 </ul>
                             </div>
                             <div className="blog-sidebar" style={{paddingLeft:'0px'}}>
@@ -119,8 +117,8 @@ export default function Immigrationprvisa() {
                         <h4 className="post-title border-effect-2">
                           <a href=""> Canada </a>
                         </h4>
-                        <span className="post-date">
-                        <a href="/Countries" style={{color:'#787B84'}}>Read More</a>
+                        <span className="post-date" >
+                          <a href="/Countries" style={{color:'#787B84'}}>Read More</a>
                           <span>
                             <img src="assets/img/icon/right_arrow.svg" alt="" />
                           </span>
@@ -209,103 +207,17 @@ export default function Immigrationprvisa() {
                     <div class="col-lg-8">
                         <div class="single-content">
                             <h3> </h3>
-                            <h3> Immigration - PR Visa</h3>
-                            <h4>Turning Your Immigration Dreams into Reality.</h4>
+                            <h3>Canada</h3>
+                            <h4>Why study in Canada?</h4>
                              <p>
-                      As per the report of BBC-UK people migrate for many
-                      different reasons. These reasons can be classified as
-                      economic, social, political or environmental :
+                     Ample number of collaborative programmes offering hands-on learning combined with a more theoretical approach makes Canada on the best destinations to pursue tertiary education overseas. The Canadian institutions offer tailored programmes, and these courses may differ from campus to campus, but the ultimate goal is to provide service & support to ensure success of the students.
                     </p>
-                    <ul style={{ paddingLeft: "10px" }}>
-                      <li>
-                        <b>economic migration</b> - moving to find work or
-                        follow a particular career path
-                      </li>
-                      <li>
-                        <b>social migration</b> - moving somewhere for a better
-                        quality of life or to be closer to family or friends
-                      </li>
-                      <li>
-                        <b>political migration</b> - moving to escape political
-                        persecution or war
-                      </li>
-                      <li>
-                        <b>environmental</b> causes of migration include natural
-                        disasters such as flooding Some people choose to
-                        migrate, eg someone who moves to another country to
-                        enhance their career opportunities. Some people are
-                        forced to migrate, eg someone who moves due to war or
-                        famine.
-                      </li>
-                    </ul>
+                    <p>Another reason that makes Canada a dream education destination is that some international students who have graduated from Canadian Institution are allowed to apply for permanent residency visa without moving out of the country. Also, it�s a fact that over 90% of students who graduate from Canadian institutions get employed in their field of studies within 6 months after graduation, which is why studying in Canada is said to be an all-encompassing experience.</p>
+                   
                             <div class="single-img mt-35 mb-70">
-                                <img src="/assets/pic/visa1.png" />
+                                <img src="/assets/pic/countries.jpg" />
                             </div>
-                            <h3>How Go Foren work</h3>
-                            <ul class="about-list ul_li list-unstyled">
-                                <li>
-                                    <div class="xb-item--inner">
-                                        <div class="xb-item--number">1</div>
-                                        <div class="xb-item--holder">
-                                            <h3 class="xb-item--title mb-10">Choose your visa type</h3>
-                                            <div class="xb-item--description">
-                                                Determine the Visa type for your travel
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="xb-item--inner">
-                                        <div class="xb-item--number color-2">2</div>
-                                        <div class="xb-item--holder">
-                                            <h3 class="xb-item--title mb-10">Contact our branches</h3>
-                                            <div class="xb-item--description">
-                                                Start your transaction by applying..
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="xb-item--inner">
-                                        <div class="xb-item--number color-3">3</div>
-                                        <div class="xb-item--holder">
-                                            <h3 class="xb-item--title mb-10">Submit All Your Documents</h3>
-                                            <div class="xb-item--description">
-                                                Collect all the required documents  the..
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="xb-item--inner">
-                                        <div class="xb-item--number color-4">4</div>
-                                        <div class="xb-item--holder">
-                                            <h3 class="xb-item--title mb-10">Passport delivery</h3>
-                                            <div class="xb-item--description">
-                                                Receive your visa, which is finalized..
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            
-                          <h3 class="mt-70">Conclusion</h3>
-                            <p>Immigrating to Canada can be a complex and time-consuming process, but with Go Foren by your side, you can rest assured that your application will be handled with the utmost care and expertise. Our team of best immigration consultants and registered immigration consultants is dedicated to helping you achieve your Canadian immigration goals. . </p>
-                            <div class="row align-items-center mt-10">
-                                <div class="col-lg-6 mt-30">
-                                    <img src="/assets/pic/course.jpg" alt="" />
-                                </div>
-                                <div class="col-lg-6 mt-30">
-                                    <ul class="single-content-list list-unstyled pl-25">
-                                        <li><img src="assets/img/icon/star.svg" alt="" />Cultural Enrichmen</li>
-                                        <li><img src="assets/img/icon/star.svg" alt="" />Language Proficiency</li>
-                                        <li><img src="assets/img/icon/star.svg" alt="" />Quality of Life</li>
-                                        <li><img src="assets/img/icon/star.svg" alt="" />Career Opportunities</li>
-                                        <li><img src="assets/img/icon/star.svg" alt="" />Business Setup</li>
-                                    </ul>
-                                </div>
-                            </div>
-                          
+                           
                         </div>
                     </div>
                 </div>
