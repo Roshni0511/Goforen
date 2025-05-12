@@ -803,9 +803,7 @@ export default function NewHome() {
           <div className="xb-service__top ul_li_between mb-20">
             <div className="sec-title sec-title--white style-2 mb-20">
               <span className="sec-title--sub" style={{color:'#110F10'}}>
-                
-                services
-               
+                 services
               </span>
               <h3 className="sec-title--heading"  style={{color:'#110F10'}}>Easy Study Abroad</h3>
             </div>
@@ -2633,7 +2631,8 @@ export default function NewHome() {
                 className="thm-btn thm-btn--white thm-btn--trv mt-20"
                 href="/Contact"
               >
-                Book a Appointment's
+            
+                Book Your Appointment
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
