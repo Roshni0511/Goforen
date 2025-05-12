@@ -254,7 +254,7 @@ export default function NewHome() {
                   data-wow-delay="600ms"
                   data-wow-duration=".6s"
                 >
-                  <a className="thm-btn" href="/Contact">
+                  <a className="colorcode" href="/Contact">
                     Quick Inquiry
                   </a>
                   <a className="thm-btn thm-btn--white" href="/Upload-cv">
@@ -798,7 +798,7 @@ export default function NewHome() {
       </section>
       {/* <!-- feature end --> */}
       {/* <!-- services start --> */}
-      <section className="service service-bottom-pb pos-rel  pt-120" style={{background:'#edf3f57a'}}>
+      <section className="service  pos-rel  pt-120 pb-100"  style={{background:'#edf3f57a'}}>
         <div className="container">
           <div className="xb-service__top ul_li_between mb-20">
             <div className="sec-title sec-title--white style-2 mb-20">
@@ -2736,7 +2736,7 @@ export default function NewHome() {
                   </div>
                   <form className="xb-item--form" action="#!">
                     <input type="text" placeholder="Your e-mail address" />
-                    <button className="thm-btn">Subscribe</button>
+                    <button className="colorcode">Subscribe</button>
                   </form>
                 </div>
               </div>

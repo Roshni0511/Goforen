@@ -69,7 +69,7 @@ export default function FooterTop() {
                   </div>
                   <form className="xb-item--form" action="#!">
                     <input type="text" placeholder="Your e-mail address" />
-                    <button className="thm-btn">Subscribe</button>
+                    <button className="colorcode">Subscribe</button>
                   </form>
                 </div>
               </div>
