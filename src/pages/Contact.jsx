@@ -473,7 +473,11 @@ export default function Contact() {
               </div>
             </div>
             <div className="google-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.254272231177!2d90.3654215!3d23.7985508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1592852423971!5m2!1sen!2sbd"></iframe>
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.320860525789!2d72.80680377527486!3d21.              19867938370285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.             1!3m3!1m2!1s0x3be04ffbe708d995%3A0x7e8a45d08d632bcf!2sGo%20Foren!5e0!3m2!1sen!2sin!4v1680345892653!5m2!1sen!2sin"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>

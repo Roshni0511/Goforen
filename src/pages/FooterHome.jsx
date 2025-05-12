@@ -152,7 +152,7 @@ const FooterHome = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/TOEFLIBT">
+                    <a href="/IELTS">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ const FooterHome = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/GRE">
+                    <a href="/IELTS">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +190,7 @@ const FooterHome = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/PTE">
+                    <a href="/IELTS">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -209,7 +209,7 @@ const FooterHome = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/SAT">
+                    <a href="/IELTS">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -254,7 +254,7 @@ const FooterHome = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/Student-visa">
+                    <a href="/Immigration-pr-visa">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -273,7 +273,7 @@ const FooterHome = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/Visitor-visa">
+                    <a href="/Immigration-pr-visa">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -292,7 +292,7 @@ const FooterHome = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/Investor-visa">
+                    <a href="/Immigration-pr-visa">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -311,7 +311,7 @@ const FooterHome = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/Work-permit-visa">
+                    <a href="/Immigration-pr-visa">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
