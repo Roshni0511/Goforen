@@ -507,7 +507,7 @@ const Footer = () => {
   <span 
     style={{
       background: '#fff',
-      width: '45`€px',
+      width: '45px',
       height: '45px',
       marginRight: '10px',
       alignItems: 'center',
