@@ -48,6 +48,7 @@ import Newsdetails from "./pages/News-details";
 import Visaservice from "./pages/Visaservice";
 import NewHome from "./pages/NewHome";
 import Countries from "./pages/Countries";
+import FooterHome from "./pages/FooterHome";
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -218,6 +219,7 @@ function App() {
 
         <Route path="/Visaservice" element={<Visaservice />} />
         <Route path="/Countries" element={<Countries />} />
+        <Route path="/FooterHome" element={<FooterHome />} />
       </Routes>
     </>
   );

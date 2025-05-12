@@ -407,7 +407,7 @@ const Footer = () => {
         </div>
       </footer> */}
 
-      <footer className="site-footer gray-bg pt-125">
+      <footer className="site-footer gray-bg pt-1">
         <div className="container">
          
           <div className="row mt-30 pb-60 justify-content-around">

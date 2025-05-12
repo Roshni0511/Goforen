@@ -17,6 +17,7 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import GTranslateIcon from '@mui/icons-material/GTranslate';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import FooterHome from "./FooterHome";
 export default function NewHome() {
   const brandImages = [
     "/assets/pic/svisa.jpeg",
@@ -2748,7 +2749,7 @@ export default function NewHome() {
       </section>
       {/* <!-- newsletter end --> */}
 
-      <Footer />
+      <FooterHome />
     </div>
   );
 }
