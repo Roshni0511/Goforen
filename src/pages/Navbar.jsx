@@ -369,6 +369,11 @@ export default function Navbar() {
                                 <span>Investor Visa </span>
                               </a>
                             </li>
+                            <li className="menu-item">
+                              <a href="/investor">
+                                <span>WP Visa </span>
+                              </a>
+                            </li>
                           {/* </ul> */}
                         {/* </li> */}
                         {/* <li className="menu-item">
@@ -600,6 +605,9 @@ export default function Navbar() {
                           </li>
                           <li className="menu-item">
                             <a href="/investor">Investor Visa </a>
+                          </li>
+                          <li className="menu-item">
+                            <a href="">WP Visa </a>
                           </li>
                      
                       

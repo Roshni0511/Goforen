@@ -205,7 +205,23 @@ export default function Studentvisainquiry() {
     const updatedRows = rows.filter((_, i) => i !== index);
     setRows(updatedRows);
   };
+ const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
 
+  const validateEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(value);
+  };
+
+  const handleChanges = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    if (value === '' || validateEmail(value)) {
+      setError('');
+    } else {
+      setError('Please enter a valid email address.');
+    }
+  };
   return (
     <div>
       <Navbar />
@@ -318,57 +334,110 @@ export default function Studentvisainquiry() {
 
               {/** Your Full Name **/}
               <div className="col-lg-6">
-                <label className="mb-1">Your Full Name:</label>
-                <div className="d-flex align-items-center border rounded px-3 py-2">
-                  <PermIdentityIcon className="me-2 text-muted" />
-                  <input type="text" placeholder="Enter your Name" className="form-control border-0 p-0" />
-                </div>
-              </div>
+  <label className="mb-1">Your Full Name:</label>
+  <div className="d-flex align-items-center border rounded px-3 py-2">
+    <PermIdentityIcon className="me-2 text-muted" />
+    <input
+      type="text"
+      placeholder="Enter your Name"
+      className="form-control border-0 p-0"
+      onInput={(e) => {
+        e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+      }}
+    />
+  </div>
+</div>
+
 
               {/** Father Name **/}
-              <div className="col-lg-6">
-                <label className="mb-1">Your Father Name:</label>
-                <div className="d-flex align-items-center border rounded px-3 py-2">
-                  <PermIdentityIcon className="me-2 text-muted" />
-                  <input type="text" placeholder="Enter your Father Name" className="form-control border-0 p-0" />
-                </div>
-              </div>
+             <div className="col-lg-6">
+  <label className="mb-1">Your Father Name:</label>
+  <div className="d-flex align-items-center border rounded px-3 py-2">
+    <PermIdentityIcon className="me-2 text-muted" />
+    <input
+      type="text"
+      placeholder="Enter your Father Name"
+      className="form-control border-0 p-0"
+      onInput={(e) => {
+        e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+      }}
+    />
+  </div>
+</div>
+
 
               {/** Contact **/}
               <div className="col-lg-6">
-                <label className="mb-1">Contact No. (Mobile):</label>
-                <div className="d-flex align-items-center border rounded px-3 py-2">
-                  <CallIcon className="me-2 text-muted" />
-                  <input type="text" placeholder="Enter Your Contact Number" className="form-control border-0 p-0" />
-                </div>
-              </div>
+  <label className="mb-1">Contact No. (Mobile):</label>
+  <div className="d-flex align-items-center border rounded px-3 py-2">
+    <CallIcon className="me-2 text-muted" />
+    <input
+      type="text"
+      placeholder="Enter Your Contact Number"
+      className="form-control border-0 p-0"
+      maxLength={10}
+      onInput={(e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+      }}
+    />
+  </div>
+</div>
+
 
               {/** Landline **/}
-              <div className="col-lg-6">
-                <label className="mb-1">Landline Number (If Any):</label>
-                <div className="d-flex align-items-center border rounded px-3 py-2">
-                  <RingVolumeIcon className="me-2 text-muted" />
-                  <input type="text" placeholder="Enter Your Landline Number" className="form-control border-0 p-0" />
-                </div>
-              </div>
+             <div className="col-lg-6">
+  <label className="mb-1">Landline Number (If Any):</label>
+  <div className="d-flex align-items-center border rounded px-3 py-2">
+    <RingVolumeIcon className="me-2 text-muted" />
+    <input
+      type="text"
+      placeholder="Enter Your Landline Number"
+      className="form-control border-0 p-0"
+      maxLength={11}
+      onInput={(e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+      }}
+    />
+  </div>
+</div>
 
               {/** Alternate Contact **/}
-              <div className="col-lg-6">
-                <label className="mb-1">Alternate Contact No.:</label>
-                <div className="d-flex align-items-center border rounded px-3 py-2">
-                  <CallIcon className="me-2 text-muted" />
-                  <input type="text" placeholder="Enter Alternate Number" className="form-control border-0 p-0" />
-                </div>
-              </div>
+            <div className="col-lg-6">
+  <label className="mb-1">Alternate Contact No.:</label>
+  <div className="d-flex align-items-center border rounded px-3 py-2">
+    <CallIcon className="me-2 text-muted" />
+    <input
+      type="text"
+      placeholder="Enter Alternate Number"
+      className="form-control border-0 p-0"
+      maxLength={10}
+      onInput={(e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+      }}
+    />
+  </div>
+</div>
+
 
               {/** Email **/}
               <div className="col-lg-6">
-                <label className="mb-1">Email:</label>
-                <div className="d-flex align-items-center border rounded px-3 py-2">
-                  <EmailIcon className="me-2 text-muted" />
-                  <input type="email" placeholder="Enter Your Email" className="form-control border-0 p-0" />
-                </div>
-              </div>
+      <label className="mb-1">Email:</label>
+      <div className="d-flex align-items-center border rounded px-3 py-2">
+        <EmailIcon className="me-2 text-muted" />
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          className="form-control border-0 p-0"
+          value={email}
+          onChange={handleChanges}
+        />
+      </div>
+      {error && (
+        <small style={{ color: 'red', marginTop: '5px', display: 'block' }}>
+          {error}
+        </small>
+      )}
+    </div>
 
               {/** DOB **/}
               <div className="col-lg-6">

@@ -82,7 +82,24 @@ export default function Contact() {
   const handleSwitchChange = (event) => {
     setShowCourse(event.target.checked);
   };
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
 
+  const validateEmail = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(value);
+  };
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    if (value === '' || validateEmail(value)) {
+      setError('');
+    } else {
+      setError('Please enter a valid email address.');
+    }
+  };
 
   return (
     <div>
@@ -167,33 +184,61 @@ export default function Contact() {
                   </div>
                   <form className="xb-item--form contact-from" action="#!">
                     <div className="row">
-                      <div className="col-lg-6">
-                        <label htmlFor="">Name :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_user.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Enter your Name" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Email :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_mail.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Enter Your Email" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Number :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_call.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Enter Your Number" />
-                        </div>
-                      </div>
+                    <div className="col-lg-6">
+  <label htmlFor="name">Name :</label>
+  <div className="xb-item--field">
+    <span>
+      <img src="assets/img/icon/c_user.svg" alt="" />
+    </span>
+    <input
+      type="text"
+      id="name"
+      placeholder="Enter your Name"
+      onInput={(e) => {
+        e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+      }}
+    />
+  </div>
+</div>
+
+                <div className="col-lg-6">
+      <label htmlFor="email">Email :</label>
+      <div className="xb-item--field">
+        <span>
+          <img src="assets/img/icon/c_mail.svg" alt="" />
+        </span>
+        <input
+          type="text"
+          id="email"
+          placeholder="Enter Your Email"
+          value={email}
+          onChange={handleChange}
+        />
+      </div>
+      {error && (
+        <small style={{ color: 'red', marginTop: '5px', display: 'block' }}>
+          {error}
+        </small>
+      )}
+    </div>
+                    <div className="col-lg-6">
+  <label htmlFor="phone">Number :</label>
+  <div className="xb-item--field">
+    <span>
+      <img src="assets/img/icon/c_call.svg" alt="" />
+    </span>
+    <input
+      type="text"
+      id="phone"
+      placeholder="Enter Your Number"
+      maxLength={10}
+      onInput={(e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+      }}
+    />
+  </div>
+</div>
+
                       <div className="col-lg-6">
                         <label htmlFor="">Desired Country :</label>
                         <div className="xb-item--field">
