@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 import VanillaTilt from 'vanilla-tilt'
 
 
-const Gallary = () => {
+const Gallery = () => {
      const [background, setBackground] = useState(" " );
             
               useEffect(() => {
@@ -549,4 +549,4 @@ const Gallary = () => {
   )
 }
 
-export default Gallary
+export default Gallery

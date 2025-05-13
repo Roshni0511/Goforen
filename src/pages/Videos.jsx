@@ -48,12 +48,12 @@ const Videos = () => {
 
   <div className="container" style={{ position: 'relative', zIndex: 2 }}>
     <div className="breadcrumb__content">
-    <h2 className="breadcrumb__title" style={{color:'#fff'}}> Videos Gallary</h2>
+    <h2 className="breadcrumb__title" style={{color:'#fff'}}> Videos Gallery</h2>
                         <ul className="breadcrumb__list clearfix">
                             <li className="breadcrumb-item">
                                 <a href="/">Home</a>
                             </li>
-                            <li className="breadcrumb-item">Videos Gallary</li>
+                            <li className="breadcrumb-item">Videos Gallery</li>
                         </ul>
     </div>
   </div>
@@ -83,7 +83,7 @@ const Videos = () => {
                 </div>
             </section>
             {/* <!-- breadcrumb end --> */}
-            {/* video gallary start */}
+            {/* video gallery start */}
 
 
             <div>
@@ -160,7 +160,7 @@ const Videos = () => {
                                 </a></li></ul>
                 </div>
             </div>
-            {/* video gallary end */}
+            {/* video gallery end */}
   {/* working time  */}
   <div style={{background:'#edf3f5',padding:'30px 0px'}}>
   <div className="container">

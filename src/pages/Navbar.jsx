@@ -29,7 +29,7 @@ export default function Navbar() {
       "gre": "/GRE",
       "pte": "/PTE",
       "sat": "/SAT",
-      "gallery": "/Gallary",
+      "gallery": "/Gallery",
       "videos": "/Videos",
       "success": "/SuccessStory",
       "blog": "/Blog",
@@ -290,8 +290,8 @@ export default function Navbar() {
                       </a>
                       <ul className="submenu">
                         <li className="menu-item">
-                          <a href="/Gallary">
-                            <span>Gallary</span>
+                          <a href="/Gallery">
+                            <span>Gallery</span>
                           </a>
                         </li>
                         <li className="menu-item">
@@ -555,8 +555,8 @@ export default function Navbar() {
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
-                        <a href="/Gallary">
-                          <span>Gallary</span>
+                        <a href="/Gallery">
+                          <span>Gallery</span>
                         </a>
                       </li>
                       <li className="menu-item">
