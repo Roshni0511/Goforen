@@ -18,6 +18,7 @@ import HouseIcon from "@mui/icons-material/House";
 import AddRoadIcon from "@mui/icons-material/AddRoad";
 import PinDropIcon from "@mui/icons-material/PinDrop";
 import AddLocationIcon from "@mui/icons-material/AddLocation";
+import axios from 'axios';
 
 import UploadYourResume from "../component/UploadYourResume";
 
@@ -134,6 +135,114 @@ const options1 = [
   { value: 7, label: "Any Other" },
 ];
 export default function Prvisainquiry() {
+  const [formData, setFormData] = useState({
+    desired_country: '',
+    desired_visa_route: '',
+    relation: '',
+    name: '',
+    number: '',
+    landline: '',
+    alt_number: '',
+    email: '',
+    dob: '',
+    marital_status: '',
+    no_of_child: '',
+    flat_no: '',
+    building_name: '',
+    road_street: '',
+    pincode: '',
+    area: '',
+    city: '',
+    resume: null,
+
+    education_qualifications: [
+      {
+        qualification: '',
+        stream_of_degree: '',
+        major_degree: '',
+        year_of_completion: '',
+        percentage: '',
+        total_backlog: '',
+      },
+    ],
+    employeement_details: [
+      {
+        company: '',
+        designation: '',
+        from_date: '',
+        to_date: '',
+        no_of_years: '',
+      },
+    ],
+    exam_details: [
+      {
+        exam: '',
+        listening: '',
+        reading: '',
+        writing: '',
+        speaking: '',
+        final_score: '',
+      },
+    ],
+    test_details: [
+      {
+        exam: '',
+        verbal_reasoning: '',
+        quantitative_reasoning: '',
+        analytical_writing: '',
+        final_score: '',
+      },
+    ],
+  });
+
+  // Generic input change handler for top-level fields
+  const handleChange = (e) => {
+    const { name, value, type, files } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'file' ? files[0] : value,
+    }));
+  };
+
+  // Dynamic list field handler
+  const handleNestedChange = (e, index, section, field) => {
+    const updatedList = [...formData[section]];
+    updatedList[index][field] = e.target.value;
+    setFormData((prev) => ({
+      ...prev,
+      [section]: updatedList,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = new FormData();
+
+    // Append regular fields
+    Object.keys(formData).forEach((key) => {
+      if (Array.isArray(formData[key])) {
+        data.append(key, JSON.stringify(formData[key]));
+      } else {
+        data.append(key, formData[key]);
+      }
+    });
+
+    try {
+      const res = await axios.post('https://yourdomain.com/api/submit-pr-visa-inquiry/', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      if (res.status === 201) {
+        alert("Form submitted successfully!");
+        window.location.reload();
+      }
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  };
+
 
     const [step, setStep] = useState(1); // Step 1, 2, 3...
   
@@ -190,11 +299,11 @@ export default function Prvisainquiry() {
   
     const [rows, setRows] = useState(initialRows);
   
-    const handleChange = (index, field, value) => {
-      const updatedRows = [...rows];
-      updatedRows[index][field] = value;
-      setRows(updatedRows);
-    };
+    // const handleChange = (index, field, value) => {
+    //   const updatedRows = [...rows];
+    //   updatedRows[index][field] = value;
+    //   setRows(updatedRows);
+    // };
   
     const addRow = () => {
       setRows([
@@ -349,7 +458,7 @@ export default function Prvisainquiry() {
                             <PublicIcon />
                           </span>
                           <div className="nice-select" tabindex="0">
-                            <span className="current">Select Country</span>
+                            <span className="current" >Select Country</span>
                             <ul className="list">
                               <li
                                 data-value="1"

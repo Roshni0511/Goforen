@@ -5,9 +5,55 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { useLocation } from 'react-router-dom';
+import axios from "axios";
+// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
+  const navigate = useNavigate();
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    desired_country: '',
+    desired_visa_service: '',
+    resume: '',
+    interested_in_coaching: false,
+    course: '',
+    message: '',
+    captcha_entered: '',
+  });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    if (captchaInput !== captchaCode) {
+      alert("Invalid captcha code. Please try again.");
+      generateCaptcha();
+      setCaptchaInput("");
+      return;
+    }
+  
+    const data = new FormData();
+    for (const key in formData) {
+      data.append(key, formData[key]);
+    }
+  
+    try {
+      const response = await axios.post('http://localhost:8000/visa-inquiry/', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+  
+      if (response.status === 201 || response.status === 200) {
+        window.location.reload();
+      }
+    } catch (error) {
+      console.error("Error submitting form: ", error);
+    }
+  };
+  
   const location = useLocation();
 
   const isVisitorVisa = location.pathname === '/visitor';
@@ -18,7 +64,13 @@ export default function Contact() {
   const [captchaCode, setCaptchaCode] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
 
-
+  const visaServices = [
+    { name: "Student Visa", info: false },
+    { name: "PR Visa", info: false },
+    { name: "Visitor Visa", info: true },
+    { name: "Investor Visa", info: true },
+    { name: "Work Permit Visa", info: false },
+  ];
   useEffect(() => {
     generateCaptcha();
   }, []);
@@ -50,55 +102,31 @@ export default function Contact() {
     setCaptchaCode(captcha);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (captchaInput !== captchaCode) {
-      alert("Invalid captcha code. Please try again.");
-      generateCaptcha();
-      setCaptchaInput("");
-      return;
-    }
-    alert("Form submitted successfully!");
-    // Reset your form here
-    generateCaptcha();
-    setCaptchaInput("");
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (captchaInput !== captchaCode) {
+  //     alert("Invalid captcha code. Please try again.");
+  //     generateCaptcha();
+  //     setCaptchaInput("");
+  //     return;
+  //   }
+  //   alert("Form submitted successfully!");
+  //   // Reset your form here
+  //   generateCaptcha();
+  //   setCaptchaInput("");
+  // };
 
   useEffect(() => {
-    const backgroundUrl ="/assets/pic/breadcrumb-bg.jpg";
+    const backgroundUrl = "assets/img/bg/breadcrumb_bg.jpg";
     setBackground(backgroundUrl);
   }, []);
-  
-          const [background12, setBackground12] = useState("");
-        
-          useEffect(() => {
-            const backgroundUrl12 = "assets/img/bg/blog_bg.png";
-            setBackground12(backgroundUrl12);
-          }, []);
   // data-background img end
 
   const [showCourse, setShowCourse] = useState(false);
 
   const handleSwitchChange = (event) => {
     setShowCourse(event.target.checked);
-  };
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-
-  const validateEmail = (value) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(value);
-  };
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setEmail(value);
-
-    if (value === '' || validateEmail(value)) {
-      setError('');
-    } else {
-      setError('Please enter a valid email address.');
-    }
+    setFormData({ ...formData, interested_in_coaching: event.target.checked });
   };
 
   return (
@@ -106,29 +134,12 @@ export default function Contact() {
       <Navbar />
       {/* <!-- breadcrumb start --> */}
       <section
-  className="breadcrumb pos-rel bg_img"
-  style={{ 
-    backgroundImage: `url(${background})`, 
-    minHeight: '400px',
-    position: 'relative',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  }}
->
-  {/* Overlay */}
-  <div style={{
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
-    zIndex: 1
-  }}></div>
-
-  <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-    <div className="breadcrumb__content">
-    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Contact Us</h2>
+        className="breadcrumb pos-rel bg_img"
+        style={{ backgroundImage: `url(${background})` }}
+      >
+        <div className="container">
+          <div className="breadcrumb__content">
+            <h2 className="breadcrumb__title">Contact Us</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
@@ -136,10 +147,8 @@ export default function Contact() {
 
               <li className="breadcrumb-item">Contact Us</li>
             </ul>
-    </div>
-  </div>
-      
-  
+          </div>
+        </div>
         <div className="breadcrumb__circle">
           <span
             className="big"
@@ -168,7 +177,7 @@ export default function Contact() {
       {/* <!-- contact start --> */}
       <section
         className="contact contact-pt gray-bg"
-        style={{ paddingBottom: "60px",paddingTop:'100px' }}
+        style={{ paddingBottom: "60px" }}
       >
         <div className="container">
           <div className="xb-contact pos-rel">
@@ -182,156 +191,100 @@ export default function Contact() {
                     </span>
                     {/* <h3>Do you have questions or went more <br/> information?</h3> */}
                   </div>
-                  <form className="xb-item--form contact-from" action="#!">
+                  <form  onSubmit={handleSubmit} className="xb-item--form contact-from" action="https://sitsoftwares.co.in/go_foren/visa-inquiry/" encType="multipart/form-data" method="post">
                     <div className="row">
-                    <div className="col-lg-6">
-  <label htmlFor="name">Name :</label>
+                      <div className="col-lg-6">
+                        <label htmlFor="">Name :</label>
+                        <div className="xb-item--field">
+                          <span>
+                            <img src="assets/img/icon/c_user.svg" alt="" />
+                          </span>
+                          <input type="text" name="name" placeholder="Enter your Name" onChange={(e) =>
+    setFormData({ ...formData, name: e.target.value })
+  }
+/>
+                        </div>
+                      </div>
+                      <div className="col-lg-6">
+                        <label htmlFor="">Email :</label>
+                        <div className="xb-item--field">
+                          <span>
+                            <img src="assets/img/icon/c_mail.svg" alt="" />
+                          </span>
+                          <input type="text" onChange={(e) =>
+    setFormData({ ...formData, email: e.target.value })
+  }
+ name="email" placeholder="Enter Your Email" />
+                        </div>
+                      </div>
+                      <div className="col-lg-6">
+                        <label htmlFor="">Number :</label>
+                        <div className="xb-item--field">
+                          <span>
+                            <img src="assets/img/icon/c_call.svg" alt="" />
+                          </span>
+                          <input type="text"  name="number" onChange={(e) =>
+    setFormData({ ...formData, number: e.target.value })
+  }
+ placeholder="Enter Your Number" />
+                        </div>
+                      </div>
+                      <div className="col-lg-6">
+  <label htmlFor="desiredCountry">Desired Country :</label>
   <div className="xb-item--field">
     <span>
-      <img src="assets/img/icon/c_user.svg" alt="" />
+      <img src="assets/img/icon/c_select.svg" alt="" />
     </span>
-    <input
-      type="text"
-      id="name"
-      placeholder="Enter your Name"
-      onInput={(e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
-      }}
-    />
+    <select id="desiredCountry" name="desired_country" onChange={(e) =>
+    setFormData({ ...formData, desired_country: e.target.value })
+  }
+
+className="form-control">
+      <option value="">Select Desired Country</option>
+      <option value="Canada">Canada</option>
+      <option value="Australia">Australia</option>
+      <option value="New Zealand">New Zealand</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+      <option value="Europe">Europe</option>
+      <option value="Any Other">Any Other</option>
+    </select>
   </div>
 </div>
 
-                <div className="col-lg-6">
-      <label htmlFor="email">Email :</label>
-      <div className="xb-item--field">
-        <span>
-          <img src="assets/img/icon/c_mail.svg" alt="" />
-        </span>
-        <input
-          type="text"
-          id="email"
-          placeholder="Enter Your Email"
-          value={email}
-          onChange={handleChange}
-        />
-      </div>
-      {error && (
-        <small style={{ color: 'red', marginTop: '5px', display: 'block' }}>
-          {error}
-        </small>
-      )}
-    </div>
-                    <div className="col-lg-6">
-  <label htmlFor="phone">Number :</label>
+<div className="col-lg-6">
+  <label htmlFor="desiredVisaService">Desired Visa Service :</label>
   <div className="xb-item--field">
     <span>
-      <img src="assets/img/icon/c_call.svg" alt="" />
+      <img src="assets/img/icon/c_select.svg" alt="" />
     </span>
-    <input
-      type="text"
-      id="phone"
-      placeholder="Enter Your Number"
-      maxLength={10}
-      onInput={(e) => {
-        e.target.value = e.target.value.replace(/[^0-9]/g, '');
-      }}
-    />
+    <select id="desiredVisaService" name="desired_visa_service" className="form-control" onChange={(e) =>
+    setFormData({ ...formData, desired_visa_service: e.target.value })
+  }
+>
+      <option value="">Select Visa Service</option>
+      <option value="Permanent Residency">Permanent Residency</option>
+      <option value="Work Permit">Work Permit</option>
+      <option value="State Nomination">State Nomination</option>
+      <option value="Investment">Investment</option>
+      <option value="Business">Business</option>
+      <option value="Visitor Visa">Visitor Visa</option>
+      <option value="PR - RNIP">PR - RNIP</option>
+      <option value="PR - AIPP">PR - AIPP</option>
+      <option value="Blood Relation">Blood Relation</option>
+      <option value="Student Visa">Student Visa</option>
+    </select>
   </div>
 </div>
 
-                      <div className="col-lg-6">
-                        <label htmlFor="">Desired Country :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_select.svg" alt="" />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">Desired Country</span>
-                            <ul className="list">
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                Canada
-                              </li>
-                              <li data-value="2" className="option">
-                                Australia
-                              </li>
-                              <li data-value="3" className="option">
-                                New Zealand
-                              </li>
-                              <li data-value="4" className="option">
-                                USA
-                              </li>
-                              <li data-value="4" className="option">
-                                UK
-                              </li>
-                              <li data-value="4" className="option">
-                                Europe
-                              </li>
-                              <li data-value="4" className="option">
-                                Any Other
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-6">
-                        <label htmlFor="">Desired Visa Service :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_select.svg" alt="" />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">
-                              Desired Visa Service
-                            </span>
-                            <ul className="list">
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                Permanent Residency
-                              </li>
-                              <li data-value="2" className="option">
-                                Work Permit
-                              </li>
-                              <li data-value="3" className="option">
-                                State Nomination
-                              </li>
-                              <li data-value="4" className="option">
-                                Investment
-                              </li>
-                              <li data-value="4" className="option">
-                                Business
-                              </li>
-                              <li data-value="4" className="option">
-                                Visitor Visa
-                              </li>
-                              <li data-value="4" className="option">
-                                PR - RNIP
-                              </li>
-                              <li data-value="4" className="option">
-                                PR - AIPP
-                              </li>
-                              <li data-value="4" className="option">
-                                Blood Relation
-                              </li>
-                              <li data-value="4" className="option">
-                                Student Visa
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
                       <div className="col-lg-6">
                         <label htmlFor="">Resume :</label>
                         <div className="xb-item--field">
                           <span>
                             <img src="assets/img/icon/c_upload.svg" alt="" />
                           </span>
-                          <input
+                          <input onChange={(e) => setFormData({ ...formData, resume: e.target.files[0] })}
+                          name = "resume"
                             type="file"
                             accept=".pdf,.doc,.docx"
                             id="resumeUpload"
@@ -352,6 +305,7 @@ export default function Contact() {
                               <FormControlLabel
                                 control={
                                   <Switch
+                                  name="interested_in_coaching"
                                     checked={showCourse}
                                     onChange={handleSwitchChange}
                                     color="primary"
@@ -378,32 +332,26 @@ export default function Contact() {
                                     alt=""
                                   />
                                 </span>
-                                <div className="nice-select" tabindex="0">
-                                  <span className="current">Select Course</span>
-                                  <ul className="list">
-                                    <li
-                                      data-value="1"
-                                      className="option selected focus"
-                                    >
-                                      IELTS
-                                    </li>
-                                    <li data-value="2" className="option">
-                                      TOEFL IBT
-                                    </li>
-                                    <li data-value="3" className="option">
-                                      GRE
-                                    </li>
-                                    <li data-value="4" className="option">
-                                      PTE
-                                    </li>
-                                    <li data-value="4" className="option">
-                                      SAT
-                                    </li>
-                                    <li data-value="4" className="option">
-                                      Other
-                                    </li>
-                                  </ul>
-                                </div>
+                                <div className="col-lg-6">
+  <label htmlFor="selectCourse">Select Course :</label>
+  <div className="xb-item--field">
+    <span>
+      <img src="assets/img/icon/c_select.svg" alt="" />
+    </span>
+    <select id="selectCourse" name="course" className="form-control" onChange={(e) =>
+    setFormData({ ...formData, course: e.target.value })
+  }
+>
+      <option value="">Select Course</option>
+      <option value="IELTS">IELTS</option>
+      <option value="TOEFL IBT">TOEFL IBT</option>
+      <option value="GRE">GRE</option>
+      <option value="PTE">PTE</option>
+      <option value="SAT">SAT</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+</div>
                               </div>
                             </div>
                           </div>
@@ -415,7 +363,10 @@ export default function Contact() {
                           <span>
                             <img src="assets/img/icon/c_message.svg" alt="" />
                           </span>
-                          <textarea
+                          <textarea onChange={(e) =>
+    setFormData({ ...formData, message: e.target.value })
+  }
+
                             name="message"
                             id="message"
                             cols="30"
@@ -453,9 +404,12 @@ export default function Contact() {
                         <div className="xb-item--field">
                           <input
                             type="text"
+                            name="captcha_entered"
                             placeholder="Enter Captcha"
                             value={captchaInput}
-                            onChange={(e) => setCaptchaInput(e.target.value)}
+                            onChange={(e) => {setCaptchaInput(e.target.value);
+                              setFormData({ ...formData, captcha_entered: e.target.value });
+                            }}
                             required
                             className="form-control"
                           />
@@ -473,11 +427,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="google-map">
-               <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.320860525789!2d72.80680377527486!3d21.              19867938370285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.             1!3m3!1m2!1s0x3be04ffbe708d995%3A0x7e8a45d08d632bcf!2sGo%20Foren!5e0!3m2!1sen!2sin!4v1680345892653!5m2!1sen!2sin"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14602.254272231177!2d90.3654215!3d23.7985508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1592852423971!5m2!1sen!2sbd"></iframe>
             </div>
           </div>
         </div>
@@ -485,7 +435,30 @@ export default function Contact() {
       {/* <!-- contact end --> */}
 
       <div className="container py-5">
-        
+        <span className="sec-title--sub">
+          <img src="assets/img/icon/h_star.png" alt="" />
+          IF YOU WANT YOUR PROFILE TO BE ASSESSED IN DETAIL PLEASE FILL UP THE
+          REQUIRED FORM
+          <img src="assets/img/icon/h_star.png" alt="" />
+        </span>
+
+        <ul className="list-unstyled">
+          {visaServices.map((service, idx) => (
+            <li key={idx} className="mb-2 d-flex align-items-center">
+              <span className=" me-2">●</span>
+              <a href="#" className="fw-bold text-dark text-decoration-none">
+                {service.name}
+                {service.info && (
+                  <i
+                    className="bi bi-info-circle-fill ms-1"
+                    title="More Info"
+                  ></i>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+
         {/* Cards Grid */}
         <center>
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-4">
@@ -534,7 +507,7 @@ export default function Contact() {
             </div>
           </div>
         </center>
-     </div>
+      </div>
 
       {/* new page start  */}
       <div className="contact-page">
@@ -556,68 +529,7 @@ export default function Contact() {
 
 </div>
       {/* new page end */}
-  {/* working time  */}
-  <div style={{background:'#edf3f5',padding:'30px 0px'}}>
-  <div className="container">
-        <div
-          className="xb-newsletter1 pos-rel "
-          style={{
-            backgroundImage: `url(${background12})`,
-            // minHeight: '400px',
-            position: "relative",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            margin: "30px 0px",
-          }}
-        >
-          <div className="row">
-            <div className="col-12">
-              <div>
-                <div className="sec-title mb-40 text-center">
-                  <h2 className="mb-20 wow skewIn">Our Working Time</h2>
-                  <p style={{ textAlign: "center" }}>
-                    We are available throughout the week to help you with your
-                    visa and training needs.
-                  </p>
-                </div>
 
-                <div className="row justify-content-center text-center">
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
-                      boxShadow: " 0px 14px 19px rgb(221 229 236)",
-                      padding: "20px",
-                      margin: "5px",
-                    }}
-                  >
-                    <div>
-                      <h5 className="mb-2">Monday - Saturday :</h5>
-                      <p style={{ textAlign: "center" }}>
-                        10.00 a.m. to 6.30 p.m.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
-                      boxShadow: "0px 14px 19px rgb(221 229 236)",
-                      padding: "20px",
-                      margin: "5px",
-                    }}
-                  >
-                    <h5 className="mb-2">Sunday :</h5>
-                    <p style={{ textAlign: "center" }}>
-                      10.00 a.m. to 12.30 p.m.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      {/* workingtime end  */}
       <Footer />
     </div>
   );

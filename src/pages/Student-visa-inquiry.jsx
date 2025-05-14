@@ -138,12 +138,6 @@ export default function Studentvisainquiry() {
                           const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
                           setBackground(backgroundUrl);
                         }, []);
-                            const [background12, setBackground12] = useState("");
-                              
-                                useEffect(() => {
-                                  const backgroundUrl12 = "assets/img/bg/blog_bg.png";
-                                  setBackground12(backgroundUrl12);
-                                }, []);
   // data-background img end
   const [showSpouseDetails, setShowSpouseDetails] = useState(false); // default: No
 
@@ -205,23 +199,7 @@ export default function Studentvisainquiry() {
     const updatedRows = rows.filter((_, i) => i !== index);
     setRows(updatedRows);
   };
- const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
 
-  const validateEmail = (value) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(value);
-  };
-
-  const handleChanges = (e) => {
-    const value = e.target.value;
-    setEmail(value);
-    if (value === '' || validateEmail(value)) {
-      setError('');
-    } else {
-      setError('Please enter a valid email address.');
-    }
-  };
   return (
     <div>
       <Navbar />
@@ -334,110 +312,57 @@ export default function Studentvisainquiry() {
 
               {/** Your Full Name **/}
               <div className="col-lg-6">
-  <label className="mb-1">Your Full Name:</label>
-  <div className="d-flex align-items-center border rounded px-3 py-2">
-    <PermIdentityIcon className="me-2 text-muted" />
-    <input
-      type="text"
-      placeholder="Enter your Name"
-      className="form-control border-0 p-0"
-      onInput={(e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
-      }}
-    />
-  </div>
-</div>
-
+                <label className="mb-1">Your Full Name:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <PermIdentityIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter your Name" className="form-control border-0 p-0" />
+                </div>
+              </div>
 
               {/** Father Name **/}
-             <div className="col-lg-6">
-  <label className="mb-1">Your Father Name:</label>
-  <div className="d-flex align-items-center border rounded px-3 py-2">
-    <PermIdentityIcon className="me-2 text-muted" />
-    <input
-      type="text"
-      placeholder="Enter your Father Name"
-      className="form-control border-0 p-0"
-      onInput={(e) => {
-        e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
-      }}
-    />
-  </div>
-</div>
-
+              <div className="col-lg-6">
+                <label className="mb-1">Your Father Name:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <PermIdentityIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter your Father Name" className="form-control border-0 p-0" />
+                </div>
+              </div>
 
               {/** Contact **/}
               <div className="col-lg-6">
-  <label className="mb-1">Contact No. (Mobile):</label>
-  <div className="d-flex align-items-center border rounded px-3 py-2">
-    <CallIcon className="me-2 text-muted" />
-    <input
-      type="text"
-      placeholder="Enter Your Contact Number"
-      className="form-control border-0 p-0"
-      maxLength={10}
-      onInput={(e) => {
-        e.target.value = e.target.value.replace(/[^0-9]/g, '');
-      }}
-    />
-  </div>
-</div>
-
+                <label className="mb-1">Contact No. (Mobile):</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <CallIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter Your Contact Number" className="form-control border-0 p-0" />
+                </div>
+              </div>
 
               {/** Landline **/}
-             <div className="col-lg-6">
-  <label className="mb-1">Landline Number (If Any):</label>
-  <div className="d-flex align-items-center border rounded px-3 py-2">
-    <RingVolumeIcon className="me-2 text-muted" />
-    <input
-      type="text"
-      placeholder="Enter Your Landline Number"
-      className="form-control border-0 p-0"
-      maxLength={11}
-      onInput={(e) => {
-        e.target.value = e.target.value.replace(/[^0-9]/g, '');
-      }}
-    />
-  </div>
-</div>
+              <div className="col-lg-6">
+                <label className="mb-1">Landline Number (If Any):</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <RingVolumeIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter Your Landline Number" className="form-control border-0 p-0" />
+                </div>
+              </div>
 
               {/** Alternate Contact **/}
-            <div className="col-lg-6">
-  <label className="mb-1">Alternate Contact No.:</label>
-  <div className="d-flex align-items-center border rounded px-3 py-2">
-    <CallIcon className="me-2 text-muted" />
-    <input
-      type="text"
-      placeholder="Enter Alternate Number"
-      className="form-control border-0 p-0"
-      maxLength={10}
-      onInput={(e) => {
-        e.target.value = e.target.value.replace(/[^0-9]/g, '');
-      }}
-    />
-  </div>
-</div>
-
+              <div className="col-lg-6">
+                <label className="mb-1">Alternate Contact No.:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <CallIcon className="me-2 text-muted" />
+                  <input type="text" placeholder="Enter Alternate Number" className="form-control border-0 p-0" />
+                </div>
+              </div>
 
               {/** Email **/}
               <div className="col-lg-6">
-      <label className="mb-1">Email:</label>
-      <div className="d-flex align-items-center border rounded px-3 py-2">
-        <EmailIcon className="me-2 text-muted" />
-        <input
-          type="email"
-          placeholder="Enter Your Email"
-          className="form-control border-0 p-0"
-          value={email}
-          onChange={handleChanges}
-        />
-      </div>
-      {error && (
-        <small style={{ color: 'red', marginTop: '5px', display: 'block' }}>
-          {error}
-        </small>
-      )}
-    </div>
+                <label className="mb-1">Email:</label>
+                <div className="d-flex align-items-center border rounded px-3 py-2">
+                  <EmailIcon className="me-2 text-muted" />
+                  <input type="email" placeholder="Enter Your Email" className="form-control border-0 p-0" />
+                </div>
+              </div>
 
               {/** DOB **/}
               <div className="col-lg-6">
@@ -2822,69 +2747,6 @@ export default function Studentvisainquiry() {
         
       </section>
       {/* <!-- contact end --> */}
-
-        {/* working time  */}
-  <div style={{background:'#edf3f5',padding:'30px 0px'}}>
-  <div className="container">
-        <div
-          className="xb-newsletter1 pos-rel "
-          style={{
-            backgroundImage: `url(${background12})`,
-            // minHeight: '400px',
-            position: "relative",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            margin: "30px 0px",
-          }}
-        >
-          <div className="row">
-            <div className="col-12">
-              <div>
-                <div className="sec-title mb-40 text-center">
-                  <h2 className="mb-20 wow skewIn">Our Working Time</h2>
-                  <p style={{ textAlign: "center" }}>
-                    We are available throughout the week to help you with your
-                    visa and training needs.
-                  </p>
-                </div>
-
-                <div className="row justify-content-center text-center">
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
-                      boxShadow: " 0px 14px 19px rgb(221 229 236)",
-                      padding: "20px",
-                      margin: "5px",
-                    }}
-                  >
-                    <div>
-                      <h5 className="mb-2">Monday - Saturday :</h5>
-                      <p style={{ textAlign: "center" }}>
-                        10.00 a.m. to 6.30 p.m.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
-                      boxShadow: "0px 14px 19px rgb(221 229 236)",
-                      padding: "20px",
-                      margin: "5px",
-                    }}
-                  >
-                    <h5 className="mb-2">Sunday :</h5>
-                    <p style={{ textAlign: "center" }}>
-                      10.00 a.m. to 12.30 p.m.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      {/* workingtime end  */}
       <Footer />
     </div>
   );

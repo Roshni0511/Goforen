@@ -12,11 +12,17 @@ export default function Home() {
   
   // data-background img start
   const [background, setBackground] = useState("");
+  const [HomeContent, setHomeContent] = useState({});
 
   useEffect(() => {
     const backgroundUrl = "https://www.goforen.com/images/slider-4.jpg";
     setBackground(backgroundUrl);
   }, []);
+  // useEffect(() => {
+  //   const HomeContent = "http://localhost:8000/get_home_data/";
+  //   setHomeContent(HomeContent);
+  // }, []);
+  // console.log(HomeContent);
   // data-background img end
   const scrollRef = useRef(null);
   const itemHeight = 70;
