@@ -3,6 +3,25 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 
 const Courses = () => {
+
+    const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/get_course_data/")
+      .then((res) => res.json())
+      .then((data) => setCourses(data))
+      .catch((err) => console.error("Failed to fetch courses:", err));
+  }, []);
+
+    //    <div>
+    //   <h1>Courses</h1>
+    //   <ul>
+    //     {courses.map((course, index) => (
+    //       <li key={index}>{course.course_name}</li> // adjust key name as needed
+    //     ))}
+    //   </ul>
+    // </div>
+
       const [background, setBackground] = useState("");
     
       useEffect(() => {
