@@ -10,63 +10,68 @@ export default function News() {
             const backgroundUrl12 = "assets/img/bg/blog_bg.png";
             setBackground12(backgroundUrl12);
           }, []);
+
+          
+            const [items, setItems] = useState([]);
+
+          useEffect(() => {
+            fetch("http://localhost:8000/get_news_data/")
+              .then((res) => res.json())
+              .then((data) => setItems(data))
+              .catch((err) => console.error("Failed to fetch news:", err));
+          }, []);
+
+              
   return (
     <div>
       <Navbar />
       <section className="blog pt-120 pb-120">
         <div className="container">
           <div className="row">
-            <div className="col-lg-8">
-              <div className="blog-post-wrapper">
-                <article className="post-details">
-                  <div className="post-thumb">
-                    <img src="/assets/pic/1-image.jpg" alt="" />
-                  </div>
-                  <ul className="post-meta ul_li">
-                    <li>
-                      <span className="posted-on">
-                        <i className="far fa-calendar-check"></i>{" "}
-                        <a href="#!">August 4, 2023</a>
-                      </span>
-                    </li>
-                  </ul>
-                  <h2>
-                    Netherlands Sees Rise in Undocumented Workers, Raising
-                    Exploitation Concerns
-                  </h2>
-                  <p>
-                    The Netherlands is witnessing a surge in unauthorised
-                    employment of third-country nationals, with tens of
-                    thousands, including 35,000 Brazilians in Amsterdam alone,
-                    working without proper permits. These undocumented workers
-                    are mostly found in construction, agriculture, hospitality,
-                    and domestic services, raising concerns about exploitation
-                    and lack of access to health care. The misuse of the
-                    Registration of Non-Residents (RNI) system, which allows
-                    short-term visitors to obtain a citizen service number
-                    without scrutiny, is contributing to this growing issue.
-                    Authorities remain inactive despite long-standing awareness.
-                    For better understanding, contact GOFOREN at
-                    7600909090.Click for the Gujarati translate
-                  </p>
-
-                  <button style={{ background: "none" }}>
-                    <a
-                      href="/Newsdetails"
-                      style={{
-                        color: "#fff",
-                        padding: "20px ",
-                        background: "#00cc99",
-                        borderRadius: "10px",
-                      }}
-                    >
-                      Read More
-                    </a>
-                  </button>
-                </article>
-              </div>
+ <div className="col-lg-8">
+        <div  className="blog-post-wrapper">
+      {items.map((item) => (
+          <article key={item.id} className="post-details"  style={{ marginBottom:"5rem", border:"1px solid gray", padding: "30px" , borderRadius:"10px" }}>
+            <div className="post-thumb">
+              <img style={{ width: '100%' }}
+                src={`https://drive.google.com/thumbnail?id=${item.image_id}`}
+                alt={item.heading}
+              />
             </div>
-            <div className="col-lg-4">
+            <ul className="post-meta ul_li">
+              <li>
+                <span className="posted-on">
+                  <i className="far fa-calendar-check"></i>{" "}
+                  <a href="#!">
+                    {new Date(item.created_at).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </a>
+                </span>
+              </li>
+            </ul>
+            <h2>{item.heading}</h2>
+            <div dangerouslySetInnerHTML={{ __html: item.description }} />
+            <button style={{ background: "none", marginTop:"2rem" }}>
+              <a
+                href={`/Newsdetails?id=${item.id}`}
+                style={{
+                  color: "#fff",
+                  padding: "20px ",
+                  background: "#00cc99",
+                  borderRadius: "10px",
+                }}
+              >
+                Read More
+              </a>
+            </button>
+          </article>
+      ))}
+        </div>
+    </div>    
+           <div className="col-lg-4">
               <div className="blog-sidebar">
                 <div className="widget text-center">
                   <h3 className="widget-title">Detailed Information</h3>

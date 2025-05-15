@@ -5,6 +5,8 @@ import Visacard from '../component/Visacard';
 import SuccessStories from '../component/SuccessStories';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import axios from 'axios';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Carousel } from 'react-bootstrap';
 
@@ -27,16 +29,31 @@ export default function Home() {
   const scrollRef = useRef(null);
   const itemHeight = 70;
   const [index, setIndex] = useState(0);
-  const items = [
-    "Poland Introduced e-Konsulat for Work Visa Applications in India.",
-    "Australian Universities Impose Restrictions on Students from Six Indian Regions.",
-    "Stay and Work in Canada: Apply for a TFWP Work Permit After PGWP Expiry.",
-    "Latvia to Enforce Stricter Entry Rules for Third-Country Nationals Without Local Visa or Permit.",
-    "CRS Scores Drop Sharply After Removal of Arranged Employment Points.",
-    "UAE Expands Visa on Arrival for Indian Nationals.",
-    "EU Urges Fast-Track of ETIAS &amp; EES to Secure Schengen Borders.",
-    "Latvia to Tighten Border Rules for Third-Country Nationals Without Latvian Visa or Residence Permit.",
-  ];
+  
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/get_news_data/')
+      .then(response => {
+        const headings = response.data.map(item => item.heading);
+        setItems(headings); // Replaces your hardcoded array
+      })
+      .catch(error => {
+        console.error('Error fetching news data:', error);
+      });
+  }, []);
+  
+  // const items = [
+  //   "Poland Introduced e-Konsulat for Work Visa Applications in India.",
+  //   "Australian Universities Impose Restrictions on Students from Six Indian Regions.",
+  //   "Stay and Work in Canada: Apply for a TFWP Work Permit After PGWP Expiry.",
+  //   "Latvia to Enforce Stricter Entry Rules for Third-Country Nationals Without Local Visa or Permit.",
+  //   "CRS Scores Drop Sharply After Removal of Arranged Employment Points.",
+  //   "UAE Expands Visa on Arrival for Indian Nationals.",
+  //   "EU Urges Fast-Track of ETIAS &amp; EES to Secure Schengen Borders.",
+  //   "Latvia to Tighten Border Rules for Third-Country Nationals Without Latvian Visa or Residence Permit.",
+  // ];
+
   const visa = [
     "Temporary Residents Can Now Apply for the Canada Child Benefit (CCB).",
     "Canada&amp;rsquo;s CRS System: How It Works.",

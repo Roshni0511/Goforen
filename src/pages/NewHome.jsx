@@ -18,7 +18,61 @@ import GTranslateIcon from '@mui/icons-material/GTranslate';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import FooterHome from "./FooterHome";
+import axios from 'axios';
+
+function stripHtml(html) {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  return div.textContent || div.innerText || "";
+}
+
 export default function NewHome() {
+
+    const [galleryData, setGalleryData] = useState([])
+  
+    useEffect(() => {
+      axios.get('http://localhost:8000/get_gallery_data/')
+        .then((res) => {
+          setGalleryData(res.data)
+        })
+        .catch((err) => {
+          console.error('Failed to fetch gallery data:', err)
+        })
+    }, [])
+
+  const [Courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_course_data/')
+      .then((res) => res.json())
+      .then((data) => {
+        setCourses(data);
+      })
+      .catch((err) => console.error("Failed to fetch Courses:", err));
+  }, []);
+
+  const [TeamData, setTeamData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_team_data/')
+      .then((res) => res.json())
+      .then((data) => {
+        setTeamData(data);
+      })
+      .catch((err) => console.error("Failed to fetch Team Data:", err));
+  }, []);
+
+  const [visaServices, setVisaServices] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_visa_services/')
+      .then((res) => res.json())
+      .then((data) => {
+        setVisaServices(data);
+      })
+      .catch((err) => console.error("Failed to fetch visa services:", err));
+  }, []);
+
   const brandImages = [
     "/assets/pic/svisa.jpeg",
     "/assets/pic/Investor-Visa-1200x675.jpg",
@@ -48,16 +102,43 @@ export default function NewHome() {
   const scrollRef = useRef(null);
   const itemHeight = 70;
   const [index, setIndex] = useState(0);
-  const items = [
-    "Poland Introduced e-Konsulat for Work Visa Applications in India.",
-    "Australian Universities Impose Restrictions on Students from Six Indian Regions.",
-    "Stay and Work in Canada: Apply for a TFWP Work Permit After PGWP Expiry.",
-    "Latvia to Enforce Stricter Entry Rules for Third-Country Nationals Without Local Visa or Permit.",
-    "CRS Scores Drop Sharply After Removal of Arranged Employment Points.",
-    "UAE Expands Visa on Arrival for Indian Nationals.",
-    "EU Urges Fast-Track of ETIAS &amp; EES to Secure Schengen Borders.",
-    "Latvia to Tighten Border Rules for Third-Country Nationals Without Latvian Visa or Residence Permit.",
-  ];
+
+  // const items = [
+  //   "Poland Introduced e-Konsulat for Work Visa Applications in India.",
+  //   "Australian Universities Impose Restrictions on Students from Six Indian Regions.",
+  //   "Stay and Work in Canada: Apply for a TFWP Work Permit After PGWP Expiry.",
+  //   "Latvia to Enforce Stricter Entry Rules for Third-Country Nationals Without Local Visa or Permit.",
+  //   "CRS Scores Drop Sharply After Removal of Arranged Employment Points.",
+  //   "UAE Expands Visa on Arrival for Indian Nationals.",
+  //   "EU Urges Fast-Track of ETIAS &amp; EES to Secure Schengen Borders.",
+  //   "Latvia to Tighten Border Rules for Third-Country Nationals Without Latvian Visa or Residence Permit.",
+  // ];
+
+  
+  const [items, setItems] = useState([]);
+    
+  useEffect(() => {
+    fetch("http://localhost:8000/get_news_data/")
+      .then((res) => res.json())
+      .then((data) => {
+        const headings = data.map(item => item.heading);
+        setItems(headings);
+      })
+      .catch((err) => console.error("Failed to fetch news data:", err));
+  }, []);
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:8000/get_news_data/')
+  //     .then(response => {
+  //       const headings = response.data.map(item => item.heading);
+  //       setItems(headings); // Replaces your hardcoded array
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching news data:', error);
+  //     });
+  // }, []);
+    
+
   const visa = [
     "Temporary Residents Can Now Apply for the Canada Child Benefit (CCB).",
     "Canada&amp;rsquo;s CRS System: How It Works.",
@@ -396,99 +477,38 @@ export default function NewHome() {
                 </p>
               </div>
             </div>
-            <div className="row justify-content-md-center mt-none-30">
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--icon mb-50">
-                      <img src="assets/img/icon/sv_01.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/IELTS"> IELTS</a>
-                      </h3>
-                      <p >
-                        Prepare for the globally recognized IELTS exam to
-                        enhance your chances of studying or migrating abroad.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--icon color2 mb-50">
-                      <img src="assets/img/icon/sv_02.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/TOEFLIBT">TOEFL IBT</a>
-                      </h3>
-                      <p>
-                        Boost your English proficiency with TOEFL iBT, accepted
-                        by universities and immigration bodies worldwide.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 mt-30"></div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--icon color3 mb-50">
-                      <img src="assets/img/icon/sv_03.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/GRE">GRE</a>
-                      </h3>
-                      <p >
-                        Achieve your academic and career goals with the GRE,
-                        essential for graduate admissions globally.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--icon color4 mb-50">
-                      <img src="assets/img/icon/sv_04.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/PTE"> PTE</a>
-                      </h3>
-                      <p >
-                        Get fast, reliable results with PTE Academic — ideal for
-                        study, work, or migration.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--icon color5 mb-50">
-                      <img src="assets/img/icon/sv_05.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/SAT">SAT</a>
-                      </h3>
-                      <p >
-                        Open doors to top  universities with strong
-                        SAT scores designed for undergraduate programs.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<div className="row justify-content-md-center mt-none-30">
+  {Courses.map((course, index) => (
+    <React.Fragment key={course.id}>
+      <div className="col-lg-4 col-md-6 mt-30">
+        <div className="xb-service">
+          <div className="xb-item--inner">
+            <div className={`xb-item--icon color${(index % 5) + 1} mb-50`}>
+              <img src={`assets/img/icon/sv_0${(index % 5) + 1}.svg`} alt={course.course_name} />
             </div>
+            <div className="xb-item--holder">
+              <h3 className="xb-item--title mb-20">
+                <a href={`/Course-details?id=${course.id}`}>{course.course_name}</a>
+              </h3>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: course.description.replace(/<[^>]+>/g, '').slice(0, 140) + '...',
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Insert a blank column after the second item (index 1) */}
+      {index === 1 && (
+        <div className="col-lg-4 mt-30"></div>
+      )}
+    </React.Fragment>
+  ))}
+</div>
+
+          
           </div>
         </div>
       </section>
@@ -589,79 +609,27 @@ export default function NewHome() {
           <div className="row align-items-center">
             <div className="col-lg-10">
               <div className="about__content">
-                <ul className="about-list ul_li list-unstyled">
-                  <li>
-                    <a href="/Immigration-pr-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number">1</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Immigration - PR Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Settle Abroad with Permanent Residency Support
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Student-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number color-2">2</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">Student Visa</h3>
-                          <p style={{color:'#787B84'}}>
-                            Study Overseas with Full Visa Guidance
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Visitor-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number color-3">3</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">Visitor Visa</h3>
-                          <p style={{color:'#787B84'}}>
-                            Travel Abroad Hassle-Free with Our Help
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Investor-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number color-4">4</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Investor Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Invest and Relocate with Business Visa
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Work-permit-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number color-5">5</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Work Permit Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Build Your Career Abroad with Ease
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
+       <ul className="about-list ul_li list-unstyled">
+  {visaServices.map((service, index) => (
+    <li key={service.id}>
+      <a href={`/visa-services-detail?id=${service.id}`}>
+        <div className="xb-item--inner">
+          <div className={`xb-item--number color-${(index % 5) + 1}`}>
+            {index + 1}
+          </div>
+          <div className="xb-item--holder">
+            <h3 className="xb-item--title mb-10">{service.visa_type}</h3>
+            <p style={{ color: '#787B84' }}>
+              {/* Optional: Show a trimmed version of the description */}
+              {stripHtml(service.description).slice(0, 80)}...
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>
+
               </div>
             </div>
           </div>
@@ -2002,221 +1970,60 @@ export default function NewHome() {
       <section className="team pb-120">
         <div className="container">
           <div className="team-wrap pos-rel">
-            <div className="row mt-none-30">
-              <div className="col-xl-6 mt-30">
-                <div className="sec-title mb-45">
-                  <h2 className="mb-40 wow skewIn">
-                    Our trusted immigration <br /> <span> support team</span>
-                  </h2>
-                  <p>
-                    At the heart of our commitment to providing exceptional
-                    immigration solutions stands
-                  </p>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div className="xb-team text-center">
-                  <div className="xb-item--inner" data-parallax='{"scale" : 1}'>
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/team.jpg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--name">
-                        <a href="">Janvi Patel</a>
-                      </h3>
-                      <span className="xb-item--designation">
-                        Legal Advisor
-                      </span>
-                    </div>
-                    <ul className="xb-item--social list-unstyled">
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div className="xb-team text-center">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/profile4.jpg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--name">
-                        <a href="">Vivek Sharma</a>
-                      </h3>
-                      <span className="xb-item--designation">
-                        Education Counsellor
-                      </span>
-                    </div>
-                    <ul className="xb-item--social list-unstyled">
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div className="xb-team text-center">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/profile5 (3).jpg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--name">
-                        <a href="">Kunal Mehta</a>
-                      </h3>
-                      <span className="xb-item--designation">
-                        Visa Specialist
-                      </span>
-                    </div>
-                    <ul className="xb-item--social list-unstyled">
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div className="xb-team text-center">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/profile1 (2).jpg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--name">
-                        <a href="">Krishna Varma</a>
-                      </h3>
-                      <span className="xb-item--designation">
-                        Visa Coordinator
-                      </span>
-                    </div>
-                    <ul className="xb-item--social list-unstyled">
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div className="xb-team text-center">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/profile6.jpg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--name">
-                        <a href="">Jay Patel</a>
-                      </h3>
-                      <span className="xb-item--designation">
-                        General Manager
-                      </span>
-                    </div>
-                    <ul className="xb-item--social list-unstyled">
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-4 col-md-6 mt-30">
-                <div className="xb-team text-center">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/profile7 (1).jpg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--name">
-                        <a href="">Drashti Vora</a>
-                      </h3>
-                      <span className="xb-item--designation">Case Manager</span>
-                    </div>
-                    <ul className="xb-item--social list-unstyled">
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-linkedin-in"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!">
-                          <i className="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+<div className="row mt-none-30">
+  <div className="col-xl-6 mt-30">
+    <div className="sec-title mb-45">
+      <h2 className="mb-40 wow skewIn">
+        Our trusted immigration <br /> <span> support team</span>
+      </h2>
+      <p>
+        At the heart of our commitment to providing exceptional
+        immigration solutions stands
+      </p>
+    </div>
+  </div>
+
+  {TeamData.map((member) => (
+    <div key={member.id} className="col-xl-3 col-lg-4 col-md-6 mt-30">
+      <div className="xb-team text-center">
+        <div className="xb-item--inner">
+          <div className="xb-item--img">
+            {/* Show a fallback image if needed */}
+            <img
+              src={`https://drive.google.com/thumbnail?id=${member.image_id}`}
+              alt={member.name}
+            />
+          </div>
+          <div className="xb-item--holder">
+            <h3 className="xb-item--name">
+              <a href="#!">{member.name}</a>
+            </h3>
+            <span className="xb-item--designation">
+              {member.designation}
+            </span>
+          </div>
+          <ul className="xb-item--social list-unstyled">
+            <li>
+              <a href={member.tweeter || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href={member.linkedin || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a href={member.facebook || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
             <div className="xb-team-bg">
               <div className="xb-bg xb-bg--1"></div>
               <div className="xb-bg xb-bg--2"></div>
@@ -2403,49 +2210,55 @@ export default function NewHome() {
       {/* <!-- faq end --> */}
 
       {/* <!-- category start --> */}
-      <div style={{ margin: "60px 0px " }}>
-        <div className="d-flex justify-content-center">
-          <div className="sec-title mb-60 text-center">
-            <h2 className="mb-30 wow skewIn">
-              Every photo tells our story
-              <br /> <span> Media</span>
-            </h2>
-          </div>
+    <div style={{ margin: "60px 0px " }}>
+      <div className="d-flex justify-content-center">
+        <div className="sec-title mb-60 text-center">
+          <h2 className="mb-30 wow skewIn">
+            Every photo tells our story
+            <br /> <span> Media</span>
+          </h2>
         </div>
-        <Swiper
-  className="xb-category-slider"
-  modules={[Autoplay]}
-  spaceBetween={30}
-  slidesPerView={7}
-  loop={true}
-  loopAdditionalSlides={30}
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-  }}
-  allowTouchMove={true}
-  grabCursor={true}
-  speed={150} // 🔥 faster feel
-  breakpoints={{
-    1600: { slidesPerView: 7 },
-    1200: { slidesPerView: 6 },
-    992: { slidesPerView: 5 },
-    768: { slidesPerView: 4 },
-    576: { slidesPerView: 3 },
-    0: { slidesPerView: 2 },
-  }}
->
-          {images.map((src, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={src}
-                alt={`Slide ${index + 1}`}
-                style={{ width: "300px", height: "250px", borderRadius: "8px" }}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </div>
+
+      <Swiper
+        className="xb-category-slider"
+        modules={[Autoplay]}
+        spaceBetween={30}
+        slidesPerView={7}
+        loop={true}
+        loopAdditionalSlides={30}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        allowTouchMove={true}
+        grabCursor={true}
+        speed={150}
+        breakpoints={{
+          1600: { slidesPerView: 7 },
+          1200: { slidesPerView: 6 },
+          992: { slidesPerView: 5 },
+          768: { slidesPerView: 4 },
+          576: { slidesPerView: 3 },
+          0: { slidesPerView: 2 },
+        }}
+      >
+        {galleryData.map((item, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={`https://drive.google.com/thumbnail?id=${item.image_id}`}
+              alt={item.image_name || `Slide ${index + 1}`}
+              style={{
+                width: "300px",
+                height: "250px",
+                objectFit: "cover",
+                borderRadius: "8px",
+              }}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
       {/* <!-- category end --> */}
 
       {/* <!-- blog start --> */}
@@ -2752,3 +2565,4 @@ export default function NewHome() {
     </div>
   );
 }
+

@@ -7,7 +7,7 @@ import Aboutfounder from "./pages/About-founder";
 import Visaservices from "./pages/Visa-services";
 import Courses from "./pages/Courses";
 import Immigrationprvisa from "./pages/Immigration-pr-visa";
-import IELTS from "./pages/IELTS";
+import CourseDetails from "./pages/CourseDetails";
 import TOEFLIBT from "./pages/TOEFLIBT";
 import GRE from "./pages/GRE";
 import PTE from "./pages/PTE";
@@ -182,13 +182,13 @@ function App() {
         <Route path="/About-us-race" element={<Aboutusrace />} />
         <Route path="/About-founder" element={<Aboutfounder />} />
         <Route path="/Visa-services" element={<Visaservices />} />
-        <Route path="/Immigration-pr-visa" element={<Immigrationprvisa />} />
+        <Route path="/visa-services-detail" element={<Immigrationprvisa />} />
         <Route path="/Student-visa" element={<Studentvisa />} />
         <Route path="/Visitor-visa" element={<Visitorvisa />} />
         <Route path="/Investor-visa" element={<Investorvisa />} />
         <Route path="/Work-permit-visa" element={<Workpermitvisa />} />
         <Route path="/Courses" element={<Courses />} />
-        <Route path="/IELTS" element={<IELTS />} />
+        <Route path="/Course-details" element={<CourseDetails />} />
 
         <Route path="/TOEFLIBT" element={<TOEFLIBT />} />
         <Route path="/GRE" element={<GRE />} />

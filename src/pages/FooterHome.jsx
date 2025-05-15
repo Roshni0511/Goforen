@@ -9,6 +9,27 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const FooterHome = () => {
   
+    const [visaServices, setVisaServices] = useState([]);
+  
+    useEffect(() => {
+      fetch('http://localhost:8000/get_visa_services/')
+        .then((res) => res.json())
+        .then((data) => {
+          setVisaServices(data);
+        })
+        .catch((err) => console.error("Failed to fetch visa services:", err));
+    }, []);
+    const [Courses, setCourses] = useState([]);
+  
+    useEffect(() => {
+      fetch('http://localhost:8000/get_course_data/')
+        .then((res) => res.json())
+        .then((data) => {
+          setCourses(data);
+        })
+        .catch((err) => console.error("Failed to fetch Courses:", err));
+    }, []);
+  
   return (
     <>
 
@@ -130,11 +151,13 @@ const FooterHome = () => {
             </div>
             <div className="col-lg-3 mt-30 col-md-6 footer__custom-col">
               <div className="footer__widget">
-                <h3 className="widget-title">Training & Courses</h3>
+                <h3 className="widget-title">dddTraining & Courses</h3>
                 <ul className="footer__links list-unstyled">
-                  <li>
-                    <a href="/IELTS">
-                      <span>
+
+                      {Courses.map((item) => (
+                        <li key={item.id}>
+                          <a href= {`/Course-details?id=${item.id}`}>
+                                                <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="13"
@@ -148,85 +171,13 @@ const FooterHome = () => {
                           />
                         </svg>
                       </span>
-                      IELTS
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/IELTS">
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="13"
-                          height="13"
-                          viewBox="0 0 13 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
-                            fill="#B1B4BA"
-                          />
-                        </svg>
-                      </span>
-                      TOEFL IBT
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/IELTS">
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="13"
-                          height="13"
-                          viewBox="0 0 13 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
-                            fill="#B1B4BA"
-                          />
-                        </svg>
-                      </span>
-                      GRE
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/IELTS">
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="13"
-                          height="13"
-                          viewBox="0 0 13 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
-                            fill="#B1B4BA"
-                          />
-                        </svg>
-                      </span>
-                      PTE
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/IELTS">
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="13"
-                          height="13"
-                          viewBox="0 0 13 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
-                            fill="#B1B4BA"
-                          />
-                        </svg>
-                      </span>
-                      SAT
-                    </a>
-                  </li>
+                      {item.course_name}
+                          </a>
+                        </li>
+                            ))}
+
+
+
                 </ul>
               </div>
             </div>
@@ -234,9 +185,10 @@ const FooterHome = () => {
               <div className="footer__widget">
                 <h3 className="widget-title">Services</h3>
                 <ul className="footer__links list-unstyled">
-                  <li>
-                    <a href="/Immigration-pr-visa">
-                      <span>
+                                            {visaServices.map((item) => (
+              <li key={item.id}>
+                          <a href= {`/visa-services-detail?id=${item.id}`}>
+                           <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="13"
@@ -249,86 +201,11 @@ const FooterHome = () => {
                             fill="#B1B4BA"
                           />
                         </svg>
-                      </span>
-                      Immigration - PR Visa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Immigration-pr-visa">
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="13"
-                          height="13"
-                          viewBox="0 0 13 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
-                            fill="#B1B4BA"
-                          />
-                        </svg>
-                      </span>
-                      Student Visa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Immigration-pr-visa">
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="13"
-                          height="13"
-                          viewBox="0 0 13 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
-                            fill="#B1B4BA"
-                          />
-                        </svg>
-                      </span>
-                      Visitor Visa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Immigration-pr-visa">
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="13"
-                          height="13"
-                          viewBox="0 0 13 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
-                            fill="#B1B4BA"
-                          />
-                        </svg>
-                      </span>
-                      Investor Visa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Immigration-pr-visa">
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="13"
-                          height="13"
-                          viewBox="0 0 13 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.5 0C6.72067 3.49437 9.5056 6.27934 13 6.5C9.5056 6.72067 6.72067 9.5056 6.5 13C6.27934 9.5056 3.49437 6.72067 0 6.5C3.49437 6.27934 6.27934 3.49437 6.5 0Z"
-                            fill="#B1B4BA"
-                          />
-                        </svg>
-                      </span>
-                      Work Permit Visa
-                    </a>
-                  </li>
+                        </span>
+                        {item.visa_type}
+                          </a>
+                        </li>
+                            ))}
                 </ul>
               </div>
             </div>

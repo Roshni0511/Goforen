@@ -7,7 +7,36 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import SuccessStories from "../component/SuccessStories";
 import FooterTop from "../component/FooterTop";
+import axios from 'axios';
+
+
+
 export default function About() {
+
+  const [TeamData, setTeamData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_team_data/')
+      .then((res) => res.json())
+      .then((data) => {
+        setTeamData(data);
+      })
+      .catch((err) => console.error("Failed to fetch Team Data:", err));
+  }, []);
+
+ const [aboutData, setAboutData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/get_about_us_data/')
+      .then((res) => {
+        const filtered = res.data.filter(item => item.category === 'About Us');
+        setAboutData(filtered);
+      })
+      .catch((err) => {
+        console.error("Error fetching data:", err);
+      });
+  }, []);
+
   // data-background img start
   const [background, setBackground] = useState("");
 
@@ -123,45 +152,35 @@ export default function About() {
       <Counter />
       {/* <!-- about end --> */}
 
-      <section class="mission pt-130 pb-130">
-            <div class="container">
-                <div class="row align-items-center flex-row-reverse mt-none-30">
-                    <div class="col-lg-6 mt-30">
-                        <div class="mission__img text-lg-end">
-                            <div class="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
-                                <img src="/assets/pic/canada-passport-1 (1).webp" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-30">
-                        <div class="mission__content">
-                            <div class="sec-title">
-                                <h2 class="mb-20 wow skewIn">Inception of GO FOREN<br /> <span  style={{fontSize:'35px'}}>Immigration Mission</span></h2>
-                                <p>The birth of GO FOREN, the immigration consultation and overseas education advising division, holds a captivating tale. Situated in South Gujarat, India, GO FOREN is widely regarded as one of the top establishments in its field. Its origins trace back to our parent company, RACHNA ACADEMY OF CAREER EDUCATION (RACE), which has been actively engaged in providing career guidance and facilitating government and private sector job placements in India since 2006. Mr. Rajesh Bhavsar, our esteemed founder, has been instrumental in assisting and guiding numerous individuals in their pursuit of settling abroad, whether as students or permanent residents.</p>
-                            </div>
-                        </div>
-                    </div>
+  <section className="mission pt-130 pb-130">
+      <div className="container">
+        {aboutData.map((item, index) => (
+          <div className="row align-items-center flex-row-reverse mt-none-30" key={item.id}>
+            <div className="col-lg-6 mt-30">
+              <div className="mission__img text-lg-end">
+                <div className="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
+                  <img
+                    src={`https://drive.google.com/thumbnail?id=${item.image_id}`}
+                    alt={item.heading}
+                  />
                 </div>
-                <div class="row align-items-center mt-100">
-                    <div class="col-lg-6 mt-30">
-                        <div class="mission__img">
-                            <div class="inner-img d-inline-block wow skewIn">
-                                <img src="/assets/pic/aboutpage2.webp" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-30">
-                        <div class="mission__content">
-                            <div class="sec-title">
-                                <h2 class="mb-20 wow skewIn" data-wow-delay="200ms">About scope of GO FOREN <br /> <span  style={{fontSize:'35px'}}>Visa Guidance</span></h2>
-                                <p>GO FOREN specializes in immigration/PR visa, student visa, visitor visa, entrepreneur/business visa and work permit visa services. Our core expertise lies in the immigration field, where we offer comprehensive assistance to clients who wish to work and settle in a new country. Our support extends beyond initial counselling, evaluation, application, and immigration processes. We also provide additional services such as air ticketing, foreign exchange, accommodation arrangements, travel insurance, and airport transfers upon successful relocation to the new country.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
-
+            <div className="col-lg-6 mt-30">
+              <div className="mission__content">
+                <div className="sec-title">
+                  <h2 className="mb-20 wow skewIn">
+                    {item.heading}<br />
+                    <span style={{ fontSize: '35px' }} dangerouslySetInnerHTML={{ __html: item.description.match(/<h2[^>]*>(.*?)<\/h2>/)?.[1] || '' }} />
+                  </h2>
+                  <div dangerouslySetInnerHTML={{ __html: item.description.replace(/<h2[^>]*>.*?<\/h2>/, '') }} />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
         {/* <!-- team start --> */}
         <section class="team pt-120 pb-130 bg_img" style={{  backgroundImage: `url(${background1})`, }}>
@@ -170,152 +189,51 @@ export default function About() {
                     <h2 class="mb-40 wow skewIn">Our trusted immigration <br /> <span  style={{fontSize:'35px'}}> support team</span></h2>
                     <p style={{textAlign:'center',justifyContent:'center',display:'flex'}}>At the heart of our commitment to providing exceptional <br /> immigration solutions stands</p>
                 </div>
-                <div class="row mt-none-30">
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner" data-parallax='{"scale" : 1}'>
-                                <div class="xb-item--img">
-                                    <img src="/assets/pic/team.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Janvi Patel</a></h3>
-                                    <span class="xb-item--designation">Legal Advisor</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile4.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Vivek Sharma</a></h3>
-                                    <span class="xb-item--designation">Education Counsellor</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile5 (3).jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Kunal Mehta</a></h3>
-                                    <span class="xb-item--designation">Visa Specialist</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile1 (2).jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Krishna Varma</a></h3>
-                                    <span class="xb-item--designation">Visa Coordinator</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile6.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Jay Patel</a></h3>
-                                    <span class="xb-item--designation">General Manager</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile7 (1).jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Drashti Vora</a></h3>
-                                    <span class="xb-item--designation">Case Manager</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                    <img src="/assets/pic/profile8.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html"></a>ketan kakdiya</h3>
-                                    <span class="xb-item--designation">Visa Coordinator</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                    <img src="/assets/pic/profile9.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Shivani Dabhi</a></h3>
-                                    <span class="xb-item--designation">Case Manager</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+<div className="row mt-none-30">
+
+  {TeamData.map((member) => (
+    <div key={member.id} className="col-xl-3 col-lg-4 col-md-6 mt-30">
+      <div className="xb-team text-center">
+        <div className="xb-item--inner">
+          <div className="xb-item--img">
+            {/* Show a fallback image if needed */}
+            <img
+              src={`https://drive.google.com/thumbnail?id=${member.image_id}`}
+              alt={member.name}
+            />
+          </div>
+          <div className="xb-item--holder">
+            <h3 className="xb-item--name">
+              <a href="#!">{member.name}</a>
+            </h3>
+            <span className="xb-item--designation">
+              {member.designation}
+            </span>
+          </div>
+          <ul className="xb-item--social list-unstyled">
+            <li>
+              <a href={member.tweeter || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href={member.linkedin || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a href={member.facebook || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>                
             </div>
         </section>
         {/* <!-- team end --> */}

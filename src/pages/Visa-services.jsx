@@ -4,7 +4,18 @@ import Footer from "./Footer";
 import FooterTop from "../component/FooterTop";
 
 export default function Visaservices() {
-  // data-background img start
+
+  const [visaServices, setVisaServices] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_visa_services/')
+      .then((res) => res.json())
+      .then((data) => {
+        setVisaServices(data);
+      })
+      .catch((err) => console.error("Failed to fetch visa services:", err));
+  }, []);
+
   const [background, setBackground] = useState("");
 
   useEffect(() => {
@@ -196,101 +207,41 @@ export default function Visaservices() {
         
               {/* <!-- visa type start --> */}
               <section className="visa-type pt-120 pb-135">
-            <div className="container">
+            {/* <div className="container"> */}
                 <div className="sec-title text-center mb-60">
                     <h2 className="wow skewIn">Visa Services </h2> <br />
                   <p style={{justifyContent:'center',display:'flex',marginTop:'15px'}}>"Comprehensive visa services to simplify your journey abroad, from application to approval."</p>
                 </div>
-                <div className="row justify-content-md-center mt-none-30">
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon mb-50">
-                                    <img src="assets/img/icon/sv_01.svg" alt="" />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/Immigration-pr-visa"> 
-                                    Immigration - PR Visa</a>
-                                    </h3>
-                                    <div className="xb-item--description">
-                                    A PR Visa allows you to live, work, and settle permanently in a foreign country. 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon color2 mb-50">
-                                    <img src="assets/img/icon/sv_02.svg" alt=" "  />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/Student-visa">
-                                        
-Student Visa</a></h3>
-                                    <div className="xb-item--description">
-                                    A Student Visa lets you study abroad and build a bright future with global education opportunities.
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon color6 mb-50">
-                                    <img src="assets/img/icon/sv_02.svg" alt="" />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/Visitor-visa"> 
-                                    Visitor Visa</a></h3>
-                                    <div className="xb-item--description">
-                                    A Visitor Visa allows you to travel abroad for tourism, family visits, and hassle-free.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon color3 mb-50">
-                                    <img src="assets/img/icon/sv_03.svg" alt="" />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/Investor-visa"> 
-                                    Investor Visa</a>
-                                    </h3>
-                                    <div className="xb-item--description">
-                                    Investor Visa lets you live and invest abroad for a secure future.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon color4 mb-50">
-                                    <img src="assets/img/icon/sv_04.svg" alt="" />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/Work-permit-visa">
-                                        
-Work Permit Visa</a></h3>
-                                    <div className="xb-item--description">
-                                    A Work Permit Visa allows you to work abroad with ease and accuracy.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
+<div className="row justify-content-md-center mt-none-30">
+  {visaServices.map((item) => (
+    <div key={item.id} className="col-lg-4 col-md-6 mt-30">
+      <a href={`/visa-services-detail?id=${item.id}`}>
+        <div className="xb-service">
+          <div className="xb-item--inner">
+            <div className="xb-item--icon mb-50">
+              <img
+                src={`https://drive.google.com/thumbnail?id=${item.image_id}`}
+                alt={item.visa_type}
+                className="img-fluid"
+              />
             </div>
+            <div className="xb-item--holder">
+              <h3 className="xb-item--title mb-20">
+                {item.visa_type}
+              </h3>
+              <div className="xb-item--description">
+                {item.description
+                  ? item.description.replace(/<[^>]+>/g, '').slice(0, 50) + '...'
+                  : ''}
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  ))}
+</div>
+
         </section>
         {/* <!-- visa type end --> */}
       </section>

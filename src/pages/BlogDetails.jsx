@@ -1,8 +1,37 @@
 import React, { useEffect, useState } from "react";
 import Navbar from './Navbar'
 import Footer from './Footer'
+import { useLocation } from "react-router-dom";
+import moment from "moment"; // npm install moment
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 
 export default function BlogDetails() {
+
+  const query = useQuery();
+  const id = query.get("id"); 
+
+  const [course, setCourse] = useState(null);
+
+  useEffect(() => {
+    if (id) {
+      fetch(`http://localhost:8000/get_blog_detail/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setCourse(data);
+        })
+        .catch((err) => {
+          console.error("Error fetching course:", err);
+        });
+    }
+  }, [id]);
+
+ const getDriveImageUrl = (id) =>
+    `https://drive.google.com/thumbnail?id=${id}`;
+
        // data-background img start
           const [background, setBackground] = useState("");
         
@@ -90,48 +119,172 @@ export default function BlogDetails() {
       {/* <!-- breadcrumb end --> */}
 
       {/* <!-- blog start --> */}
+
+
         <section className="blog pt-120 pb-120">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8">
                         <div className="blog-post-wrapper">
-                            <article className="post-details">
-                                <div className="post-thumb">
-                                    <img src="/assets/pic/bd1.webp" alt="" />
-                                </div>
-                                <ul className="post-meta ul_li">
-                                    <li><span><i className="far fa-user"></i><span className="author vcard">Admin</span></span></li>
-                                    <li><a href="#!"><i className="far fa-comments"></i> Comments (3)</a></li>
-                                    <li><span className="posted-on"><i className="far fa-calendar-check"></i> <a href="#!">August 4, 2023</a></span></li>
-                                </ul>
-                                <h2>Elevating your visa application navigating complexity with confidence</h2>
-                                <p>This phrase suggests that the act of seeking professional help, such as from a visa consultant or agency, can take your visa application to a higher level. It implies that the assistance provided will enhance the overall quality of your application. The term  acknowledges that the visa application process can be intricate</p>
-                                <p>This phrase underscores the idea that seeking professional help instills a sense of assurance in the applicant. It implies that having experts guide you through the process can boost your confidence in the success of your application.</p>
-                                <blockquote>
-                                    <p>"Creativity is allowing yourself to make mistakes. You only have to do a few things right in your life so long as you don’t do too many things."</p>
-                                    <span>Cameron Williamson</span>
-                                    <div className="quote"><img src="assets/img/icon/quote.png" alt="" /></div>
-                                </blockquote>
-                                <p>The phrase "with confidence" signifies that seeking expert guidance can provide you with a sense of assurance and self-assuredness throughout the application journey. It highlights that you're not alone in facing the challenges of the application process.It positions expert guidance as a powerful tool that can significantly impact.</p>
-                                <p>Visa consultants provide continuous support, helping you navigate any additional requests from immigration authorities and addressing any concerns that may arise during the processing period.</p>
-                                <div className="row align-items-center mt-none-20 mb-30">
-                                    <div className="col-lg-6 col-md-6 mt-30">
-                                        <img src="/assets/pic/bd2.png" alt="" />
-                                    </div>
-                                    <div className="col-lg-6 col-md-6 mt-30">
-                                        <ul className="post-info-list list-unstyled">
-                                            <li><img src="assets/img/icon/arrow_right2.svg" alt="" />Elevating Your Visa Application</li>
-                                            <li><img src="assets/img/icon/arrow_right2.svg" alt="" />Navigating Complexity</li>
-                                            <li><img src="assets/img/icon/arrow_right2.svg" alt="" />With Confidence</li>
-                                            <li><img src="assets/img/icon/arrow_right2.svg" alt="" />The Power of  Assistance</li>
-                                            <li><img src="assets/img/icon/arrow_right2.svg" alt="" />A Multifaceted Approach</li>
-                                            <li><img src="assets/img/icon/arrow_right2.svg" alt="" />Achieving Success</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h3>The Visa Consulting Process Unveiled Initial Consultation</h3>
-                                <p>Visa consulting is an invaluable resource for anyone navigating the complexities of international travel, work, or family reunification. By enlisting the expertise of a visa consultant, you can save time, reduce stress, and increase your chances of a successful visa application. Make sure to do your due diligence when choosing a consultant, and you'll be well on your way to realizing your global aspirations.</p>
-                            </article>
+
+              <article className="post-details">
+                <div className="post-thumb">
+                  {/* image_id first */}
+                  {course?.image_id && (
+                    <img width={"100%"}
+                      src={getDriveImageUrl(course.image_id)}
+                      alt="blog"
+                      className="img-fluid"
+                    />
+                  )}
+                </div>
+
+                <ul className="post-meta ul_li">
+                  <li>
+                    <span>
+                      <i className="far fa-user"></i>
+                      <span className="author vcard">Admin</span>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="#!">
+                      <i className="far fa-comments"></i> Comments (3)
+                    </a>
+                  </li>
+                  <li>
+                    <span className="posted-on">
+                      <i className="far fa-calendar-check"></i>{" "}
+                      <a href="#!">
+                        {/* created_at in format August 4, 2023 */}
+                        {course?.created_at &&
+                          moment(course.created_at).format("MMMM D, YYYY")}
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+
+                {/* heading 1 */}
+                {course?.heading && <h2>{course.heading}</h2>}
+
+                {/* title 1 */}
+                {course?.title && <h3>{course.title}</h3>}
+
+                {/* description 1 */}
+                {course?.description && (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: course.description }}
+                  />
+                )}
+
+                {/* do not change start */}
+                <blockquote>
+                  <p>
+                    "Creativity is allowing yourself to make mistakes. You only
+                    have to do a few things right in your life so long as you
+                    don’t do too many things."
+                  </p>
+                  <span>Cameron Williamson</span>
+                  <div className="quote">
+                    <img src="assets/img/icon/quote.png" alt="" />
+                  </div>
+                </blockquote>
+                {/* do not change end */}
+
+                {/* image_id_2 if any */}
+                {course?.image_id_2 && (
+                  <img width={"100%"}
+                    src={getDriveImageUrl(course.image_id_2)}
+                    alt="blog section"
+                    className="img-fluid my-4"
+                  />
+                )}
+
+                {/* title2 if any */}
+                {course?.title2 && <h3>{course.title2}</h3>}
+
+                {/* description2 if any */}
+                {course?.description2 && (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: course.description2 }}
+                  />
+                )}
+
+                {/* do not change start */}
+                <div className="row align-items-center mt-none-20 mb-30">
+                  <div className="col-lg-6 col-md-6 mt-30">
+                    <img src="/assets/pic/bd2.png" alt="" />
+                  </div>
+                  <div className="col-lg-6 col-md-6 mt-30">
+                    <ul className="post-info-list list-unstyled">
+                      <li>
+                        <img
+                          src="assets/img/icon/arrow_right2.svg"
+                          alt=""
+                        />
+                        Elevating Your Visa Application
+                      </li>
+                      <li>
+                        <img
+                          src="assets/img/icon/arrow_right2.svg"
+                          alt=""
+                        />
+                        Navigating Complexity
+                      </li>
+                      <li>
+                        <img 
+                          src="assets/img/icon/arrow_right2.svg"
+                          alt=""
+                        />
+                        With Confidence
+                      </li>
+                      <li>
+                        <img
+                          src="assets/img/icon/arrow_right2.svg"
+                          alt=""
+                        />
+                        The Power of Assistance
+                      </li>
+                      <li>
+                        <img
+                          src="assets/img/icon/arrow_right2.svg"
+                          alt=""
+                        />
+                        A Multifaceted Approach
+                      </li>
+                      <li>
+                        <img
+                          src="assets/img/icon/arrow_right2.svg"
+                          alt=""
+                        />
+                        Achieving Success
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                {/* do not change end */}
+
+                {/* image_id_3 if any */}
+                {course?.image_id_3 && (
+                  <img width={"100%"}
+                    src={getDriveImageUrl(course.image_id_3)}
+                    alt="blog section"
+                    className="img-fluid my-4"
+                  />
+                )}
+
+                {/* title3 if any */}
+                {course?.title3 && <h3>{course.title3}</h3>}
+
+                {/* description3 if any */}
+                {course?.description3 && (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: course.description3 }}
+                  />
+                )}
+              </article>
+
+
+
                             <div className="post-footer mt-10 mb-40 ul_li_between">
                                 <div className="post-tags ul_li mt-20">
                                     <h5 className="tag-title">Tags:</h5>
@@ -343,6 +496,9 @@ export default function BlogDetails() {
                 </div>
             </div>
         </section>
+
+
+
         {/* <!-- blog end --> */}
           {/* working time  */}
   <div style={{background:'#edf3f5',padding:'30px 0px'}}>

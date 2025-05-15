@@ -6,6 +6,28 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
+  
+  const [visaServices, setVisaServices] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_visa_services/')
+      .then((res) => res.json())
+      .then((data) => {
+        setVisaServices(data);
+      })
+      .catch((err) => console.error("Failed to fetch visa services:", err));
+  }, []);
+  const [Courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_course_data/')
+      .then((res) => res.json())
+      .then((data) => {
+        setCourses(data);
+      })
+      .catch((err) => console.error("Failed to fetch Courses:", err));
+  }, []);
+
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -224,11 +246,177 @@ export default function Navbar() {
                         <span>Visa Services</span>
                       </a>
                       <ul className="submenu">
-                        <li>
-                          <a href="/Immigration-pr-visa">
-                            <span> Immigration - PR Visa</span>
+            {visaServices.map((item) => (
+              <li key={item.id}>
+                          <a href= {`/visa-services-detail?id=${item.id}`}>
+                            <span>{item.visa_type}</span>
                           </a>
                         </li>
+                            ))}
+                      </ul>
+                    </li>
+
+                    <li className="menu-item-has-children">
+                      <a href="/Courses">
+                        <span>Courses</span>
+                      </a>
+                      <ul className="submenu">
+                      {Courses.map((item) => (
+                        <li key={item.id}>
+                          <a href= {`/Course-details?id=${item.id}`}>
+                            <span>{item.course_name}</span>
+                          </a>
+                        </li>
+                            ))}
+                      </ul>
+                    </li>
+                    <li className="menu-item-has-children">
+                      <a >
+                        <span>Media</span>
+                      </a>
+                      <ul className="submenu">
+                        <li className="menu-item">
+                          <a href="/Gallery">
+                            <span>Gallery</span>
+                          </a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="/Videos">
+                            <span>Videos</span>
+                          </a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="/SuccessStory">
+                            <span>Success Stories</span>
+                          </a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="/Activities">
+                            <span>Activities</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/Blog">
+                        <span>Blog</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Contact">
+                        <span>Contact</span>
+                      </a>
+                    </li>
+                    <li className="menu-item-has-children">
+                      <a>
+                        <span>Inquiry</span>
+                      </a>
+                      <ul className="submenu">
+                            <li className="menu-item">
+                              <a href="/Student-visa-inquiry">
+                                <span>Student Visa</span>
+                              </a>
+                            </li>
+                            <li className="menu-item">
+                              <a href="/Pr-visa-inquiry">
+                                <span>PR Visa</span>
+                              </a>
+                            </li>
+                            <li className="menu-item">
+                              <a href="/visitor">
+                                <span>Visitor Visa </span>
+                              </a>
+                            </li>
+                            <li className="menu-item">
+                              <a href="/investor">
+                                <span>Investor Visa </span>
+                              </a>
+                            </li>
+                            <li className="menu-item">
+                              <a href="/investor">
+                                <span>WP Visa </span>
+                              </a>
+                            </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div className="xb-hamburger-menu">
+                <div className="xb-nav-mobile">
+                  <div className="xb-nav-mobile-button">
+                    <i className="fal fa-bars"></i>
+                  </div>
+                </div>
+              </div>
+
+              <ul className="header__action ul_li">
+   
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="xb-header-wrap">
+          <div className="xb-header-menu">
+            <div className="xb-header-menu-scroll">
+              <div className="xb-menu-close xb-hide-xl xb-close"></div>
+              <div className="xb-logo-mobile xb-hide-xl">
+                <a href="/" rel="home">
+                  <img src="/assets/pic/newgof.png" alt=""  style={{width:'100px',height:'100%'}}/>
+                </a>
+              </div>
+
+          
+             
+                <nav className="main-menu collapse navbar-collapse">
+                  <ul>
+                    <li>
+                      <a href="/">
+                        <span>Home</span>
+                      </a>
+                    </li>
+
+                    <li className="menu-item-has-children">
+                      <a>
+                        <span>About us</span>
+                      </a>
+                      <ul className="submenu">
+                      <li>
+                          <a href="/About">
+                            <span>About Goforen</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/About-us-race">
+                            <span>About Race Group</span>
+                          </a>
+                        </li>
+                       
+                        <li>
+                          <a href="/About-founder">
+                            <span>About Founder</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+
+
+                    <li className="menu-item-has-children">
+                      <a href="/Visa-services">
+                        <span>Visa Services</span>
+                      </a>
+                      <ul className="submenu">
+
+            {visaServices.map((item) => (
+
+              <li key={item.id}>
+                          <a href= {`/visa-services-detail?id=${item.id}`}>
+                            <span>{item.visa_type}</span>
+                          </a>
+                        </li>
+                            ))}
                         <li>
                           <a href="/Immigration-pr-visa">
                             <span>Student Visa</span>
@@ -326,29 +514,6 @@ export default function Navbar() {
                         <span>Inquiry</span>
                       </a>
                       <ul className="submenu">
-                        {/* <li className="menu-item">
-                          <a href="/Contact">
-                            <span>Quick Inquiry</span>
-                          </a>
-                        </li> */}
-                        {/* <li className="menu-item">
-                          <a href="/Upload-cv">
-                            <span>Upload Your CV</span>
-                          </a>
-                        </li> */}
-                        {/* <li className="menu-item menu-item-has-children"> */}
-                          {/* <a href="/Contact">
-                            <span>Inquiry / Request For Assessment </span>
-                          </a> */}
-                          {/* <ul className="submenu"> */}
-                            {/* <li className="menu-item" style={{background:'rgb(0, 204, 153)',padding:'10px'}}>
-                           
-                                <span style={{color:'#fff'}}>
-                                  If you want your profile to be assessed in
-                                  detail please fill up the required form
-                                </span>
-                             
-                            </li> */}
                             <li className="menu-item">
                               <a href="/Student-visa-inquiry">
                                 <span>Student Visa</span>
@@ -385,236 +550,7 @@ export default function Navbar() {
                     </li>
                   </ul>
                 </nav>
-              </div>
 
-              <div className="xb-hamburger-menu">
-                <div className="xb-nav-mobile">
-                  <div className="xb-nav-mobile-button">
-                    <i className="fal fa-bars"></i>
-                  </div>
-                </div>
-              </div>
-
-              <ul className="header__action ul_li">
-                {/* <li>
-                  <button
-                    type="button"
-                    style={{ background: "none" }}
-                    className="header__search header-search-btn"
-                    onClick={() => setSearchOpen(true)}
-                  >
-                    <img src="assets/img/icon/search.svg" alt="" />
-                    Search
-                  </button>
-                </li> */}
-                {/* <li>
-                  <div className="header__language">
-                    <ul>
-                      <li>
-                        <a href="#!" className="lang-btn">
-                          <div className="flag"><img src="assets/img/icon/us_flag.png" alt="" /></div>
-                          English
-                          <div className="arrow_down"><img src="assets/img/icon/arrow_down.svg" alt="" /></div>
-                        </a>
-                        <ul className="lang_sub_list">
-                          <li><a href="#">English</a></li>
-                          <li><a href="#">Arabic</a></li>
-                          <li><a href="#">Bangla</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </li> */}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="xb-header-wrap">
-          <div className="xb-header-menu">
-            <div className="xb-header-menu-scroll">
-              <div className="xb-menu-close xb-hide-xl xb-close"></div>
-              <div className="xb-logo-mobile xb-hide-xl">
-                <a href="/" rel="home">
-                  <img src="/assets/pic/newgof.png" alt=""  style={{width:'100px',height:'100%'}}/>
-                </a>
-              </div>
-
-              {/* <div className="xb-header-mobile-search xb-hide-xl">
-              <form role="search" onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search..."
-          name="s"
-          className="search-field"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
-        <button type="submit" className="search-submit"></button>
-      </form>
-              </div> */}
-
-              <nav className="xb-header-nav">
-                <ul className="xb-menu-primary clearfix">
-                  <li className="menu-item">
-                    <a href="/">
-                      <span>Home</span>
-                    </a>
-                  </li>
-
-                  <li className="menu-item menu-item-has-children">
-                    <a href="/About">
-                      <span>About us</span>
-                    </a>
-                    <ul className="sub-menu">
-                      <li className="menu-item">
-                        <a href="/About-us-race">
-                          <span>About Race Group</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/About">
-                          <span>About Goforen</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/About-founder">
-                          <span>About Founder</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="menu-item menu-item-has-children">
-                    <a href="/Visa-services">
-                      <span>Visa Services</span>
-                    </a>
-                    <ul className="sub-menu">
-                      <li className="menu-item">
-                        <a href="/Immigration-pr-visa">
-                          <span>Immigration - PR Visa</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/Student-visa">
-                          <span>Student Visa</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/Visitor-visa">
-                          <span>Visitor Visa</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/Investor-visa">
-                          <span>Investor Visa</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/Work-permit-visa">
-                          <span>Work Permit Visa</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li className="menu-item menu-item-has-children">
-                    <a href="/Courses">
-                      <span>Courses</span>
-                    </a>
-                    <ul className="sub-menu">
-                      <li className="menu-item">
-                        <a href="/IELTS">
-                          <span>IELTS</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/TOEFLIBT">
-                          <span>TOEFL IBT</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/GRE">
-                          <span>GRE</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/PTE">
-                          <span>PTE</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/SAT">
-                          <span>SAT</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="menu-item menu-item-has-children">
-                    <a href="#">
-                      <span>Media</span>
-                    </a>
-                    <ul className="sub-menu">
-                      <li className="menu-item">
-                        <a href="/Gallery">
-                          <span>Gallery</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/Videos">
-                          <span>Videos</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/SuccessStory">
-                          <span>Success Stories</span>
-                        </a>
-                      </li>
-                      <li className="menu-item">
-                        <a href="/Activities">
-                          <span>Activities</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="menu-item">
-                    <a href="/Blog">
-                      <span>Blog</span>
-                    </a>
-                  </li>
-                  <li className="menu-item">
-                    <a href="/Contact">
-                      <span>Contact</span>
-                    </a>
-                  </li>
-                  <li className="menu-item menu-item-has-children">
-                    <a href="">
-                      <span>Inquiry</span>
-                    </a>
-                    <ul className="sub-menu">
-                    
-                   
-                    
-                          <li className="menu-item">
-                            <a href="/Student-visa-inquiry">Student Visa</a>
-                          </li>
-                          <li className="menu-item">
-                            <a href="/Pr-visa-inquiry">PR Visa</a>
-                          </li>
-                          <li className="menu-item">
-                            <a href="/visitor">Visitor Visa </a>
-                          </li>
-                          <li className="menu-item">
-                            <a href="/investor">Investor Visa </a>
-                          </li>
-                          <li className="menu-item">
-                            <a href="">WP Visa </a>
-                          </li>
-                     
-                      
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
           <div className="xb-header-menu-backdrop"></div>

@@ -3,73 +3,62 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 
 const SuccessStory = () => {
-     // data-background img start
-            const [background12, setBackground12] = useState("");
-          
-            useEffect(() => {
-              const backgroundUrl12 = "assets/img/bg/blog_bg.png";
-              setBackground12(backgroundUrl12);
-            }, []);
-            // data-background img end
-            const [background, setBackground] = useState("");
-            
-              useEffect(() => {
-                const backgroundUrl = "/assets/pic/breadcrumb-bg.jpg";
-                setBackground(backgroundUrl);
-              }, []);
-              const [background1, setBackground1] = useState("");
-            
-              useEffect(() => {
-                const backgroundUrl1 = "https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg";
-                setBackground1(backgroundUrl1);
-              }, []);
+  const [stories, setStories] = useState([]);
+
+  // Background image states
+  const [background12, setBackground12] = useState("");
+  const [background, setBackground] = useState("");
+  const [background1, setBackground1] = useState("");
+
+  useEffect(() => {
+    setBackground12("assets/img/bg/blog_bg.png");
+    setBackground("/assets/pic/breadcrumb-bg.jpg");
+    setBackground1("https://html.xpressbuddy.com/e.visa/assets/img/bg/b_bg.jpg");
+  }, []);
+
+  // Fetch stories on load
+  useEffect(() => {
+    fetch("http://localhost:8000/get_success_stories/")
+      .then(res => res.json())
+      .then(data => setStories(data))
+      .catch(err => console.error("Error fetching success stories:", err));
+  }, []);
+
   return (
     <>
       <Navbar />
-          {/* <!-- breadcrumb start --> */}
-          <section
-  className="breadcrumb pos-rel bg_img"
-  style={{ 
-    backgroundImage: `url(${background})`, 
-    minHeight: '400px',
-    position: 'relative',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  }}
->
-  {/* Overlay */}
-  <div style={{
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
-    zIndex: 1
-  }}></div>
-
-  <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-    <div className="breadcrumb__content">
-    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Success Stories</h2>
+      {/* Breadcrumb */}
+      <section
+        className="breadcrumb pos-rel bg_img"
+        style={{
+          backgroundImage: `url(${background})`,
+          minHeight: '400px',
+          position: 'relative',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 1
+        }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="breadcrumb__content">
+            <h2 className="breadcrumb__title" style={{ color: '#fff' }}>Success Stories</h2>
             <ul className="breadcrumb__list clearfix">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
+              <li className="breadcrumb-item"><a href="/">Home</a></li>
               <li className="breadcrumb-item">Success Stories</li>
             </ul>
-    </div>
-  </div>
-      
-        
+          </div>
+        </div>
         <div className="breadcrumb__circle">
-          <span
-            className="big"
-            data-parallax='{"y" : 100, "scale" : 0.1}'
-          ></span>
-          <span
-            className="small"
-            data-parallax='{"y" : 100, "scale" : 0.1}'
-          ></span>
+          <span className="big" data-parallax='{"y" : 100, "scale" : 0.1}'></span>
+          <span className="small" data-parallax='{"y" : 100, "scale" : 0.1}'></span>
         </div>
         <div className="breadcrumb__shape">
           <div className="shape shape--1">
@@ -84,242 +73,96 @@ const SuccessStory = () => {
           </div>
         </div>
       </section>
-      {/* <!-- breadcrumb end --> */}
 
-
-
-
-      {/* <!-- testimonial start --> */}
-        <section class="testimonial pt-180 pb-130">
-            <div class="container">
-                <div class="xb-testimonial__masonry">
-                    <div class="row grid mt-none-100">
-                    <div class="col-lg-6 grid-item mt-100">
-    <div class="xb-testimonial3"  style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
- 
-        <div class="xb-item--inner">
-            <div class="xb-item--author-info ul_li">
-                <div class="xb-item--avatar">
-                    <img src="/assets/pic/s1.jpg" alt="" />
-                </div>
-                <div class="xb-item--author">
-                    <h3 class="xb-item--name">RISHI MODI</h3>
-                    <span class="xb-item--desig">STV CANADA</span>
-                </div>
-            </div>
-            <div class="xb-item--content">
-                <p>I would like to thank Go Foren for your assistance during the student visa process for Canada.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-                        <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-2" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
-                                <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li ">
-                                        <div className="xb-item--avatar">
-                                            <img src="/assets/pic/story.jpeg" alt="" />
-                                        </div>
-                                        <div className="xb-item--author">
-                                            <h3 className="xb-item--name">
-                                            KAIS  PATEL </h3>
-                                          
-                                            <span class="xb-item--desig">STV CANADA</span>
-                                        
-                                        </div>
-                                    </div>
-                                    <div className="xb-item--content">
-                                    
-                                        <p>For a long time I had a dream of studying abroad and finally it came true with the help of GOFOREN. the staff of GOFOREN have guided me through every stage of process.</p>
-                                    </div>
-                                </div>
-                            </div>
+      {/* Testimonial Section */}
+      <section className="testimonial pt-180 pb-130">
+        <div className="container">
+          <div className="xb-testimonial__masonry">
+            <div className="row grid mt-none-100">
+              {stories.map((story) => (
+                <div className="col-lg-6 grid-item mt-100" key={story.id}>
+                  <div className="xb-testimonial3" style={{ boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)', borderRadius: '12px' }}>
+                    <div className="xb-item--inner">
+                      <div className="xb-item--author-info ul_li">
+                        <div className="xb-item--avatar">
+                          <img
+                            src={`https://drive.google.com/thumbnail?id=${story.image_id}`}
+                            alt={story.heading}
+                          />
                         </div>
-                        <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-3" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
-                                <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li ">
-                                        <div className="xb-item--avatar">
-                                        <img src="/assets/pic/story.jpeg" alt="" />
-                                        </div>
-                                        <div className="xb-item--author">
-                                            <h3 className="xb-item--name">meet patel  </h3>
-                                            <span class="xb-item--desig">STV CANADA</span>
-                                        </div>
-                                    </div>
-                                    <div className="xb-item--content">
-                                        <p>GOFOREN has been my pillar of support through all the steps required to achieve my dreams of studying abroad. I especially thank Rajesh Sir and Vijay Sir for guiding me throughout my process from selection of courses, application of student visa.</p>
-                      
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="xb-item--author">
+                          <h3 className="xb-item--name">{story.heading}</h3>
+                          <span className="xb-item--desig">{story.post}</span>
                         </div>
-                        <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-4" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
-                                <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li ">
-                                        <div className="xb-item--avatar">
-                                        <img src="/assets/pic/s1.jpg" alt="" />
-                                        </div>
-                                        <div className="xb-item--author">
-                                            <h3 className="xb-item--name">Tushar Javeri  </h3>
-                                            <span class="xb-item--desig">TRV Europe</span>
-                                        </div>
-                                    </div>
-                                    <div className="xb-item--content">
-                                        <p>I had a great experience at Go Foren. I thank the team for helping me in the passport as well as in my visa process.</p>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-5" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
-                                <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li ">
-                                        <div className="xb-item--avatar">
-                                        <img src="/assets/pic/s1.jpg" alt="" />
-                                        </div>
-                                        <div className="xb-item--author">
-                                            <h3 className="xb-item--name">
-                                            Laksh tank  </h3>
-                                            <span class="xb-item--desig">  New Zealand</span>
-                                        </div>
-                                    </div>
-                                    <div className="xb-item--content">
-                                        <p>I really thankful to you guys for guiding me properly on visa and its process. Thanks for your support and help to get it done.</p>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-6" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
-                                <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li ">
-                                        <div className="xb-item--avatar">
-                                        <img src="/assets/pic/story.jpeg" alt="" />
-                                        </div>
-                                        <div className="xb-item--author">
-                                            <h3 className="xb-item--name">Ketan D. Parekh </h3>
-                                            <span class="xb-item--desig">STV UK </span>
-                                        </div>
-                                    </div>
-                                    <div className="xb-item--content">
-                                        <p>Go Foren has great coaching classes for IELTS, the faculties of which imparts detailed information necessary for getting a good score. It also has helped me get my visa.</p>
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3 style-7" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
-                                <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li ">
-                                        <div className="xb-item--avatar">
-                                        <img src="/assets/pic/story.jpeg" alt="" />
-                                        </div>
-                                        <div className="xb-item--author">
-                                            <h3 className="xb-item--name">
-                                            Patel P  </h3>
-                                            <span class="xb-item--desig"> H1B Visa USA</span>
-                                        </div>
-                                    </div>
-                                    <div className="xb-item--content">
-                                        <p>I want to thank the entire team of Go Foren for sharing vital details about visa and explaining them properly. The team has helped me with great support for getting the USA Green Card done.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 grid-item mt-100">
-                            <div className="xb-testimonial3" style={{boxShadow:'0 4px 15px rgba(0, 0, 0, 0.08)',borderRadius:'12px'}}>
-                                <div className="xb-item--inner">
-                                    <div className="xb-item--author-info ul_li ">
-                                        <div className="xb-item--avatar">
-                                        <img src="/assets/pic/s1.jpg" alt="" />
-                                        </div>
-                                        <div className="xb-item--author">
-                                            <h3 className="xb-item--name">Manav Bhavsar</h3>
-                                            <span class="xb-item--desig"> PRV - Canada</span>
-                                        </div>
-                                    </div>
-                                    <div className="xb-item--content">
-                                        <p>Very helpful and supportive staff. Had a great support from these guys during visa process.</p>
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      </div>
+                      <div className="xb-item--content">
+                        <div dangerouslySetInnerHTML={{ __html: story.description }} />
+                      </div>
                     </div>
+                  </div>
                 </div>
+              ))}
+              {stories.length === 0 && (
+                <div className="col-12 text-center mt-5">
+                  <p>Loading success stories...</p>
+                </div>
+              )}
             </div>
-        </section>
-        {/* <!-- testimonial end --> */}
-  
+          </div>
+        </div>
+      </section>
 
+      {/* Working time */}
+      <div style={{ background: '#edf3f5', padding: '30px 0px' }}>
+        <div className="container">
+          <div
+            className="xb-newsletter1 pos-rel"
+            style={{
+              backgroundImage: `url(${background12})`,
+              position: "relative",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              margin: "30px 0px",
+            }}
+          >
+            <div className="row">
+              <div className="col-12">
+                <div>
+                  <div className="sec-title mb-40 text-center">
+                    <h2 className="mb-20 wow skewIn">Our Working Time</h2>
+                    <p style={{ textAlign: "center" }}>
+                      We are available throughout the week to help you with your
+                      visa and training needs.
+                    </p>
+                  </div>
 
-
-
-
-
-
-
-
-
-{/* working time  */}
-<div style={{background:'#edf3f5',padding:'30px 0px'}}>
-  <div className="container">
-        <div
-          className="xb-newsletter1 pos-rel "
-          style={{
-            backgroundImage: `url(${background12})`,
-            // minHeight: '400px',
-            position: "relative",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            margin: "30px 0px",
-          }}
-        >
-          <div className="row">
-            <div className="col-12">
-              <div>
-                <div className="sec-title mb-40 text-center">
-                  <h2 className="mb-20 wow skewIn">Our Working Time</h2>
-                  <p style={{ textAlign: "center" }}>
-                    We are available throughout the week to help you with your
-                    visa and training needs.
-                  </p>
-                </div>
-
-                <div className="row justify-content-center text-center">
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
-                      boxShadow: " 0px 14px 19px rgb(221 229 236)",
-                      padding: "20px",
-                      margin: "5px",
-                    }}
-                  >
-                    <div>
+                  <div className="row justify-content-center text-center">
+                    <div
+                      className="col-lg-3 mt-30 col-md-6"
+                      style={{
+                        boxShadow: "0px 14px 19px rgb(221 229 236)",
+                        padding: "20px",
+                        margin: "5px",
+                      }}
+                    >
                       <h5 className="mb-2">Monday - Saturday :</h5>
                       <p style={{ textAlign: "center" }}>
                         10.00 a.m. to 6.30 p.m.
                       </p>
                     </div>
-                  </div>
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
-                      boxShadow: "0px 14px 19px rgb(221 229 236)",
-                      padding: "20px",
-                      margin: "5px",
-                    }}
-                  >
-                    <h5 className="mb-2">Sunday :</h5>
-                    <p style={{ textAlign: "center" }}>
-                      10.00 a.m. to 12.30 p.m.
-                    </p>
+                    <div
+                      className="col-lg-3 mt-30 col-md-6"
+                      style={{
+                        boxShadow: "0px 14px 19px rgb(221 229 236)",
+                        padding: "20px",
+                        margin: "5px",
+                      }}
+                    >
+                      <h5 className="mb-2">Sunday :</h5>
+                      <p style={{ textAlign: "center" }}>
+                        10.00 a.m. to 12.30 p.m.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -327,18 +170,10 @@ const SuccessStory = () => {
           </div>
         </div>
       </div>
-      </div>
-      {/* workingtime end  */}
-
-
-
-
-
-
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default SuccessStory
+export default SuccessStory;

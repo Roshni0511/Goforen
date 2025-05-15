@@ -1,548 +1,161 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import VanillaTilt from 'vanilla-tilt'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import axios from 'axios'
 
 const Gallery = () => {
-     const [background, setBackground] = useState(" " );
-            
-              useEffect(() => {
-                const backgroundUrl ="/assets/pic/breadcrumb-bg.jpg" ;
-                setBackground(backgroundUrl);
-              }, []);
-         
-                 const [background12, setBackground12] = useState("");
-               
-                 useEffect(() => {
-                   const backgroundUrl12 = "assets/img/bg/blog_bg.png";
-                   setBackground12(backgroundUrl12);
-                 }, []);
-       
-         
+  const [background, setBackground] = useState("")
+  const [background12, setBackground12] = useState("")
+  
+    useEffect(() => {
+      setBackground("/assets/pic/breadcrumb-bg.jpg")
+      setBackground12("assets/img/bg/blog_bg.png")
+    }, [])
+
+  const [galleryData, setGalleryData] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/get_gallery_data/')
+      .then((res) => {
+        setGalleryData(res.data)
+      })
+      .catch((err) => {
+        console.error('Failed to fetch gallery data:', err)
+      })
+  }, [])
+
+  // Categorize the images
+  const categorizedImages = {
+    coaching: [],
+    successfull: [],
+    advertisment: [],
+    offer: [],
+  }
+
+  galleryData.forEach(item => {
+    if (categorizedImages[item.category]) {
+      categorizedImages[item.category].push(item)
+    }
+  })
+
+  // Get viewable image URL from Google Drive file ID
+  const getImageSrc = (image_id) => `https://drive.google.com/thumbnail?id=${image_id}`
+
+  const renderImages = (category) => (
+    <div className="xb-countryes row">
+      {categorizedImages[category]?.map((item, index) => (
+        <div key={index} className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
+          <a href={getImageSrc(item.image_id)} data-fancybox={`gallery-${category}`} className="xb-item--inner">
+            <div className="image" style={{ backgroundImage: `url(${getImageSrc(item.image_id)})` }}>
+              <div className="overlay">
+                <em className="mdi mdi-magnify-plus"></em>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  )
+
   return (
     <>
       <div>
         <Navbar />
-                   {/* <!-- breadcrumb start --> */}
-                   <section
-  className="breadcrumb pos-rel bg_img"
-  style={{ 
-    backgroundImage: `url(${background})`, 
-    minHeight: '400px',
-    position: 'relative',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  }}
->
-  {/* Overlay */}
-  <div style={{
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
-    zIndex: 1
-  }}></div>
-
-  <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-    <div className="breadcrumb__content">
-    <h2 className=" breadcrumb__title" style={{color:'#fff'}}>Gallery</h2>
-            <ul className=" breadcrumb__list clearfix" >
-              <li className=" breadcrumb-item" >
-                <a href=" /" >Home</a>
-              </li>
-              <li className=" breadcrumb-item" >Gallery</li>
-            </ul>
-    </div>
-  </div>
-      
-     
-        <div className=" breadcrumb__circle" >
-          <span
-            className=" big" 
-            data-parallax='{" y"  : 100, " scale"  : 0.1}'
-          ></span>
-          <span
-            className=" small" 
-            data-parallax='{" y"  : 100, " scale"  : 0.1}'
-          ></span>
-        </div>
-        <div className=" breadcrumb__shape" >
-          <div className=" shape shape--1" >
-            <div className=" shape-inner"  data-parallax='{" x" :-50," y" :80}'>
-              <img src=" assets/img/shape/br_shape1.png"    />
-            </div>
-          </div>
-          <div className=" shape shape--2" >
-            <div className=" shape-inner"  data-parallax='{" x" :50," y" :-90}'>
-              <img src=" assets/img/shape/br_shape2.png"    />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- breadcrumb end --> */}
-
-
-      
-      {/* <!-- country start --> */}
-        <section className="country pt-120 pb-130">
-            <div className="container">
-              
-                        <div className="sec-title" style={{display:'flex',justifyContent:'center',marginBottom:'30px'}}>
-                            <h2 className="mb-20 wow skewIn">Our Gallery
-                            </h2>
-                        </div>
-                    
-             
-           
-                        <ul className="xb-country-nav nav nav-tabs d-flex justify-content-between mb-65 w-100" id="myTab" role="tablist">
-
-
-                    <li className="nav-item" role="presentation">
-                        <button className="nav-link active" id="xbc-tab1" data-bs-toggle="tab"
-                                data-bs-target="#xbc-tab-pane1" type="button" role="tab" aria-controls="xbc-tab-pane1"
-                                aria-selected="true">Coaching
-                        </button>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="xbc-tab2" data-bs-toggle="tab" data-bs-target="#xbc-tab-pane2"
-                                type="button" role="tab" aria-controls="xbc-tab-pane2" aria-selected="false">
-                            succesfull
-                        </button>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="xbc-tab3" data-bs-toggle="tab" data-bs-target="#xbc-tab-pane3"
-                                type="button" role="tab" aria-controls="xbc-tab-pane3" aria-selected="false">Advertisment
-                        </button>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="xbc-tab4" data-bs-toggle="tab" data-bs-target="#xbc-tab-pane4"
-                                type="button" role="tab" aria-controls="xbc-tab-pane4" aria-selected="false">
-                            Offer
-                        </button>
-                    </li>
-                  
-                </ul>
-                <div className="tab-content" id="myTabContent">
-                <div className="tab-pane animated fadeInUp show active" id="xbc-tab-pane1" role="tabpanel" aria-labelledby="xbc-tab1" tabIndex="0">
-  <div className="xb-countryes row">
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/g1.jpg" data-fancybox="gallery" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/g1.jpg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/g2.webp" data-fancybox="gallery" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/g2.webp')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/g3.webp" data-fancybox="gallery" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/g3.webp')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/g4.jpeg" data-fancybox="gallery" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/g4.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/g5.webp" data-fancybox="gallery" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/g5.webp')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/g6.jpeg" data-fancybox="gallery" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/g6.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/g7.jpg" data-fancybox="gallery" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/g7.jpg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/g8.jpeg" data-fancybox="gallery" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/g8.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-</div>
-
-<div className="tab-pane animated fadeInUp" id="xbc-tab-pane2" role="tabpanel" aria-labelledby="xbc-tab2" tabIndex="0">
-  <div className="xb-countryes row">
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/s1.jpeg" data-fancybox="gallery2" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/s1.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/s2.jpeg" data-fancybox="gallery2" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/s2.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/s3.jpeg" data-fancybox="gallery2" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/s3.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/s4.jpeg" data-fancybox="gallery2" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/s4.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-
-  </div>
-</div>
-
-<div className="tab-pane animated fadeInUp" id="xbc-tab-pane3" role="tabpanel" aria-labelledby="xbc-tab3" tabIndex="0">
-  <div className="xb-countryes row">
-  
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a1.webp" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a1.webp')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a2.webp" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a2.webp')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a3.webp" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a3.webp')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a4.jpeg" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a4.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a5.webp" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a5.webp')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a6.jpg" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a6.jpg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a7.jpeg" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a7.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a8.jpeg" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a8.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a9.jpeg" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a9.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a10.jpeg" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a10.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a11.jpeg" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a11.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/a12.jpeg" data-fancybox="gallery3" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/a12.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-</div>
-
-
-<div className="tab-pane animated fadeInUp" id="xbc-tab-pane4" role="tabpanel" aria-labelledby="xbc-tab4" tabIndex="0">
-  <div className="xb-countryes row">
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/q1.jpeg" data-fancybox="gallery4" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/q1.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/q3.jpeg" data-fancybox="gallery4" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/q3.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/q4.jpeg" data-fancybox="gallery4" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/q4.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/q5.jpeg" data-fancybox="gallery4" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/q5.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/q6.jpeg" data-fancybox="gallery4" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/q6.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/q7.jpeg" data-fancybox="gallery4" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/q7.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/q8.jpeg" data-fancybox="gallery4" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/q8.jpeg')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div className="xb-itemes--itemes col-lg-3 col-md-4 col-12">
-      <a href="/assets/pic/q9.png" data-fancybox="gallery4" className="xb-item--inner">
-        <div className="image" style={{ backgroundImage: "url('/assets/pic/q9.png')" }}>
-          <div className="overlay">
-            <em className="mdi mdi-magnify-plus"></em>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-</div>
-
-                    
-               
-                  
-                </div>
-            </div>
-        </section>
-        {/* <!-- country end --> */}
-          {/* working time  */}
-  <div style={{background:'#edf3f5',padding:'30px 0px'}}>
-  <div className="container">
-        <div
-          className="xb-newsletter1 pos-rel "
+        {/* Breadcrumb Section */}
+        <section className="breadcrumb pos-rel bg_img"
           style={{
-            backgroundImage: `url(${background12})`,
-            // minHeight: '400px',
-            position: "relative",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            margin: "30px 0px",
-          }}
-        >
-          <div className="row">
-            <div className="col-12">
-              <div>
-                <div className="sec-title mb-40 text-center">
-                  <h2 className="mb-20 wow skewIn">Our Working Time</h2>
-                  <p style={{ textAlign: "center" }}>
-                    We are available throughout the week to help you with your
-                    visa and training needs.
-                  </p>
-                </div>
+            backgroundImage: `url(${background})`,
+            minHeight: '400px',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            position: 'relative'
+          }}>
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            zIndex: 1
+          }}></div>
 
-                <div className="row justify-content-center text-center">
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
-                      boxShadow: " 0px 14px 19px rgb(221 229 236)",
-                      padding: "20px",
-                      margin: "5px",
-                    }}
-                  >
-                    <div>
-                      <h5 className="mb-2">Monday - Saturday :</h5>
-                      <p style={{ textAlign: "center" }}>
-                        10.00 a.m. to 6.30 p.m.
-                      </p>
-                    </div>
+          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+            <div className="breadcrumb__content">
+              <h2 className="breadcrumb__title" style={{ color: '#fff' }}>Gallery</h2>
+              <ul className="breadcrumb__list clearfix">
+                <li className="breadcrumb-item"><a href="/">Home</a></li>
+                <li className="breadcrumb-item">Gallery</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery Tabs Section */}
+        <section className="country pt-120 pb-130">
+          <div className="container">
+            <div className="sec-title text-center mb-30">
+              <h2 className="mb-20 wow skewIn">Our Gallery</h2>
+            </div>
+
+            <ul className="xb-country-nav nav nav-tabs justify-content-between mb-65 w-100" id="myTab" role="tablist">
+              <li className="nav-item"><button className="nav-link active" data-bs-toggle="tab" data-bs-target="#coaching">Coaching</button></li>
+              <li className="nav-item"><button className="nav-link" data-bs-toggle="tab" data-bs-target="#successfull">Successful</button></li>
+              <li className="nav-item"><button className="nav-link" data-bs-toggle="tab" data-bs-target="#advertisment">Advertisement</button></li>
+              <li className="nav-item"><button className="nav-link" data-bs-toggle="tab" data-bs-target="#offer">Offer</button></li>
+            </ul>
+
+            <div className="tab-content" id="myTabContent">
+              <div className="tab-pane fade show active" id="coaching" role="tabpanel">
+                {renderImages("coaching")}
+              </div>
+              <div className="tab-pane fade" id="successfull" role="tabpanel">
+                {renderImages("successfull")}
+              </div>
+              <div className="tab-pane fade" id="advertisment" role="tabpanel">
+                {renderImages("advertisment")}
+              </div>
+              <div className="tab-pane fade" id="offer" role="tabpanel">
+                {renderImages("offer")}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Working Time */}
+        <div style={{ background: '#edf3f5', padding: '30px 0px' }}>
+          <div className="container">
+            <div className="xb-newsletter1 pos-rel" style={{
+              backgroundImage: `url(${background12})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              margin: "30px 0px"
+            }}>
+              <div className="row">
+                <div className="col-12">
+                  <div className="sec-title mb-40 text-center">
+                    <h2 className="mb-20 wow skewIn">Our Working Time</h2>
+                    <p>We are available throughout the week to help you with your visa and training needs.</p>
                   </div>
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
-                      boxShadow: "0px 14px 19px rgb(221 229 236)",
-                      padding: "20px",
-                      margin: "5px",
-                    }}
-                  >
-                    <h5 className="mb-2">Sunday :</h5>
-                    <p style={{ textAlign: "center" }}>
-                      10.00 a.m. to 12.30 p.m.
-                    </p>
+
+                  <div className="row justify-content-center text-center">
+                    <div className="col-lg-3 mt-30 col-md-6" style={{ boxShadow: "0px 14px 19px rgb(221 229 236)", padding: "20px", margin: "5px" }}>
+                      <h5 className="mb-2">Monday - Saturday :</h5>
+                      <p>10.00 a.m. to 6.30 p.m.</p>
+                    </div>
+                    <div className="col-lg-3 mt-30 col-md-6" style={{ boxShadow: "0px 14px 19px rgb(221 229 236)", padding: "20px", margin: "5px" }}>
+                      <h5 className="mb-2">Sunday :</h5>
+                      <p>10.00 a.m. to 12.30 p.m.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      </div>
-      {/* workingtime end  */}
+
         <Footer />
       </div>
     </>

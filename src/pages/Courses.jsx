@@ -57,7 +57,7 @@ const Courses = () => {
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // black overlay with 50% opacity
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
     zIndex: 1
   }}></div>
 
@@ -127,11 +127,8 @@ const Courses = () => {
              
                <p>The language exams show your English proficiency skills. You need to give either one of the language exams to get admission to any university in an English speaking country. These are required for almost all courses; Undergraduate courses, Postgraduate courses, Certificates or Diplomas (unless mentioned).
 
-Different countries give preference to one language exam over others. TOEFL is the preferred exam for universities at US and Canada, while it is not accepted at many colleges in UK. On the other hand, IELTS is the preferred exam for getting admission to universities at UK, Australia and New Zealand. PTE is accepted at a few colleges in US and most colleges in UK. CAE and CPE are given preference by the British universities.</p>
+Differe ish universities.</p>
               </li>
-
-
-
 
               {/* <!-- visa type start --> */}
         <section className="visa-type pt-120 pb-135">
@@ -141,85 +138,29 @@ Different countries give preference to one language exam over others. TOEFL is t
                   <p style={{justifyContent:'center',display:'flex',marginTop:'15px'}}>"Explore a wide range of career-focused courses tailored to help you qualify for your desired visa destination."</p>
                 </div>
                 <div className="row justify-content-md-center mt-none-30">
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon mb-50">
-                                    <img src="assets/img/icon/sv_01.svg" alt="" />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/IELTS"> IELTS</a>
-                                    </h3>
-                                    <div className="xb-item--description">
-                                    Prepare for the globally recognized IELTS exam to enhance your chances of studying or migrating abroad.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon color2 mb-50">
-                                    <img src="assets/img/icon/sv_02.svg" alt=" "  />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/TOEFLIBT">
-                                        TOEFL IBT</a></h3>
-                                    <div className="xb-item--description">
-                                    Boost your English proficiency with TOEFL iBT, accepted by universities and immigration bodies worldwide.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon color6 mb-50">
-                                    <img src="assets/img/icon/sv_02.svg" alt="" />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/GRE"> GRE</a></h3>
-                                    <div className="xb-item--description">
-                                    Achieve your academic and career goals with the GRE – a powerful gateway essential for graduate admissions globally.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon color3 mb-50">
-                                    <img src="assets/img/icon/sv_03.svg" alt="" />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/PTE"> PTE</a>
-                                    </h3>
-                                    <div className="xb-item--description">
-                                    Get fast, reliable results with PTE Academic — ideal for study, work, or migration.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-6 mt-30">
-                        <div className="xb-service">
-                            <div className="xb-item--inner">
-                                <div className="xb-item--icon color4 mb-50">
-                                    <img src="assets/img/icon/sv_04.svg" alt="" />
-                                </div>
-                                <div className="xb-item--holder">
-                                    <h3 className="xb-item--title mb-20"><a href="/SAT">
-                                        SAT</a></h3>
-                                    <div className="xb-item--description">
-                                    Open doors to top  universities with strong SAT scores designed for undergraduate programs.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  {courses.map((course, index) => (
+    <React.Fragment key={course.id}>
+      <div className="col-lg-4 col-md-6 mt-30">
+        <div className="xb-service">
+          <div className="xb-item--inner">
+            <div className={`xb-item--icon color${(index % 5) + 1} mb-50`}>
+              <img src={`assets/img/icon/sv_0${(index % 5) + 1}.svg`} alt={course.course_name} />
+            </div>
+            <div className="xb-item--holder">
+              <h3 className="xb-item--title mb-20">
+                <a href={`/Course-details?id=${course.id}`}>{course.course_name}</a>
+              </h3>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: course.description.replace(/<[^>]+>/g, '').slice(0, 140) + '...',
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  ))}
                 
                 </div>
             </div>
