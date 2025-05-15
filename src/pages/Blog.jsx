@@ -8,12 +8,12 @@ export default function Blog() {
   const [background1, setBackground1] = useState("");
   const [background12, setBackground12] = useState("");
   const [blogData, setBlogData] = useState([]);
-
+  
   useEffect(() => {
     setBackground("/assets/pic/breadcrumb-bg.jpg");
     setBackground1("assets/img/bg/b_bg.jpg");
     setBackground12("assets/img/bg/blog_bg.png");
-
+    
     // Fetch blog data from API
     fetch("http://localhost:8000/get_blog_data/")
       .then((res) => res.json())
@@ -82,8 +82,8 @@ export default function Blog() {
             <div className="col-lg-8">
               <div className="blog-post-wrapper">
                 {blogData.map((blog) => (
-                  <article className="single-post-item" key={blog.id}>
-                    <div className="post-thumbnail-wrapper"  style={{width:"100%", height:"50%", overflow:"hidden"}}>
+                  <article className="single-post-item" key={blog.id} style={{border :"1px solid gray", borderRadius:'16px', padding:"1.5rem"}}> 
+                    <div className="post-thumbnail-wrapper"  style={{width:"100%", height:"20rem", overflow:"hidden"}}>
                       <a href={`/BlogDetails/${blog.id}`}>
                         <img style={{width:"100%"}}
                           src={`https://drive.google.com/thumbnail?id=${blog.image_id}`}
@@ -101,7 +101,13 @@ export default function Blog() {
                         <a href={`/BlogDetails/${blog.id}`}>{blog.heading}</a>
                       </h3>
                       <div className="post-excerpt">
-                        <p>{blog.title?.slice(0, 150)}...</p>
+<div
+  dangerouslySetInnerHTML={{
+    __html: blog.description
+      ? blog.description.slice(0, 150) + '...'
+      : ''
+  }}
+/>                        {/* <p>{__HTML: blog.description?.slice(0, 150)}...</p> */}
                       </div>
                       <div className="post-read-more">
                         <a className="thm-btn" href={`/BlogDetails?id=${blog.id}`}>Read More</a>
@@ -123,21 +129,21 @@ export default function Blog() {
                   </form>
                 </div>
 
-                {/* Related Posts */}
+                {/* Related Posts */} 
                 <div className="widget">
                   <h3 className="widget-title">Related Posts</h3>
                   <div className="widget__post">
                     {blogData.slice(0, 3).map((post) => (
                       <div className="widget__post-item ul_li" key={post.id}>
                         <div className="post-thumb">
-                          <a href={`/BlogDetails/${post.id}`}>
-                            <img src={`https://drive.google.com/uc?export=view&id=${post.image_id}`} alt="" />
+                          <a href={`/BlogDetails?id=${post.id}`}>
+                            <img src={`https://drive.google.com/thumbnail?id=${post.image_id}`} alt="" />
                           </a>
                         </div>
                         <div className="post-content">
                           <span className="post-date">{new Date(post.created_at).toLocaleDateString()}</span>
                           <h4 className="post-title border-effect-2">
-                            <a href={`/BlogDetails/${post.id}`}>{post.heading.slice(0, 40)}...</a>
+                            <a href={`/BlogDetails?id=${post.id}`}>{post.heading.slice(0, 40)}...</a>
                           </h4>
                         </div>
                       </div>

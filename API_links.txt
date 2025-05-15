@@ -11,6 +11,7 @@ GET type = [
     http://localhost:8000/get_news_data/
     http://localhost:8000/get_country_data/
     http://localhost:8000/get_occupation_data/
+    http://localhost:8000/get_faq_data/
 ]
 
 GET type (details) = [

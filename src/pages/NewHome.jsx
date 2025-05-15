@@ -27,6 +27,14 @@ function stripHtml(html) {
 }
 
 export default function NewHome() {
+  const [faqData, setFaqData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/get_faq_data/")
+      .then((response) => setFaqData(response.data))
+      .catch((error) => console.error("Error fetching FAQ data:", error));
+  }, []);
 
     const [galleryData, setGalleryData] = useState([])
   
@@ -2034,179 +2042,54 @@ export default function NewHome() {
       {/* <!-- team end --> */}
       <SuccessStories />
       {/* <!-- faq start --> */}
-      <section className="faq pt-120 pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-5">
-              <div className="xb-faq-content">
-                <div className="sec-title mb-125">
-                  <h2 className="mb-30 wow skewIn">
-                    Common questions <br /> <span>answered</span>
-                  </h2>
-                  <p>
-                    At the heart of our commitment to providing <br />{" "}
-                    exceptional immigration solutions stands our trusted
-                  </p>
-                </div>
-                <div className="faq-img">
-                  <img src="/assets/pic/faq_img.png" alt="" />
-                </div>
+    <section className="faq pt-120 pb-120">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-5">
+            <div className="xb-faq-content">
+              <div className="sec-title mb-125">
+                <h2 className="mb-30 wow skewIn">
+                  Common questions <br /> <span>answered</span>
+                </h2>
+                <p>
+                  At the heart of our commitment to providing <br />
+                  exceptional immigration solutions stands our trusted
+                </p>
               </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="xb-faq">
-                <ul className="accordion_box clearfix">
-                  <li className="accordion block active-block">
-                    <div className="acc-btn">
-                      What services do you offer?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body current">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="accordion block">
-                    <div className="acc-btn">
-                      What is the consultation process like?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="accordion block">
-                    <div className="acc-btn">
-                      How much do your services cost?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="accordion block">
-                    <div className="acc-btn">
-                      How do I get started with your services?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="accordion block">
-                    <div className="acc-btn">
-                      What is your success rate with visa applications?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+              <div className="faq-img">
+                <img src="/assets/pic/faq_img.png" alt="FAQ Visual" />
               </div>
             </div>
           </div>
+
+          <div className="col-lg-7">
+            <div className="xb-faq">
+              <ul className="accordion_box clearfix">
+                {faqData.map((item, index) => (
+                  <li
+                    key={item.id}
+                    className={`accordion block ${
+                      index === 0 ? "active-block" : ""
+                    }`}
+                  >
+                    <div className="acc-btn">
+                      {item.question}
+                      <span className="arrow"></span>
+                    </div>
+                    <div className={`acc_body ${index === 0 ? "current" : ""}`}>
+                      <div
+                        className="content"
+                        dangerouslySetInnerHTML={{ __html: item.answer }}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
       {/* <!-- faq end --> */}
 
       {/* <!-- category start --> */}
