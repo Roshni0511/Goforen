@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import StudentVisaInquiryForm from "./StudentVisaInquiryForm";
 
 export default function Studentvisa() {
   // data-background img start

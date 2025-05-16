@@ -229,7 +229,7 @@ export default function Prvisainquiry() {
     });
 
     try {
-      const res = await axios.post('https://localhost:8000/submit-pr-visa-inquiry/', data, {
+      const res = await axios.post('https://yourdomain.com/api/submit-pr-visa-inquiry/', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -3125,7 +3125,7 @@ export default function Prvisainquiry() {
             <button className="btn btn-secondary" onClick={handlePrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={handleSubmit}>
+            <button className="btn btn-primary" >
               Submit
             </button>
           </div>
@@ -3135,24 +3135,11 @@ export default function Prvisainquiry() {
               </div>
               )}
               {/* Additional Details end */}
-        <div className="container py-5">
-          <div className="xb-contact pos-rel bg-white shadow rounded p-4" style={{ overflow: "visible" }}>
-            <div className="row">
-              <div className="col-12">
-                <div className="p-3">
-                  <div className="xb-item--holder mb-4">
-                    <h3 className="wow skewIn  fw-bold border-bottom pb-2">Primary Details</h3>
-                  </div>
       
-      <PRVisaInquiryForm />
-                      </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
+              
             </section>
             {/* <!-- contact end --> */}
+      <PRVisaInquiryForm />
       <Footer />
     </div>
   );
