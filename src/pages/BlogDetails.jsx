@@ -10,6 +10,56 @@ function useQuery() {
 
 
 export default function BlogDetails() {
+    const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // You need to provide the blog_id here (hardcoded or from props)
+    const payload = {
+      blog_id: 5,  // Example blog id, replace accordingly
+      name: formData.name,
+      email: formData.email,
+      description: formData.description,
+    };
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/submit_blog_comment/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        alert("Error: " + JSON.stringify(errorData));
+        return;
+      }
+
+      const data = await res.json();
+      alert(data.success);
+
+      // Reset form
+      setFormData({ name: "", email: "", description: "" });
+
+    } catch (err) {
+      alert("An error occurred: " + err.message);
+    }
+  };
+
   const [blogData, setBlogData] = useState([]); // ✅ Declare at top level
 
   useEffect(() => {
@@ -399,32 +449,63 @@ export default function BlogDetails() {
                         <h2 className="title">Post Comments</h2>
                         <p>Your email address will not be published. Required fields are marked * </p>
                       </div>
-                      <form className="xb-item--form contact-from" action="#!">
-                        <div className="row">
-                          <div className="col-lg-6">
-                            <div className="xb-item--field">
-                              <span><img src="assets/img/icon/c_user.svg" alt="" /></span>
-                              <input type="text" placeholder="Shivangini Patel" />
-                            </div>
-                          </div>
-                          <div className="col-lg-6">
-                            <div className="xb-item--field">
-                              <span><img src="assets/img/icon/c_mail.svg" alt="" /></span>
-                              <input type="text" placeholder="goforen@services.com" />
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="xb-item--field">
-                              <span><img src="assets/img/icon/c_message.svg" alt="" /></span>
-                              <textarea name="message" id="message" cols="30" rows="10"
-                                placeholder="Write Your Message..."></textarea>
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <button className="thm-btn" type="submit">Post comment</button>
-                          </div>
-                        </div>
-                      </form>
+    <form className="xb-item--form contact-from" onSubmit={handleSubmit}>
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="xb-item--field">
+            <input
+            hidden
+              type="text"
+              name="blog_id"
+              placeholder="Shivangini Patel"
+              value={id}
+              onChange={handleChange}
+              required
+            />
+            <span><img src="assets/img/icon/c_user.svg" alt="" /></span>
+            <input
+              type="text"
+              name="name"
+              placeholder="Shivangini Patel"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+        <div className="col-lg-6">
+          <div className="xb-item--field">
+            <span><img src="assets/img/icon/c_mail.svg" alt="" /></span>
+            <input
+              type="email"
+              name="email"
+              placeholder="goforen@services.com"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+        <div className="col-12">
+          <div className="xb-item--field">
+            <span><img src="assets/img/icon/c_message.svg" alt="" /></span>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+              placeholder="Write Your Message..."
+              value={formData.description}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div className="col-12">
+          <button className="thm-btn" type="submit">Post comment</button>
+        </div>
+      </div>
+    </form>
                     </div>
                   </div>
                 </div>

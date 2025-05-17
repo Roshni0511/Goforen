@@ -29,4 +29,5 @@ GET type (details) = [
 POST type = [
     http://localhost:8000/visa-inquiry/
     http://localhost:8000/submit-pr-visa-inquiry/
+    http://localhost:8000/submit_blog_comment/
 ]
