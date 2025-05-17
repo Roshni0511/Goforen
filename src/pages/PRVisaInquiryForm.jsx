@@ -50,7 +50,7 @@ const PRVisaInquiryForm = () => {
         .then((res) => setVisaTypes(res.data))
         .catch((err) => console.error("Error fetching countries:", err));
     }, []);
-  
+   
 const handleSelect2 = (e) => {
   const { name, value } = e.target;
   setFormData((prev) => ({ ...prev, [name]: value }));

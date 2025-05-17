@@ -9,7 +9,36 @@ import axios from "axios";
 // import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+const custom_input = {
+  border: '1px solid #ced4da',
+  borderRadius: '4px',
+  padding: '0.375rem 0.75rem',
+  fontSize: '1rem',
+};
+
 export default function Contact() {
+
+const handleSelect2 = (e) => {
+  const { name, value } = e.target;
+  setFormData((prev) => ({ ...prev, [name]: value }));
+};
+      const [countries, setCountries] = useState([]);
+    const [VisaTypes, setVisaTypes] = useState([]);
+  
+    // Fetch country data
+    useEffect(() => {
+      axios.get("http://localhost:8000/get_country_data/")
+        .then((res) => setCountries(res.data))
+        .catch((err) => console.error("Error fetching countries:", err));
+    }, []);
+  
+    // Fetch visa data
+    useEffect(() => {
+      axios.get("http://localhost:8000/get_visa_services/")
+        .then((res) => setVisaTypes(res.data))
+        .catch((err) => console.error("Error fetching countries:", err));
+    }, []);
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -229,53 +258,38 @@ export default function Contact() {
  placeholder="Enter Your Number" />
                         </div>
                       </div>
-                      <div className="col-lg-6">
-  <label htmlFor="desiredCountry">Desired Country :</label>
-  <div className="xb-item--field">
-    <span>
-      <img src="assets/img/icon/c_select.svg" alt="" />
-    </span>
-    <select id="desiredCountry" name="desired_country" onChange={(e) =>
-    setFormData({ ...formData, desired_country: e.target.value })
-  }
 
-className="form-control">
-      <option value="">Select Desired Country</option>
-      <option value="Canada">Canada</option>
-      <option value="Australia">Australia</option>
-      <option value="New Zealand">New Zealand</option>
-      <option value="USA">USA</option>
-      <option value="UK">UK</option>
-      <option value="Europe">Europe</option>
-      <option value="Any Other">Any Other</option>
-    </select>
-  </div>
+
+    <div className="col-md-6">
+      <label className="form-label">Desired Country</label>
+    <select onChange={handleSelect2} name="desired_country" className="form-select" style={custom_input}>
+        <option value="">Select a Country...</option>
+        {countries.map((country) => (
+          <option key={country.id} value={country.country}>
+            {country.country}
+          </option>
+        ))}
+      </select>
+    </div>
+
+ <div className="col-md-6">
+  <label className="form-label">Desired Visa Route</label>
+  <select
+    name="desired_visa_service"
+    className="form-control"
+    style={custom_input}
+    onChange={handleSelect2}
+    required
+  >
+    <option value="">-- Select Visa Route --</option>
+    {VisaTypes.map((visa) => (
+      <option key={visa.id} value={visa.visa_type}>
+        {visa.visa_type}
+      </option>
+    ))}
+  </select>
 </div>
 
-<div className="col-lg-6">
-  <label htmlFor="desiredVisaService">Desired Visa Service :</label>
-  <div className="xb-item--field">
-    <span>
-      <img src="assets/img/icon/c_select.svg" alt="" />
-    </span>
-    <select id="desiredVisaService" name="desired_visa_service" className="form-control" onChange={(e) =>
-    setFormData({ ...formData, desired_visa_service: e.target.value })
-  }
->
-      <option value="">Select Visa Service</option>
-      <option value="Permanent Residency">Permanent Residency</option>
-      <option value="Work Permit">Work Permit</option>
-      <option value="State Nomination">State Nomination</option>
-      <option value="Investment">Investment</option>
-      <option value="Business">Business</option>
-      <option value="Visitor Visa">Visitor Visa</option>
-      <option value="PR - RNIP">PR - RNIP</option>
-      <option value="PR - AIPP">PR - AIPP</option>
-      <option value="Blood Relation">Blood Relation</option>
-      <option value="Student Visa">Student Visa</option>
-    </select>
-  </div>
-</div>
 
                       <div className="col-lg-6">
                         <label htmlFor="">Resume :</label>
