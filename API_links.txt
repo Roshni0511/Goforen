@@ -24,10 +24,12 @@ GET type (details) = [
     http://localhost:8000/get_news_detail/id
     http://localhost:8000/get_team_detail/id
     http://localhost:8000/get_visa_service_detail/id
+    http://localhost:8000/get_blog_comments/id
 ]
 
 POST type = [
     http://localhost:8000/visa-inquiry/
     http://localhost:8000/submit-pr-visa-inquiry/
     http://localhost:8000/submit_blog_comment/
+    http://localhost:8000/submit_cv/
 ]

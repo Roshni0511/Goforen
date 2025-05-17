@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import { useLocation } from "react-router-dom";
 import moment from "moment"; // npm install moment
+import axios from "axios";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -10,7 +11,9 @@ function useQuery() {
 
 
 export default function BlogDetails() {
-    const [formData, setFormData] = useState({
+
+
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     description: "",
@@ -28,7 +31,7 @@ export default function BlogDetails() {
 
     // You need to provide the blog_id here (hardcoded or from props)
     const payload = {
-      blog_id: 5,  // Example blog id, replace accordingly
+      blog_id: id,  // Example blog id, replace accordingly
       name: formData.name,
       email: formData.email,
       description: formData.description,
@@ -113,6 +116,23 @@ export default function BlogDetails() {
     const backgroundUrl12 = "assets/img/bg/blog_bg.png";
     setBackground12(backgroundUrl12);
   }, []);
+
+
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    if (id) {
+      axios
+        .get(`http://localhost:8000/get_blog_comments/${id}/`)
+        .then((response) => {
+          setComments(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching blog comments:", error);
+        });
+    }
+  }, [id]);
+
   // data-background img end
   return (
     <div>
@@ -217,7 +237,6 @@ export default function BlogDetails() {
                       <span className="posted-on">
                         <i className="far fa-calendar-check"></i>{" "}
                         <a href="#!">
-                          {/* created_at in format August 4, 2023 */}
                           {course?.created_at &&
                             moment(course.created_at).format("MMMM D, YYYY")}
                         </a>
@@ -383,67 +402,36 @@ export default function BlogDetails() {
                     </ul>
                   </div>
                 </div>
+
+
                 <div className="row">
                   <div className="col-xl-12">
-                    <div className="post-comments">
-                      <h2 className="title mb-25">03 Comments</h2>
-                      <div className="latest__comments">
-                        <ul className="list-unstyled mb-0">
-                          <li>
-                            <div className="comments-box">
-                              <div className="comments-avatar">
-                                <img src="/assets/pic/bd3.png" alt="" />
-                              </div>
-                              <div className="comments-text">
-                                <div className="avatar-name">
-                                  <h5>Matt Gartner</h5>
-                                  <span>19th May 2023</span>
-                                  <a className="reply" href="#0">Reply</a>
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the leap into electronic typesetting, remaining
-                                  essentiallyuncha opularisedthe with the release of Letrasetsheets containingthe leap electrtypesetting remaining
-                                  majority have.</p>
-                              </div>
-                            </div>
-                          </li>
-                          <li className="children">
-                            <div className="comments-box">
-                              <div className="comments-avatar">
-                                <img src="/assets/pic/bd3.png" alt="" />
-                              </div>
-                              <div className="comments-text">
-                                <div className="avatar-name">
-                                  <h5>Dan Whiting</h5>
-                                  <span>19th May 2023</span>
-                                  <a className="reply" href="#0">Reply</a>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                  tempor incididunt
-                                  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                  exercitation.</p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div className="comments-box">
-                              <div className="comments-avatar">
-                                <img src="/assets/pic/bd3.png" alt="" />
-                              </div>
-                              <div className="comments-text">
-                                <div className="avatar-name">
-                                  <h5>Carlin Wong</h5>
-                                  <span>19th May 2023</span>
-                                  <a className="reply" href="#0">Reply</a>
-                                </div>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the leap into electronic typesetting, remaining
-                                  essentiallyuncha opularisedthe with the release of Letrasetsheets containingthe leap electrtypesetting remaining
-                                  majority have.</p>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+    <div className="post-comments">
+      <h2 className="title mb-25">{comments.length} Comment{comments.length !== 1 ? "s" : ""}</h2>
+      <div className="latest__comments">
+        <ul className="list-unstyled mb-0">
+          {comments.map((comment, index) => (
+            <li key={comment.id} className={index === 1 ? "children" : ""}>
+              <div className="comments-box">
+                <div className="comments-avatar">
+                  <img src="/assets/pic/bd3.png" alt="" />
+                </div>
+                <div className="comments-text">
+                  <div className="avatar-name">
+                    <h5>{comment.name}</h5>
+                    <span>{new Date(comment.created_at).toLocaleDateString()}</span>
+                    <a className="reply" href="#0">Reply</a>
+                  </div>
+                  <p>{comment.description}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+
                     <div className="comments-form">
                       <div className="comment-heading">
                         <h2 className="title">Post Comments</h2>

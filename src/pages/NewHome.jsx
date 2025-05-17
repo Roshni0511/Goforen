@@ -70,6 +70,32 @@ export default function NewHome() {
       .catch((err) => console.error("Failed to fetch Team Data:", err));
   }, []);
 
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      alert("Please enter your email address.");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:8000/submit_newsletter/", {
+        email: email,
+      });
+
+      if (response.data.success) {
+        alert("Subscribed successfully!");
+        setEmail("");
+      }
+    } catch (error) {
+      console.error("Subscription failed:", error);
+      alert("Error: " + (error.response?.data?.error || "Something went wrong"));
+    }
+  };
+
+
   const [visaServices, setVisaServices] = useState([]);
 
   useEffect(() => {
@@ -122,7 +148,21 @@ export default function NewHome() {
   //   "Latvia to Tighten Border Rules for Third-Country Nationals Without Latvian Visa or Residence Permit.",
   // ];
 
+    const [blogData, setBlogData] = useState([]);
   
+  useEffect(() => {
+    setBackground("/assets/pic/breadcrumb-bg.jpg");
+    setBackground1("assets/img/bg/b_bg.jpg");
+    setBackground12("assets/img/bg/blog_bg.png");
+    
+    // Fetch blog data from API
+    fetch("http://localhost:8000/get_blog_data/")
+      .then((res) => res.json())
+      .then((data) => setBlogData(data))
+      .catch((error) => console.error("Error fetching blog data:", error));
+  }, []);
+
+
   const [items, setItems] = useState([]);
     
   useEffect(() => {
@@ -2145,116 +2185,68 @@ export default function NewHome() {
       {/* <!-- category end --> */}
 
       {/* <!-- blog start --> */}
-      <section className="blog pb-130">
-        <div className="container">
-          <div className="blog-wrap">
-            <div className="sec-title mb-60 text-center">
-              <h2 className="mb-30 wow skewIn">
-                Cast Your Eyes Upon Our <br /> <span> Newest Article</span>
-              </h2>
-              <p style={{ textAlign: "center" }}>
-                Explore the most recent addition to our informative articles
-              </p>
-            </div>
-            <div className="row justify-content-md-center mt-none-30">
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-blog">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/img_01blog.jpg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <span className="xb-item--category">PR VISA</span>
+<section className="blog pb-130">
+  <div className="container">
+    <div className="blog-wrap">
+      <div className="sec-title mb-60 text-center">
+        <h2 className="mb-30 wow skewIn">
+          Cast Your Eyes Upon Our <br /> <span> Newest Article</span>
+        </h2>
+        <p style={{ textAlign: "center" }}>
+          Explore the most recent addition to our informative articles
+        </p>
+      </div>
+      <div className="row justify-content-md-center mt-none-30">
+        {blogData.map((blog, index) => {
+          // Convert Google Drive shareable link to direct image link if needed
+          let imageUrl = blog.image_id
+            ? `https://drive.google.com/thumbnail?id=${blog.image_id}`
+            : "/assets/pic/img_01blog.jpg"; // fallback image
 
-                      <h3 className="xb-item--title border-effect">
-                        <a href="/Blog">
-                          A PR Visa allows you to live and work in ...
-                        </a>
-                      </h3>
-                      <a className="xb-item--link" href="/Blog">
-                        Read More
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a className="xb-overlay xb-overlay-link" href="/Blog"></a>
+          return (
+            <div className="col-lg-4 col-md-6 mt-30" key={blog.id}>
+              <div className="xb-blog">
+                <div className="xb-item--inner">
+                  <div className="xb-item--img">
+                    <a href={`/BlogDetails?id=${blog.id}`}>
+                      <img src={imageUrl} alt={blog.heading} style={{width:"100%"}}/>
+                    </a>
                   </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-blog">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <a href="/Blog">
-                        <img src="/assets/pic/img_03blog.jpg" alt="" />
+                  <div className="xb-item--holder">
+                    <span className={`xb-item--category color-${(index % 3) + 1}`}>
+                      {blog.heading.length > 20 ? blog.heading.slice(0, 20) + "..." : blog.heading}
+                    </span>
+                    <h3 className="xb-item--title border-effect">
+                      <a href={`/BlogDetails?id=${blog.id}`}>
+                        {blog.title.length > 60 ? blog.title.slice(0, 60) + "..." : blog.title}
                       </a>
-                    </div>
-                    <div className="xb-item--holder">
-                      <a className="xb-item--category color-2" href="#!">
-                        STUDENT VISA
-                      </a>
-
-                      <h3 className="xb-item--title border-effect">
-                        <a href="/Blog">
-                          A Student Visa allows you to study full-time in ..
-                        </a>
-                      </h3>
-                      <a className="xb-item--link" href="/Blog">
-                        Read More
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a className="xb-overlay xb-overlay-link" href="/Blog"></a>
+                    </h3>
+                    <a className="xb-item--link" href={`/BlogDetails?id=${blog.id}`}>
+                      Read More
+                      <span>
+                        <img src="assets/img/icon/right_arrow.svg" alt="" />
+                      </span>
+                    </a>
                   </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-blog">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <a href="/Blog">
-                        <img src="/assets/pic/img_02blog.jpg" alt="" />
-                      </a>
-                    </div>
-                    <div className="xb-item--holder">
-                      <a className="xb-item--category color-3" href="#!">
-                        INVESTOR VISA
-                      </a>
-
-                      <h3 className="xb-item--title border-effect">
-                        <a href="/Blog">
-                          An Investor Visa allows individuals to obtain ..
-                        </a>
-                      </h3>
-                      <a className="xb-item--link" href="/Blog">
-                        Read More
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a className="xb-overlay xb-overlay-link" href="/Blog"></a>
-                  </div>
+                  <a className="xb-overlay xb-overlay-link" href={`/BlogDetails?id=${blog.id}`}></a>
                 </div>
               </div>
             </div>
-            <div
-              className="xb-blog-bg"
-              style={{
-                backgroundImage: `url(${background4})`,
-                // minHeight: '400px',
-                // position: 'absolute',
-                background: "#EDF3F5",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
-          </div>
-        </div>
-      </section>
+          );
+        })}
+      </div>
+      <div
+        className="xb-blog-bg"
+        style={{
+          backgroundImage: `url(${background4})`,
+          background: "#EDF3F5",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></div>
+    </div>
+  </div>
+</section>
       {/* <!-- blog end --> */}
       {/* <!-- brand start --> */}
       <section
@@ -2429,10 +2421,17 @@ export default function NewHome() {
                       <br /> news & case studies!
                     </h3>
                   </div>
-                  <form className="xb-item--form" action="#!">
-                    <input type="text" placeholder="Your e-mail address" />
-                    <button className="colorcode">Subscribe</button>
-                  </form>
+    <form className="xb-item--form" onSubmit={handleSubscribe}>
+      <input
+        type="text"
+        placeholder="Your e-mail address"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <button className="colorcode" type="submit">
+        Subscribe
+      </button>
+    </form>
                 </div>
               </div>
             </div>

@@ -1,14 +1,86 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import axios from "axios";
 
+const custom_input = {
+  border: '1px solid #ced4da',
+  borderRadius: '4px',
+  padding: '0.375rem 0.75rem',
+  fontSize: '1rem',
+};
 
 export default function Uploadcv() {
+  
+    const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [gender, setGender] = useState("");
+  const [desiredVisaService, setDesiredVisaService] = useState("");
+  const [resume, setResume] = useState(null);
+  const [captcha, setCaptcha] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
   const canvasRef = useRef(null);
+
+  // Generate CAPTCHA
+  const generateCaptcha = () => {
+    const captchaText = Math.random().toString(36).substring(2, 8);
+    setCaptcha(captchaText);
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = "30px Arial";
+    ctx.fillText(captchaText, 10, 35);
+  };
+    const [VisaTypes, setVisaTypes] = useState([]);
+   // Fetch visa data
+    useEffect(() => {
+      axios.get("http://localhost:8000/get_visa_services/")
+        .then((res) => setVisaTypes(res.data))
+        .catch((err) => console.error("Error fetching countries:", err));
+    }, []);
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (captchaInput !== captcha) {
+      alert("Invalid captcha!");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("number", number);
+    formData.append("gender", gender);
+    formData.append("desired_visa_service", desiredVisaService);
+    formData.append("resume", resume);
+    formData.append("captcha_entered", captchaInput);
+
+    try {
+      const res = await axios.post("http://localhost:8000/submit_cv/", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      alert(res.data.success);
+      // Reset form
+      setName("");
+      setNumber("");
+      setGender("");
+      setDesiredVisaService("");
+      setResume(null);
+      setCaptchaInput("");
+      generateCaptcha();
+    } catch (error) {
+      alert("Submission failed: " + error.response?.data?.error || error.message);
+    }
+  };
+
  
   const [background, setBackground] = useState("");
   const [captchaCode, setCaptchaCode] = useState("");
-  const [captchaInput, setCaptchaInput] = useState("");
 
   const visaServices = [
     { name: "Student Visa", info: false },
@@ -21,46 +93,11 @@ export default function Uploadcv() {
     generateCaptcha();
   }, []);
 
-  const generateCaptcha = () => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let captcha = "";
-
-    for (let i = 0; i < 6; i++) {
-      const char = chars.charAt(Math.floor(Math.random() * chars.length));
-      captcha += char;
-      ctx.font = `${20 + Math.random() * 10}px Arial`;
-      ctx.fillStyle = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
-        Math.random() * 256
-      )}, ${Math.floor(Math.random() * 256)})`;
-      const angle = (Math.random() - 0.5) * 0.5;
-      ctx.save();
-      ctx.translate(30 * i + 20, canvas.height / 2);
-      ctx.rotate(angle);
-      ctx.fillText(char, 0, 0);
-      ctx.restore();
-    }
-
-    setCaptchaCode(captcha);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (captchaInput !== captchaCode) {
-      alert("Invalid captcha code. Please try again.");
-      generateCaptcha();
-      setCaptchaInput("");
-      return;
-    }
-    alert("Form submitted successfully!");
-    // Reset your form here
-    generateCaptcha();
-    setCaptchaInput("");
-  };
+const handleSelect2 = (e) => {
+  const { name, value } = e.target;
+  setDesiredVisaService((prev) => ({ ...prev, [name]: value }));
+};
  // data-background img start
   useEffect(() => {
     const backgroundUrl ="/assets/pic/breadcrumb-bg.jpg";
@@ -160,153 +197,84 @@ export default function Uploadcv() {
                    
                     <h5>If you do not wish to fill up the full inquiry form, upload your latest CV below. We will assess your profile and contact you.</h5>
                   </div>
-                  <form className="xb-item--form contact-from" action="#!">
-                    <div className="row">
-                      <div className="col-lg-6">
-                        <label htmlFor="">Name :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_user.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Enter your Name" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Desired Visa Service :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_select.svg" alt="" />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">
-                              Desired Visa Service
-                            </span>
-                            <ul className="list">
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                                Immigration - PR Visa
-                              </li>
-                              <li data-value="2" className="option">
-                              Student Visa
-                              </li>
-                              <li data-value="3" className="option">
-                              Visitor Visa
-                              </li>
-                              <li data-value="4" className="option">
-                              Investor Visa
-                              </li>
-                              <li data-value="4" className="option">
-                              Work Permit Visa
-                              </li>
-                              
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="col-lg-6">
-                        <label htmlFor="">Number :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_call.svg" alt="" />
-                          </span>
-                          <input type="text" placeholder="Enter Your Number" />
-                        </div>
-                      </div>
-                     
+    <form className="xb-item--form contact-from" onSubmit={handleSubmit}>
+      <div className="row">
+        <div className="col-lg-6">
+          <label>Name :</label>
+          <div className="xb-item--field">
+            <input type="text" placeholder="Enter your Name" value={name} onChange={(e) => setName(e.target.value)} required />
+          </div>
+        </div>
 
-                     
-                      <div className="col-lg-6">
-                        <label htmlFor="">CV :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_upload.svg" alt="" />
-                          </span>
-                          <input
-                            type="file"
-                            accept=".pdf,.doc,.docx"
-                            id="resumeUpload"
-                            className="form-control"
-                            placeholder="Upload Your Resume"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <label htmlFor="">Gender :</label>
-                        <div className="xb-item--field">
-                          <span>
-                            <img src="assets/img/icon/c_select.svg" alt="" />
-                          </span>
-                          <div className="nice-select" tabindex="0">
-                            <span className="current">
-                            Select Gender
-                            </span>
-                            <ul className="list">
-                              <li
-                                data-value="1"
-                                className="option selected focus"
-                              >
-                               Male
-                              </li>
-                              <li data-value="2" className="option">
-                              Female
-                              </li>
-                              <li data-value="3" className="option">
-                              Other
-                              </li>
-                              
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                     
-                      <div className="col-lg-6">
-                        <label>Captcha :</label>
+<div className="col-md-6">
+  <label className="form-label">Desired Visa Route</label>
+            <select value={desiredVisaService} onChange={(e) => setDesiredVisaService(e.target.value)} className="form-control" required>
 
-                        <div className="row align-items-center g-2 mb-2">
-                          <div className="col-md-auto">
-                            <canvas
-                              ref={canvasRef}
-                              width={200}
-                              height={50}
-                              style={{
-                                border: "1px solid #ccc",
-                                display: "block",
-                              }}
-                            />
-                          </div>
-                          <div className="col-md-auto">
-                            <button
-                              type="button"
-                              className="btn btn-secondary"
-                              onClick={generateCaptcha}
-                            >
-                              Refresh
-                            </button>
-                          </div>
-                        </div>
+    <option value="">-- Select Visa Route --</option>
+    {VisaTypes.map((visa) => (
+      <option key={visa.id} value={visa.visa_type}>
+        {visa.visa_type}
+      </option>
+    ))}
+  </select>
+</div>
+        <div className="col-lg-6">
+          <label>Number :</label>
+          <div className="xb-item--field">
+            <input type="text" placeholder="Enter Your Number" value={number} onChange={(e) => setNumber(e.target.value)} required />
+          </div>
+        </div>
 
-                        <div className="xb-item--field">
-                          <input
-                            type="text"
-                            placeholder="Enter Captcha"
-                            value={captchaInput}
-                            onChange={(e) => setCaptchaInput(e.target.value)}
-                            required
-                            className="form-control"
-                          />
-                        </div>
-                      </div>
+        <div className="col-lg-6">
+          <label>CV :</label>
+          <div className="xb-item--field">
+            <input type="file" accept=".pdf,.doc,.docx" onChange={(e) => setResume(e.target.files[0])} required />
+          </div>
+        </div>
 
-                      <div className="col-12">
-                        <button className="thm-btn" type="submit">
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+        <div className="col-lg-6">
+          <label>Gender :</label>
+          <div className="xb-item--field">
+            <select value={gender} onChange={(e) => setGender(e.target.value)} className="form-control" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="col-lg-6">
+          <label>Captcha :</label>
+          <div className="row align-items-center g-2 mb-2">
+            <div className="col-md-auto">
+              <canvas ref={canvasRef} width={200} height={50} style={{ border: "1px solid #ccc", display: "block" }} />
+            </div>
+            <div className="col-md-auto">
+              <button type="button" className="btn btn-secondary" onClick={generateCaptcha}>
+                Refresh
+              </button>
+            </div>
+          </div>
+          <div className="xb-item--field">
+            <input
+              type="text"
+              placeholder="Enter Captcha"
+              value={captchaInput}
+              onChange={(e) => setCaptchaInput(e.target.value)}
+              required
+              className="form-control"
+            />
+          </div>
+        </div>
+
+        <div className="col-12">
+          <button className="thm-btn" type="submit">
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
                 </div>
               </div>
             </div>
