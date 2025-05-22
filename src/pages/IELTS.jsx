@@ -119,7 +119,7 @@ const IELTS = () => {
                     </div>
                     <div class="col-lg-8">
                         <div class="single-content">
-                            <h3>IELTS</h3>
+                            <h3>IELTS </h3>
                             <h4>Preparing You for Success in Every Module</h4>
                             <p>IELTS, the international English Language Testing system, provides an assessment of language ability of candidates who need to study or train in the medium of English.</p>
                           <p>IELTS is regarded as an entrance requirement by most universities in the United Kingdom, Australia, New Zealand and Canada. It is also gaining recognition among universities and other educational institutes in the United States of America.</p>
