@@ -113,7 +113,7 @@ export default function Blog() {
                                         <p>Navigating Complexity with Confidence" is a concise and impactful title that captures the essence of how visa consultants can assist in making the intricate visa process more manageable ...</p>
                                     </div>
                                     <div className="post-read-more">
-                                        <a className="thm-btn" href="/BlogDetails">Read More</a>
+                                        <a className="colorcode" href="/BlogDetails">Read More</a>
                                     </div>
                                 </div>
                             </article>
@@ -132,7 +132,7 @@ export default function Blog() {
                                         <p>Embarking on the journey of securing a visa can be a labyrinthine process, rife with complexities and uncertainties. That's where expert consulting steps in as your guiding light, illuminating...</p>
                                     </div>
                                     <div className="post-read-more">
-                                        <a className="thm-btn" href="/BlogDetails">Read More</a>
+                                        <a className="colorcode" href="/BlogDetails">Read More</a>
                                     </div>
                                 </div>
                             </article>
@@ -151,7 +151,7 @@ export default function Blog() {
                                         <p>Our guide doesn't just navigate the technicalities; it's a roadmap that instills confidence. We believe that informed decisions lead to successful outcomes, and our aim is to empower...</p>
                                     </div>
                                     <div className="post-read-more">
-                                        <a className="thm-btn" href="/BlogDetails">Read More</a>
+                                        <a className="colorcode" href="/BlogDetails">Read More</a>
                                     </div>
                                 </div>
                             </article>
@@ -236,7 +236,7 @@ export default function Blog() {
                             <div className="widget widget-banner text-center bg_img" style={{ backgroundImage: `url(${background1})` }}>
                                 <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
                                 <h4>Assured Approval – <br/> Guaranteed</h4>
-                                <a className="thm-btn" href="#!">Get in Touch</a>
+                                <a className="colorcode" href="#!">Get in Touch</a>
                             </div>
                         </div>
                     </div>

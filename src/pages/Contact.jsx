@@ -463,7 +463,7 @@ export default function Contact() {
                       </div>
 
                       <div className="col-12">
-                        <button className="thm-btn" type="submit">
+                        <button className="colorcode" type="submit">
                           Submit
                         </button>
                       </div>

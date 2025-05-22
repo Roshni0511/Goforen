@@ -258,7 +258,7 @@ export default function BlogDetails() {
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
-                                                    <button className="thm-btn" type="submit">Post comment</button>
+                                                    <button className="colorcode" type="submit">Post comment</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -336,7 +336,7 @@ export default function BlogDetails() {
                             <div className="widget widget-banner text-center bg_img" style={{ backgroundImage: `url(${background1})` }}>
                                 <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
                                 <h4>Assured Approval – <br/> Guaranteed</h4>
-                                <a className="thm-btn" href="#!">Get in Touch</a>
+                                <a className="colorcode" href="#!">Get in Touch</a>
                             </div>
                         </div>
                     </div>
