@@ -177,7 +177,8 @@ export default function Contact() {
                 <div className="xb-item--inner" style={{ boxShadow: "none" }}>
                   <div className="xb-item--holder mb-25">
                     <span>
-                      <img src="assets/img/icon/n_pad.svg" alt="" />
+                     <img src="assets/img/icon/n_pad.svg" alt="" className="orange-icon" />
+
                       Contact Us
                     </span>
                     {/* <h3>Do you have questions or went more <br/> information?</h3> */}

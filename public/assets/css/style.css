@@ -689,19 +689,521 @@ background-color:"rgb(237, 243, 245)" ;
   font-size: 18px; 
 }
 .colorcode{
-  background-color: rgb(0, 204, 153);
+  background-color: #e38508;
   color: #fff;
   padding: 19px 37px;
   border-radius: 10px;
 }
 .colorcode:hover{
   color: #fff;
-   background-color: rgb(0, 204, 153);
+   background-color: #e38508;
+}
+.orange-icon {
+  filter: brightness(0) saturate(100%) invert(45%) sepia(90%) saturate(1900%) hue-rotate(0deg) brightness(95%) contrast(90%);
+}
+.hero-slider {
+  height: 100vh;
 }
 
+.hero-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+}
                                   
                                             
 
-                    
+          .our-services {
+  margin-top: 50px;
+}
+
+.flip-container {
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  margin: 0 auto 60px auto;
+  width: 320px;
+  height: 200px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.flip-container:hover .flipper {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  width: 320px;
+  height: 200px;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.front h3 {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+.front img {
+  display: block;
+  margin: 10px auto 0 auto;
+}
+
+.back {
+  text-align: center;
+  font-size: 18px;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.back h5 {
+  margin-top: 20px;
+}
+
+.back p {
+  font-size: 14px;
+  margin: 15px;
+}
+
+.flipper {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* Responsive adjustments */
+
+/* Tablets and below */
+@media (max-width: 991px) {
+  .flip-container {
+    width: 250px;
+    height: 160px;
+  }
+  
+  .front, .back {
+    width: 250px;
+    height: 160px;
+  }
+  
+  .front h3, .back h5 {
+    font-size: 16px;
+  }
+  
+  .back p {
+    font-size: 13px;
+    margin: 10px;
+  }
+  
+  .front img {
+    width: 180px; /* optional: scale down image */
+    height: auto;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  /* Reduce margin between flip containers */
+  .flip-container {
+    margin-bottom: 20px; /* smaller vertical spacing */
+  }
+  
+  /* Adjust column padding/margin if using Bootstrap */
+  .row > .col-sm-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px; /* reduce vertical gaps */
+  }
+  
+  /* Make sure cards take full width */
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* If the .row uses flexbox, reduce gap */
+  .row {
+    gap: 10px; /* reduce horizontal gap between cards */
+  }
+}
+
+
+#reg_login {
+  position: relative;
+  min-height: 50vh;
+  /* background-color: #f8dd30; */
+  background-image: url(https://res.cloudinary.com/diyp1k5z5/image/upload/v1744874374/bg_v79sxr.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#reg_login .container {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#reg_login .container .user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#reg_login .container .user .imgBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+#reg_login .container .user .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#reg_login .container .user .formBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: 0.5s;
+}
+
+#reg_login .container .user .formBx form h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+#reg_login .container .user .formBx form input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 8px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+#reg_login .container .user .formBx form input:hover {
+  border: 1px solid #62260dab;
+}
+
+#reg_login .container .user .formBx form input[type="submit"] {
+  max-width: 100px;
+  background: #62260dab;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#reg_login .container .user .formBx form input[type="submit"]:hover {
+  transition: 0.5s;
+  background: #62260d;
+}
+
+#reg_login .container .user .formBx form .signup {
+  position: relative;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+#reg_login .container .user .formBx form .signup a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #62260d;
+}
+
+#reg_login .container .signupBx {
+  pointer-events: none;
+}
+
+#reg_login .container.active .signupBx {
+  pointer-events: initial;
+}
+
+#reg_login .container .signupBx .formBx {
+  left: 100%;
+}
+
+#reg_login .container.active .signupBx .formBx {
+  left: 0;
+}
+
+#reg_login .container .signupBx .imgBx {
+  left: -100%;
+}
+
+#reg_login .container.active .signupBx .imgBx {
+  left: 0%;
+}
+
+#reg_login .container .signinBx .formBx {
+  left: 0%;
+}
+
+#reg_login .container.active .signinBx .formBx {
+  left: 100%;
+}
+
+#reg_login .container .signinBx .imgBx {
+  left: 0%;
+}
+
+#reg_login .container.active .signinBx .imgBx {
+  left: -100%;
+}
+
+.hero-section {
+  position: relative;
+  width: 60%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: sans-serif;
+}
+
+.bg-image {
+  background-image: url('https://res.cloudinary.com/diyp1k5z5/image/upload/v1744874379/login-img_cdeenv.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.text-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5); /* keeps text readable */
+  color: white;
+  height: 100%;              /* Make it match the section height */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;   /* Vertically center the content */
+}
+
+
+.text-content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.text-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.text-content em {
+  font-style: italic;
+}
+
+.cta-button {
+  background: white;
+  color: #004080;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-signup-form h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #002b5c;
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.captcha-row {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.captcha-box img {
+  height: 50px;
+}
+
+.custom-signup-form button {
+  background-color: #005499;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.custom-signup-form button:hover {
+  background-color: #003f7d;
+}
+
+/* For tablets and smaller laptops */
+@media (max-width: 991px) {
+  /* Container width adjustment for better fit */
+  #reg_login .container {
+    width: 90%; /* Instead of fixed 400px */
+    height: auto; /* Let height adjust dynamically */
+    min-height: 600px; /* Maintain some minimum height */
+  }
+
+  /* Hide .imgBx as you already have */
+  #reg_login .container .imgBx {
+    display: none;
+  }
+
+  /* Make form take full width */
+  #reg_login .container .user .formBx {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Hero section adjustments */
+  .hero-section {
+    width: 100%; /* Full width for hero section */
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .text-content {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .text-content h1 {
+    font-size: 24px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+  #reg_login {
+    padding: 10px;
+    min-height: auto;
+  }
+
+  #reg_login .container {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+
+  /* Stack the hero-section and form vertically */
+  #reg_login .container .user {
+    flex-direction: column;
+    position: relative;
+    height: auto;
+  }
+
+  .hero-section {
+    width: 100%;
+    height: auto;
+    order: 2; /* place below form */
+    padding: 15px;
+  }
+
+  #reg_login .container .user .formBx {
+    width: 100%;
+    padding: 20px;
+    order: 1; /* place above hero */
+  }
+
+  .text-content h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .text-content ul {
+    font-size: 14px;
+    padding-left: 15px;
+  }
+
+  .custom-signup-form h2 {
+    font-size: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row input,
+  .form-row select {
+    width: 100%;
+  }
+
+  .custom-signup-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
 
                                   

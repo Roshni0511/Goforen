@@ -18,7 +18,99 @@ import GTranslateIcon from '@mui/icons-material/GTranslate';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import FooterHome from "./FooterHome";
+import {  Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Link } from "react-router-dom";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
+
+
+
+  const imagess = [
+    "/assets/pic/banner1.png",
+    "/assets/pic/banner2.png",
+    "/assets/pic/banner3.png",
+  ];
 export default function NewHome() {
+
+const cards = [
+  {
+    title: "Canada",
+    img: "/assets/pic/canada.png",
+    bgColor: "#e38508",
+ points: [
+  { text: "Student Visa", link: "/Immigration-pr-visa" },
+  { text: "Immigration - PR Visa", link: "/Immigration-pr-visa" },
+  { text: "Visitor Visa", link: "/Immigration-pr-visa" },
+    { text: "Investore Visa", link: "/Immigration-pr-visa" },
+      { text: "Work Permit Visa", link: "/Immigration-pr-visa" }
+]
+
+  },
+  {
+    title: "Australia",
+    img: "/assets/pic/aus.png",
+    bgColor: "#07374d",
+    points: [
+  { text: "Student Visa", link: "/Immigration-pr-visa" },
+  { text: "Immigration - PR Visa", link: "/Immigration-pr-visa" },
+  { text: "Visitor Visa", link: "/Immigration-pr-visa" },
+    { text: "Investore Visa", link: "/Immigration-pr-visa" },
+      { text: "Work Permit Visa", link: "/Immigration-pr-visa" }
+]
+  },
+  {
+    title: "Germany",
+    img: "/assets/pic/germany.png",
+    bgColor: "#e38508",
+ points: [
+  { text: "Student Visa", link: "/Immigration-pr-visa" },
+  { text: "Immigration - PR Visa", link: "/Immigration-pr-visa" },
+  { text: "Visitor Visa", link: "/Immigration-pr-visa" },
+    { text: "Investore Visa", link: "/Immigration-pr-visa" },
+      { text: "Work Permit Visa", link: "/Immigration-pr-visa" }
+]
+  },
+  {
+    title: "USA",
+    img: "/assets/pic/usa.png",
+    bgColor: "#07374d",
+  points: [
+  { text: "Student Visa", link: "/Immigration-pr-visa" },
+  { text: "Immigration - PR Visa", link: "/Immigration-pr-visa" },
+  { text: "Visitor Visa", link: "/Immigration-pr-visa" },
+    { text: "Investore Visa", link: "/Immigration-pr-visa" },
+      { text: "Work Permit Visa", link: "/Immigration-pr-visa" }
+]
+  },
+  {
+    title: "UK",
+    img: "/assets/pic/uk.png",
+    bgColor: "#e38508",
+   points: [
+  { text: "Student Visa", link: "/Immigration-pr-visa" },
+  { text: "Immigration - PR Visa", link: "/Immigration-pr-visa" },
+  { text: "Visitor Visa", link: "/Immigration-pr-visa" },
+    { text: "Investore Visa", link: "/Immigration-pr-visa" },
+      { text: "Work Permit Visa", link: "/Immigration-pr-visa" }
+]
+  },
+  {
+    title: "UAE",
+    img: "/assets/pic/Mask group.png",
+    bgColor: "#07374d",
+ points: [
+  { text: "Student Visa", link: "/Immigration-pr-visa" },
+  { text: "Immigration - PR Visa", link: "/Immigration-pr-visa" },
+  { text: "Visitor Visa", link: "/Immigration-pr-visa" },
+    { text: "Investore Visa", link: "/Immigration-pr-visa" },
+      { text: "Work Permit Visa", link: "/Immigration-pr-visa" }
+]
+  },
+];
+
   const brandImages = [
     "/assets/pic/svisa.jpeg",
     "/assets/pic/Investor-Visa-1200x675.jpg",
@@ -114,7 +206,7 @@ export default function NewHome() {
   const [background10, setBackground10] = useState("");
 
   useEffect(() => {
-    const backgroundUrl10 = "assets/img/bg/cta_bg.jpg";
+    const backgroundUrl10 = "assets/img/bg/cta_bg1.jpg";
     setBackground10(backgroundUrl10);
   }, []);
   // data-background img end
@@ -142,7 +234,7 @@ export default function NewHome() {
   const [background2, setBackground2] = useState("");
 
   useEffect(() => {
-    const backgroundUrl2 = "/assets/pic/img_01coure.jpg";
+    const backgroundUrl2 = "assets/pic/img_01coure.jpg";
     setBackground2(backgroundUrl2);
   }, []);
   // data-background img end
@@ -221,12 +313,21 @@ export default function NewHome() {
   return (
     <div>
       <Navbar />
+
+      
       {/* <!-- hero start --> */}
+     <Swiper
+  modules={[Autoplay]}
+  autoplay={{ delay: 3000, disableOnInteraction: false }}
+  loop={true}
+  className="hero-slider"
+>
+  {imagess.map((background, index) => (
+    <SwiperSlide key={index}>
       <section
         className="hero hero__style-one bg_img"
         style={{
           backgroundImage: `url(${background})`,
-          // minHeight: '400px',
           position: "relative",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -254,7 +355,7 @@ export default function NewHome() {
                   data-wow-delay="600ms"
                   data-wow-duration=".6s"
                 >
-                  <a className="colorcode" href="/Contact">
+                  <a className="colorcode" href="/Contact" style={{ background: '#f09318', color: '#fff' ,marginBottom:'15px'}}>
                     Quick Inquiry
                   </a>
                   <a className="thm-btn thm-btn--white" href="/Upload-cv">
@@ -266,96 +367,119 @@ export default function NewHome() {
           </div>
         </div>
       </section>
+    </SwiperSlide>
+  ))}
+</Swiper>
       {/* <!-- hero end --> */}
 
-      {/* <!-- package start --> */}
-      <section
-        className="package package-bg pos-rel pt-120 pb-120"
-        style={{
-          backgroundImage: `url(${background4})`,
-          // minHeight: '400px',
-          position: "relative",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+
+
+      {/* <!-- about start --> */}
+      <section className="about pos-rel pt-120 pb-130">
         <div className="container">
-          <div className="sec-title sec-title--travel text-center mb-55">
-            <h2>Latest News</h2>
+          <div className="sec-title mb-55">
+            <div className="sec-title mb-45">
+              <h2 className="mb-40 wow skewIn">
+                Why Us <br />
+                <span> Trusted Guidance for Your Future</span>
+              </h2>
+              <p>
+                GO FOREN offers services for immigration/PR visas, student
+                visas, visitor visas, <br /> and business/entrepreneur visas. We
+                provide complete support — from counseling <br /> and
+                application to visa processing. Our assistance also includes air
+                ticketing, foreign <br /> exchange, travel insurance,
+                accommodation, and airport transfers, ensuring a smooth <br />{" "}
+                transition to your new country
+              </p>
+            </div>
           </div>
-          <div className="row mt-none-30 d-flex justify-content-center">
-            <div className="col-lg-10 co-12">
-              <div className="xb-package mt-30">
-                <div className="xb-item--inner">
-                  <div className="xb-item--img">
-                    <a
-                      href="#!"
-                      style={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <img
-                        src="/assets/pic/visanews.png"
-                        alt=""
-                        width={"300px"}
-                      />
-                    </a>
-                  </div>
-                  <div className="scroll-container mt-3" id="scrollBox">
-                    <div className="scroll-inner" ref={scrollRef}>
-                      {extendedItems.map((text, i) => (
-                        <div className="scroll-item" key={i}>
-                          <div
-                            className="xb-item--description"
-                            style={{ fontSize: "18px", textAlign: "center" }}
-                          >
-                            {text}
-                          </div>
+          <div className="row align-items-center">
+            <div className="col-lg-10">
+              <div className="about__content">
+                <ul className="about-list ul_li list-unstyled">
+                  <li>
+                    <a href="/Immigration-pr-visa">
+                      <div className="xb-item--inner">
+                        <div className="xb-item--number">1</div>
+                        <div className="xb-item--holder">
+                          <h3 className="xb-item--title mb-10">
+                            Immigration - PR Visa
+                          </h3>
+                          <p style={{color:'#787B84'}}>
+                            Settle Abroad with Permanent Residency Support
+                          </p>
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      marginTop: "10px",
-                    }}
-                  >
-                    <button
-                      style={{
-                        padding: "10px 20px",
-                        background: "#00cc99",
-                        borderRadius: "10px",
-                      }}
-                    >
-                      <a style={{ color: "#fff" }} href="/News">
-                        View All
-                      </a>
-                    </button>
-                  </div>
-                </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/Student-visa">
+                      <div className="xb-item--inner">
+                        <div className="xb-item--number color-2">2</div>
+                        <div className="xb-item--holder">
+                          <h3 className="xb-item--title mb-10">Student Visa</h3>
+                          <p style={{color:'#787B84'}}>
+                            Study Overseas with Full Visa Guidance
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/Visitor-visa">
+                      <div className="xb-item--inner">
+                        <div className="xb-item--number color-3">3</div>
+                        <div className="xb-item--holder">
+                          <h3 className="xb-item--title mb-10">Visitor Visa</h3>
+                          <p style={{color:'#787B84'}}>
+                            Travel Abroad Hassle-Free with Our Help
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/Investor-visa">
+                      <div className="xb-item--inner">
+                        <div className="xb-item--number color-4">4</div>
+                        <div className="xb-item--holder">
+                          <h3 className="xb-item--title mb-10">
+                            Investor Visa
+                          </h3>
+                          <p style={{color:'#787B84'}}>
+                            Invest and Relocate with Business Visa
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/Work-permit-visa">
+                      <div className="xb-item--inner">
+                        <div className="xb-item--number color-5">5</div>
+                        <div className="xb-item--holder">
+                          <h3 className="xb-item--title mb-10">
+                            Work Permit Visa
+                          </h3>
+                          <p style={{color:'#787B84'}}>
+                            Build Your Career Abroad with Ease
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-            {/* <div className="col-lg-4 col-12">
-              <div className="xb-package mt-30">
-                <div className="xb-item--inner">
-                  <div className="xb-item--img">
-                    <a href="#!">
-                      <img src="/assets/pic/Plane-on-takeoff.webp" alt="" />
-                    </a>
-                  </div>
-                  <div className="xb-item--holder">
-                    <h2 className="xb-item--title ul_li_center mb-2">
-                      <a href="#!">ACTIVITIES</a>
-                    </h2>
-                    <p style={{ textAlign: "center" }}>Comming Soon!</p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
+        <div className="about__img">
+          <img src="/assets/pic/why.png" alt="" />
+        </div>
       </section>
-      {/* <!-- package end --> */}
+      {/* <!-- about end --> */}
+   
 
       {/* <!-- visa type start --> */}
       <section className="visa type pb-135">
@@ -566,111 +690,61 @@ export default function NewHome() {
       </div>
       {/* <!-- country end --> */}
 
-      {/* <!-- about start --> */}
-      <section className="about pos-rel pt-120 pb-130">
-        <div className="container">
-          <div className="sec-title mb-55">
-            <div className="sec-title mb-45">
-              <h2 className="mb-40 wow skewIn">
-                Why Us <br />
-                <span> Trusted Guidance for Your Future</span>
-              </h2>
+
+
+      {/* CARD SECTION STRT */}
+ <div className="container our-services">
+<div className="sec-title mb-55">
+            <div className="sec-title mb-10" style={{justifyContent:'center',display:'flex'}}>
+              <h2 className="mb-10 wow skewIn" style={{fontSize:'40px'}}>
+             Popular Visa </h2>
+             </div>
+              <div className="sec-title mb-45"  style={{justifyContent:'center',display:'flex'}}>
               <p>
-                GO FOREN offers services for immigration/PR visas, student
-                visas, visitor visas, <br /> and business/entrepreneur visas. We
-                provide complete support — from counseling <br /> and
-                application to visa processing. Our assistance also includes air
-                ticketing, foreign <br /> exchange, travel insurance,
-                accommodation, and airport transfers, ensuring a smooth <br />{" "}
-                transition to your new country
+                 "Get expert guidance for the most popular visas to Canada, Australia, USA, and more."
               </p>
             </div>
           </div>
-          <div className="row align-items-center">
-            <div className="col-lg-10">
-              <div className="about__content">
-                <ul className="about-list ul_li list-unstyled">
-                  <li>
-                    <a href="/Immigration-pr-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number">1</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Immigration - PR Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Settle Abroad with Permanent Residency Support
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Student-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number color-2">2</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">Student Visa</h3>
-                          <p style={{color:'#787B84'}}>
-                            Study Overseas with Full Visa Guidance
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Visitor-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number color-3">3</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">Visitor Visa</h3>
-                          <p style={{color:'#787B84'}}>
-                            Travel Abroad Hassle-Free with Our Help
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Investor-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number color-4">4</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Investor Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Invest and Relocate with Business Visa
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Work-permit-visa">
-                      <div className="xb-item--inner">
-                        <div className="xb-item--number color-5">5</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Work Permit Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Build Your Career Abroad with Ease
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+  <div className="row">
+    {cards.map((card, index) => (
+      <div className="col-sm-4" key={index}>
+        <div className="flip-container">
+          <div className="flipper">
+            <div className="front" style={{ background: card.bgColor }}>
+              <img
+                className="lazyload"
+                src={card.img}
+                alt={card.title}
+                style={{ width: "200px", height: "150px" }}
+              />
+              <h3 >{card.title}</h3>
+            </div>
+            <div className="back" style={{ background: card.bgColor }}>
+              <h5 style={{color:'#fff',marginBottom:'10px'}}>{card.title}</h5>
+             <ul style={{ paddingLeft: "20px", textAlign: "left",listStyle:'none' ,lineHeight:'28px'}}>
+  {card.points.map((point, i) => (
+    <li key={i} style={{textDecoration:'none'}}>
+      <Link to={point.link} style={{ color: "#fff" }}>
+       <ArrowForwardIcon /> {point.text}
+      </Link>
+    </li>
+  ))}
+</ul>
             </div>
           </div>
         </div>
-        <div className="about__img">
-          <img src="/assets/pic/why.png" alt="" />
-        </div>
-      </section>
-      {/* <!-- about end --> */}
+      </div>
+    ))}
+  </div>
+</div>
+
+      {/* CARD SECTION END */}
+
+      {/* banner start */}
+      <div>
+        <img src="/assets/pic/Group 1340 1.png" alt="" />
+      </div>
+ {/* banner end */}
 
       {/* <!-- feature start --> */}
       <section className="feature pos-rel gray-bg-2 pt-120 pb-120">
@@ -692,7 +766,7 @@ export default function NewHome() {
                     <div className="xb-item--icon">
                       <span className="default">
                         <SchoolIcon
-                          style={{ color: "#00cc99", fontSize: "70px" }}
+                          style={{ color: "#e38508", fontSize: "70px" }}
                         />
                       </span>
                       <span className="hover">
@@ -719,7 +793,7 @@ export default function NewHome() {
                       <span className="default">
                         {/* <img src="assets/img/icon/fr_02.svg" alt="" /> */}
                         <CreditCardIcon
-                          style={{ color: "#00cc99", fontSize: "70px" }}
+                          style={{ color: "#e38508", fontSize: "70px" }}
                         />
                       </span>
                       <span className="hover">
@@ -745,7 +819,7 @@ export default function NewHome() {
                     <div className="xb-item--icon">
                       <span className="default">
                         <MenuBookIcon
-                          style={{ color: "#00cc99", fontSize: "70px" }}
+                          style={{ color: "#e38508", fontSize: "70px" }}
                         />
                       </span>
                       <span className="hover">
@@ -774,7 +848,7 @@ export default function NewHome() {
         <button
                       style={{
                         padding: "10px 20px",
-                        background: "#00cc99",
+                        background: "#e38508",
                         borderRadius: "10px",
                       }}
                     >
@@ -820,7 +894,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <BusinessCenterIcon style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                  <BusinessCenterIcon style={{color:'#e38508' ,fontSize:'60px'}}/>
                   
                 </div>
                 <div className="xb-item--holder">
@@ -846,7 +920,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                  <FlightTakeoffIcon  style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                  <FlightTakeoffIcon  style={{color:'#e38508' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -871,7 +945,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                <AccountBalanceWalletIcon   style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                <AccountBalanceWalletIcon   style={{color:'#e38508' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -895,7 +969,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                <DescriptionIcon style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                <DescriptionIcon style={{color:'#e38508' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -919,7 +993,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                <ArticleIcon  style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                <ArticleIcon  style={{color:'#e38508' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -943,7 +1017,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                <LocalHospitalIcon  style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                <LocalHospitalIcon  style={{color:'#e38508' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -967,7 +1041,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                <GTranslateIcon  style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                <GTranslateIcon  style={{color:'#e38508' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -991,7 +1065,7 @@ export default function NewHome() {
             <div className="xb-service2">
               <div className="xb-item--inner" style={{borderRadius:'0px'}}>
                 <div className="xb-item--icon">
-                <TravelExploreIcon   style={{color:'#00cc99' ,fontSize:'60px'}}/>
+                <TravelExploreIcon   style={{color:'#e38508' ,fontSize:'60px'}}/>
                 </div>
                 <div className="xb-item--holder">
                   <h3 className="xb-item--title">
@@ -1998,6 +2072,238 @@ export default function NewHome() {
       </section>
       {/* <!-- country end --> */}
 
+
+         {/* <!-- package start --> */}
+      <section
+        className="package package-bg pos-rel pt-70 pb-120"
+        style={{
+          backgroundImage: `url(${background4})`,
+          // minHeight: '400px',
+          position: "relative",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="container">
+          <div className="sec-title mb-55">
+            <div className="sec-title mb-10" style={{justifyContent:'center',display:'flex'}}>
+              <h2 className="mb-10 wow skewIn" style={{fontSize:'40px'}}>
+           Updates, Stories & Happenings </h2>
+             </div>
+              <div className="sec-title mb-45"  style={{justifyContent:'center',display:'flex'}}>
+              <p>
+                 "Stay informed and inspired with the latest news, engaging stories, and upcoming events."
+              </p>
+            </div>
+          </div>
+     
+          <div className="col-12">
+          <div className="row mt-none-30 d-flex justify-content-center">
+              <div className="col-lg-4 co-12">
+  <div className="xb-package mt-30" style={{ height: '100%' }}>
+    <div className="xb-item--inner" style={{
+      height: '94%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between'
+    }}>
+      <div style={{ justifyContent: 'center', display: 'flex' }}>
+        <h1>News</h1>
+      </div>
+      <div>
+        <img src="https://ischoolconnect.com/blog/wp-content/uploads/2022/04/UK-US-VISA-1-1200x800.png" alt="" style={{width:'100%',height:'170px',borderRadius:'15px 15px 0px 0px'}}/>
+      </div>
+      <div className="scroll-container mt-3" id="scrollBox"   style={{
+    height: `${itemHeight * 3}px`, // 3 items visible
+    overflow: 'hidden',
+    position: 'relative'
+  }}>
+        <div className="scroll-inner" ref={scrollRef}>
+          {extendedItems.map((text, i) => (
+            <div className="scroll-item" key={i}>
+              <div
+                className="xb-item--description"
+                style={{ fontSize: "18px", textAlign: "center" }}
+              >
+                {text}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "10px"
+      }}>
+        <a
+          href="/News"
+          style={{
+            padding: "10px 20px",
+            background: '#f09318',
+            color: '#fff',
+            borderRadius: "10px",
+            textDecoration: "none"
+          }}
+        >
+          View All
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <div className="col-lg-4 co-12">
+              <div className="xb-package mt-30">
+                <div className="xb-item--inner">
+                  <div className="xb-item--img">
+                    <h1 style={{justifyContent:'center',display:'flex'}}>Blog</h1>
+                  </div>
+                
+                   <div className="xb-blog">
+                  <div className="xb-item--inner">
+                    <div className="xb-item--img">
+                      <a href="/Blog">
+                             <img src="/assets/pic/pleased-young-woman-wearing-red-shirt-sunglasses-holding-globe-while-flying-blue-toy-plane-white-wall.jpg" alt="" style={{width:'100%',height:'215px'}}/>
+                      </a>
+                    </div>
+                    <div className="xb-item--holder">
+                      <a className="xb-item--category color-2" href="#!">
+                        STUDENT VISA
+                      </a>
+
+                      <h3 className="xb-item--title border-effect">
+                        <a href="/Blog">
+                          A Student Visa allows you to study full-time in ..
+                        </a>
+                      </h3>
+                      <div style={{justifyContent:'center',display:'flex'}}>
+                 <a
+      href="/events"
+      style={{
+        display: 'inline-block',
+        padding: '10px 20px',
+        backgroundColor: '#e38508',
+        color: '#fff',
+        fontWeight: '500',
+        fontSize: '14px',
+        borderRadius: '6px',
+        textDecoration: 'none',
+ 
+      }}
+    >
+      Read More →
+    </a>
+                      </div>
+  
+                    </div>
+                    <a className="xb-overlay xb-overlay-link" href="/Blog"></a>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+             
+              <div className="col-lg-4 co-12">
+              <div className="xb-package mt-30">
+                <div className="xb-item--inner">
+                  <div style={{justifyContent:'center',display:'flex'}}>
+                    <h1>Event</h1>
+                  </div>
+                  {/* <div className="scroll-container mt-3" id="scrollBox">
+                    <div className="scroll-inner" ref={scrollRef}>
+                      {extendedItems.map((text, i) => (
+                        <div className="scroll-item" key={i}>
+                          <div
+                            className="xb-item--description"
+                            style={{ fontSize: "18px", textAlign: "center" }}
+                          >
+                            {text}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div> */}
+           <div
+  style={{
+    width: '100%',
+  
+    borderRadius: '10px',
+    overflow: 'hidden',
+
+    fontFamily: 'sans-serif',
+  }}
+>
+  {/* Image */}
+  <img
+    src="https://www.goforen.com//uploads/gallery/85-image.jpg"
+    alt="Study in Hungary Event"
+    style={{ width: '100%', display: 'block',height:'270px' }}
+  />
+
+  {/* Title */}
+  <div style={{ padding: '16px' }}>
+    <h3
+      style={{
+        fontSize: '17px',
+        fontWeight: '600',
+        color: '#0c2340',
+        lineHeight: '1.6',
+        marginBottom: '13px',
+      }}
+    >
+     Study in Hungary and Greece, France & Germany – Goforean Institute's Private Universities Info Session
+    </h3>
+
+    {/* Button */}
+   <div style={{justifyContent:'center',display:'flex'}}>
+     <a
+      href="/Activities"
+      style={{
+        display: 'inline-block',
+        padding: '10px 20px',
+        backgroundColor: '#e38508',
+        color: '#fff',
+        fontWeight: '500',
+        fontSize: '14px',
+        borderRadius: '6px',
+   
+        textDecoration: 'none',
+      }}
+    >
+      Events →
+    </a>
+   </div>
+  </div>
+</div>
+
+                </div>
+              </div>
+            </div>
+          
+            {/* <div className="col-lg-4 col-12">
+              <div className="xb-package mt-30">
+                <div className="xb-item--inner">
+                  <div className="xb-item--img">
+                    <a href="#!">
+                      <img src="/assets/pic/Plane-on-takeoff.webp" alt="" />
+                    </a>
+                  </div>
+                  <div className="xb-item--holder">
+                    <h2 className="xb-item--title ul_li_center mb-2">
+                      <a href="#!">ACTIVITIES</a>
+                    </h2>
+                    <p style={{ textAlign: "center" }}>Comming Soon!</p>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+          </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- package end --> */}
+
       {/* <!-- team start --> */}
       <section className="team pb-120">
         <div className="container">
@@ -2465,7 +2771,7 @@ export default function NewHome() {
                 <div className="xb-blog">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <img src="/assets/pic/img_01blog.jpg" alt="" />
+                      <img src="/assets/pic/tourist-woman-holding-travel-suitcase-passport-with-tickets-with-smile-face-happy-positive.jpg" alt="" style={{width:'100%',height:'215px'}}/>
                     </div>
                     <div className="xb-item--holder">
                       <span className="xb-item--category">PR VISA</span>
@@ -2491,7 +2797,7 @@ export default function NewHome() {
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
                       <a href="/Blog">
-                        <img src="/assets/pic/img_03blog.jpg" alt="" />
+                        <img src="/assets/pic/pleased-young-woman-wearing-red-shirt-sunglasses-holding-globe-while-flying-blue-toy-plane-white-wall.jpg" alt="" style={{width:'100%',height:'215px'}}/>
                       </a>
                     </div>
                     <div className="xb-item--holder">
@@ -2501,7 +2807,7 @@ export default function NewHome() {
 
                       <h3 className="xb-item--title border-effect">
                         <a href="/Blog">
-                          A Student Visa allows you to study full-time in ..
+                           Student Visa allow you to study fulltime in ..
                         </a>
                       </h3>
                       <a className="xb-item--link" href="/Blog">
@@ -2520,7 +2826,7 @@ export default function NewHome() {
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
                       <a href="/Blog">
-                        <img src="/assets/pic/img_02blog.jpg" alt="" />
+                        <img src="/assets/pic/customer-service-cute-guy-grey-suit-with-computer-headset-waving-hands-holding-cup.jpg" alt=""  style={{width:'100%',height:'215px'}} />
                       </a>
                     </div>
                     <div className="xb-item--holder">
@@ -2560,6 +2866,73 @@ export default function NewHome() {
         </div>
       </section>
       {/* <!-- blog end --> */}
+
+
+{/* form start */}
+
+  <section id="reg_login">
+  <div class="container">
+    <div class="user signinBx">
+   <div class="hero-section">
+  <div class="bg-image"></div>
+  <div class="text-content">
+    <h1 style={{color:'#e38508'}}>Study Abroad Made Simple with Trusted Visa Experts</h1>
+    <ul>
+      <li>Planning to study abroad? Let our trusted visa experts simplify every step.</li>
+      <li>Say goodbye to confusion — we handle all your study visa documentation and formalities.</li>
+      <li>With us, your dream of international education becomes a smooth and stress-free reality.</li>
+      <li>Trusted by thousands of students for reliable and timely visa approvals.</li>
+      <li>Let our visa consultants turn your study abroad dream into a successful journey.</li>
+    </ul>
+      <a  href="https://wa.me/YourPhoneNumber" 
+      target="_blank" > <button class="cta-button" style={{color:'#e38508'}}>
+   Talk to Experts</button></a>
+  </div>
+</div>
+      <div class="formBx">
+      <form className="custom-signup-form">
+  <h2>Get Personalized Guidance for Your Visa Process</h2>
+  <div className="form-row">
+    <input type="text" placeholder="First Name" name="firstName" required />
+    <input type="text" placeholder="Last Name" name="lastName" required />
+  </div>
+  <div className="form-row">
+    <input type="tel" placeholder="Phone Number" name="phone" required />
+    <input type="email" placeholder="Email" name="email" required />
+  </div>
+  <div className="form-row">
+    <select name="country" required>
+      <option value="">Country Interested</option>
+      <option value="USA">USA</option>
+      <option value="Canada">Canada</option>
+           <option value="Canada">australia</option>
+                <option value="Canada">UK</option>
+                     <option value="Canada">France
+
+</option>
+                          <option value="Canada">Germany</option>
+    </select>
+    <select name="visaType" required>
+      <option value="">Visa Type</option>
+      <option value="student">Student Visa</option>
+      <option value="work">Work Visa</option>
+            <option value="work">Investore Visa</option>
+                  <option value="work">Visitor Visa</option>
+                        <option value="work">PR Visa</option>
+    </select>
+  </div>
+
+  <button type="submit" style={{background:'#e38508',color:'#fff'}}>Submit</button>
+</form>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{/* form end */}
+
       {/* <!-- brand start --> */}
       <section
         className="brand brand-pb z-1 pos-rel"

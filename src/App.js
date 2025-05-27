@@ -42,13 +42,14 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import { FaWhatsapp } from 'react-icons/fa'; 
 import News from "./pages/News";
 import Newsdetails from "./pages/News-details";
-
-
-
 import Visaservice from "./pages/Visaservice";
 import NewHome from "./pages/NewHome";
 import Countries from "./pages/Countries";
 import FooterHome from "./pages/FooterHome";
+
+
+
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -100,7 +101,7 @@ function App() {
         className={`xb-backtotop ${showScroll ? "active" : ""}`}
         onClick={scrollToTop}
       >
-        <button className="scroll-btn" style={{ background: '#00cc99', color: '#fff', padding: '10px 15px', borderRadius: '8px' }}>
+        <button className="scroll-btn" style={{ background: '#e38508', color: '#fff', padding: '10px 15px', borderRadius: '8px' }}>
           <i className="far fa-arrow-up"></i>
         </button>
       </div>

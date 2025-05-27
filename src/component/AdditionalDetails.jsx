@@ -374,7 +374,7 @@ export default function AdditionalDetails({  onPrevious }) {
         <button className="btn btn-secondary" onClick={onPrevious}>
           Previous
         </button>
-        <button className="btn btn-primary" >
+        <button className="btn btn-primary"  style={{background:'#e38508',border:'1px solid #e38508'}}>
           Submit
         </button>
       </div>

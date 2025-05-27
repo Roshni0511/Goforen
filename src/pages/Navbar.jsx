@@ -170,7 +170,8 @@ export default function Navbar() {
             <div className="header__top ul_li_between" style={{justifyContent:'center'}}>
               <div className="header__top-cta">
               <a href="tel:+917600909090" style={{color:"#000"}}>
-                <img src="assets/img/icon/n_pad.svg" alt="" />
+             <img src="assets/img/icon/n_pad.svg" alt="" className="orange-icon" />
+
                 <span>Help Desk :</span>  +91 76 00 90 90 90
                 </a>
               </div>
@@ -179,12 +180,12 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="header__wrap stricky  ">
+        <div className="header__wrap stricky  " style={{background:'#07374d'}}>
           <div className="container">
-            <div className="header__inner ul_li_between">
+            <div className="header__inner ul_li_between" style={{padding:'13px 0px'}}>  
               <div className="header__logo">
                 <a href="/">
-                  <img src="/assets/pic/newgof.png" alt="" />
+                  <img src="/assets/pic/logogo.png" alt="" style={{width:'100%',height:'90px'}} />
                 </a>
               </div>
               <div className="main-menu__wrap ul_li navbar navbar-expand-lg">
@@ -192,18 +193,18 @@ export default function Navbar() {
                   <ul>
                     <li>
                       <a href="/">
-                        <span>Home</span>
+                        <span style={{color:'#fff'}}>Home</span>
                       </a>
                     </li>
 
                     <li className="menu-item-has-children">
                       <a>
-                        <span>About us</span>
+                        <span style={{color:'#fff'}}>About us</span>
                       </a>
                       <ul className="submenu">
                       <li>
                           <a href="/About">
-                            <span>About Goforen</span>
+                            <span >About Goforen</span>
                           </a>
                         </li>
                         <li>
@@ -221,7 +222,7 @@ export default function Navbar() {
                     </li>
                     <li className="menu-item-has-children">
                       <a href="/Visa-services">
-                        <span>Visa Services</span>
+                        <span style={{color:'#fff'}}> Visa Services</span>
                       </a>
                       <ul className="submenu">
                         <li>
@@ -254,7 +255,7 @@ export default function Navbar() {
 
                     <li className="menu-item-has-children">
                       <a href="/Courses">
-                        <span>Courses</span>
+                        <span style={{color:'#fff'}}  >Courses</span>
                       </a>
                       <ul className="submenu">
                         <li>
@@ -286,7 +287,7 @@ export default function Navbar() {
                     </li>
                     <li className="menu-item-has-children">
                       <a >
-                        <span>Media</span>
+                        <span style={{color:'#fff'}}>Media</span>
                       </a>
                       <ul className="submenu">
                         <li className="menu-item">
@@ -313,17 +314,17 @@ export default function Navbar() {
                     </li>
                     <li>
                       <a href="/Blog">
-                        <span>Blog</span>
+                        <span style={{color:'#fff'}}>Blog</span>
                       </a>
                     </li>
                     <li>
                       <a href="/Contact">
-                        <span>Contact</span>
+                        <span style={{color:'#fff'}}>Contact</span>
                       </a>
                     </li>
                     <li className="menu-item-has-children">
                       <a>
-                        <span>Inquiry</span>
+                        <span style={{color:'#fff'}}>Inquiry</span>
                       </a>
                       <ul className="submenu">
                         {/* <li className="menu-item">
@@ -390,7 +391,7 @@ export default function Navbar() {
               <div className="xb-hamburger-menu">
                 <div className="xb-nav-mobile">
                   <div className="xb-nav-mobile-button">
-                    <i className="fal fa-bars"></i>
+                    <i className="fal fa-bars" style={{color:'#fff'}}></i>
                   </div>
                 </div>
               </div>
@@ -436,7 +437,7 @@ export default function Navbar() {
               <div className="xb-menu-close xb-hide-xl xb-close"></div>
               <div className="xb-logo-mobile xb-hide-xl">
                 <a href="/" rel="home">
-                  <img src="/assets/pic/newgof.png" alt=""  style={{width:'100px',height:'100%'}}/>
+                  <img src="/assets/pic/logogo.png" alt="" style={{width:'100%',height:'90px'}} />
                 </a>
               </div>
 
@@ -458,13 +459,13 @@ export default function Navbar() {
                 <ul className="xb-menu-primary clearfix">
                   <li className="menu-item">
                     <a href="/">
-                      <span>Home</span>
+                      <span style={{color:'#fff'}}>Home</span>
                     </a>
                   </li>
 
                   <li className="menu-item menu-item-has-children">
                     <a href="/About">
-                      <span>About us</span>
+                      <span style={{color:'#fff'}}>About us</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -486,7 +487,7 @@ export default function Navbar() {
                   </li>
                   <li className="menu-item menu-item-has-children">
                     <a href="/Visa-services">
-                      <span>Visa Services</span>
+                      <span style={{color:'#fff'}}>Visa Services</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -519,7 +520,7 @@ export default function Navbar() {
 
                   <li className="menu-item menu-item-has-children">
                     <a href="/Courses">
-                      <span>Courses</span>
+                      <span style={{color:'#fff'}}>Courses</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -551,7 +552,7 @@ export default function Navbar() {
                   </li>
                   <li className="menu-item menu-item-has-children">
                     <a href="#">
-                      <span>Media</span>
+                      <span style={{color:'#fff'}}>Media</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -578,17 +579,17 @@ export default function Navbar() {
                   </li>
                   <li className="menu-item">
                     <a href="/Blog">
-                      <span>Blog</span>
+                      <span style={{color:'#fff'}}>Blog</span>
                     </a>
                   </li>
                   <li className="menu-item">
                     <a href="/Contact">
-                      <span>Contact</span>
+                      <span style={{color:'#fff'}}>Contact</span>
                     </a>
                   </li>
                   <li className="menu-item menu-item-has-children">
                     <a href="">
-                      <span>Inquiry</span>
+                      <span style={{color:'#fff'}}>Inquiry</span>
                     </a>
                     <ul className="sub-menu">
                     

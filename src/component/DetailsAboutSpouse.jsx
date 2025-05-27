@@ -1560,7 +1560,7 @@ export default function DetailsAboutSpouse({ onNext, onPrevious }) {
         <button className="btn btn-secondary" onClick={onPrevious}>
           Previous
         </button>
-        <button className="btn btn-primary" onClick={onNext}>
+        <button className="btn btn-primary" onClick={onNext}  style={{background:'#e38508',border:'1px solid #e38508'}}>
           Next
         </button>
       </div>

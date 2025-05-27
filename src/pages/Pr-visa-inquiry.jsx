@@ -531,7 +531,7 @@ export default function Prvisainquiry() {
                         </form>
                       </div>
                       <div className="col-12 mt-4 text-end">
-                    <button className="btn btn-primary" onClick={handleNext}>
+                    <button className="btn btn-primary" onClick={handleNext} style={{background:'#e38508',border:'1px solid #e38508'}}>
                       Next
                     </button>
                   </div>
@@ -1384,7 +1384,7 @@ export default function Prvisainquiry() {
             <button className="btn btn-secondary" onClick={handlePrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={handleNext}>
+            <button className="btn btn-primary" onClick={handleNext} style={{background:'#e38508',border:'1px solid #e38508'}}>
               Next
             </button>
           </div>
@@ -1520,7 +1520,7 @@ export default function Prvisainquiry() {
             <button className="btn btn-secondary" onClick={handlePrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={handleNext}>
+            <button className="btn btn-primary" onClick={handleNext} style={{background:'#e38508',border:'1px solid #e38508'}}>
               Next
             </button>
           </div>
@@ -2768,7 +2768,7 @@ export default function Prvisainquiry() {
             <button className="btn btn-secondary" onClick={handlePrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" onClick={handleNext}>
+            <button className="btn btn-primary" onClick={handleNext} style={{background:'#e38508',border:'1px solid #e38508'}}>
               Next
             </button>
           </div>
@@ -3034,7 +3034,7 @@ export default function Prvisainquiry() {
             <button className="btn btn-secondary" onClick={handlePrevious}>
               Previous
             </button>
-            <button className="btn btn-primary" >
+            <button className="btn btn-primary" style={{background:'#e38508',border:'1px solid #e38508'}} >
               Submit
             </button>
           </div>

@@ -97,7 +97,7 @@ export default function Newsdetails() {
     boxShadow: '0 0 10px rgba(0,0,0,0.1)',
   
   }}>
-    <h4 style={{ color: '#00cc99', marginBottom: '10px' }}>
+    <h4 style={{ color: '#e38508', marginBottom: '10px' }}>
       Netherlands Sees Rise in Undocumented Workers, Raising Exploitation Concerns
     </h4>
     <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '15px', marginBottom: '10px' }}>
@@ -152,7 +152,7 @@ export default function Newsdetails() {
     borderRadius: '5px',
     boxShadow: '0 0 10px rgba(0,0,0,0.1)'
   }}>
-    <h5 style={{ fontWeight: 'bold', borderBottom: '2px solid #00cc99', display: 'inline-block', marginBottom: '15px' }}>
+    <h5 style={{ fontWeight: 'bold', borderBottom: '2px solid #e38508', display: 'inline-block', marginBottom: '15px' }}>
       Latest News
     </h5>
     <ul style={{ padding: 0, listStyle: 'none', margin: 0 }}>
