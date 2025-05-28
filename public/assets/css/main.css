@@ -2639,17 +2639,20 @@ h6 {
   .header-style-two .stricked-menu .main-menu ul li:hover > a,
   .header-style-two .stricked-menu .main-menu ul li.active > a {
     color: var(--color-dark); }
+
   .header-style-two .stricked-menu .main-menu ul li:not(:last-child) {
     margin-right: 40px !important; }
+
+
   .header-style-two .xb-menu-primary li > a:hover, .header-style-two .xb-menu-primary li > a.current,
   .header-style-two .xb-menu-primary li.current_page_item > a,
   .header-style-two .xb-menu-primary li.current-menu-item > a,
   .header-style-two .xb-menu-primary li.current_page_ancestor > a,
   .header-style-two .xb-menu-primary li.current-menu-ancestor > a,
   .header-style-two .xb-menu-primary .xb-menu-toggle:hover {
-    color: var(--color-primary-2); }
+    color: #e38508; }
   .header-style-two .xb-header-mobile-search .search-field:focus {
-    border-color: var(--color-primary-2); }
+    border-color: #e38508; }
 
 .xb-header-top {
   border-bottom: 1px solid #212121;
@@ -2839,9 +2842,23 @@ h6 {
       position: relative; }
       .main-menu ul li:not(:last-child) {
         margin-right: 20px; }
+
         @media only screen and (min-width: 1200px) and (max-width: 1500px) {
           .main-menu ul li:not(:last-child) {
-            margin-right: 15px; } }
+            margin-right: 15px; } 
+          
+          }
+
+ /* @media only screen and (min-width: 768px) and (max-width: 10px) {
+          .main-menu ul li:not(:last-child) {
+            margin-right: 15px; } 
+          
+          } */
+
+
+
+
+
             .menu-item-has-children:hover > .submenu {
               display: block;
             }
@@ -3069,7 +3086,11 @@ h6 {
 
 .demo-travel-agency {
   background-color: #F0F2F6; }
-
+@media (max-width: 1025px) {
+  .main-menu > ul > li > a span{
+    padding: 5px 7px;
+  }
+}
 .gradient-bg {
   background-image: linear-gradient(90deg, var(--gradient-color-from) 0%, var(--gradient-color-to) 100%);
   background-image: -moz-linear-gradient(90deg, var(--gradient-color-from) 0%, var(--gradient-color-to) 100%);
@@ -7194,7 +7215,7 @@ blockquote {
   flex-wrap: wrap; }
 
 .xb-menu-primary .xb-menu-toggle:hover {
-  color: var(--color-primary); }
+  color: #e38508; }
 
 .xb-logo-mobile {
   margin-bottom: 40px; }

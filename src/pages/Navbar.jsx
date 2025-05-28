@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import $ from "jquery";
+import { FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -433,39 +434,30 @@ export default function Navbar() {
 
         <div className="xb-header-wrap">
           <div className="xb-header-menu">
-            <div className="xb-header-menu-scroll">
-              <div className="xb-menu-close xb-hide-xl xb-close"></div>
-              <div className="xb-logo-mobile xb-hide-xl">
+            <div className="xb-header-menu-scroll" style={{padding:'0px'}}>
+             <div className="xb-menu-close xb-hide-xl xb-close" >
+  <FaTimes style={{ color: '#fff',fontSize:'30px' }}/>
+</div>
+
+              <div className=" xb-hide-xl" style={{background:'#07374d'}}>
                 <a href="/" rel="home">
-                  <img src="/assets/pic/logogo.png" alt="" style={{width:'100%',height:'90px'}} />
+                  <img src="/assets/pic/logogo.png" alt="" style={{width:'85%',height:'145px',padding:'30px 45px'}} />
                 </a>
               </div>
 
-              {/* <div className="xb-header-mobile-search xb-hide-xl">
-              <form role="search" onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search..."
-          name="s"
-          className="search-field"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
-        <button type="submit" className="search-submit"></button>
-      </form>
-              </div> */}
+             
 
-              <nav className="xb-header-nav">
+              <nav className="xb-header-nav" style={{padding:'10px 25px'}} >
                 <ul className="xb-menu-primary clearfix">
                   <li className="menu-item">
                     <a href="/">
-                      <span style={{color:'#fff'}}>Home</span>
+                      <span >Home</span>
                     </a>
                   </li>
 
                   <li className="menu-item menu-item-has-children">
                     <a href="/About">
-                      <span style={{color:'#fff'}}>About us</span>
+                      <span>About us</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -487,7 +479,7 @@ export default function Navbar() {
                   </li>
                   <li className="menu-item menu-item-has-children">
                     <a href="/Visa-services">
-                      <span style={{color:'#fff'}}>Visa Services</span>
+                      <span >Visa Services</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -520,7 +512,7 @@ export default function Navbar() {
 
                   <li className="menu-item menu-item-has-children">
                     <a href="/Courses">
-                      <span style={{color:'#fff'}}>Courses</span>
+                      <span >Courses</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -552,7 +544,7 @@ export default function Navbar() {
                   </li>
                   <li className="menu-item menu-item-has-children">
                     <a href="#">
-                      <span style={{color:'#fff'}}>Media</span>
+                      <span>Media</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -579,17 +571,17 @@ export default function Navbar() {
                   </li>
                   <li className="menu-item">
                     <a href="/Blog">
-                      <span style={{color:'#fff'}}>Blog</span>
+                      <span >Blog</span>
                     </a>
                   </li>
                   <li className="menu-item">
                     <a href="/Contact">
-                      <span style={{color:'#fff'}}>Contact</span>
+                      <span >Contact</span>
                     </a>
                   </li>
                   <li className="menu-item menu-item-has-children">
                     <a href="">
-                      <span style={{color:'#fff'}}>Inquiry</span>
+                      <span>Inquiry</span>
                     </a>
                     <ul className="sub-menu">
                     

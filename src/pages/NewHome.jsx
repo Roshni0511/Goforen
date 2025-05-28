@@ -28,11 +28,24 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
 
-  const imagess = [
-    "/assets/pic/banner1.png",
-    "/assets/pic/banner2.png",
-    "/assets/pic/banner3.png",
-  ];
+ const slides = [
+  {
+    image: "/assets/pic/newphotos.png",
+    title: "Get a free assessment / advice",
+    description: "Fill up a quick inquiry form / Upload your CV and we will help you out with your queries!",
+  },
+  {
+    image: "/assets/pic/banner2.png",
+    title: "Begin with a Free Evaluation",
+    description: "Take the first step toward your goals with a no-obligation assessment from our experts.",
+  },
+  {
+    image: "/assets/pic/mainbaner.png",
+    title: "Get Expert Advice – No Cost!",
+    description: "Connect with our experienced consultants and receive personalized guidance absolutely free!",
+  },
+];
+
 export default function NewHome() {
 
 const cards = [
@@ -316,18 +329,18 @@ const cards = [
 
       
       {/* <!-- hero start --> */}
-     <Swiper
+   <Swiper
   modules={[Autoplay]}
   autoplay={{ delay: 3000, disableOnInteraction: false }}
   loop={true}
   className="hero-slider"
 >
-  {imagess.map((background, index) => (
+  {slides.map((slide, index) => (
     <SwiperSlide key={index}>
       <section
         className="hero hero__style-one bg_img"
         style={{
-          backgroundImage: `url(${background})`,
+          backgroundImage: `url(${slide.image})`,
           position: "relative",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -337,25 +350,24 @@ const cards = [
           <div className="row align-items-center">
             <div className="col-xl-6 col-lg-7">
               <div className="hero__content">
-                <h1 className="wow skewIn">
-                  Get a free assessment /<br />
-                  advice
-                </h1>
+                <h1 className="wow skewIn">{slide.title}</h1>
                 <p
                   className="wow fadeInUp"
                   data-wow-delay="200ms"
                   data-wow-duration=".6s"
                 >
-                  Fill up a quick inquiry form / Upload your cv and we will help
-                  you out with your queries!
+                  {slide.description}
                 </p>
-
                 <div
                   className="btns wow fadeInUp mt-5"
                   data-wow-delay="600ms"
                   data-wow-duration=".6s"
                 >
-                  <a className="colorcode" href="/Contact" style={{ background: '#f09318', color: '#fff' ,marginBottom:'15px'}}>
+                  <a
+                    className="colorcode"
+                    href="/Contact"
+                    style={{ background: "#f09318", color: "#fff", marginBottom: "15px" }}
+                  >
                     Quick Inquiry
                   </a>
                   <a className="thm-btn thm-btn--white" href="/Upload-cv">
@@ -370,9 +382,56 @@ const cards = [
     </SwiperSlide>
   ))}
 </Swiper>
+
       {/* <!-- hero end --> */}
 
+        {/* CARD SECTION STRT */}
+  <div className="container our-services">
+  <div className="sec-title mb-55">
+              <div className="sec-title mb-10" style={{justifyContent:'center',display:'flex'}}>
+                <h2 className="mb-10 wow skewIn" style={{fontSize:'40px'}}>
+              Popular Visa </h2>
+              </div>
+                <div className="sec-title mb-45"  style={{justifyContent:'center',display:'flex'}}>
+                <p>
+                  "Get expert guidance for the most popular visas to Canada, Australia, USA, and more."
+                </p>
+              </div>
+            </div>
+    <div className="row">
+      {cards.map((card, index) => (
+        <div className="col-sm-4" key={index}>
+          <div className="flip-container">
+            <div className="flipper">
+              <div className="front" style={{ background: card.bgColor }}>
+                <img
+                  className="lazyload"
+                  src={card.img}
+                  alt={card.title}
+                  style={{ width: "200px", height: "150px" }}
+                />
+                <h3 >{card.title}</h3>
+              </div>
+              <div className="back" style={{ background: card.bgColor }}>
+                <h5 style={{color:'#fff',marginBottom:'10px'}}>{card.title}</h5>
+              <ul style={{ paddingLeft: "20px", textAlign: "left",listStyle:'none' ,lineHeight:'28px'}}>
+    {card.points.map((point, i) => (
+      <li key={i} style={{textDecoration:'none'}}>
+        <Link to={point.link} style={{ color: "#fff" }}>
+        <ArrowForwardIcon /> {point.text}
+        </Link>
+      </li>
+    ))}
+  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
 
+        {/* CARD SECTION END */}
 
       {/* <!-- about start --> */}
       <section className="about pos-rel pt-120 pb-130">
@@ -692,57 +751,11 @@ const cards = [
 
 
 
-      {/* CARD SECTION STRT */}
- <div className="container our-services">
-<div className="sec-title mb-55">
-            <div className="sec-title mb-10" style={{justifyContent:'center',display:'flex'}}>
-              <h2 className="mb-10 wow skewIn" style={{fontSize:'40px'}}>
-             Popular Visa </h2>
-             </div>
-              <div className="sec-title mb-45"  style={{justifyContent:'center',display:'flex'}}>
-              <p>
-                 "Get expert guidance for the most popular visas to Canada, Australia, USA, and more."
-              </p>
-            </div>
-          </div>
-  <div className="row">
-    {cards.map((card, index) => (
-      <div className="col-sm-4" key={index}>
-        <div className="flip-container">
-          <div className="flipper">
-            <div className="front" style={{ background: card.bgColor }}>
-              <img
-                className="lazyload"
-                src={card.img}
-                alt={card.title}
-                style={{ width: "200px", height: "150px" }}
-              />
-              <h3 >{card.title}</h3>
-            </div>
-            <div className="back" style={{ background: card.bgColor }}>
-              <h5 style={{color:'#fff',marginBottom:'10px'}}>{card.title}</h5>
-             <ul style={{ paddingLeft: "20px", textAlign: "left",listStyle:'none' ,lineHeight:'28px'}}>
-  {card.points.map((point, i) => (
-    <li key={i} style={{textDecoration:'none'}}>
-      <Link to={point.link} style={{ color: "#fff" }}>
-       <ArrowForwardIcon /> {point.text}
-      </Link>
-    </li>
-  ))}
-</ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
 
-      {/* CARD SECTION END */}
 
       {/* banner start */}
-      <div>
-        <img src="/assets/pic/Group 1340 1.png" alt="" />
+      <div style={{paddingTop:'80px'}}>
+        <img src="/assets/pic/newbanner.png" alt="" />
       </div>
  {/* banner end */}
 
@@ -2102,7 +2115,7 @@ const cards = [
               <div className="col-lg-4 co-12">
   <div className="xb-package mt-30" style={{ height: '100%' }}>
     <div className="xb-item--inner" style={{
-      height: '94%',
+      height: '512px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between'
@@ -2155,7 +2168,10 @@ const cards = [
 
             <div className="col-lg-4 co-12">
               <div className="xb-package mt-30">
-                <div className="xb-item--inner">
+                <div className="xb-item--inner" style={{
+      height:'512px'
+
+    }}>
                   <div className="xb-item--img">
                     <h1 style={{justifyContent:'center',display:'flex'}}>Blog</h1>
                   </div>
@@ -2206,7 +2222,7 @@ const cards = [
              
               <div className="col-lg-4 co-12">
               <div className="xb-package mt-30">
-                <div className="xb-item--inner">
+                <div className="xb-item--inner" style={{height:'512px'}}>
                   <div style={{justifyContent:'center',display:'flex'}}>
                     <h1>Event</h1>
                   </div>
@@ -2252,7 +2268,7 @@ const cards = [
         marginBottom: '13px',
       }}
     >
-     Study in Hungary and Greece, France & Germany – Goforean Institute's Private Universities Info Session
+     Study in Hungary and Greece, France -Goforean Institute's Private Universities Info Session
     </h3>
 
     {/* Button */}
