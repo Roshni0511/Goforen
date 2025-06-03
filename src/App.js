@@ -85,12 +85,12 @@ function App() {
     return (
       <div id="xb-loadding">
         <div className="loader">
-          <div className="plane">
-            <img className="plane-img" src="assets/img/icon/plane.gif" alt="" />
+          <div>
+            <img src="/assets/pic/preloaderr.gif" alt="" />
           </div>
-          <div className="earth-wrapper">
+          {/* <div className="earth-wrapper">
             <div className="earth"></div>
-          </div>
+          </div> */}
         </div>
       </div>
     );
