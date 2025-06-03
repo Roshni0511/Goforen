@@ -709,6 +709,9 @@ background-color:"rgb(237, 243, 245)" ;
   display: flex;
   align-items: center;
 }
+.white-icon {
+  filter: brightness(0) invert(1);
+}
                                   
                                             
 
@@ -716,125 +719,62 @@ background-color:"rgb(237, 243, 245)" ;
   margin-top: 50px;
 }
 
-.flip-container {
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  margin: 0 auto 60px auto;
-  width: 320px;
-  height: 200px;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
+
+
+.hero__style-one {
+   background-position: center;
+   background-repeat: no-repeat; 
+   background-size: cover !important; 
+  height: 100vh;
 }
 
-.flip-container:hover .flipper {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
-.front, .back {
-  width: 320px;
-  height: 200px;
-  border-radius: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  color: white;
-  font-family: "Poppins", sans-serif;
-}
-
-.front h3 {
-  text-align: center;
-  font-size: 18px;
-  color: white;
-}
-
-.front img {
-  display: block;
-  margin: 10px auto 0 auto;
-}
-
-.back {
-  text-align: center;
-  font-size: 18px;
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
-.back h5 {
-  margin-top: 20px;
-}
-
-.back p {
-  font-size: 14px;
-  margin: 15px;
-}
-
-.flipper {
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  position: relative;
-}
-/* Responsive adjustments */
-
-/* Tablets and below */
-@media (max-width: 991px) {
-  .flip-container {
-    width: 250px;
-    height: 160px;
+/* 👇 MOBILE FIX */
+@media (max-width: 460px) {
+  .hero__style-one {
+    background-size: contain !important;
+    height: 500px; /* change as needed */
+    background-repeat: no-repeat;
+    background-position: center;
   }
+
+  .hero-slider {
+    height: 40vh;
+}
+
+
+.bg_img {
+    background-position: center center;
+    background-size: cover !important;
   
-  .front, .back {
-    width: 250px;
-    height: 160px;
-  }
-  
-  .front h3, .back h5 {
-    font-size: 16px;
-  }
-  
-  .back p {
-    font-size: 13px;
-    margin: 10px;
-  }
-  
-  .front img {
-    width: 180px; /* optional: scale down image */
-    height: auto;
-  }
 }
 
-/* Mobile phones */
-@media (max-width: 600px) {
-  /* Reduce margin between flip containers */
-  .flip-container {
-    margin-bottom: 20px; /* smaller vertical spacing */
-  }
-  
-  /* Adjust column padding/margin if using Bootstrap */
-  .row > .col-sm-4 {
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-bottom: 10px; /* reduce vertical gaps */
-  }
-  
-  /* Make sure cards take full width */
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  /* If the .row uses flexbox, reduce gap */
-  .row {
-    gap: 10px; /* reduce horizontal gap between cards */
-  }
+@media (max-width: 1199px) {
+    .hero__style-one {
+        min-height: 350px !important;
+    }
+}
+
+.fadeInUp {
+    display: flex !important;
 }
 
 
+}
+
+
+
+
+
+.newclassmarg{
+  margin: 0;
+}
+@media (max-width: 992px) {
+
+.newclassmarg{
+  margin: 0 33% 0 0;
+}
+
+}
 #reg_login {
   position: relative;
   min-height: 50vh;
@@ -994,6 +934,20 @@ background-color:"rgb(237, 243, 245)" ;
 #reg_login .container.active .signinBx .imgBx {
   left: -100%;
 }
+.responsive-btns {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .responsive-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 .hero-section {
   position: relative;
@@ -1206,4 +1160,148 @@ background-color:"rgb(237, 243, 245)" ;
   }
 }
 
-                                  
+     .imglogo{
+       width: 100%;
+       height: 90px;
+     }                             
+ 
+   
+     @media (max-width: 769px) { 
+ .imglogo{
+       width: 100%;
+       height: 60px;
+     }     
+     }
+
+
+
+     /*  */
+     .country-layout {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.flip-card-wrapper {
+  width: 150px;
+  height: 180px;
+  perspective: 1000px;
+}
+
+/* Tilted + shifted layout */
+.card-1 { transform: rotate(-8deg) translateY(0px); }
+.card-2 { transform: rotate(6deg) translateY(20px); }
+.card-3 { transform: rotate(12deg) translateY(-10px); }
+.card-4 { transform: rotate(10deg) translateY(10px); }
+
+.card-3 .flip-card-front, 
+.card-3 .flip-card-back{
+    top: 77px;
+   
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner {
+  width: 130%;
+  height: 130%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.flip-card-front h3,
+.flip-card-back h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  margin: 0;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flip-card-wrapper {
+    width: 273px;
+    height: 140px;
+  }
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4 {
+    transform: none;
+  }
+
+  .card-3 .flip-card-front,
+  .card-3 .flip-card-back {
+    top: 0;
+  }
+
+  .country-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+}
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+}
+
+@media (max-width: 480px) {
+  .flip-card-wrapper {
+    width: 273px;
+    height: 140px;
+  }
+
+  .flip-card-front h3,
+  .flip-card-back h3 {
+    font-size: 14px;
+  }
+
+  .flip-card-front img,
+  .flip-card-back img {
+    width: 50px;
+    height: 50px;
+  }
+}

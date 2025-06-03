@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import FooterTop from "../component/FooterTop";
 
-export default function Blog() {
+export default function StayInformed  () {
      // data-background img start
       const [background, setBackground] = useState("");
     
@@ -55,13 +55,13 @@ export default function Blog() {
 
   <div className="container" style={{ position: 'relative', zIndex: 2 }}>
     <div className="breadcrumb__content">
-    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Blog</h2>
+    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Stay Informed</h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
               </li>
               
-              <li className="breadcrumb-item">Blog</li>
+              <li className="breadcrumb-item">Stay Informed</li>
             </ul>
     </div>
   </div>
@@ -100,7 +100,7 @@ export default function Blog() {
                         <div className="blog-post-wrapper">
                             <article className="single-post-item">
                                 <div className="post-thumbnail-wrapper">
-                                    <a href="/BlogDetails"><img src="/assets/pic/blog1.webp" alt="" /></a>
+                                    <a href="/StayInformedDetails"><img src="/assets/pic/blog1.webp" alt="" /></a>
                                 </div>
                                 <div className="post-content-wrapper">
                                     <ul className="post-meta ul_li">
@@ -108,18 +108,18 @@ export default function Blog() {
                                         <li><a href="#!"><i className="far fa-comments"></i> Comments (3)</a></li>
                                         <li><span className="posted-on"><i className="far fa-calendar-check"></i> <a href="#!">August 4, 2023</a></span></li>
                                     </ul>
-                                    <h3 className="post-title border_effect"><a href="/BlogDetails">Elevating your visa application navigating complexity with confidence</a></h3>
+                                    <h3 className="post-title border_effect"><a href="/StayInformedDetails">Elevating your visa application navigating complexity with confidence</a></h3>
                                     <div className="post-excerpt">
                                         <p>Navigating Complexity with Confidence" is a concise and impactful title that captures the essence of how visa consultants can assist in making the intricate visa process more manageable ...</p>
                                     </div>
                                     <div className="post-read-more">
-                                        <a className="colorcode" href="/BlogDetails">Read More</a>
+                                        <a className="colorcode" href="/StayInformedDetails">Read More</a>
                                     </div>
                                 </div>
                             </article>
                             <article className="single-post-item">
                                 <div className="post-thumbnail-wrapper">
-                                    <a href="/BlogDetails"><img src="/assets/pic/blog2.jpg" alt="" /></a>
+                                    <a href="/StayInformedDetails"><img src="/assets/pic/blog2.jpg" alt="" /></a>
                                 </div>
                                 <div className="post-content-wrapper">
                                     <ul className="post-meta ul_li">
@@ -127,18 +127,18 @@ export default function Blog() {
                                         <li><a href="#!"><i className="far fa-comments"></i> Comments (3)</a></li>
                                         <li><span className="posted-on"><i className="far fa-calendar-check"></i> <a href="#!">August 4, 2023</a></span></li>
                                     </ul>
-                                    <h3 className="post-title border_effect"><a href="/BlogDetails">Expert Consulting for Smooth Approval and Confident Navigation</a></h3>
+                                    <h3 className="post-title border_effect"><a href="/StayInformedDetails">Expert Consulting for Smooth Approval and Confident Navigation</a></h3>
                                     <div className="post-excerpt">
                                         <p>Embarking on the journey of securing a visa can be a labyrinthine process, rife with complexities and uncertainties. That's where expert consulting steps in as your guiding light, illuminating...</p>
                                     </div>
                                     <div className="post-read-more">
-                                        <a className="colorcode" href="/BlogDetails">Read More</a>
+                                        <a className="colorcode" href="/StayInformedDetails">Read More</a>
                                     </div>
                                 </div>
                             </article>
                             <article className="single-post-item">
                                 <div className="post-thumbnail-wrapper">
-                                    <a href="/BlogDetails"><img src="/assets/pic/blog3.jpg" alt="" /></a>
+                                    <a href="/StayInformedDetails"><img src="/assets/pic/blog3.jpg" alt="" /></a>
                                 </div>
                                 <div className="post-content-wrapper">
                                     <ul className="post-meta ul_li">
@@ -146,12 +146,12 @@ export default function Blog() {
                                         <li><a href="#!"><i className="far fa-comments"></i> Comments (3)</a></li>
                                         <li><span className="posted-on"><i className="far fa-calendar-check"></i> <a href="#!">August 4, 2023</a></span></li>
                                     </ul>
-                                    <h3 className="post-title border_effect"><a href="/BlogDetails">Your Comprehensive Guide to Successfully Pursuing Education Abroad</a></h3>
+                                    <h3 className="post-title border_effect"><a href="/StayInformedDetails">Your Comprehensive Guide to Successfully Pursuing Education Abroad</a></h3>
                                     <div className="post-excerpt">
                                         <p>Our guide doesn't just navigate the technicalities; it's a roadmap that instills confidence. We believe that informed decisions lead to successful outcomes, and our aim is to empower...</p>
                                     </div>
                                     <div className="post-read-more">
-                                        <a className="colorcode" href="/BlogDetails">Read More</a>
+                                        <a className="colorcode" href="/StayInformedDetails">Read More</a>
                                     </div>
                                 </div>
                             </article>
@@ -181,29 +181,29 @@ export default function Blog() {
                                 <div className="widget__post">
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="/BlogDetails"><img src="/assets/pic/blog4.webp" alt="" /></a>
+                                            <a href="/StayInformedDetails"><img src="/assets/pic/blog4.webp" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">nov 28,2023 </span>
-                                            <h4 className="post-title border-effect-2"><a href="/BlogDetails">Your Comprehensive Guide to Student Visa...</a></h4>
+                                            <h4 className="post-title border-effect-2"><a href="/StayInformedDetails">Your Comprehensive Guide to Student Visa...</a></h4>
                                         </div>
                                     </div>
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="/BlogDetails"><img src="/assets/pic/blog5.webp" alt="" /></a>
+                                            <a href="/StayInformedDetails"><img src="/assets/pic/blog5.webp" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">July 16,2023</span>
-                                            <h4 className="post-title border-effect-2"><a href="/BlogDetails">How Visa Consultants Make It Happen...</a></h4>
+                                            <h4 className="post-title border-effect-2"><a href="/StayInformedDetails">How Visa Consultants Make It Happen...</a></h4>
                                         </div>
                                     </div>
                                     <div className="widget__post-item ul_li">
                                         <div className="post-thumb">
-                                            <a href="/BlogDetails"><img src="/assets/pic/blog6.jpg" alt="" /></a>
+                                            <a href="/StayInformedDetails"><img src="/assets/pic/blog6.jpg" alt="" /></a>
                                         </div>
                                         <div className="post-content">
                                             <span className="post-date">July 25,2023</span>
-                                            <h4 className="post-title border-effect-2"><a href="/BlogDetails">Visa Consultants Make Global Moves Easier...</a></h4>
+                                            <h4 className="post-title border-effect-2"><a href="/StayInformedDetails">Visa Consultants Make Global Moves Easier...</a></h4>
                                         </div>
                                     </div>
                                 </div>

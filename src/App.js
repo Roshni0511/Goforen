@@ -21,8 +21,8 @@ import Activities from "./pages/Activities";
 import Visitorvisa from "./pages/Visitor-visa";
 import Investorvisa from "./pages/Investor-visa";
 import Workpermitvisa from "./pages/Work-permit-visa";
-import Blog from "./pages/Blog";
-import BlogDetails from "./pages/BlogDetails";
+// import StayInformed   from "./pages/StayInformed";
+// import StayInformedDetails from "./pages/StayInformedDetails";
 
 import SuccessStory from "./pages/SuccessStory";
 import Uploadcv from "./pages/Upload-cv";
@@ -46,6 +46,8 @@ import Visaservice from "./pages/Visaservice";
 import NewHome from "./pages/NewHome";
 import Countries from "./pages/Countries";
 import FooterHome from "./pages/FooterHome";
+import StayInformed from "./pages/StayInformed ";
+import StayInformedDetails from "./pages/StayInformedDetails";
 
 
 
@@ -197,8 +199,9 @@ function App() {
         <Route path="/Gallary" element={<Gallary />} />
         <Route path="/Videos" element={<Videos />} />
         <Route path="/SuccessStory" element={<SuccessStory />} />
-        <Route path="/Blog" element={<Blog />} />
-        <Route path="/BlogDetails" element={<BlogDetails />} />
+        {/* <Route path="/StayInformed  " element={<StayInformed  />} /> */}
+        <Route path="/StayInformed" element={<StayInformed />}/>
+        {/* <Route path="/BlogDetails" element={<BlogDetails />} /> */}
         <Route path="/Activities" element={<Activities />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/visitor" element={<Contact />} />
@@ -217,7 +220,7 @@ function App() {
         <Route path="/News" element={<News />} />
         <Route path="/Newsdetails" element={<Newsdetails />} />
 
-
+<Route path="/StayInformedDetails" element={<StayInformedDetails />}/>
         <Route path="/Visaservice" element={<Visaservice />} />
         <Route path="/Countries" element={<Countries />} />
         <Route path="/FooterHome" element={<FooterHome />} />

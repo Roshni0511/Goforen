@@ -244,7 +244,10 @@ export default function Immigrationprvisa() {
                 <h3>How Go Foren work</h3>
                 <ul class="about-list ul_li list-unstyled">
                   <li>
-                    <div class="xb-item--inner">
+                    <div class="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                       <div class="xb-item--number">1</div>
                       <div class="xb-item--holder">
                         <h3 class="xb-item--title mb-10">Choose your visa type</h3>
@@ -255,7 +258,10 @@ export default function Immigrationprvisa() {
                     </div>
                   </li>
                   <li>
-                    <div class="xb-item--inner">
+                    <div class="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                       <div class="xb-item--number color-2">2</div>
                       <div class="xb-item--holder">
                         <h3 class="xb-item--title mb-10">Contact our branches</h3>
@@ -266,7 +272,10 @@ export default function Immigrationprvisa() {
                     </div>
                   </li>
                   <li>
-                    <div class="xb-item--inner">
+                    <div class="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                       <div class="xb-item--number color-3">3</div>
                       <div class="xb-item--holder">
                         <h3 class="xb-item--title mb-10">Submit All Your Documents</h3>
@@ -277,7 +286,10 @@ export default function Immigrationprvisa() {
                     </div>
                   </li>
                   <li>
-                    <div class="xb-item--inner">
+                    <div class="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                       <div class="xb-item--number color-4">4</div>
                       <div class="xb-item--holder">
                         <h3 class="xb-item--title mb-10">Passport delivery</h3>

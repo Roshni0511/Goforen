@@ -30,17 +30,17 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
  const slides = [
   {
-    image: "/assets/pic/newphotos.png",
+    image: "/assets/pic/banner14.png",
     title: "Get a free assessment / advice",
     description: "Fill up a quick inquiry form / Upload your CV and we will help you out with your queries!",
   },
   {
-    image: "/assets/pic/banner2.png",
+    image: "/assets/pic/banner13.png",
     title: "Begin with a Free Evaluation",
     description: "Take the first step toward your goals with a no-obligation assessment from our experts.",
   },
   {
-    image: "/assets/pic/mainbaner.png",
+    image: "/assets/pic/banner11.png",
     title: "Get Expert Advice – No Cost!",
     description: "Connect with our experienced consultants and receive personalized guidance absolutely free!",
   },
@@ -151,7 +151,7 @@ const cards = [
   }, []);
   // data-background img end
   const scrollRef = useRef(null);
-  const itemHeight = 70;
+  const itemHeight = 40;
   const [index, setIndex] = useState(0);
   const items = [
     "Poland Introduced e-Konsulat for Work Visa Applications in India.",
@@ -338,14 +338,16 @@ const cards = [
   {slides.map((slide, index) => (
     <SwiperSlide key={index}>
       <section
-        className="hero hero__style-one bg_img"
-        style={{
-          backgroundImage: `url(${slide.image})`,
-          position: "relative",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+  className="hero hero__style-one bg_img"
+  style={{
+    backgroundImage: `url(${slide.image})`,
+    position: "relative",
+    // ❌ REMOVE this (CSS will control it):
+    // backgroundSize: "cover",
+    // backgroundPosition: "center",
+  }}
+>
+
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-6 col-lg-7">
@@ -355,25 +357,50 @@ const cards = [
                   className="wow fadeInUp"
                   data-wow-delay="200ms"
                   data-wow-duration=".6s"
+                  style={{color:'#e38508'}}
                 >
                   {slide.description}
                 </p>
-                <div
-                  className="btns wow fadeInUp mt-5"
-                  data-wow-delay="600ms"
-                  data-wow-duration=".6s"
-                >
-                  <a
-                    className="colorcode"
-                    href="/Contact"
-                    style={{ background: "#f09318", color: "#fff", marginBottom: "15px" }}
-                  >
-                    Quick Inquiry
-                  </a>
-                  <a className="thm-btn thm-btn--white" href="/Upload-cv">
-                    Upload CV
-                  </a>
-                </div>
+<div
+  className="btns wow fadeInUp mt-5"
+  data-wow-delay="600ms"
+  data-wow-duration=".6s"
+>
+
+  <a
+    className="colorcode"
+    href="/Contact"
+    style={{
+      background: "#f09318",
+      color: "#fff",
+      padding: "15px 20px",
+      borderRadius: "8px",
+      textDecoration: "none",
+      fontWeight: "bold",
+      textAlign: "center",
+      width: "200px" // optional: same width
+    }}
+  >
+    Quick Inquiry
+  </a>
+
+  <a
+    className="thm-btn thm-btn--white"
+    href="/Upload-cv"
+    style={{
+    
+      padding: "20px",
+      borderRadius: "8px",
+      textDecoration: "none",
+      fontWeight: "bold",
+      textAlign: "center",
+      width: "200px"
+    }}
+  >
+    Upload CV
+  </a>
+</div>
+
               </div>
             </div>
           </div>
@@ -386,7 +413,7 @@ const cards = [
       {/* <!-- hero end --> */}
 
         {/* CARD SECTION STRT */}
-  <div className="container our-services">
+  {/* <div className="container our-services">
   <div className="sec-title mb-55">
               <div className="sec-title mb-10" style={{justifyContent:'center',display:'flex'}}>
                 <h2 className="mb-10 wow skewIn" style={{fontSize:'40px'}}>
@@ -400,7 +427,7 @@ const cards = [
             </div>
     <div className="row">
       {cards.map((card, index) => (
-        <div className="col-sm-4" key={index}>
+        <div className="col-md-6 col-sm-6 col-lg-4" key={index}>
           <div className="flip-container">
             <div className="flipper">
               <div className="front" style={{ background: card.bgColor }}>
@@ -429,7 +456,7 @@ const cards = [
         </div>
       ))}
     </div>
-  </div>
+  </div> */}
 
         {/* CARD SECTION END */}
 
@@ -459,7 +486,14 @@ const cards = [
                 <ul className="about-list ul_li list-unstyled">
                   <li>
                     <a href="/Immigration-pr-visa">
-                      <div className="xb-item--inner">
+                      <div className="xb-item--inner"  
+    
+      style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+        padding: '35px 20px',
+        borderRadius: '10px'
+      }}
+    >
                         <div className="xb-item--number">1</div>
                         <div className="xb-item--holder">
                           <h3 className="xb-item--title mb-10">
@@ -474,7 +508,11 @@ const cards = [
                   </li>
                   <li>
                     <a href="/Student-visa">
-                      <div className="xb-item--inner">
+                      <div className="xb-item--inner"     style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+              padding: '35px 20px',
+        borderRadius: '10px'
+      }}>
                         <div className="xb-item--number color-2">2</div>
                         <div className="xb-item--holder">
                           <h3 className="xb-item--title mb-10">Student Visa</h3>
@@ -487,7 +525,11 @@ const cards = [
                   </li>
                   <li>
                     <a href="/Visitor-visa">
-                      <div className="xb-item--inner">
+                      <div className="xb-item--inner"     style={{
+     backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+          padding: '35px 20px',
+        borderRadius: '10px'
+      }}>
                         <div className="xb-item--number color-3">3</div>
                         <div className="xb-item--holder">
                           <h3 className="xb-item--title mb-10">Visitor Visa</h3>
@@ -500,7 +542,11 @@ const cards = [
                   </li>
                   <li>
                     <a href="/Investor-visa">
-                      <div className="xb-item--inner">
+                      <div className="xb-item--inner"     style={{
+         backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+               padding: '35px 20px',
+        borderRadius: '10px'
+      }}>
                         <div className="xb-item--number color-4">4</div>
                         <div className="xb-item--holder">
                           <h3 className="xb-item--title mb-10">
@@ -515,7 +561,11 @@ const cards = [
                   </li>
                   <li>
                     <a href="/Work-permit-visa">
-                      <div className="xb-item--inner">
+                      <div className="xb-item--inner"     style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+             padding: '35px 20px',
+        borderRadius: '10px'
+      }}>
                         <div className="xb-item--number color-5">5</div>
                         <div className="xb-item--holder">
                           <h3 className="xb-item--title mb-10">
@@ -582,7 +632,11 @@ const cards = [
             <div className="row justify-content-md-center mt-none-30">
               <div className="col-lg-4 col-md-6 mt-30">
                 <div className="xb-service">
-                  <div className="xb-item--inner">
+                  <div className="xb-item--inner"  style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+        padding: '20px',
+        borderRadius: '10px'
+      }}>
                     <div className="xb-item--icon mb-50">
                       <img src="assets/img/icon/sv_01.svg" alt="" />
                     </div>
@@ -600,7 +654,11 @@ const cards = [
               </div>
               <div className="col-lg-4 col-md-6 mt-30">
                 <div className="xb-service">
-                  <div className="xb-item--inner">
+                  <div className="xb-item--inner"  style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+        padding: '20px',
+        borderRadius: '10px'
+      }}>
                     <div className="xb-item--icon color2 mb-50">
                       <img src="assets/img/icon/sv_02.svg" alt="" />
                     </div>
@@ -619,7 +677,11 @@ const cards = [
               <div className="col-lg-4 mt-30"></div>
               <div className="col-lg-4 col-md-6 mt-30">
                 <div className="xb-service">
-                  <div className="xb-item--inner">
+                  <div className="xb-item--inner"  style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+        padding: '20px',
+        borderRadius: '10px'
+      }}>
                     <div className="xb-item--icon color3 mb-50">
                       <img src="assets/img/icon/sv_03.svg" alt="" />
                     </div>
@@ -637,7 +699,11 @@ const cards = [
               </div>
               <div className="col-lg-4 col-md-6 mt-30">
                 <div className="xb-service">
-                  <div className="xb-item--inner">
+                  <div className="xb-item--inner"  style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+        padding: '20px',
+        borderRadius: '10px'
+      }}>
                     <div className="xb-item--icon color4 mb-50">
                       <img src="assets/img/icon/sv_04.svg" alt="" />
                     </div>
@@ -655,7 +721,11 @@ const cards = [
               </div>
               <div className="col-lg-4 col-md-6 mt-30">
                 <div className="xb-service">
-                  <div className="xb-item--inner">
+                  <div className="xb-item--inner"  style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+        padding: '20px',
+        borderRadius: '10px'
+      }}>
                     <div className="xb-item--icon color5 mb-50">
                       <img src="assets/img/icon/sv_05.svg" alt="" />
                     </div>
@@ -678,7 +748,7 @@ const cards = [
       {/* <!-- visa type end --> */}
 
       {/* <!-- country start --> */}
-      <div
+      {/* <div
         style={{
           background: "#edf3f578",
           paddingTop: "120px",
@@ -724,13 +794,13 @@ const cards = [
             className="country-shape"
             style={{
               backgroundImage: `url(${background8})`,
-              // minHeight: '400px',
+              
               position: "absolute",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           ></div>
-          {/* <h2 className="xb-strock-text-cat xb-strock-text">Popular Destination</h2> */}
+       
           <div className="country-icon-shape">
             <div className="shape shape--1">
               <img src="assets/img/icon/cs_01.png" alt="" />
@@ -746,7 +816,73 @@ const cards = [
             </div>
           </div>
         </section>
+      </div> */}
+
+   <div
+  style={{
+    background: "#edf3f578",
+    paddingTop: "120px",
+    paddingBottom: "80px",
+    position: "relative",
+  }}
+>
+  <section className="country pt-md-100 pos-rel pb-120">
+    <div className="xb-country3__wrap country-layout">
+      {[
+          { frontImg: "trv_flag_01.png", frontName: "Germany", backImg: "franceflag.jpeg", backName: "France" },
+          { frontImg: "trv_flag_02.png", frontName: "Belgium", backImg: "italydflah.jpg", backName: "Italy" },
+          { frontImg: "trv_flag_03.png", frontName: "Switzerland", backImg: "flagimage7.jpeg", backName: "Spain" },
+          { frontImg: "trv_flag_04.png", frontName: "Vietnam", backImg: "flagimage8.jpeg", backName: "Thailand" },
+      ].map((item, index) => (
+        <div className={`flip-card-wrapper card-${index + 1}`} key={index}>
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <img src={`assets/img/country/${item.frontImg}`} alt={item.frontName} />
+                <h3>{item.frontName}</h3>
+              </div>
+              <div className="flip-card-back">
+                <img src={`assets/img/country/${item.backImg}`} alt={item.backName} />
+                <h3>{item.backName}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Background shape image and icon shapes remain unchanged */}
+    <div
+      className="country-shape"
+       style={{
+              backgroundImage: `url(${background8})`,
+              height:'380px',
+              position: "absolute",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+    ></div>
+
+    <div className="country-icon-shape">
+      <div className="shape shape--1">
+        <img src="assets/img/icon/cs_01.png" alt="" />
       </div>
+      <div className="shape shape--2">
+        <img src="assets/img/icon/cs_02.png" alt="" />
+      </div>
+      <div className="shape shape--3">
+        <img src="assets/img/icon/cs_03.png" alt="" />
+      </div>
+      <div className="shape shape--4">
+        <img src="assets/img/icon/cs_04.png" alt="" />
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
       {/* <!-- country end --> */}
 
 
@@ -2124,7 +2260,7 @@ const cards = [
         <h1>News</h1>
       </div>
       <div>
-        <img src="https://ischoolconnect.com/blog/wp-content/uploads/2022/04/UK-US-VISA-1-1200x800.png" alt="" style={{width:'100%',height:'170px',borderRadius:'15px 15px 0px 0px'}}/>
+        <img src="/assets/pic/news.png" alt="" style={{width:'100%',height:'170px',borderRadius:'15px 15px 0px 0px'}}/>
       </div>
       <div className="scroll-container mt-3" id="scrollBox"   style={{
     height: `${itemHeight * 3}px`, // 3 items visible
@@ -2147,7 +2283,7 @@ const cards = [
       <div style={{
         display: "flex",
         justifyContent: "center",
-        marginTop: "10px"
+        
       }}>
         <a
           href="/News"
@@ -2173,14 +2309,14 @@ const cards = [
 
     }}>
                   <div className="xb-item--img">
-                    <h1 style={{justifyContent:'center',display:'flex'}}>Blog</h1>
+                    <h1 style={{justifyContent:'center',display:'flex'}}>StayInformed</h1>
                   </div>
                 
                    <div className="xb-blog">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <a href="/Blog">
-                             <img src="/assets/pic/pleased-young-woman-wearing-red-shirt-sunglasses-holding-globe-while-flying-blue-toy-plane-white-wall.jpg" alt="" style={{width:'100%',height:'215px'}}/>
+                      <a href="/StayInformed">
+                             <img src="/assets/pic/download.jpeg" alt="" style={{width:'100%',height:'215px'}}/>
                       </a>
                     </div>
                     <div className="xb-item--holder">
@@ -2189,7 +2325,7 @@ const cards = [
                       </a>
 
                       <h3 className="xb-item--title border-effect">
-                        <a href="/Blog">
+                        <a href="/StayInformed">
                           A Student Visa allows you to study full-time in ..
                         </a>
                       </h3>
@@ -2213,7 +2349,7 @@ const cards = [
                       </div>
   
                     </div>
-                    <a className="xb-overlay xb-overlay-link" href="/Blog"></a>
+                    <a className="xb-overlay xb-overlay-link" href="/StayInformed"></a>
                   </div>
                 </div>
                 </div>
@@ -2252,7 +2388,7 @@ const cards = [
 >
   {/* Image */}
   <img
-    src="https://www.goforen.com//uploads/gallery/85-image.jpg"
+    src="/assets/pic/events.jpg"
     alt="Study in Hungary Event"
     style={{ width: '100%', display: 'block',height:'270px' }}
   />
@@ -2321,7 +2457,7 @@ const cards = [
       {/* <!-- package end --> */}
 
       {/* <!-- team start --> */}
-      <section className="team pb-120">
+      {/* <section className="team pb-120">
         <div className="container">
           <div className="team-wrap pos-rel">
             <div className="row mt-none-30">
@@ -2545,7 +2681,7 @@ const cards = [
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- team end --> */}
       <SuccessStories />
       {/* <!-- faq start --> */}
@@ -2793,18 +2929,18 @@ const cards = [
                       <span className="xb-item--category">PR VISA</span>
 
                       <h3 className="xb-item--title border-effect">
-                        <a href="/Blog">
+                        <a href="/StayInformed">
                           A PR Visa allows you to live and work in ...
                         </a>
                       </h3>
-                      <a className="xb-item--link" href="/Blog">
+                      <a className="xb-item--link" href="/StayInformed">
                         Read More
                         <span>
                           <img src="assets/img/icon/right_arrow.svg" alt="" />
                         </span>
                       </a>
                     </div>
-                    <a className="xb-overlay xb-overlay-link" href="/Blog"></a>
+                    <a className="xb-overlay xb-overlay-link" href="/StayInformed"></a>
                   </div>
                 </div>
               </div>
@@ -2812,7 +2948,7 @@ const cards = [
                 <div className="xb-blog">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <a href="/Blog">
+                      <a href="/StayInformed">
                         <img src="/assets/pic/pleased-young-woman-wearing-red-shirt-sunglasses-holding-globe-while-flying-blue-toy-plane-white-wall.jpg" alt="" style={{width:'100%',height:'215px'}}/>
                       </a>
                     </div>
@@ -2822,18 +2958,18 @@ const cards = [
                       </a>
 
                       <h3 className="xb-item--title border-effect">
-                        <a href="/Blog">
+                        <a href="/StayInformed">
                            Student Visa allow you to study fulltime in ..
                         </a>
                       </h3>
-                      <a className="xb-item--link" href="/Blog">
+                      <a className="xb-item--link" href="/StayInformed">
                         Read More
                         <span>
                           <img src="assets/img/icon/right_arrow.svg" alt="" />
                         </span>
                       </a>
                     </div>
-                    <a className="xb-overlay xb-overlay-link" href="/Blog"></a>
+                    <a className="xb-overlay xb-overlay-link" href="/StayInformed"></a>
                   </div>
                 </div>
               </div>
@@ -2841,7 +2977,7 @@ const cards = [
                 <div className="xb-blog">
                   <div className="xb-item--inner">
                     <div className="xb-item--img">
-                      <a href="/Blog">
+                      <a href="/StayInformed">
                         <img src="/assets/pic/customer-service-cute-guy-grey-suit-with-computer-headset-waving-hands-holding-cup.jpg" alt=""  style={{width:'100%',height:'215px'}} />
                       </a>
                     </div>
@@ -2851,18 +2987,18 @@ const cards = [
                       </a>
 
                       <h3 className="xb-item--title border-effect">
-                        <a href="/Blog">
+                        <a href="/StayInformed">
                           An Investor Visa allows individuals to obtain ..
                         </a>
                       </h3>
-                      <a className="xb-item--link" href="/Blog">
+                      <a className="xb-item--link" href="/StayInformed">
                         Read More
                         <span>
                           <img src="assets/img/icon/right_arrow.svg" alt="" />
                         </span>
                       </a>
                     </div>
-                    <a className="xb-overlay xb-overlay-link" href="/Blog"></a>
+                    <a className="xb-overlay xb-overlay-link" href="/StayInformed"></a>
                   </div>
                 </div>
               </div>
@@ -2950,7 +3086,7 @@ const cards = [
 {/* form end */}
 
       {/* <!-- brand start --> */}
-      <section
+      {/* <section
         className="brand brand-pb z-1 pos-rel"
         style={{ background: "#F0F2F6" }}
       >
@@ -2994,10 +3130,10 @@ const cards = [
         >
           Our Brand
         </h2>
-      </section>
+      </section> */}
       {/* <!-- brand end --> */}
       {/* <!-- cta start --> */}
-      <section className="cta bg-white">
+      <section className="cta bg-white" style={{paddingTop:'230px'}}>
         <div className="container">
           <div className="xb-brand2__mt">
             <div

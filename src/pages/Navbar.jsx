@@ -33,8 +33,8 @@ export default function Navbar() {
       "gallery": "/Gallary",
       "videos": "/Videos",
       "success": "/SuccessStory",
-      "blog": "/Blog",
-      "blog details": "/BlogDetails",
+      "Stay Informed": "/StayInformed",
+      "Stay Informed Details": "/StayInformedDetails",
       "activities": "/Activities",
       "contact": "/Contact",
       "cv": "/Upload-cv",
@@ -166,27 +166,38 @@ export default function Navbar() {
   return (
     <div>
       <header className="site-header header-style-one">
-        <div className="header__top-wrap gray-bg">
-          <div className="container">
-            <div className="header__top ul_li_between" style={{justifyContent:'center'}}>
-              <div className="header__top-cta">
-              <a href="tel:+917600909090" style={{color:"#000"}}>
-             <img src="assets/img/icon/n_pad.svg" alt="" className="orange-icon" />
-
-                <span>Help Desk :</span>  +91 76 00 90 90 90
-                </a>
-              </div>
-          
-            </div>
-          </div>
+       <div className="header__top-wrap gray-bg" style={{ background: '#e38508' ,padding:'8px'}}>
+  <div className="container">
+    <div className="row align-items-center">
+      
+      {/* col-3: Help Desk */}
+      <div className="col-md-3 col-12">
+        <div className="header__top-cta d-flex align-items-center gap-2">
+          <img src="assets/img/icon/n_pad.svg" alt="" className="white-icon" style={{ width: 20 }} />
+          <a href="tel:+917600909090" style={{ color: "#fff", fontWeight: 'bold', textDecoration: 'none' }}>
+            <span>Help Desk:</span> +91 76 00 90 90 90
+          </a>
         </div>
+      </div>
 
-        <div className="header__wrap stricky  " style={{background:'#07374d'}}>
+      {/* col-9: Marquee */}
+      <div className="col-md-9 col-12">
+        <marquee behavior="scroll" direction="left" scrollamount="5" style={{ color: '#fff', fontWeight: 'bold' }}>
+          Admission Open | Apply Now | Limited Seats Available | For More Info Call +91 76 00 90 90 90
+        </marquee>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+        <div className=" stricky  " style={{background:'#07374d'}}>
           <div className="container">
-            <div className="header__inner ul_li_between" style={{padding:'13px 0px'}}>  
-              <div className="header__logo">
+            <div className="header__inner ul_li_between newbetween" style={{padding:'13px 0px'}}>  
+              <div className="header__logo newclassmarg">
                 <a href="/">
-                  <img src="/assets/pic/logogo.png" alt="" style={{width:'100%',height:'90px'}} />
+                  <img src="/assets/pic/logogo.png" alt=""  className="imglogo"/>
                 </a>
               </div>
               <div className="main-menu__wrap ul_li navbar navbar-expand-lg">
@@ -314,8 +325,8 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li>
-                      <a href="/Blog">
-                        <span style={{color:'#fff'}}>Blog</span>
+                      <a href="/StayInformed">
+                        <span style={{color:'#fff'}}>Stay Informed</span>
                       </a>
                     </li>
                     <li>
@@ -397,37 +408,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <ul className="header__action ul_li">
-                {/* <li>
-                  <button
-                    type="button"
-                    style={{ background: "none" }}
-                    className="header__search header-search-btn"
-                    onClick={() => setSearchOpen(true)}
-                  >
-                    <img src="assets/img/icon/search.svg" alt="" />
-                    Search
-                  </button>
-                </li> */}
-                {/* <li>
-                  <div className="header__language">
-                    <ul>
-                      <li>
-                        <a href="#!" className="lang-btn">
-                          <div className="flag"><img src="assets/img/icon/us_flag.png" alt="" /></div>
-                          English
-                          <div className="arrow_down"><img src="assets/img/icon/arrow_down.svg" alt="" /></div>
-                        </a>
-                        <ul className="lang_sub_list">
-                          <li><a href="#">English</a></li>
-                          <li><a href="#">Arabic</a></li>
-                          <li><a href="#">Bangla</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </li> */}
-              </ul>
+             
             </div>
           </div>
         </div>
@@ -436,12 +417,12 @@ export default function Navbar() {
           <div className="xb-header-menu">
             <div className="xb-header-menu-scroll" style={{padding:'0px'}}>
              <div className="xb-menu-close xb-hide-xl xb-close" >
-  <FaTimes style={{ color: '#fff',fontSize:'30px' }}/>
+  <FaTimes style={{ color: '#fff',fontSize:'30px'}}/>
 </div>
 
               <div className=" xb-hide-xl" style={{background:'#07374d'}}>
                 <a href="/" rel="home">
-                  <img src="/assets/pic/logogo.png" alt="" style={{width:'85%',height:'145px',padding:'30px 45px'}} />
+                  <img src="/assets/pic/logogo.png" alt="" style={{width:'63%',height:'94px',padding:'14px 45px',marginLeft:'50px'}} />
                 </a>
               </div>
 
@@ -570,8 +551,8 @@ export default function Navbar() {
                     </ul>
                   </li>
                   <li className="menu-item">
-                    <a href="/Blog">
-                      <span >Blog</span>
+                    <a href="/StayInformed">
+                      <span >StayInformed</span>
                     </a>
                   </li>
                   <li className="menu-item">
