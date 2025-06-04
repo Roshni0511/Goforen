@@ -4,6 +4,30 @@ import $ from "jquery";
 import { FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
+  
+  const [visaServices, setVisaServices] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_visa_services/')
+      .then((res) => res.json())
+      .then((data) => {
+        setVisaServices(data);
+      })
+      .catch((err) => console.error("Failed to fetch visa services:", err));
+  }, []);
+  const [Courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_course_data/')
+      .then((res) => res.json())
+      .then((data) => {
+        setCourses(data);
+      })
+      .catch((err) => console.error("Failed to fetch Courses:", err));
+  }, []);
+
+
+
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
@@ -234,67 +258,31 @@ export default function Navbar() {
                     </li>
                     <li className="menu-item-has-children">
                       <a href="/Visa-services">
-                        <span style={{color:'#fff'}}> Visa Services</span>
+                        <span>Visa Services</span>
                       </a>
                       <ul className="submenu">
-                        <li>
-                          <a href="/Immigration-pr-visa">
-                            <span> Immigration - PR Visa</span>
+            {visaServices.map((item) => (
+              <li key={item.id}>
+                          <a href= {`/visa-services-detail?id=${item.id}`}>
+                            <span>{item.visa_type}</span>
                           </a>
                         </li>
-                        <li>
-                          <a href="/Immigration-pr-visa">
-                            <span>Student Visa</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/Immigration-pr-visa">
-                            <span> Visitor Visa</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/Immigration-pr-visa">
-                            <span> Investor Visa</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/Immigration-pr-visa">
-                            <span> Work Permit Visa</span>
-                          </a>
-                        </li>
+                            ))}
                       </ul>
                     </li>
 
                     <li className="menu-item-has-children">
                       <a href="/Courses">
-                        <span style={{color:'#fff'}}  >Courses</span>
+                        <span>Courses</span>
                       </a>
                       <ul className="submenu">
-                        <li>
-                          <a href="/IELTS">
-                            <span>IELTS</span>
+                      {Courses.map((item) => (
+                        <li key={item.id}>
+                          <a href= {`/Course-details?id=${item.id}`}>
+                            <span>{item.course_name}</span>
                           </a>
                         </li>
-                        <li>
-                          <a href="/IELTS">
-                            <span>TOEFL IBT</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/IELTS">
-                            <span>GRE</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/IELTS">
-                            <span>PTE</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/IELTS">
-                            <span>SAT</span>
-                          </a>
-                        </li>
+                            ))}
                       </ul>
                     </li>
                     <li className="menu-item-has-children">

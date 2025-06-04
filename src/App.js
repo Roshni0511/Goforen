@@ -48,6 +48,7 @@ import Countries from "./pages/Countries";
 import FooterHome from "./pages/FooterHome";
 import StayInformed from "./pages/StayInformed ";
 import StayInformedDetails from "./pages/StayInformedDetails";
+import CourseDetails from "./pages/CourseDetails";
 
 
 
@@ -184,13 +185,14 @@ function App() {
         <Route path="/About-us-race" element={<Aboutusrace />} />
         <Route path="/About-founder" element={<Aboutfounder />} />
         <Route path="/Visa-services" element={<Visaservices />} />
-        <Route path="/Immigration-pr-visa" element={<Immigrationprvisa />} />
+        <Route path="/visa-services-detail" element={<Immigrationprvisa />} />
         <Route path="/Student-visa" element={<Studentvisa />} />
         <Route path="/Visitor-visa" element={<Visitorvisa />} />
         <Route path="/Investor-visa" element={<Investorvisa />} />
         <Route path="/Work-permit-visa" element={<Workpermitvisa />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/IELTS" element={<IELTS />} />
+        <Route path="/Course-details" element={<CourseDetails />} />
 
         <Route path="/TOEFLIBT" element={<TOEFLIBT />} />
         <Route path="/GRE" element={<GRE />} />
