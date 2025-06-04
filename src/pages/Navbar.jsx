@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import $ from "jquery";
+import { FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -32,8 +33,8 @@ export default function Navbar() {
       "gallery": "/Gallery",
       "videos": "/Videos",
       "success": "/SuccessStory",
-      "blog": "/Blog",
-      "blog details": "/BlogDetails",
+      "Stay Informed": "/StayInformed",
+      "Stay Informed Details": "/StayInformedDetails",
       "activities": "/Activities",
       "contact": "/Contact",
       "cv": "/Upload-cv",
@@ -165,26 +166,38 @@ export default function Navbar() {
   return (
     <div>
       <header className="site-header header-style-one">
-        <div className="header__top-wrap gray-bg">
-          <div className="container">
-            <div className="header__top ul_li_between" style={{justifyContent:'center'}}>
-              <div className="header__top-cta">
-              <a href="tel:+917600909090" style={{color:"#000"}}>
-                <img src="assets/img/icon/n_pad.svg" alt="" />
-                <span>Help Desk :</span>  +91 76 00 90 90 90
-                </a>
-              </div>
-          
-            </div>
-          </div>
+       <div className="header__top-wrap gray-bg" style={{ background: '#e38508' ,padding:'8px'}}>
+  <div className="container">
+    <div className="row align-items-center">
+      
+      {/* col-3: Help Desk */}
+      <div className="col-md-3 col-12">
+        <div className="header__top-cta d-flex align-items-center gap-2">
+          <img src="assets/img/icon/n_pad.svg" alt="" className="white-icon" style={{ width: 20 }} />
+          <a href="tel:+917600909090" style={{ color: "#fff", fontWeight: 'bold', textDecoration: 'none' }}>
+            <span>Help Desk:</span> +91 76 00 90 90 90
+          </a>
         </div>
+      </div>
 
-        <div className="header__wrap stricky  ">
+      {/* col-9: Marquee */}
+      <div className="col-md-9 col-12">
+        <marquee behavior="scroll" direction="left" scrollamount="5" style={{ color: '#fff', fontWeight: 'bold' }}>
+          Admission Open | Apply Now | Limited Seats Available | For More Info Call +91 76 00 90 90 90
+        </marquee>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+        <div className=" stricky  " style={{background:'#07374d'}}>
           <div className="container">
-            <div className="header__inner ul_li_between">
-              <div className="header__logo">
+            <div className="header__inner ul_li_between newbetween" style={{padding:'13px 0px'}}>  
+              <div className="header__logo newclassmarg">
                 <a href="/">
-                  <img src="/assets/pic/newgof.png" alt="" />
+                  <img src="/assets/pic/logogo.png" alt=""  className="imglogo"/>
                 </a>
               </div>
               <div className="main-menu__wrap ul_li navbar navbar-expand-lg">
@@ -192,18 +205,18 @@ export default function Navbar() {
                   <ul>
                     <li>
                       <a href="/">
-                        <span>Home</span>
+                        <span style={{color:'#fff'}}>Home</span>
                       </a>
                     </li>
 
                     <li className="menu-item-has-children">
                       <a>
-                        <span>About us</span>
+                        <span style={{color:'#fff'}}>About us</span>
                       </a>
                       <ul className="submenu">
                       <li>
                           <a href="/About">
-                            <span>About Goforen</span>
+                            <span >About Goforen</span>
                           </a>
                         </li>
                         <li>
@@ -221,7 +234,7 @@ export default function Navbar() {
                     </li>
                     <li className="menu-item-has-children">
                       <a href="/Visa-services">
-                        <span>Visa Services</span>
+                        <span style={{color:'#fff'}}> Visa Services</span>
                       </a>
                       <ul className="submenu">
                         <li>
@@ -254,7 +267,7 @@ export default function Navbar() {
 
                     <li className="menu-item-has-children">
                       <a href="/Courses">
-                        <span>Courses</span>
+                        <span style={{color:'#fff'}}  >Courses</span>
                       </a>
                       <ul className="submenu">
                         <li>
@@ -286,7 +299,7 @@ export default function Navbar() {
                     </li>
                     <li className="menu-item-has-children">
                       <a >
-                        <span>Media</span>
+                        <span style={{color:'#fff'}}>Media</span>
                       </a>
                       <ul className="submenu">
                         <li className="menu-item">
@@ -312,18 +325,18 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li>
-                      <a href="/Blog">
-                        <span>Blog</span>
+                      <a href="/StayInformed">
+                        <span style={{color:'#fff'}}>Stay Informed</span>
                       </a>
                     </li>
                     <li>
                       <a href="/Contact">
-                        <span>Contact</span>
+                        <span style={{color:'#fff'}}>Contact</span>
                       </a>
                     </li>
                     <li className="menu-item-has-children">
                       <a>
-                        <span>Inquiry</span>
+                        <span style={{color:'#fff'}}>Inquiry</span>
                       </a>
                       <ul className="submenu">
                         {/* <li className="menu-item">
@@ -390,75 +403,36 @@ export default function Navbar() {
               <div className="xb-hamburger-menu">
                 <div className="xb-nav-mobile">
                   <div className="xb-nav-mobile-button">
-                    <i className="fal fa-bars"></i>
+                    <i className="fal fa-bars" style={{color:'#fff'}}></i>
                   </div>
                 </div>
               </div>
 
-              <ul className="header__action ul_li">
-                {/* <li>
-                  <button
-                    type="button"
-                    style={{ background: "none" }}
-                    className="header__search header-search-btn"
-                    onClick={() => setSearchOpen(true)}
-                  >
-                    <img src="assets/img/icon/search.svg" alt="" />
-                    Search
-                  </button>
-                </li> */}
-                {/* <li>
-                  <div className="header__language">
-                    <ul>
-                      <li>
-                        <a href="#!" className="lang-btn">
-                          <div className="flag"><img src="assets/img/icon/us_flag.png" alt="" /></div>
-                          English
-                          <div className="arrow_down"><img src="assets/img/icon/arrow_down.svg" alt="" /></div>
-                        </a>
-                        <ul className="lang_sub_list">
-                          <li><a href="#">English</a></li>
-                          <li><a href="#">Arabic</a></li>
-                          <li><a href="#">Bangla</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </li> */}
-              </ul>
+             
             </div>
           </div>
         </div>
 
         <div className="xb-header-wrap">
           <div className="xb-header-menu">
-            <div className="xb-header-menu-scroll">
-              <div className="xb-menu-close xb-hide-xl xb-close"></div>
-              <div className="xb-logo-mobile xb-hide-xl">
+            <div className="xb-header-menu-scroll" style={{padding:'0px'}}>
+             <div className="xb-menu-close xb-hide-xl xb-close" >
+  <FaTimes style={{ color: '#fff',fontSize:'30px'}}/>
+</div>
+
+              <div className=" xb-hide-xl" style={{background:'#07374d'}}>
                 <a href="/" rel="home">
-                  <img src="/assets/pic/newgof.png" alt=""  style={{width:'100px',height:'100%'}}/>
+                  <img src="/assets/pic/logogo.png" alt="" style={{width:'63%',height:'94px',padding:'14px 45px',marginLeft:'50px'}} />
                 </a>
               </div>
 
-              {/* <div className="xb-header-mobile-search xb-hide-xl">
-              <form role="search" onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Search..."
-          name="s"
-          className="search-field"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
-        <button type="submit" className="search-submit"></button>
-      </form>
-              </div> */}
+             
 
-              <nav className="xb-header-nav">
+              <nav className="xb-header-nav" style={{padding:'10px 25px'}} >
                 <ul className="xb-menu-primary clearfix">
                   <li className="menu-item">
                     <a href="/">
-                      <span>Home</span>
+                      <span >Home</span>
                     </a>
                   </li>
 
@@ -486,7 +460,7 @@ export default function Navbar() {
                   </li>
                   <li className="menu-item menu-item-has-children">
                     <a href="/Visa-services">
-                      <span>Visa Services</span>
+                      <span >Visa Services</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -519,7 +493,7 @@ export default function Navbar() {
 
                   <li className="menu-item menu-item-has-children">
                     <a href="/Courses">
-                      <span>Courses</span>
+                      <span >Courses</span>
                     </a>
                     <ul className="sub-menu">
                       <li className="menu-item">
@@ -577,13 +551,13 @@ export default function Navbar() {
                     </ul>
                   </li>
                   <li className="menu-item">
-                    <a href="/Blog">
-                      <span>Blog</span>
+                    <a href="/StayInformed">
+                      <span >StayInformed</span>
                     </a>
                   </li>
                   <li className="menu-item">
                     <a href="/Contact">
-                      <span>Contact</span>
+                      <span >Contact</span>
                     </a>
                   </li>
                   <li className="menu-item menu-item-has-children">

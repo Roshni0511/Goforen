@@ -21,8 +21,8 @@ import Activities from "./pages/Activities";
 import Visitorvisa from "./pages/Visitor-visa";
 import Investorvisa from "./pages/Investor-visa";
 import Workpermitvisa from "./pages/Work-permit-visa";
-import Blog from "./pages/Blog";
-import BlogDetails from "./pages/BlogDetails";
+// import StayInformed   from "./pages/StayInformed";
+// import StayInformedDetails from "./pages/StayInformedDetails";
 
 import SuccessStory from "./pages/SuccessStory";
 import Uploadcv from "./pages/Upload-cv";
@@ -42,14 +42,16 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import { FaWhatsapp } from 'react-icons/fa'; 
 import News from "./pages/News";
 import Newsdetails from "./pages/News-details";
-
-
-
 import Visaservice from "./pages/Visaservice";
 import NewHome from "./pages/NewHome";
 import Countries from "./pages/Countries";
 import FooterHome from "./pages/FooterHome";
-import Gallery from "./pages/Gallery";
+import StayInformed from "./pages/StayInformed ";
+import StayInformedDetails from "./pages/StayInformedDetails";
+
+
+
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
@@ -83,12 +85,12 @@ function App() {
     return (
       <div id="xb-loadding">
         <div className="loader">
-          <div className="plane">
-            <img className="plane-img" src="assets/img/icon/plane.gif" alt="" />
+          <div>
+            <img src="/assets/pic/preloaderr.gif" alt="" />
           </div>
-          <div className="earth-wrapper">
+          {/* <div className="earth-wrapper">
             <div className="earth"></div>
-          </div>
+          </div> */}
         </div>
       </div>
     );
@@ -101,7 +103,7 @@ function App() {
         className={`xb-backtotop ${showScroll ? "active" : ""}`}
         onClick={scrollToTop}
       >
-        <button className="scroll-btn" style={{ background: '#00cc99', color: '#fff', padding: '10px 15px', borderRadius: '8px' }}>
+        <button className="scroll-btn" style={{ background: '#e38508', color: '#fff', padding: '10px 15px', borderRadius: '8px' }}>
           <i className="far fa-arrow-up"></i>
         </button>
       </div>
@@ -198,8 +200,9 @@ function App() {
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/Videos" element={<Videos />} />
         <Route path="/SuccessStory" element={<SuccessStory />} />
-        <Route path="/Blog" element={<Blog />} />
-        <Route path="/BlogDetails" element={<BlogDetails />} />
+        {/* <Route path="/StayInformed  " element={<StayInformed  />} /> */}
+        <Route path="/StayInformed" element={<StayInformed />}/>
+        {/* <Route path="/BlogDetails" element={<BlogDetails />} /> */}
         <Route path="/Activities" element={<Activities />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/visitor" element={<Contact />} />
@@ -218,7 +221,7 @@ function App() {
         <Route path="/News" element={<News />} />
         <Route path="/Newsdetails" element={<Newsdetails />} />
 
-
+<Route path="/StayInformedDetails" element={<StayInformedDetails />}/>
         <Route path="/Visaservice" element={<Visaservice />} />
         <Route path="/Countries" element={<Countries />} />
         <Route path="/FooterHome" element={<FooterHome />} />

@@ -19,7 +19,10 @@ const FanFactItem = ({ end, suffix, title }) => {
   return (
     <div className="col-lg-4 col-md-4">
       <div className="xb-fanfact xb-fanfact1">
-        <div className="xb-item--inner" ref={ref}>
+        <div className="xb-item--inner" ref={ref}  style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      borderRadius:'0px'
+      }}>
           <h2 className="xb-item--number">
             {inView ? <CountUp end={parseInt(end)} duration={2} /> : "00"}
             <span className="suffix">{suffix}</span>

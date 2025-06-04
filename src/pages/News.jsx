@@ -56,7 +56,7 @@ export default function News() {
                       style={{
                         color: "#fff",
                         padding: "20px ",
-                        background: "#00cc99",
+                        background: "#e38508",
                         borderRadius: "10px",
                       }}
                     >
@@ -77,7 +77,7 @@ export default function News() {
                       style={{
                         color: "#fff",
                         padding: "15px ",
-                        background: "#00cc99",
+                        background: "#e38508",
                         borderRadius: "10px",
                       }}
                     >

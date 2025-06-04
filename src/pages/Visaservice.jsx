@@ -65,7 +65,7 @@ const Visaservice = () => {
       maxWidth: '100%'
     }}>
       <h4 style={{ textAlign: 'center', marginBottom: '20px' }}>
-        Search Blogs
+        Search StayInformed
         <div style={{
           width: '30px',
           height: '3px',

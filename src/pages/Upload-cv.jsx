@@ -154,7 +154,7 @@ export default function Uploadcv() {
                 <div className="p-5">
                   <div className="xb-item--holder mb-25">
                     <span>
-                      <img src="assets/img/icon/n_pad.svg" alt="" />
+                       <img src="assets/img/icon/n_pad.svg" alt="" className="orange-icon" />
                       Upload Your CV
                     </span>
                    

@@ -124,7 +124,10 @@ Different countries give preference to one language exam over others. TOEFL is t
                 <div className="row justify-content-md-center mt-none-30">
                     <div className="col-lg-4 col-md-6 mt-30">
                         <div className="xb-service">
-                            <div className="xb-item--inner">
+                            <div className="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                                 <div className="xb-item--icon mb-50">
                                     <img src="assets/img/icon/sv_01.svg" alt="" />
                                 </div>
@@ -140,7 +143,10 @@ Different countries give preference to one language exam over others. TOEFL is t
                     </div>
                     <div className="col-lg-4 col-md-6 mt-30">
                         <div className="xb-service">
-                            <div className="xb-item--inner">
+                            <div className="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                                 <div className="xb-item--icon color2 mb-50">
                                     <img src="assets/img/icon/sv_02.svg" alt=" "  />
                                 </div>
@@ -156,7 +162,10 @@ Different countries give preference to one language exam over others. TOEFL is t
                     </div>
                     <div className="col-lg-4 col-md-6 mt-30">
                         <div className="xb-service">
-                            <div className="xb-item--inner">
+                            <div className="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                                 <div className="xb-item--icon color6 mb-50">
                                     <img src="assets/img/icon/sv_02.svg" alt="" />
                                 </div>
@@ -171,7 +180,10 @@ Different countries give preference to one language exam over others. TOEFL is t
                     </div>
                     <div className="col-lg-4 col-md-6 mt-30">
                         <div className="xb-service">
-                            <div className="xb-item--inner">
+                            <div className="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                                 <div className="xb-item--icon color3 mb-50">
                                     <img src="assets/img/icon/sv_03.svg" alt="" />
                                 </div>
@@ -187,7 +199,10 @@ Different countries give preference to one language exam over others. TOEFL is t
                     </div>
                     <div className="col-lg-4 col-md-6 mt-30">
                         <div className="xb-service">
-                            <div className="xb-item--inner">
+                            <div className="xb-item--inner"   style={{
+        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
+      
+      }}>
                                 <div className="xb-item--icon color4 mb-50">
                                     <img src="assets/img/icon/sv_04.svg" alt="" />
                                 </div>

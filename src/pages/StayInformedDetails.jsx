@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-export default function BlogDetails() {
+export default function StayInformedDetails() {
        // data-background img start
           const [background, setBackground] = useState("");
         
@@ -53,13 +53,13 @@ export default function BlogDetails() {
 
   <div className="container" style={{ position: 'relative', zIndex: 2 }}>
     <div className="breadcrumb__content">
-    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Blog Details</h2>
+    <h2 className="breadcrumb__title" style={{color:'#fff'}}>Stay Informed Details </h2>
             <ul className="breadcrumb__list clearfix">
               <li className="breadcrumb-item">
                 <a href="/">Home</a>
               </li>
               
-              <li className="breadcrumb-item">Blog Details</li>
+              <li className="breadcrumb-item">Stay Informed Details</li>
             </ul>
     </div>
   </div>
@@ -258,7 +258,7 @@ export default function BlogDetails() {
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
-                                                    <button className="thm-btn" type="submit">Post comment</button>
+                                                    <button className="colorcode" type="submit">Post comment</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -336,7 +336,7 @@ export default function BlogDetails() {
                             <div className="widget widget-banner text-center bg_img" style={{ backgroundImage: `url(${background1})` }}>
                                 <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
                                 <h4>Assured Approval – <br/> Guaranteed</h4>
-                                <a className="thm-btn" href="#!">Get in Touch</a>
+                                <a className="colorcode" href="#!">Get in Touch</a>
                             </div>
                         </div>
                     </div>

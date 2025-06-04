@@ -403,6 +403,7 @@ const FooterHome = () => {
               <a
                 target="_blank"
                 href="https://successinnovativetechnologiespvtltd.com"
+                style={{color:'#e38508'}}
               >
                 Success Innovative Technologies Pvt. Ltd.
               </a>
