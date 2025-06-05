@@ -20,6 +20,7 @@ import PinDropIcon from "@mui/icons-material/PinDrop";
 import AddLocationIcon from "@mui/icons-material/AddLocation";
 
 import UploadYourResume from "../component/UploadYourResume";
+import PRVisaInquiryForm from "./PRVisaInquiryForm";
 
 
 import AttemptedInternationalExam3 from "../component/AttemptedInternationalExam3";
@@ -3045,7 +3046,22 @@ export default function Prvisainquiry() {
               )}
               {/* Additional Details end */}
       
-              
+                      <div className="container py-5">
+          <div className="xb-contact pos-rel bg-white shadow rounded p-4" style={{ overflow: "visible" }}>
+            <div className="row">
+              <div className="col-12">
+                <div className="p-3">
+                  <div className="xb-item--holder mb-4">
+                    <h3 className="wow skewIn  fw-bold border-bottom pb-2">Primary Details</h3>
+                  </div>
+      
+      <PRVisaInquiryForm />
+                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
             </section>
             {/* <!-- contact end --> */}
       <Footer />

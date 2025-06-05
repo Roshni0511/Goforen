@@ -6,8 +6,36 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import SuccessStories from "../component/SuccessStories";
 import FooterTop from "../component/FooterTop";
 import Counter from "../component/Counter";
+import axios from 'axios';
 
 export default function Aboutusrace() {
+
+  const [TeamData, setTeamData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_team_data/')
+      .then((res) => res.json())
+      .then((data) => {
+        setTeamData(data);
+      })
+      .catch((err) => console.error("Failed to fetch Team Data:", err));
+  }, []);
+
+
+ const [aboutData, setAboutData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/get_about_us_data/')
+      .then((res) => {
+        const filtered = res.data.filter(item => item.category === 'About Race Groups');
+        setAboutData(filtered);
+      })
+      .catch((err) => {
+        console.error("Error fetching data:", err);
+      });
+  }, []);
+
+
       // data-background img start
         const [background12, setBackground12] = useState("");
       
@@ -123,47 +151,36 @@ export default function Aboutusrace() {
       </section>
       <Counter />
       {/* <!-- about end --> */}
-
-      <section class="mission pt-130 pb-130">
-            <div class="container">
-                <div class="row align-items-center flex-row-reverse mt-none-30">
-                    <div class="col-lg-6 mt-30">
-                        <div class="mission__img text-lg-end">
-                            <div class="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
-                            <img src="/assets/pic/canada-passport-1 (1).webp" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-30">
-                        <div class="mission__content">
-                            <div class="sec-title">
-                                <h2 class="mb-20 wow skewIn">Introduction of RACE group<br /> <span  style={{fontSize:'35px'}}>Prosperous Beginning</span></h2>
-                                <p>Step into the world of opportunities with the RACE Group (Rachna Academy of Career Education), an esteemed institution nestled in the vibrant heart of South Gujarat, India. Led by the visionary founder, Mr. Rajesh Bhavsar, affectionately known as RJ SIR, the group has become a beacon of hope for countless individuals aspiring to carve a successful career. Our team of seasoned experts, teachers, and care takers create an environment that fosters growth and provides unwavering support, driving individuals towards their dreams. So, take the plunge and let RACE propel you towards an extraordinary future.</p>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
+      
+  <section className="mission pt-130 pb-130">
+      <div className="container">
+        {aboutData.map((item, index) => (
+          <div className="row align-items-center flex-row-reverse mt-none-30" key={item.id}>
+            <div className="col-lg-6 mt-30">
+              <div className="mission__img text-lg-end">
+                <div className="inner-img d-inline-block wow skewIn" data-wow-delay="200ms">
+                  <img
+                    src={`https://drive.google.com/thumbnail?id=${item.image_id}`}
+                    alt={item.heading}
+                  />
                 </div>
-                <div class="row align-items-center mt-100">
-                    <div class="col-lg-6 mt-30">
-                        <div class="mission__img">
-                            <div class="inner-img d-inline-block wow skewIn">
-                            <img src="/assets/pic/aboutpage2.webp" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-30">
-                        <div class="mission__content">
-                            <div class="sec-title">
-                                <h2 class="mb-20 wow skewIn" data-wow-delay="200ms">Your Pathway to Success<br /> <span  style={{fontSize:'35px'}}>The Best Opportunities for Youth</span></h2>
-                                <p>At RACE, we don't just provide education; we craft destinies. With a diverse range of services, including competitive exam preparation for government jobs, English language exams preparation for foreign admissions, computer training, private sector job placements, assistance with foreign settlement for study or permanent residency, and even offering a co-working space for innovative start-ups, RACE caters to the holistic growth of its students and clients.
-</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
+            <div className="col-lg-6 mt-30">
+              <div className="mission__content">
+                <div className="sec-title">
+                  <h2 className="mb-20 wow skewIn">
+                    {item.heading}<br />
+                    <span style={{ fontSize: '35px' }} dangerouslySetInnerHTML={{ __html: item.description.match(/<h2[^>]*>(.*?)<\/h2>/)?.[1] || '' }} />
+                  </h2>
+                  <div dangerouslySetInnerHTML={{ __html: item.description.replace(/<h2[^>]*>.*?<\/h2>/, '') }} />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
 
          {/* <!-- team start --> */}
@@ -173,153 +190,50 @@ export default function Aboutusrace() {
                     <h2 class="mb-40 wow skewIn">Our trusted immigration <br /> <span  style={{fontSize:'35px'}}> support team</span></h2>
                     <p style={{textAlign:'center',justifyContent:'center',display:'flex'}}>At the heart of our commitment to providing exceptional <br /> immigration solutions stands</p>
                 </div>
-                <div class="row mt-none-30">
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner" data-parallax='{"scale" : 1}'>
-                                <div class="xb-item--img">
-                                    <img src="/assets/pic/team.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Janvi Patel</a></h3>
-                                    <span class="xb-item--designation">Legal Advisor</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile4.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Vivek Sharma</a></h3>
-                                    <span class="xb-item--designation">Education Counsellor</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile5 (3).jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Kunal Mehta</a></h3>
-                                    <span class="xb-item--designation">Visa Specialist</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile1 (2).jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Krishna Varma</a></h3>
-                                    <span class="xb-item--designation">Visa Coordinator</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile6.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Jay Patel</a></h3>
-                                    <span class="xb-item--designation">General Manager</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                <img src="/assets/pic/profile7 (1).jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Drashti Vora</a></h3>
-                                    <span class="xb-item--designation">Case Manager</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                    <img src="/assets/pic/profile8.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html"></a>ketan kakdiya</h3>
-                                    <span class="xb-item--designation">Visa Coordinator</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 mt-30">
-                        <div class="xb-team text-center">
-                            <div class="xb-item--inner">
-                                <div class="xb-item--img">
-                                    <img src="/assets/pic/profile9.jpg" alt="" />
-                                </div>
-                                <div class="xb-item--holder">
-                                    <h3 class="xb-item--name"><a href="team-single.html">Shivani Dabhi</a></h3>
-                                    <span class="xb-item--designation">Case Manager</span>
-                                </div>
-                                <ul class="xb-item--social list-unstyled">
-                                    <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div className="row mt-none-30">
+
+  {TeamData.map((member) => (
+    <div key={member.id} className="col-xl-3 col-lg-4 col-md-6 mt-30">
+      <div className="xb-team text-center">
+        <div className="xb-item--inner">
+          <div className="xb-item--img">
+            {/* Show a fallback image if needed */}
+            <img
+              src={`https://drive.google.com/thumbnail?id=${member.image_id}`}
+              alt={member.name}
+            />
+          </div>
+          <div className="xb-item--holder">
+            <h3 className="xb-item--name">
+              <a href="#!">{member.name}</a>
+            </h3>
+            <span className="xb-item--designation">
+              {member.designation}
+            </span>
+          </div>
+          <ul className="xb-item--social list-unstyled">
+            <li>
+              <a href={member.tweeter || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href={member.linkedin || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a href={member.facebook || "#!"} target="_blank" rel="noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>                            </div>
         </section>
         {/* <!-- team end --> */}
       {/* <!-- mission,vission,value start --> */}

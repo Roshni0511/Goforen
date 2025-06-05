@@ -24,10 +24,15 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import axios from 'axios';
+import PersonalGuidanceForm from "./PersonalGuidanceForm";
 
 
-
-
+function stripHtml(html) {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  return div.textContent || div.innerText || "";
+}
  const slides = [
   {
     image: "/assets/pic/banner14.png",
@@ -47,6 +52,110 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 ];
 
 export default function NewHome() {
+  const [faqData, setFaqData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/get_faq_data/")
+      .then((response) => setFaqData(response.data))
+      .catch((error) => console.error("Error fetching FAQ data:", error));
+  }, []);
+
+    const [galleryData, setGalleryData] = useState([])
+  
+    useEffect(() => {
+      axios.get('http://localhost:8000/get_gallery_data/')
+        .then((res) => {
+          setGalleryData(res.data)
+        })
+        .catch((err) => {
+          console.error('Failed to fetch gallery data:', err)
+        })
+    }, [])
+
+  const [Courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_course_data/')
+      .then((res) => res.json())
+      .then((data) => {
+        setCourses(data);
+      })
+      .catch((err) => console.error("Failed to fetch Courses:", err));
+  }, []);
+
+  const [TeamData, setTeamData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_team_data/')
+      .then((res) => res.json())
+      .then((data) => {
+        setTeamData(data);
+      })
+      .catch((err) => console.error("Failed to fetch Team Data:", err));
+  }, []);
+
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      alert("Please enter your email address.");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:8000/submit_newsletter/", {
+        email: email,
+      });
+
+      if (response.data.success) {
+        alert("Subscribed successfully!");
+        setEmail("");
+      }
+    } catch (error) {
+      console.error("Subscription failed:", error);
+      alert("Error: " + (error.response?.data?.error || "Something went wrong"));
+    }
+  };
+
+
+  const [visaServices, setVisaServices] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/get_visa_services/')
+      .then((res) => res.json())
+      .then((data) => {
+        setVisaServices(data);
+      })
+      .catch((err) => console.error("Failed to fetch visa services:", err));
+  }, []);
+    const [blogData, setBlogData] = useState([]);
+
+  useEffect(() => {
+
+    // Fetch blog data from API
+    fetch("http://localhost:8000/get_blog_data/")
+      .then((res) => res.json())
+      .then((data) => setBlogData(data))
+      .catch((error) => console.error("Error fetching blog data:", error));
+  }, []);
+
+
+  const [items, setItems] = useState([]);
+    
+  useEffect(() => {
+    fetch("http://localhost:8000/get_news_data/")
+      .then((res) => res.json())
+      .then((data) => {
+        const headings = data.map(item => item.heading);
+        setItems(headings);
+      })
+      .catch((err) => console.error("Failed to fetch news data:", err));
+  }, []);
+
+
 
 const cards = [
   {
@@ -153,16 +262,16 @@ const cards = [
   const scrollRef = useRef(null);
   const itemHeight = 40;
   const [index, setIndex] = useState(0);
-  const items = [
-    "Poland Introduced e-Konsulat for Work Visa Applications in India.",
-    "Australian Universities Impose Restrictions on Students from Six Indian Regions.",
-    "Stay and Work in Canada: Apply for a TFWP Work Permit After PGWP Expiry.",
-    "Latvia to Enforce Stricter Entry Rules for Third-Country Nationals Without Local Visa or Permit.",
-    "CRS Scores Drop Sharply After Removal of Arranged Employment Points.",
-    "UAE Expands Visa on Arrival for Indian Nationals.",
-    "EU Urges Fast-Track of ETIAS &amp; EES to Secure Schengen Borders.",
-    "Latvia to Tighten Border Rules for Third-Country Nationals Without Latvian Visa or Residence Permit.",
-  ];
+  // const items = [
+  //   "Poland Introduced e-Konsulat for Work Visa Applications in India.",
+  //   "Australian Universities Impose Restrictions on Students from Six Indian Regions.",
+  //   "Stay and Work in Canada: Apply for a TFWP Work Permit After PGWP Expiry.",
+  //   "Latvia to Enforce Stricter Entry Rules for Third-Country Nationals Without Local Visa or Permit.",
+  //   "CRS Scores Drop Sharply After Removal of Arranged Employment Points.",
+  //   "UAE Expands Visa on Arrival for Indian Nationals.",
+  //   "EU Urges Fast-Track of ETIAS &amp; EES to Secure Schengen Borders.",
+  //   "Latvia to Tighten Border Rules for Third-Country Nationals Without Latvian Visa or Residence Permit.",
+  // ];
   const visa = [
     "Temporary Residents Can Now Apply for the Canada Child Benefit (CCB).",
     "Canada&amp;rsquo;s CRS System: How It Works.",
@@ -484,100 +593,29 @@ const cards = [
             <div className="col-lg-10">
               <div className="about__content">
                 <ul className="about-list ul_li list-unstyled">
-                  <li>
-                    <a href="/Immigration-pr-visa">
-                      <div className="xb-item--inner"  
-    
-      style={{
+                    {visaServices.map((service, index) => (
+    <li key={service.id}>
+      <a href={`/visa-services-detail?id=${service.id}`}>
+        <div className="xb-item--inner" style={{
         backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
         padding: '35px 20px',
         borderRadius: '10px'
-      }}
-    >
-                        <div className="xb-item--number">1</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Immigration - PR Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Settle Abroad with Permanent Residency Support
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Student-visa">
-                      <div className="xb-item--inner"     style={{
-        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
-              padding: '35px 20px',
-        borderRadius: '10px'
       }}>
-                        <div className="xb-item--number color-2">2</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">Student Visa</h3>
-                          <p style={{color:'#787B84'}}>
-                            Study Overseas with Full Visa Guidance
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Visitor-visa">
-                      <div className="xb-item--inner"     style={{
-     backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
-          padding: '35px 20px',
-        borderRadius: '10px'
-      }}>
-                        <div className="xb-item--number color-3">3</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">Visitor Visa</h3>
-                          <p style={{color:'#787B84'}}>
-                            Travel Abroad Hassle-Free with Our Help
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Investor-visa">
-                      <div className="xb-item--inner"     style={{
-         backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
-               padding: '35px 20px',
-        borderRadius: '10px'
-      }}>
-                        <div className="xb-item--number color-4">4</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Investor Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Invest and Relocate with Business Visa
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/Work-permit-visa">
-                      <div className="xb-item--inner"     style={{
-        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
-             padding: '35px 20px',
-        borderRadius: '10px'
-      }}>
-                        <div className="xb-item--number color-5">5</div>
-                        <div className="xb-item--holder">
-                          <h3 className="xb-item--title mb-10">
-                            Work Permit Visa
-                          </h3>
-                          <p style={{color:'#787B84'}}>
-                            Build Your Career Abroad with Ease
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
+          <div className={`xb-item--number color-${(index % 5) + 1}`}>
+            {index + 1}
+          </div>
+          <div className="xb-item--holder">
+            <h3 className="xb-item--title mb-10">{service.visa_type}</h3>
+            <p style={{ color: '#787B84' }}>
+              {/* Optional: Show a trimmed version of the description */}
+              {stripHtml(service.description).slice(0, 80)}...
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+  ))}
+
                 </ul>
               </div>
             </div>
@@ -586,7 +624,7 @@ const cards = [
         <div className="about__img">
           <img src="/assets/pic/why.png" alt="" />
         </div>
-      </section>
+      </section> 
       {/* <!-- about end --> */}
    
 
@@ -630,117 +668,43 @@ const cards = [
               </div>
             </div>
             <div className="row justify-content-md-center mt-none-30">
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner"  style={{
+
+  {Courses.map((course, index) => (
+    <React.Fragment key={course.id}>
+      <div className="col-lg-4 col-md-6 mt-30">
+        <div className="xb-service">
+          <div className="xb-item--inner"  style={{
         backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
         padding: '20px',
         borderRadius: '10px'
       }}>
-                    <div className="xb-item--icon mb-50">
-                      <img src="assets/img/icon/sv_01.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/IELTS"> IELTS</a>
-                      </h3>
-                      <p >
-                        Prepare for the globally recognized IELTS exam to
-                        enhance your chances of studying or migrating abroad.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner"  style={{
-        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
-        padding: '20px',
-        borderRadius: '10px'
-      }}>
-                    <div className="xb-item--icon color2 mb-50">
-                      <img src="assets/img/icon/sv_02.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/TOEFLIBT">TOEFL IBT</a>
-                      </h3>
-                      <p>
-                        Boost your English proficiency with TOEFL iBT, accepted
-                        by universities and immigration bodies worldwide.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 mt-30"></div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner"  style={{
-        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
-        padding: '20px',
-        borderRadius: '10px'
-      }}>
-                    <div className="xb-item--icon color3 mb-50">
-                      <img src="assets/img/icon/sv_03.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/GRE">GRE</a>
-                      </h3>
-                      <p >
-                        Achieve your academic and career goals with the GRE,
-                        essential for graduate admissions globally.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner"  style={{
-        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
-        padding: '20px',
-        borderRadius: '10px'
-      }}>
-                    <div className="xb-item--icon color4 mb-50">
-                      <img src="assets/img/icon/sv_04.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/PTE"> PTE</a>
-                      </h3>
-                      <p >
-                        Get fast, reliable results with PTE Academic — ideal for
-                        study, work, or migration.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-service">
-                  <div className="xb-item--inner"  style={{
-        backgroundImage: 'linear-gradient(135deg, rgba(214, 131, 48, 0.4), rgba(158, 63, 63, 0))',
-        padding: '20px',
-        borderRadius: '10px'
-      }}>
-                    <div className="xb-item--icon color5 mb-50">
-                      <img src="assets/img/icon/sv_05.svg" alt="" />
-                    </div>
-                    <div className="xb-item--holder">
-                      <h3 className="xb-item--title mb-20">
-                        <a href="/SAT">SAT</a>
-                      </h3>
-                      <p >
-                        Open doors to top  universities with strong
-                        SAT scores designed for undergraduate programs.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                        <a href={`/Course-details?id=${course.id}`}>
+            <div className={`xb-item--icon color${(index % 5) + 1} mb-50`}>
+              <img src={`assets/img/icon/sv_0${(index % 5) + 1}.svg`} alt={course.course_name} />
+            </div>
+            <div className="xb-item--holder">
+              <h3 className="xb-item--title mb-20">
+                <a href={`/Course-details?id=${course.id}`}>{course.course_name}</a>
+              </h3>
+              <p style={{ color: '#787B84' }}
+                dangerouslySetInnerHTML={{
+                  __html: course.description.replace(/<[^>]+>/g, '').slice(0, 140) + '...',
+                }}
+              />
+            </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Insert a blank column after the second item (index 1) */}
+      {index === 1 && (
+        <div className="col-lg-4 mt-30"></div>
+      )}
+    </React.Fragment>
+  ))}
+
             </div>
           </div>
         </div>
@@ -2249,7 +2213,7 @@ const cards = [
           <div className="col-12">
           <div className="row mt-none-30 d-flex justify-content-center">
               <div className="col-lg-4 co-12">
-  <div className="xb-package mt-30" style={{ height: '100%' }}>
+  {/* <div className="xb-package mt-30" style={{ height: '100%' }}>
     <div className="xb-item--inner" style={{
       height: '512px',
       display: 'flex',
@@ -2299,7 +2263,60 @@ const cards = [
         </a>
       </div>
     </div>
-  </div>
+  </div> */}
+    <div className="xb-package mt-30" style={{ height: '100%' }}>
+      <div className="xb-item--inner" style={{
+        height: '512px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}>
+        <div style={{ justifyContent: 'center', display: 'flex' }}>
+          <h1>News</h1>
+        </div>
+        <div>
+          <img src="/assets/pic/news.png" alt="" style={{ width: '100%', height: '170px', borderRadius: '15px 15px 0px 0px' }} />
+        </div>
+
+        <div className="scroll-container mt-3" id="scrollBox" style={{
+          height: `${itemHeight * 3}px`, // 3 items visible
+          overflow: 'hidden',
+          position: 'relative'
+        }}>
+          <div className="scroll-inner" ref={scrollRef}>
+            {extendedItems.map((text, i) => (
+              <div className="scroll-item" key={i}>
+                <div
+                  className="xb-item--description"
+                  style={{ fontSize: "18px", textAlign: "center", padding: '10px 0' }}
+                >
+                  {text}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+        }}>
+          <a
+            href="/News"
+            style={{
+              padding: "10px 20px",
+              background: '#f09318',
+              color: '#fff',
+              borderRadius: "10px",
+              textDecoration: "none"
+            }}
+          >
+            View All
+          </a>
+        </div>
+      </div>
+    </div>
+
 </div>
 
             <div className="col-lg-4 co-12">
@@ -2685,338 +2702,173 @@ const cards = [
       {/* <!-- team end --> */}
       <SuccessStories />
       {/* <!-- faq start --> */}
-      <section className="faq pt-120 pb-120">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-5">
-              <div className="xb-faq-content">
-                <div className="sec-title mb-125">
-                  <h2 className="mb-30 wow skewIn">
-                    Common questions <br /> <span>answered</span>
-                  </h2>
-                  <p>
-                    At the heart of our commitment to providing <br />{" "}
-                    exceptional immigration solutions stands our trusted
-                  </p>
-                </div>
-                <div className="faq-img">
-                  <img src="/assets/pic/faq_img.png" alt="" />
-                </div>
+    <section className="faq pt-120 pb-120">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-5">
+            <div className="xb-faq-content">
+              <div className="sec-title mb-125">
+                <h2 className="mb-30 wow skewIn">
+                  Common questions <br /> <span>answered</span>
+                </h2>
+                <p>
+                  At the heart of our commitment to providing <br />
+                  exceptional immigration solutions stands our trusted
+                </p>
               </div>
-            </div>
-            <div className="col-lg-7">
-              <div className="xb-faq">
-                <ul className="accordion_box clearfix">
-                  <li className="accordion block active-block">
-                    <div className="acc-btn">
-                      What services do you offer?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body current">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="accordion block">
-                    <div className="acc-btn">
-                      What is the consultation process like?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="accordion block">
-                    <div className="acc-btn">
-                      How much do your services cost?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="accordion block">
-                    <div className="acc-btn">
-                      How do I get started with your services?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="accordion block">
-                    <div className="acc-btn">
-                      What is your success rate with visa applications?
-                      <span className="arrow"></span>
-                    </div>
-                    <div className="acc_body">
-                      <div className="content">
-                        <p>
-                          We offer comprehensive immigration and visa consulting
-                          services, <br /> including visa application
-                          assistance, document preparation,
-                        </p>
-                        <ul>
-                          <li>
-                            <i className="far fa-check"></i>Comprehensive Visa
-                            Assistance
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Visa Category
-                            Expertise
-                          </li>
-                          <li>
-                            <i className="far fa-check"></i>Transparency and
-                            Communication
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+              <div className="faq-img">
+                <img src="/assets/pic/faq_img.png" alt="FAQ Visual" />
               </div>
             </div>
           </div>
+
+          <div className="col-lg-7">
+            <div className="xb-faq">
+              <ul className="accordion_box clearfix">
+                {faqData.map((item, index) => (
+                  <li
+                    key={item.id}
+                    className={`accordion block ${
+                      index === 0 ? "active-block" : ""
+                    }`}
+                  >
+                    <div className="acc-btn">
+                      {item.question}
+                      <span className="arrow"></span>
+                    </div>
+                    <div className={`acc_body ${index === 0 ? "current" : ""}`}>
+                      <div
+                        className="content"
+                        dangerouslySetInnerHTML={{ __html: item.answer }}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
       {/* <!-- faq end --> */}
 
       {/* <!-- category start --> */}
-      <div style={{ margin: "60px 0px " }}>
-        <div className="d-flex justify-content-center">
-          <div className="sec-title mb-60 text-center">
-            <h2 className="mb-30 wow skewIn">
-              Every photo tells our story
-              <br /> <span> Media</span>
-            </h2>
-          </div>
+    <div style={{ margin: "60px 0px " }}>
+      <div className="d-flex justify-content-center">
+        <div className="sec-title mb-60 text-center">
+          <h2 className="mb-30 wow skewIn">
+            Every photo tells our story
+            <br /> <span> Media</span>
+          </h2>
         </div>
-        <Swiper
-  className="xb-category-slider"
-  modules={[Autoplay]}
-  spaceBetween={30}
-  slidesPerView={7}
-  loop={true}
-  loopAdditionalSlides={30}
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-  }}
-  allowTouchMove={true}
-  grabCursor={true}
-  speed={150} // 🔥 faster feel
-  breakpoints={{
-    1600: { slidesPerView: 7 },
-    1200: { slidesPerView: 6 },
-    992: { slidesPerView: 5 },
-    768: { slidesPerView: 4 },
-    576: { slidesPerView: 3 },
-    0: { slidesPerView: 2 },
-  }}
->
-          {images.map((src, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={src}
-                alt={`Slide ${index + 1}`}
-                style={{ width: "300px", height: "250px", borderRadius: "8px" }}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </div>
+
+      <Swiper
+        className="xb-category-slider"
+        modules={[Autoplay]}
+        spaceBetween={30}
+        slidesPerView={7}
+        loop={true}
+        loopAdditionalSlides={30}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        allowTouchMove={true}
+        grabCursor={true}
+        speed={150}
+        breakpoints={{
+          1600: { slidesPerView: 7 },
+          1200: { slidesPerView: 6 },
+          992: { slidesPerView: 5 },
+          768: { slidesPerView: 4 },
+          576: { slidesPerView: 3 },
+          0: { slidesPerView: 2 },
+        }}
+      >
+        {galleryData.map((item, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={`https://drive.google.com/thumbnail?id=${item.image_id}`}
+              alt={item.image_name || `Slide ${index + 1}`}
+              style={{
+                width: "300px",
+                height: "250px",
+                objectFit: "cover",
+                borderRadius: "8px",
+              }}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
       {/* <!-- category end --> */}
 
       {/* <!-- blog start --> */}
+
       <section className="blog pb-130">
-        <div className="container">
-          <div className="blog-wrap">
-            <div className="sec-title mb-60 text-center">
-              <h2 className="mb-30 wow skewIn">
-                Cast Your Eyes Upon Our <br /> <span> Newest Article</span>
-              </h2>
-              <p style={{ textAlign: "center" }}>
-                Explore the most recent addition to our informative articles
-              </p>
-            </div>
-            <div className="row justify-content-md-center mt-none-30">
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-blog">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <img src="/assets/pic/tourist-woman-holding-travel-suitcase-passport-with-tickets-with-smile-face-happy-positive.jpg" alt="" style={{width:'100%',height:'215px'}}/>
-                    </div>
-                    <div className="xb-item--holder">
-                      <span className="xb-item--category">PR VISA</span>
+  <div className="container">
+    <div className="blog-wrap">
+      <div className="sec-title mb-60 text-center">
+        <h2 className="mb-30 wow skewIn">
+          Cast Your Eyes Upon Our <br /> <span> Newest Article</span>
+        </h2>
+        <p style={{ textAlign: "center" }}>
+          Explore the most recent addition to our informative articles
+        </p>
+      </div>
+      <div className="row justify-content-md-center mt-none-30">
+        {blogData.map((blog, index) => {
+          // Convert Google Drive shareable link to direct image link if needed
+          let imageUrl = blog.image_id
+            ? `https://drive.google.com/thumbnail?id=${blog.image_id}`
+            : "/assets/pic/img_01blog.jpg"; // fallback image
 
-                      <h3 className="xb-item--title border-effect">
-                        <a href="/StayInformed">
-                          A PR Visa allows you to live and work in ...
-                        </a>
-                      </h3>
-                      <a className="xb-item--link" href="/StayInformed">
-                        Read More
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a className="xb-overlay xb-overlay-link" href="/StayInformed"></a>
+          return (
+            <div className="col-lg-4 col-md-6 mt-30" key={blog.id}>
+              <div className="xb-blog">
+                <div className="xb-item--inner">
+                  <div className="xb-item--img">
+                    <a href={`/StayInformedDetails?id=${blog.id}`}>
+                      <img src={imageUrl} alt={blog.heading} style={{width:"100%"}}/>
+                    </a>
                   </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-blog">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <a href="/StayInformed">
-                        <img src="/assets/pic/pleased-young-woman-wearing-red-shirt-sunglasses-holding-globe-while-flying-blue-toy-plane-white-wall.jpg" alt="" style={{width:'100%',height:'215px'}}/>
+                  <div className="xb-item--holder">
+                    <span className={`xb-item--category color-${(index % 3) + 1}`}>
+                      {blog.heading.length > 20 ? blog.heading.slice(0, 20) + "..." : blog.heading}
+                    </span>
+                    <h3 className="xb-item--title border-effect">
+                      <a href={`/StayInformedDetails?id=${blog.id}`}>
+                        {blog.title.length > 60 ? blog.title.slice(0, 60) + "..." : blog.title}
                       </a>
-                    </div>
-                    <div className="xb-item--holder">
-                      <a className="xb-item--category color-2" href="#!">
-                        STUDENT VISA
-                      </a>
-
-                      <h3 className="xb-item--title border-effect">
-                        <a href="/StayInformed">
-                           Student Visa allow you to study fulltime in ..
-                        </a>
-                      </h3>
-                      <a className="xb-item--link" href="/StayInformed">
-                        Read More
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a className="xb-overlay xb-overlay-link" href="/StayInformed"></a>
+                    </h3>
+                    <a className="xb-item--link" href={`/StayInformedDetails?id=${blog.id}`}>
+                      Read More
+                      <span>
+                        <img src="assets/img/icon/right_arrow.svg" alt="" />
+                      </span>
+                    </a>
                   </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 mt-30">
-                <div className="xb-blog">
-                  <div className="xb-item--inner">
-                    <div className="xb-item--img">
-                      <a href="/StayInformed">
-                        <img src="/assets/pic/customer-service-cute-guy-grey-suit-with-computer-headset-waving-hands-holding-cup.jpg" alt=""  style={{width:'100%',height:'215px'}} />
-                      </a>
-                    </div>
-                    <div className="xb-item--holder">
-                      <a className="xb-item--category color-3" href="#!">
-                        INVESTOR VISA
-                      </a>
-
-                      <h3 className="xb-item--title border-effect">
-                        <a href="/StayInformed">
-                          An Investor Visa allows individuals to obtain ..
-                        </a>
-                      </h3>
-                      <a className="xb-item--link" href="/StayInformed">
-                        Read More
-                        <span>
-                          <img src="assets/img/icon/right_arrow.svg" alt="" />
-                        </span>
-                      </a>
-                    </div>
-                    <a className="xb-overlay xb-overlay-link" href="/StayInformed"></a>
-                  </div>
+                  <a className="xb-overlay xb-overlay-link" href={`/StayInformedDetails?id=${blog.id}`}></a>
                 </div>
               </div>
             </div>
-            <div
-              className="xb-blog-bg"
-              style={{
-                backgroundImage: `url(${background4})`,
-                // minHeight: '400px',
-                // position: 'absolute',
-                background: "#EDF3F5",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
-          </div>
-        </div>
-      </section>
+          );
+        })}
+      </div>
+      <div
+        className="xb-blog-bg"
+        style={{
+          backgroundImage: `url(${background4})`,
+          background: "#EDF3F5",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></div>
+    </div>
+  </div>
+</section>
+
       {/* <!-- blog end --> */}
 
 
@@ -3041,43 +2893,7 @@ const cards = [
    Talk to Experts</button></a>
   </div>
 </div>
-      <div class="formBx">
-      <form className="custom-signup-form">
-  <h2>Get Personalized Guidance for Your Visa Process</h2>
-  <div className="form-row">
-    <input type="text" placeholder="First Name" name="firstName" required />
-    <input type="text" placeholder="Last Name" name="lastName" required />
-  </div>
-  <div className="form-row">
-    <input type="tel" placeholder="Phone Number" name="phone" required />
-    <input type="email" placeholder="Email" name="email" required />
-  </div>
-  <div className="form-row">
-    <select name="country" required>
-      <option value="">Country Interested</option>
-      <option value="USA">USA</option>
-      <option value="Canada">Canada</option>
-           <option value="Canada">australia</option>
-                <option value="Canada">UK</option>
-                     <option value="Canada">France
-
-</option>
-                          <option value="Canada">Germany</option>
-    </select>
-    <select name="visaType" required>
-      <option value="">Visa Type</option>
-      <option value="student">Student Visa</option>
-      <option value="work">Work Visa</option>
-            <option value="work">Investore Visa</option>
-                  <option value="work">Visitor Visa</option>
-                        <option value="work">PR Visa</option>
-    </select>
-  </div>
-
-  <button type="submit" style={{background:'#e38508',color:'#fff'}}>Submit</button>
-</form>
-
-      </div>
+      <PersonalGuidanceForm></PersonalGuidanceForm>
     </div>
 
   </div>
@@ -3224,9 +3040,7 @@ const cards = [
                       </p>
                     </div>
                   </div>
-                  <div
-                    className="col-lg-3 mt-30 col-md-6"
-                    style={{
+                  <div className="col-lg-3 mt-30 col-md-6" style={{
                       boxShadow: "0px 14px 19px rgb(221 229 236)",
                       padding: "20px",
                       margin: "5px",
@@ -3258,10 +3072,17 @@ const cards = [
                       <br /> news & case studies!
                     </h3>
                   </div>
-                  <form className="xb-item--form" action="#!">
-                    <input type="text" placeholder="Your e-mail address" />
-                    <button className="colorcode">Subscribe</button>
-                  </form>
+    <form className="xb-item--form" onSubmit={handleSubscribe}>
+      <input
+        type="text"
+        placeholder="Your e-mail address"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <button className="colorcode" type="submit">
+        Subscribe
+      </button>
+    </form>
                 </div>
               </div>
             </div>

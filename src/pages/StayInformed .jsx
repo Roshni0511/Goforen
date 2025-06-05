@@ -28,6 +28,16 @@ export default function StayInformed  () {
                   setBackground12(backgroundUrl12);
                 }, []);
         // data-background img end
+          const [blogData, setBlogData] = useState([]);
+  
+  useEffect(() => {
+    // Fetch blog data from API
+    fetch("http://localhost:8000/get_blog_data/")
+      .then((res) => res.json())
+      .then((data) => setBlogData(data))
+      .catch((error) => console.error("Error fetching blog data:", error));
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -93,156 +103,122 @@ export default function StayInformed  () {
       {/* <!-- breadcrumb end --> */}
 
       {/* <!-- blog start --> */}
-        <section className="blog pt-120 ">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-8">
-                        <div className="blog-post-wrapper">
-                            <article className="single-post-item">
-                                <div className="post-thumbnail-wrapper">
-                                    <a href="/StayInformedDetails"><img src="/assets/pic/blog1.webp" alt="" /></a>
-                                </div>
-                                <div className="post-content-wrapper">
-                                    <ul className="post-meta ul_li">
-                                        <li><span><i className="far fa-user"></i><span className="author vcard">Admin</span></span></li>
-                                        <li><a href="#!"><i className="far fa-comments"></i> Comments (3)</a></li>
-                                        <li><span className="posted-on"><i className="far fa-calendar-check"></i> <a href="#!">August 4, 2023</a></span></li>
-                                    </ul>
-                                    <h3 className="post-title border_effect"><a href="/StayInformedDetails">Elevating your visa application navigating complexity with confidence</a></h3>
-                                    <div className="post-excerpt">
-                                        <p>Navigating Complexity with Confidence" is a concise and impactful title that captures the essence of how visa consultants can assist in making the intricate visa process more manageable ...</p>
-                                    </div>
-                                    <div className="post-read-more">
-                                        <a className="colorcode" href="/StayInformedDetails">Read More</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article className="single-post-item">
-                                <div className="post-thumbnail-wrapper">
-                                    <a href="/StayInformedDetails"><img src="/assets/pic/blog2.jpg" alt="" /></a>
-                                </div>
-                                <div className="post-content-wrapper">
-                                    <ul className="post-meta ul_li">
-                                        <li><span><i className="far fa-user"></i><span className="author vcard">Admin</span></span></li>
-                                        <li><a href="#!"><i className="far fa-comments"></i> Comments (3)</a></li>
-                                        <li><span className="posted-on"><i className="far fa-calendar-check"></i> <a href="#!">August 4, 2023</a></span></li>
-                                    </ul>
-                                    <h3 className="post-title border_effect"><a href="/StayInformedDetails">Expert Consulting for Smooth Approval and Confident Navigation</a></h3>
-                                    <div className="post-excerpt">
-                                        <p>Embarking on the journey of securing a visa can be a labyrinthine process, rife with complexities and uncertainties. That's where expert consulting steps in as your guiding light, illuminating...</p>
-                                    </div>
-                                    <div className="post-read-more">
-                                        <a className="colorcode" href="/StayInformedDetails">Read More</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article className="single-post-item">
-                                <div className="post-thumbnail-wrapper">
-                                    <a href="/StayInformedDetails"><img src="/assets/pic/blog3.jpg" alt="" /></a>
-                                </div>
-                                <div className="post-content-wrapper">
-                                    <ul className="post-meta ul_li">
-                                        <li><span><i className="far fa-user"></i><span className="author vcard">Admin</span></span></li>
-                                        <li><a href="#!"><i className="far fa-comments"></i> Comments (3)</a></li>
-                                        <li><span className="posted-on"><i className="far fa-calendar-check"></i> <a href="#!">August 4, 2023</a></span></li>
-                                    </ul>
-                                    <h3 className="post-title border_effect"><a href="/StayInformedDetails">Your Comprehensive Guide to Successfully Pursuing Education Abroad</a></h3>
-                                    <div className="post-excerpt">
-                                        <p>Our guide doesn't just navigate the technicalities; it's a roadmap that instills confidence. We believe that informed decisions lead to successful outcomes, and our aim is to empower...</p>
-                                    </div>
-                                    <div className="post-read-more">
-                                        <a className="colorcode" href="/StayInformedDetails">Read More</a>
-                                    </div>
-                                </div>
-                            </article>
-                            {/* <div className="pagination_wrap pt-20">
-                                <ul>
-                                    <li><a href="#"><i className="far fa-long-arrow-left"></i></a></li>
-                                    <li><a href="#" className="current_page">01</a></li>
-                                    <li><a href="#">02</a></li>
-                                    <li><a href="#"><i className="fal fa-ellipsis-h"></i></a></li>
-                                    <li><a href="#">08</a></li>
-                                    <li><a href="#"><i className="far fa-long-arrow-right"></i></a></li>
-                                </ul>
-                            </div> */}
-                        </div>
+      <section className="blog pt-120">
+        <div className="container">
+          <div className="row">
+            {/* Blog Content */}
+            <div className="col-lg-8">
+              <div className="blog-post-wrapper">
+                {blogData.map((blog) => (
+                  <article className="single-post-item" key={blog.id} style={{border :"1px solid gray", borderRadius:'16px', padding:"1.5rem"}}> 
+                    <div className="post-thumbnail-wrapper"  style={{width:"100%", height:"20rem", overflow:"hidden"}}>
+                      <a href={`/StayInformedDetails/${blog.id}`}>
+                        <img style={{width:"100%"}}
+                          src={`https://drive.google.com/thumbnail?id=${blog.image_id}`}
+                          alt={blog.heading}
+                        />
+                      </a>
                     </div>
-                    <div className="col-lg-4">
-                        <div className="blog-sidebar">
-                            <div className="widget">
-                                <h3 className="widget-title">Search</h3>
-                                <form className="widget__search" action="#">
-                                    <input type="text" placeholder="Search your keyword" />
-                                    <button><img src="assets/img/icon/search.svg" alt="" /></button>
-                                </form>
-                            </div>
-                            <div className="widget">
-                                <h3 className="widget-title">Related Posts</h3>
-                                <div className="widget__post">
-                                    <div className="widget__post-item ul_li">
-                                        <div className="post-thumb">
-                                            <a href="/StayInformedDetails"><img src="/assets/pic/blog4.webp" alt="" /></a>
-                                        </div>
-                                        <div className="post-content">
-                                            <span className="post-date">nov 28,2023 </span>
-                                            <h4 className="post-title border-effect-2"><a href="/StayInformedDetails">Your Comprehensive Guide to Student Visa...</a></h4>
-                                        </div>
-                                    </div>
-                                    <div className="widget__post-item ul_li">
-                                        <div className="post-thumb">
-                                            <a href="/StayInformedDetails"><img src="/assets/pic/blog5.webp" alt="" /></a>
-                                        </div>
-                                        <div className="post-content">
-                                            <span className="post-date">July 16,2023</span>
-                                            <h4 className="post-title border-effect-2"><a href="/StayInformedDetails">How Visa Consultants Make It Happen...</a></h4>
-                                        </div>
-                                    </div>
-                                    <div className="widget__post-item ul_li">
-                                        <div className="post-thumb">
-                                            <a href="/StayInformedDetails"><img src="/assets/pic/blog6.jpg" alt="" /></a>
-                                        </div>
-                                        <div className="post-content">
-                                            <span className="post-date">July 25,2023</span>
-                                            <h4 className="post-title border-effect-2"><a href="/StayInformedDetails">Visa Consultants Make Global Moves Easier...</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="widget">
-                                <h3 className="widget-title">Categories</h3>
-                                <ul className="widget__category list-unstyled">
-                                    <li><a href="#!"><i className="far fa-arrow-up"></i> Business visa</a></li>
-                                    <li><a href="#!"><i className="far fa-arrow-up"></i> Tourist visa</a></li>
-                                    <li><a href="#!"><i className="far fa-arrow-up"></i> Permanent Residency</a></li>
-                                    <li><a href="#!"><i className="far fa-arrow-up"></i> Visa documents</a></li>
-                                    <li><a href="#!"><i className="far fa-arrow-up"></i> Visa quotas</a></li>
-                                    <li><a href="#!"><i className="far fa-arrow-up"></i> Work visas</a></li>
-                               </ul>
-                            </div>
-                            <div className="widget">
-                                <h3 className="widget-title">Tags</h3>
-                                <div className="tagcloud">
-                                    <a href="#!">Citizenship</a>
-                                    <a href="#!">Family</a>
-                                    <a href="#!">Immigration</a>
-                                    <a href="#!">Traveling</a>
-                                    <a href="#!">Government</a>
-                                    <a href="#!">Visa</a>
-                                    <a href="#!">Visa Process</a>
-                                    <a href="#!">Abroad</a>
-                                    <a href="#!">Visa</a>
-                                </div>
-                            </div>
-                            <div className="widget widget-banner text-center bg_img" style={{ backgroundImage: `url(${background1})` }}>
-                                <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
-                                <h4>Assured Approval – <br/> Guaranteed</h4>
-                                <a className="colorcode" href="#!">Get in Touch</a>
-                            </div>
-                        </div>
+                    <div className="post-content-wrapper">
+                      <ul className="post-meta ul_li">
+                        <li><span><i className="far fa-user"></i> <span className="author vcard">Admin</span></span></li>
+                        <li><a href="#!"><i className="far fa-comments"></i> Comments (0)</a></li>
+                        <li><span className="posted-on"><i className="far fa-calendar-check"></i> {new Date(blog.created_at).toLocaleDateString()}</span></li>
+                      </ul>
+                      <h3 className="post-title border_effect">
+                        <a href={`/StayInformedDetails/${blog.id}`}>{blog.heading}</a>
+                      </h3>
+                      <div className="post-excerpt">
+<div
+  dangerouslySetInnerHTML={{
+    __html: blog.description
+      ? blog.description.slice(0, 150) + '...'
+      : ''
+  }}
+/>                        {/* <p>{__HTML: blog.description?.slice(0, 150)}...</p> */}
+                      </div>
+                      <div className="post-read-more">
+                        <a className="thm-btn" href={`/StayInformedDetails?id=${blog.id}`}>Read More</a>
+                      </div>
                     </div>
-                </div>
+                  </article>
+                ))}
+              </div>
             </div>
-        </section>
+
+            {/* Sidebar */}
+            <div className="col-lg-4">
+              <div className="blog-sidebar">
+                <div className="widget">
+                  <h3 className="widget-title">Search</h3>
+                  <form className="widget__search" action="#">
+                    <input type="text" placeholder="Search your keyword" />
+                    <button><img src="assets/img/icon/search.svg" alt="" /></button>
+                  </form>
+                </div>
+
+                {/* Related Posts */} 
+                <div className="widget">
+                  <h3 className="widget-title">Related Posts</h3>
+                  <div className="widget__post">
+                    {blogData.slice(0, 3).map((post) => (
+                      <div className="widget__post-item ul_li" key={post.id}>
+                        <div className="post-thumb">
+                          <a href={`/StayInformedDetails?id=${post.id}`}>
+                            <img src={`https://drive.google.com/thumbnail?id=${post.image_id}`} alt="" />
+                          </a>
+                        </div>
+                        <div className="post-content">
+                          <span className="post-date">{new Date(post.created_at).toLocaleDateString()}</span>
+                          <h4 className="post-title border-effect-2">
+                            <a href={`/StayInformedDetails?id=${post.id}`}>{post.heading.slice(0, 40)}...</a>
+                          </h4>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Static Sidebar Widgets */}
+                <div className="widget">
+                  <h3 className="widget-title">Categories</h3>
+                  <ul className="widget__category list-unstyled">
+                    <li><a href="#!"><i className="far fa-arrow-up"></i> Business visa</a></li>
+                    <li><a href="#!"><i className="far fa-arrow-up"></i> Tourist visa</a></li>
+                    <li><a href="#!"><i className="far fa-arrow-up"></i> Permanent Residency</a></li>
+                    <li><a href="#!"><i className="far fa-arrow-up"></i> Visa documents</a></li>
+                    <li><a href="#!"><i className="far fa-arrow-up"></i> Visa quotas</a></li>
+                    <li><a href="#!"><i className="far fa-arrow-up"></i> Work visas</a></li>
+                  </ul>
+                </div>
+
+                <div className="widget">
+                  <h3 className="widget-title">Tags</h3>
+                  <div className="tagcloud">
+                    <a href="#!">Citizenship</a>
+                    <a href="#!">Family</a>
+                    <a href="#!">Immigration</a>
+                    <a href="#!">Traveling</a>
+                    <a href="#!">Government</a>
+                    <a href="#!">Visa</a>
+                    <a href="#!">Visa Process</a>
+                    <a href="#!">Abroad</a>
+                  </div>
+                </div>
+
+                <div
+                  className="widget widget-banner text-center bg_img"
+                  style={{ backgroundImage: `url(${background1})` }}
+                >
+                  <img className="mb-40" src="assets/img/icon/b_icon.png" alt="" />
+                  <h4>Assured Approval – <br /> Guaranteed</h4>
+                  <a className="thm-btn" href="#!">Get in Touch</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
         {/* <!-- blog end --> */}
 
         <FooterTop />
