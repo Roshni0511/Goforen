@@ -197,7 +197,7 @@ function App() {
         <Route path="/PTE" element={<PTE />} />
         <Route path="/SAT" element={<SAT />} />
         
-        <Route path="/Gallery" element={<Gallery />} />
+        {/* <Route path="/Gallery" element={<Gallery />} /> */}
         <Route path="/Videos" element={<Videos />} />
         <Route path="/SuccessStory" element={<SuccessStory />} />
         {/* <Route path="/StayInformed  " element={<StayInformed  />} /> */}
