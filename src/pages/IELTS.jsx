@@ -103,10 +103,10 @@ const IELTS = () => {
                     <ul class="widget-category list-unstyled">
 
                       <li><a class="active" href="/IELTS">IELTS<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
-                      <li><a href="/TOEFLIBT">TOEFL IBT<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
-                      <li><a href="/GRE">GRE<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
-                      <li><a href="/PTE">PTE<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
-                      <li><a href="/SAT">SAT <span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                      <li><a href="/IELTS">TOEFL IBT<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                      <li><a href="/IELTS">GRE<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                      <li><a href="/IELTS">PTE<span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
+                      <li><a href="/IELTS">SAT <span><img src="assets/img/icon/arrow_up.svg" /></span></a></li>
                     </ul>
                   </div>
 
